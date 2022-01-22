@@ -28,8 +28,8 @@ As an intending contributor, you need to thoroughly go through the guidelines be
 
 Wiki Pages :
 
-1. [Wiki Home](https://github.com/decadevs/clads/wiki)
-2. [Wiki Styles Guidelines](https://github.com/decadevs/clads/wiki/PR-Style)
-3. [Wiki PR Guidelines](https://github.com/decadevs/clads/wiki/Style)
+1. [Wiki Home](https://github.com/decadevs/Clads-Client/wiki)
+2. [Wiki Styles Guidelines](https://github.com/decadevs/Clads-Client/wiki/PR-Style)
+3. [Wiki PR Guidelines](https://github.com/decadevs/Clads-Client/wiki/Style)
 
 
