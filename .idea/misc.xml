@@ -8,6 +8,7 @@
         <entry key="app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/side_nav_bar.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_authentication.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.2791666666666667" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2640625" />
