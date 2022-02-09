@@ -13,4 +13,27 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="welcome_back">Welcome back</string>
+    <string name="login_to_continue">Login to continue</string>
+    <string name="signup_with_google">Signup with Google</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="submit">Submit</string>
+    <string name="i_can_remember_my_password">I can remember my password.</string>
+    <string name="login">Login</string>
+    <string name="view_in_browser">view in browser</string>
+    <string name="reset_password_card_view_text_long">You’re almost there. To finish resetting
+        your password, please click on the
+        reset button below</string>
+    <string name="reset_password_card_view_text_hi">Hi,</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="stay_in_touch">Stay in touch</string>
+    <string name="email_sent_by_obioma">email sent by Obioma</string>
+    <string name="copyright_2020_all_rights_reserved">copyright 2020. All Rights Reserved</string>
+    <string name="use_phone">Use Phone</string>
+    <string name="new_use">New user?</string>
+    <string name="signup_for_free">Signup for free</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_new_password">Confirm New Password</string>
 </resources>
