@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/splash_activity"
+    android:background="#0066F5"
+    android:orientation="vertical"
+    tools:context=".presentation.ui.SplashScreenActivity">
+
+    <ImageView
+        android:id="@+id/clad_splashScreen_logo"
+        android:layout_width="141.71dp"
+        android:layout_height="40.77dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="202dp"
+        android:src="@drawable/groups" />
+
+
+    <ProgressBar
+        android:id="@+id/splashScreen_progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_marginTop="179.23dp"
+        android:layout_marginStart="157dp"
+        android:src="@drawable/index" />
+
+    <TextView
+        android:id="@+id/loading_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="157dp"
+        android:text="@string/loading"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+</LinearLayout>
