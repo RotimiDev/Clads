@@ -10,7 +10,7 @@ import com.decagonhq.clads_client.R
 class SplashScreenActivity : AppCompatActivity() {
 
     //initializing the splashtime for setting the secs the splash screen we display
-    private val SPLASH_TIME_OUT: Long = 1000
+    private val SPLASH_TIME_OUT: Long = 3000
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
