@@ -1,15 +1,8 @@
 package com.decagonhq.clads_client
-import android.view.Gravity
-import androidx.test.espresso.Espresso
 import androidx.test.espresso.Espresso.onView
-import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.contrib.DrawerActions
-import androidx.test.espresso.contrib.DrawerMatchers.isClosed
-import androidx.test.espresso.contrib.DrawerMatchers.isOpen
-import androidx.test.espresso.contrib.NavigationViewActions
 import androidx.test.espresso.matcher.ViewMatchers
-import androidx.test.espresso.matcher.ViewMatchers.withContentDescription
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
@@ -37,20 +30,11 @@ class DashboardActivityUiTest {
     @Test
     fun check_NavigationView_Visibility() {
         onView(withId(R.id.mainActivity_navView)).perform(DrawerActions.open())
-        .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
-
+            .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
     }
 
     @Test
     fun check_BottomNav_Visibility() {
         onView(withId(R.id.bottomNavigationView)).check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
     }
-
-
 }
-
-
-
-
-
-
