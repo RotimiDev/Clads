@@ -1,12 +1,11 @@
 package com.decagonhq.clads_client.presentation.ui
 
 import androidx.fragment.app.testing.launchFragmentInContainer
-import androidx.test.espresso.Espresso
 import androidx.test.espresso.Espresso.onView
-import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.assertion.ViewAssertions.matches
-import androidx.test.espresso.matcher.ViewMatchers
-import androidx.test.espresso.matcher.ViewMatchers.*
+import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
+import androidx.test.espresso.matcher.ViewMatchers.withId
+import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.decagonhq.clads_client.R
 import org.junit.Before
@@ -22,10 +21,9 @@ class SignUpFragmentTest {
         launchFragmentInContainer<SignUpFragment>(
             themeResId = R.style.Theme_AppCompat
         )
-
     }
 
-    //checking the layout if its visible or displayed to user
+    // checking the layout if its visible or displayed to user
     @Test
     fun checkFragmentVisibility() {
         onView(withId(R.id.signupLayout))
@@ -42,18 +40,16 @@ class SignUpFragmentTest {
             .check(matches(isDisplayed()))
     }
 
-    //checking if the text in signUpFragment is visible as we want
+    // checking if the text in signUpFragment is visible as we want
     @Test
     fun checkingTextVisibility() {
         onView(withId(R.id.txtLorem))
             .check(matches(isDisplayed()))
     }
 
-    //checking if the test in our view is the right one
+    // checking if the test in our view is the right one
     @Test
     fun textTextIsSignUpFragment() {
         onView(withId(R.id.txtLorem)).check(matches(withText(R.string.lorem_ipsum_ipsum_sum)))
     }
-
-
 }

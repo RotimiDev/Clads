@@ -14,5 +14,4 @@ fun setUp() {
     launchFragmentInContainer<ChoiceLoginFragment>(
         themeResId = R.style.Theme_AppCompat
     )
-
 }

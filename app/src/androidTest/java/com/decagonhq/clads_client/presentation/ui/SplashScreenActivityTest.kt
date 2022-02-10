@@ -12,27 +12,26 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4ClassRunner::class)
-class SplashScreenActivityTest{
-
+class SplashScreenActivityTest {
 
     @get: Rule
     val activityRule = ActivityScenarioRule(SplashScreenActivity::class.java)
 
-    //checking the layout if its visible or displayed to user
+    // checking the layout if its visible or displayed to user
     @Test
     fun checkActivityVisibility() {
         Espresso.onView(withId(R.id.splash_activity))
             .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
     }
 
-    //checking if the text in mainActivity is visible as we want
+    // checking if the text in mainActivity is visible as we want
     @Test
-    fun checkTextVisibility(){
+    fun checkTextVisibility() {
         Espresso.onView(withId(R.id.loading_text))
             .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
     }
     @Test
-    fun checkProgressBarVisibility(){
+    fun checkProgressBarVisibility() {
         Espresso.onView(withId(R.id.splashScreen_progressBar))
             .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
     }
