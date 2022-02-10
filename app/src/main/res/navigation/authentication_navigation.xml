@@ -23,5 +23,9 @@
         android:id="@+id/newPasswordFragment"
         android:name="com.decagonhq.clads_client.presentation.ui.NewPasswordFragment"
         android:label="fragment_new_password"
-        tools:layout="@layout/fragment_new_password" />
+        tools:layout="@layout/fragment_new_password" >
+        <action
+            android:id="@+id/action_newPasswordFragment_to_resetEmailTemplateFragment"
+            app:destination="@id/resetEmailTemplateFragment" />
+    </fragment>
 </navigation>

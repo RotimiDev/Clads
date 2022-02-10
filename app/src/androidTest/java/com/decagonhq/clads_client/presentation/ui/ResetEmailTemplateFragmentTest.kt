@@ -5,8 +5,9 @@ import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.assertion.ViewAssertions
-import androidx.test.espresso.matcher.ViewMatchers
-import androidx.test.espresso.matcher.ViewMatchers.*
+import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
+import androidx.test.espresso.matcher.ViewMatchers.withId
+import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.decagonhq.clads_client.R
 import junit.framework.TestCase
@@ -15,18 +16,17 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
-class ResetEmailTemplateFragmentTest : TestCase(){
-
+class ResetEmailTemplateFragmentTest : TestCase() {
 
     private lateinit var fragmentScenario: FragmentScenario<ResetEmailTemplateFragment>
 
     @Before
-    fun setup(){
+    fun setup() {
         fragmentScenario = launchFragmentInContainer(themeResId = R.style.Theme_CladsClient)
     }
 
     @Test
-    fun test_are_views_displayed(){
+    fun test_are_views_displayed() {
         onView(withId(R.id.btnResetPassword))
             .check(ViewAssertions.matches(isDisplayed()))
         onView(withId(R.id.obiomaLogo3))
@@ -38,7 +38,7 @@ class ResetEmailTemplateFragmentTest : TestCase(){
     }
 
     @Test
-    fun test_if_button_clicks(){
+    fun test_if_button_clicks() {
         onView(withId(R.id.btnResetPassword))
             .check(ViewAssertions.matches(isDisplayed()))
         onView(withText(R.string.reset_password))
@@ -46,16 +46,16 @@ class ResetEmailTemplateFragmentTest : TestCase(){
     }
 
     @Test
-    fun test_navigation(){
+    fun test_navigation() {
         onView(withId(R.id.btnResetPassword)).perform(ViewActions.click())
 
         onView(withId(R.id.etNewPassword))
-            .perform(ViewActions.typeText("pass@123"),
+            .perform(
+                ViewActions.typeText("pass@123"),
                 ViewActions.closeSoftKeyboard()
             )
         onView(withText(R.string.forgot_password))
         onView(withText(R.string.i_can_remember_my_password))
         onView(withText(R.string.login))
     }
-
 }
