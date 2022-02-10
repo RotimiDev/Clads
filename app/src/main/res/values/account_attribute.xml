@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="Account">
+        <item>Select account category</item>
+        <item>Account 1</item>
+        <item>Account 2</item>
+        <item>Account 3</item>
+        <item>Account 4</item>
+    </string-array>
+
+
+</resources>
