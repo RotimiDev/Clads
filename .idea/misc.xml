@@ -5,7 +5,7 @@
       <map>
         <entry key="app/src/main/res/layout/activity_authentication.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.4139867060716893" />
-        <entry key="app/src/main/res/layout/fragment_choice_screen.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/fragment_choice_screen.xml" value="0.67" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/fragment_media.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/fragment_message.xml" value="0.3098958333333333" />
