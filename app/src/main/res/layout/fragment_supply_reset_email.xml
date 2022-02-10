@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.ui.SupplyResetEmailFragment">
+
+    <ImageView
+        android:id="@+id/backArrow"
+        android:layout_width="@dimen/size_16_dp"
+        android:layout_height="@dimen/size_16_dp"
+        android:layout_marginStart="@dimen/size_11_dp"
+        android:layout_marginTop="@dimen/size_16_dp"
+        android:src="@drawable/ic_baseline_back_16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvForgotPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_20_dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/forgot_password"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_16_sp"
+        app:layout_constraintBottom_toBottomOf="@+id/backArrow"
+        app:layout_constraintStart_toEndOf="@+id/backArrow"
+        app:layout_constraintTop_toTopOf="@+id/backArrow" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/size_24_dp"
+        android:layout_marginTop="@dimen/size_64_dp"
+        android:hint="@string/email_address"
+        android:textColor="@color/gray_6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvForgotPassword" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/size_24_dp"
+        android:layout_marginTop="@dimen/size_36_dp"
+        android:backgroundTint="@color/deep_sky_blue"
+        android:text="@string/submit"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+    <TextView
+        android:id="@+id/tvRememberPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_47_dp"
+        android:layout_marginTop="@dimen/size_28_dp"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/i_can_remember_my_password"
+        android:textSize="@dimen/text_14_sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <TextView
+        android:id="@+id/tvLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login"
+        android:textColor="@color/deep_sky_blue"
+        android:fontFamily="@font/montserrat"
+        android:layout_marginStart="@dimen/size_11_dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvRememberPassword"
+        app:layout_constraintStart_toEndOf="@+id/tvRememberPassword"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@+id/tvRememberPassword" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

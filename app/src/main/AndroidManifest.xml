@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CladsClient">
         <activity
-            android:name=".presentation.ui.ResetPasswordActivity"
-            android:exported="false" />
-        <activity
             android:name=".presentation.ui.AuthenticationActivity"
             android:exported="false" />
         <activity
