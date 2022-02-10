@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/signupLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/layout_main_activity"
     android:background="#0066F5"
     android:orientation="vertical"
     tools:context=".presentation.ui.SignUpFragment">
@@ -13,7 +13,7 @@
     <ImageView
         android:id="@+id/cladImage"
         android:layout_width="143dp"
-        android:layout_height="40.77dp"
+        android:layout_height="41dp"
         android:layout_marginStart="109dp"
         android:layout_marginTop="202dp"
         android:src="@drawable/groups" />
@@ -34,32 +34,31 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:paddingVertical="9dp"
         android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
         android:layout_marginTop="80dp"
+        android:layout_marginEnd="15dp"
         android:backgroundTint="@color/white"
+        android:paddingVertical="9dp"
         android:text="@string/sign_up"
         android:textColor="#0066F5"
         android:textSize="16sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/login_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginBottom="184dp"
         android:layout_marginStart="15dp"
-        android:paddingVertical="9dp"
-        android:textStyle="bold"
         android:layout_marginEnd="15dp"
+        android:layout_marginBottom="184dp"
         android:backgroundTint="#0066F5"
-        app:strokeColor="@color/white"
-        app:strokeWidth="2dp"
+        android:paddingVertical="9dp"
         android:text="@string/login"
-        android:textSize="16sp" />
-
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:strokeColor="@color/white"
+        app:strokeWidth="2dp" />
 
 
 </LinearLayout>

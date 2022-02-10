@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.decagonhq.clads_client.R
 
-class ChoiceScreenFragment : Fragment() {
+class ChoiceLoginFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
