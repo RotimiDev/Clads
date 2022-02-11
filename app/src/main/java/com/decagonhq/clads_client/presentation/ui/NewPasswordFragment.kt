@@ -25,7 +25,7 @@ class NewPasswordFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentNewPasswordBinding.bind(view)
 
-        binding.backArrow.setOnClickListener {
+        binding.backArrowImageView.setOnClickListener {
             val backDirection = NewPasswordFragmentDirections.actionNewPasswordFragmentToResetEmailTemplateFragment()
             findNavController().navigate(backDirection)
         }

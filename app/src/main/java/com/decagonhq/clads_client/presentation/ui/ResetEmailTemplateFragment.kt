@@ -15,7 +15,7 @@ class ResetEmailTemplateFragment : Fragment(R.layout.fragment_reset_email_templa
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentResetEmailTemplateBinding.bind(view)
 
-        binding.btnResetPassword.setOnClickListener {
+        binding.resetPasswordButton.setOnClickListener {
             val resetEmailDirections = ResetEmailTemplateFragmentDirections.actionResetEmailTemplateFragmentToNewPasswordFragment()
             findNavController().navigate(resetEmailDirections)
         }

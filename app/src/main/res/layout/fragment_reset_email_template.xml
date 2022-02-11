@@ -8,212 +8,210 @@
     tools:context=".presentation.ui.ResetEmailTemplateFragment">
 
     <ImageView
-        android:id="@+id/obiomaLogo3"
+        android:id="@+id/clads_logo_image_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/obioma_logo3"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/guideline4" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/view_in_browser"
-        android:textColor="@color/menu_text_colour"
-        android:textSize="@dimen/text_11_sp"
-        app:layout_constraintBottom_toBottomOf="@+id/obiomaLogo3"
-        app:layout_constraintEnd_toStartOf="@+id/guideline3" />
+        android:src="@drawable/all_clads_logo35"
+        app:layout_constraintStart_toStartOf="@+id/reset_password_horizontal_guideline1"
+        app:layout_constraintTop_toTopOf="@+id/reset_password_vertical_guideline2" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_3_dp"
+        android:src="@drawable/all_clads_text65"
+        app:layout_constraintBottom_toBottomOf="@+id/clads_logo_image_view"
+        app:layout_constraintStart_toEndOf="@+id/clads_logo_image_view"
+        app:layout_constraintTop_toTopOf="@+id/clads_logo_image_view" />
+
+    <TextView
+        android:id="@+id/view_in_browser_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reset_email_view_in_browser"
+        android:textColor="@color/menu_text_colour"
+        android:textSize="@dimen/text_size_11sp"
+        app:layout_constraintBottom_toBottomOf="@+id/clads_logo_image_view"
+        app:layout_constraintEnd_toStartOf="@+id/reset_password_vertical_guideline1" />
+
+    <ImageView
+        android:id="@+id/email_heading_image_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/size_18_dp"
-        android:src="@drawable/mail_header"
-        app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/obiomaLogo3" />
+        android:src="@drawable/reset_mail_header_image"
+        app:layout_constraintEnd_toStartOf="@+id/reset_password_vertical_guideline1"
+        app:layout_constraintStart_toStartOf="@+id/reset_password_horizontal_guideline1"
+        app:layout_constraintTop_toBottomOf="@+id/clads_logo_image_view" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cvResetPassword"
+        android:id="@+id/reset_password_card_view"
         android:layout_width="@dimen/size_0_dp"
         android:layout_height="wrap_content"
         app:cardElevation="@dimen/size_23_dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView3"
-        app:layout_constraintStart_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3">
+        app:layout_constraintEnd_toEndOf="@+id/email_heading_image_view"
+        app:layout_constraintStart_toStartOf="@+id/email_heading_image_view"
+        app:layout_constraintTop_toBottomOf="@+id/email_heading_image_view">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/reset_password_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/size_95_dp"
                 android:layout_marginTop="@dimen/size_28_dp"
                 android:fontFamily="@font/poppins"
-                android:text="@string/reset_password"
+                android:paddingHorizontal="@dimen/size_15_dp"
+                android:text="@string/all_reset_password"
                 android:textColor="@color/menu_text_colour"
-                android:textSize="@dimen/text_14_sp"
+                android:textSize="@dimen/text_size_14sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/hi_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/size_36_dp"
+                android:paddingHorizontal="@dimen/size_15_dp"
                 android:layout_marginTop="@dimen/size_18_dp"
                 android:text="@string/reset_password_card_view_text_hi"
                 android:textColor="@color/menu_text_colour"
-                android:textSize="@dimen/text_13_sp"
+                android:textSize="@dimen/text_size_13sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+                app:layout_constraintTop_toBottomOf="@+id/reset_password_text_view" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/card_view_long_text_text_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/size_36_dp"
+                android:paddingHorizontal="@dimen/size_15_dp"
                 android:layout_marginEnd="@dimen/size_3_dp"
                 android:text="@string/reset_password_card_view_text_long"
                 android:textColor="@color/menu_text_colour"
-                android:textSize="@dimen/text_13_sp"
+                android:textSize="@dimen/text_size_13sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+                app:layout_constraintTop_toBottomOf="@+id/hi_text_view" />
 
             <Button
-                android:id="@+id/btnResetPassword"
+                android:id="@+id/reset_password_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/size_25_dp"
-                android:layout_marginBottom="@dimen/size_40_dp"
+                android:layout_marginVertical="@dimen/size_20_dp"
                 android:backgroundTint="@color/deep_sky_blue"
-                android:text="@string/reset_password"
+                android:text="@string/all_reset_password"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+                app:layout_constraintTop_toBottomOf="@+id/card_view_long_text_text_view" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/stay_in_touch_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/size_28_dp"
         android:fontFamily="@font/raleway_bold_italic"
-        android:text="@string/stay_in_touch"
+        android:text="@string/all_stay_in_touch"
         android:textColor="@color/gray_3"
-        android:textSize="@dimen/text_13_sp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/cvResetPassword" />
+        android:textSize="@dimen/text_size_13sp"
+        app:layout_constraintEnd_toStartOf="@+id/reset_password_vertical_guideline1"
+        app:layout_constraintStart_toStartOf="@+id/reset_password_horizontal_guideline1"
+        app:layout_constraintTop_toBottomOf="@+id/reset_password_card_view" />
 
-    <ImageView
-        android:id="@+id/ivFacebook"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/size_15_dp"
-        android:src="@drawable/facebook"
-        app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stay_in_touch_text_view">
 
-    <ImageView
-        android:id="@+id/ivTwitter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/size_8_dp"
-        android:src="@drawable/twitter"
-        app:layout_constraintBottom_toBottomOf="@+id/ivFacebook"
-        app:layout_constraintStart_toEndOf="@+id/ivFacebook"
-        app:layout_constraintTop_toTopOf="@+id/ivFacebook" />
+        <ImageView
+            android:id="@+id/facebook_logo_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/all_facebook_logo"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
-        android:id="@+id/ivInstagram"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/size_8_dp"
-        android:src="@drawable/instagram"
-        app:layout_constraintBottom_toBottomOf="@+id/ivFacebook"
-        app:layout_constraintStart_toEndOf="@+id/ivTwitter"
-        app:layout_constraintTop_toTopOf="@+id/ivFacebook" />
+        <ImageView
+            android:id="@+id/twitter_logo_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/size_8_dp"
+            android:src="@drawable/all_twitter_logo"
+            app:layout_constraintStart_toEndOf="@+id/facebook_logo_image_view" />
 
-    <ImageView
-        android:id="@+id/ivGmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/size_8_dp"
-        android:src="@drawable/gmail"
-        app:layout_constraintBottom_toBottomOf="@+id/ivFacebook"
-        app:layout_constraintStart_toEndOf="@+id/ivInstagram"
-        app:layout_constraintTop_toTopOf="@+id/ivFacebook" />
+        <ImageView
+            android:id="@+id/instagram_logo_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/size_8_dp"
+            android:src="@drawable/all_instagram_logo"
+            app:layout_constraintStart_toEndOf="@+id/twitter_logo_image_view" />
+
+        <ImageView
+            android:id="@+id/gmail_logo_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/size_8_dp"
+            android:src="@drawable/all_gmail_logo"
+            app:layout_constraintStart_toEndOf="@+id/instagram_logo_image_view" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
+        android:id="@+id/reset_password_horizontal_guideline1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.05" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
+        android:id="@+id/reset_password_vertical_guideline1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.94" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
+        android:id="@+id/reset_password_vertical_guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.07387141" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.32" />
-
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/email_sent_by_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
         android:layout_marginTop="@dimen/size_17_dp"
-        android:fontFamily="@font/poppins"
-        android:layout_marginStart="@dimen/size_28_dp"
-        android:text="@string/email_sent_by_obioma"
+        android:text="@string/reset_email_fragment_sentBy"
         android:textColor="@color/menu_text_colour"
-        android:textSize="@dimen/text_12_sp"
-        app:layout_constraintStart_toStartOf="@+id/guideline6"
-        app:layout_constraintTop_toBottomOf="@+id/ivTwitter" />
+        android:textSize="@dimen/text_size_12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
     <TextView
+        android:id="@+id/copyright_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins"
         android:layout_marginTop="@dimen/size_6_dp"
-        android:text="@string/copyright_2020_all_rights_reserved"
+        android:fontFamily="@font/poppins"
+        android:text="@string/all_copyright_2020"
         android:textColor="@color/menu_text_colour"
-        android:textSize="@dimen/text_11_sp"
-        app:layout_constraintStart_toStartOf="@+id/guideline6"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent= "0.2"/>
-
+        android:textSize="@dimen/text_size_11sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email_sent_by_text_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

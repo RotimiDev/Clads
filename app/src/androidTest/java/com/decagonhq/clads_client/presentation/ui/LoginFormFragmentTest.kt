@@ -13,6 +13,11 @@ import org.junit.Test
 class LoginFormFragmentTest : TestCase() {
     private lateinit var fragmentScenario: FragmentScenario<LoginFormFragment>
 
+    companion object{
+        const val EMAIL = "jmweltokg@gmail.com"
+        const val PASSWORD = "pass123"
+    }
+
     @Before
     fun setup() {
         fragmentScenario = launchFragmentInContainer(themeResId = R.style.Theme_CladsClient)
@@ -20,27 +25,27 @@ class LoginFormFragmentTest : TestCase() {
 
     @Test
     fun test_are_views_working() {
-        onView(ViewMatchers.withId(R.id.etEnterEmail))
+        onView(ViewMatchers.withId(R.id.enter_email_edit_text))
             .perform(
-                ViewActions.typeText("jmweltokg@gmail.com"),
+                ViewActions.typeText(EMAIL),
                 ViewActions.closeSoftKeyboard()
             )
 
-        onView(ViewMatchers.withId(R.id.etPassword))
+        onView(ViewMatchers.withId(R.id.login_password_edit_text))
             .perform(
-                ViewActions.typeText("pass@123"),
+                ViewActions.typeText(PASSWORD),
                 ViewActions.closeSoftKeyboard()
             )
 
-        onView(ViewMatchers.withId(R.id.btnLogin)).perform(ViewActions.click())
+        onView(ViewMatchers.withId(R.id.login_button)).perform(ViewActions.click())
     }
 
     @Test
     fun test_are_text_visible() {
-        onView(ViewMatchers.withText(R.string.welcome_back))
-        onView(ViewMatchers.withText(R.string.login_to_continue))
-        onView(ViewMatchers.withText(R.string.forgot_password))
-        onView(ViewMatchers.withText(R.string.signup_for_free))
-        onView(ViewMatchers.withText(R.string.new_use))
+        onView(ViewMatchers.withText(R.string.login_fragment_welcome_text))
+        onView(ViewMatchers.withText(R.string.login_fragment_subHeading))
+        onView(ViewMatchers.withText(R.string.all_forgot_password))
+        onView(ViewMatchers.withText(R.string.login_fragment_signup_for_free))
+        onView(ViewMatchers.withText(R.string.login_fragment_new_user))
     }
 }

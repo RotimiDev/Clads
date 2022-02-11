@@ -14,6 +14,10 @@ class NewPasswordFragmentTest : TestCase() {
 
     private lateinit var fragmentScenario: FragmentScenario<NewPasswordFragment>
 
+    companion object{
+        const val PASSWORD = "pass123"
+    }
+
     @Before
     fun setup() {
         fragmentScenario = launchFragmentInContainer(themeResId = R.style.Theme_CladsClient)
@@ -21,16 +25,16 @@ class NewPasswordFragmentTest : TestCase() {
 
     @Test
     fun are_views_working() {
-        onView(ViewMatchers.withId(R.id.etNewPassword))
+        onView(ViewMatchers.withId(R.id.newPassword_text_input_edit_text))
             .perform(
-                ViewActions.typeText("pass123"),
+                ViewActions.typeText(PASSWORD),
                 ViewActions.closeSoftKeyboard()
             )
         onView(ViewMatchers.withId(R.id.etConfirmPassword))
             .perform(
-                ViewActions.typeText("pass123"),
+                ViewActions.typeText(PASSWORD),
                 ViewActions.closeSoftKeyboard()
             )
-        onView(ViewMatchers.withId(R.id.btnResetPassword)).perform(ViewActions.click())
+        onView(ViewMatchers.withId(R.id.reset_password_button)).perform(ViewActions.click())
     }
 }

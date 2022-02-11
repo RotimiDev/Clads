@@ -78,5 +78,6 @@ dependencies {
     implementation "com.github.bumptech.glide:glide:$versions.glide_version"
     kapt "com.github.bumptech.glide:compiler:$versions.glide_version"
 
-    debugImplementation "androidx.fragment:fragment-testing:$versions.fragment_testing"
+    //Fragment Testing
+    debugImplementation "androidx.fragment:fragment-testing:$versions.fragment_testing_version"
 }
