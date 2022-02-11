@@ -39,7 +39,7 @@
         android:backgroundTint="@color/white"
         android:paddingVertical="@dimen/padding_9dp"
         android:text="@string/all_sign_up"
-        android:textColor="#0066F5"
+        android:textColor="@color/deep_sky_blue"
         android:textSize="@dimen/text_size_16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"

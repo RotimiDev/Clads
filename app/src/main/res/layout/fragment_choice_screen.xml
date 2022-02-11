@@ -86,7 +86,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/all_have_an_account"
-            android:textColor="#8DFFFFFF"
+            android:textColor="@color/light_color"
             android:textSize="@dimen/text_size_12sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
