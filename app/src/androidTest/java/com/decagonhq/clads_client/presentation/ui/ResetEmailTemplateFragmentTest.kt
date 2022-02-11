@@ -20,7 +20,7 @@ class ResetEmailTemplateFragmentTest : TestCase() {
 
     private lateinit var fragmentScenario: FragmentScenario<ResetEmailTemplateFragment>
 
-    companion object{
+    companion object {
         const val PASSWORD = "pass123"
     }
 

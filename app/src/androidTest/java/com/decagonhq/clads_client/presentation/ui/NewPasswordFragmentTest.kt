@@ -14,7 +14,7 @@ class NewPasswordFragmentTest : TestCase() {
 
     private lateinit var fragmentScenario: FragmentScenario<NewPasswordFragment>
 
-    companion object{
+    companion object {
         const val PASSWORD = "pass123"
     }
 

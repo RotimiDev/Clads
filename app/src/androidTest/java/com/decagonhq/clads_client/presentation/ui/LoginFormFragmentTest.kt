@@ -13,7 +13,7 @@ import org.junit.Test
 class LoginFormFragmentTest : TestCase() {
     private lateinit var fragmentScenario: FragmentScenario<LoginFormFragment>
 
-    companion object{
+    companion object {
         const val EMAIL = "jmweltokg@gmail.com"
         const val PASSWORD = "pass123"
     }
