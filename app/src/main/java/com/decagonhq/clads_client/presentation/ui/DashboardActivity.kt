@@ -14,7 +14,6 @@ import com.decagonhq.clads_client.databinding.ActivityDashboardBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
-
 class DashboardActivity : AppCompatActivity() {
     private lateinit var mDrawer: DrawerLayout
     private lateinit var bottomNavigationView: BottomNavigationView
@@ -57,6 +56,4 @@ class DashboardActivity : AppCompatActivity() {
         return navHostFragment.navController
             .navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
-
-
 }
