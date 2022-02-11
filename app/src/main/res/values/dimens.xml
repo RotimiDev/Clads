@@ -29,4 +29,28 @@
     <dimen name="margin_32dp">32dp</dimen>
     <dimen name="padding_24dp">24dp</dimen>
     <dimen name="margin_11dp">11dp</dimen>
+    <dimen name="nav_drawer_cancel_icon_layout_width">15dp</dimen>
+    <dimen name="nav_drawer_cancel_icon_layout_height">15dp</dimen>
+    <dimen name="nav_drawer_avatar_width_80dp">80dp</dimen>
+    <dimen name="nav_drawer_editProfile_logOut_icon_width">15dp</dimen>
+    <dimen name="nav_drawer_version_textView_margin_end">20dp</dimen>
+    <dimen name="nav_drawer_version_textView_margin_bottom">20dp</dimen>
+    <dimen name="nav_drawer_editProfile_nextIcon_margin_end">20dp</dimen>
+    <dimen name="nav_drawer_editProfile_BottomLine_margin_top">20dp</dimen>
+    <dimen name="nav_drawer_editProfile_LogOut_textView_marginStart">25dp</dimen>
+    <dimen name="nav_drawer_editProfile_logOut_icon_marginTop">24dp</dimen>
+    <dimen name="nav_drawer_editProfile_logOut_icon_marginStart">20dp</dimen>
+    <dimen name="nav_drawer_editProfile_topLine_marginTop">30dp</dimen>
+    <dimen name="nav_drawer_editProfile_button_radius">16dp</dimen>
+    <dimen name="nav_drawer_editProfile_button_textSize">11sp</dimen>
+    <dimen name="nav_drawer_editProfile_button_paddingEnd">13dp</dimen>
+    <dimen name="nav_drawer_editProfile_button_paddingStart">13dp</dimen>
+    <dimen name="nav_drawer_editProfile_button_marginTop">12dp</dimen>
+    <dimen name="nav_drawer_editProfile_name_textView_textSise">12sp</dimen>
+    <dimen name="nav_drawer_editProfile_name_textView_marginTop">14dp</dimen>
+    <dimen name="nav_drawer_avatar_marginTop">45dp</dimen>
+    <dimen name="nav_drawer_cancel_icon_marginEnd">20dp</dimen>
+    <dimen name="nav_drawer_cancel_icon_marginTop">20dp</dimen>
+
+
 </resources>
