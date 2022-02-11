@@ -20,5 +20,10 @@
         android:name="com.decagonhq.clads_client.presentation.ui.MessageFragment"
         android:label="fragment_message"
         tools:layout="@layout/fragment_message" />
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.decagonhq.clads_client.presentation.ui.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" />
 
 </navigation>

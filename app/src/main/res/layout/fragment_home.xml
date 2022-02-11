@@ -5,6 +5,16 @@
     android:layout_height="match_parent"
     tools:context=".presentation.ui.HomeFragment">
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        android:text="hfd"
+        android:layout_gravity="center_vertical"/>
 
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/frame" />
 
 </FrameLayout>

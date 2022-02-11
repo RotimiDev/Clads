@@ -13,4 +13,64 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="ijeoma">Ijeoma</string>
+    <string name="lastname">LastName</string>
+    <string name="first_name">First Name</string>
+    <string name="ibukun">Ibukun</string>
+    <string name="other_name">Other Name</string>
+    <string name="babangida">Babangida</string>
+    <string name="gender">Gender</string>
+    <string name="tap_to_change_picture">Tap to change picture</string>
+    <string name="delivery_address">Delivery Address</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+    <string name="street">Street</string>
+    <string name="city">City</string>
+    <string name="save_change">Save Change</string>
+    <string name="all_new_password">New Password</string>
+    <string name="fragment_security_old_password">Old Password</string>
+    <string name="fragment_security_change_password">Change Password</string>
+    <string name="all_password">Password</string>
+    <string name="fragement_security_phone_number">Phone Number</string>
+    <string name="fragment_security_verified_information">Verified Information</string>
+    <string name="all_edit_profile">Edit Profile</string>
+
+    <string-array name="State">
+        <item>Abia</item>
+        <item>Adamawa</item>
+        <item>Akwa Ibom</item>
+        <item>Anambra</item>
+        <item>Bauchi</item>
+        <item>Bayelsa</item>
+        <item>Benue</item>
+        <item>Borno</item>
+        <item>Cross River</item>
+        <item>Delta</item>
+        <item>Ebonyi</item>
+        <item>Edo</item>
+        <item>Ekiti</item>
+        <item>Enugu</item>
+        <item>Gombe</item>
+        <item>Imo</item>
+        <item>Jigawa</item>
+        <item>Kaduna</item>
+        <item>Kano</item>
+        <item>Katsina</item>
+        <item>Kebbi</item>
+        <item>Kogi</item>
+        <item>Kwara</item>
+        <item>Lagos</item>
+        <item>Nasarawa</item>
+        <item>Niger</item>
+        <item>Ogun</item>
+        <item>Ondo</item>
+        <item>Osun</item>
+        <item>Oyo</item>
+        <item>Plateau</item>
+        <item>Rivers</item>
+        <item>Sokoto</item>
+        <item>Taraba</item>
+        <item>Yobe</item>
+        <item>Zamfara</item>
+    </string-array>
 </resources>
