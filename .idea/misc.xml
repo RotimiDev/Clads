@@ -7,12 +7,12 @@
         <entry key="app/src/main/res/drawable/splash_screen.xml" value="0.2630208333333333" />
         <entry key="app/src/main/res/layout/activity_authentication.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_choice_screen.xml" value="0.3643200052303174" />
+        <entry key="app/src/main/res/layout/fragment_choice_screen.xml" value="0.616557734204793" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/fragment_media.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/fragment_message.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/fragment_s_ign_up.xml" value="0.29583333333333334" />
-        <entry key="app/src/main/res/layout/fragment_sign_up.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_sign_up.xml" value="0.4211309523809524" />
       </map>
     </option>
   </component>

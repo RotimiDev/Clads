@@ -9,7 +9,7 @@
     tools:context=".presentation.ui.ChoiceLoginFragment">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/all_clads_logo141"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/all_clads_logo141"
@@ -21,31 +21,31 @@
         android:id="@+id/google_signup_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="2dp"
+        app:cardCornerRadius="@dimen/radius_2dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/imageView">
+        app:layout_constraintTop_toBottomOf="@+id/all_clads_logo141">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/all_google_logo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingVertical="10dp"
+                android:paddingVertical="@dimen/padding_10dp"
                 android:src="@drawable/all_google_logo"
-                app:layout_constraintEnd_toStartOf="@+id/textView"
+                app:layout_constraintEnd_toStartOf="@+id/sign_up_with_google_button"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/sign_up_with_google_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/sign_up_with_google"
+                android:text="@string/all_sign_up_with_google"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -59,24 +59,50 @@
         android:id="@+id/email_signup_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="#0066F5"
-        android:paddingVertical="10dp"
-        android:text="@string/sign_up_with_email"
+        android:layout_marginTop="@dimen/marginTop_32dp"
+        android:backgroundTint="@color/deep_sky_blue"
+        android:paddingVertical="@dimen/padding_10dp"
+        android:text="@string/fragment_sign_up_sign_up_with_email"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="14sp"
+        android:textSize="@dimen/text_size_14sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toBottomOf="@+id/google_signup_button"
         app:strokeColor="@color/white"
-        app:strokeWidth="2dp" />
+        app:strokeWidth="@dimen/stroke_2dp" />
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_27dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email_signup_button">
 
+        <TextView
+            android:id="@+id/have_account_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/all_have_an_account"
+            android:textColor="#8DFFFFFF"
+            android:textSize="@dimen/text_size_12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/login_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_10dp"
+            android:text="@string/all_login"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/have_account_text_view"
+            app:layout_constraintStart_toEndOf="@+id/have_account_text_view"
+            app:layout_constraintTop_toTopOf="@+id/have_account_text_view" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -106,31 +132,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.81265205"/>
-
-    <TextView
-        android:id="@+id/have_account_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/have_an_account"
-        android:textColor="#8DFFFFFF"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline5"
-        app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/email_signup_button" />
-
-    <TextView
-        android:id="@+id/login_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:text="@string/login"
-        android:textColor="@color/white"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/have_account_text_view"
-        app:layout_constraintStart_toEndOf="@+id/have_account_text_view"
-        app:layout_constraintTop_toTopOf="@+id/have_account_text_view" />
+        app:layout_constraintGuide_percent="0.81265205" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
