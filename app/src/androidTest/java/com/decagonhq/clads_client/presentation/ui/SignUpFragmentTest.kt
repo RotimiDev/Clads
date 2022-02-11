@@ -43,13 +43,13 @@ class SignUpFragmentTest {
     // checking if the text in signUpFragment is visible as we want
     @Test
     fun checkingTextVisibility() {
-        onView(withId(R.id.txtLorem))
+        onView(withId(R.id.lorem_text_view))
             .check(matches(isDisplayed()))
     }
 
     // checking if the test in our view is the right one
     @Test
     fun textTextIsSignUpFragment() {
-        onView(withId(R.id.txtLorem)).check(matches(withText(R.string.lorem_ipsum_ipsum_sum)))
+        onView(withId(R.id.lorem_text_view)).check(matches(withText(R.string.lorem_ipsum_ipsum_sum)))
     }
 }

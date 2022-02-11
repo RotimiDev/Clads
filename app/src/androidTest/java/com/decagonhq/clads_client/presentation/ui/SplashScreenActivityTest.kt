@@ -27,7 +27,7 @@ class SplashScreenActivityTest {
     // checking if the text in mainActivity is visible as we want
     @Test
     fun checkTextVisibility() {
-        Espresso.onView(withId(R.id.loading_text))
+        Espresso.onView(withId(R.id.loading_text_view))
             .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
     }
     @Test

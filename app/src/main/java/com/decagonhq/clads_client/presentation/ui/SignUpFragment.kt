@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.databinding.FragmentSignUpBinding
@@ -29,5 +28,10 @@ class SignUpFragment : Fragment() {
         binding.signUpButton.setOnClickListener {
             findNavController().navigate(R.id.choiceScreenFragment)
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

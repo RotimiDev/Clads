@@ -5,37 +5,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/splash_activity"
-    android:background="#0066F5"
+    android:background="@color/deep_sky_blue"
+    android:gravity="center"
+    android:weightSum="3"
     android:orientation="vertical"
     tools:context=".presentation.ui.SplashScreenActivity">
 
     <ImageView
         android:id="@+id/clad_splashScreen_logo"
-        android:layout_width="141.71dp"
-        android:layout_height="40.77dp"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="202dp"
-        android:src="@drawable/groups" />
-
-
-    <ProgressBar
-        android:id="@+id/splashScreen_progressBar"
         android:layout_width="wrap_content"
+        android:layout_weight="1"
         android:layout_height="wrap_content"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_marginTop="179.23dp"
-        android:layout_marginStart="157dp"
-        android:src="@drawable/index" />
+        android:layout_gravity="center"
+        android:src="@drawable/all_clads_logo141" />
 
-    <TextView
-        android:id="@+id/loading_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:textStyle="bold"
-        android:layout_marginStart="157dp"
-        android:text="@string/loading"
-        android:textColor="#94FFFFFF"
-        android:textSize="16sp" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp">
+
+        <ProgressBar
+            android:id="@+id/splashScreen_progressBar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/index"
+            app:layout_constraintBottom_toTopOf="@+id/loading_text_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/loading_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/loading"
+            android:textColor="#94FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
 </LinearLayout>

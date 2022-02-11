@@ -1,11 +1,17 @@
 ext.versions = [
-        nav_version       : '2.3.5',
-        ktlint_version    : '10.2.1',
-        retrofit_version  : '2.9.0',
-        okhttp3_version   : '5.0.0-alpha.3',
-        hilt_version      : '2.38.1',
-        coroutines_version: '1.5.2',
-        lifecycle_version : '2.4.0',
-        fragment_version  : '1.4.0',
-        glide_version     : '4.12.0',
+        nav_version          : '2.3.5',
+        ktlint_version       : '10.2.1',
+        retrofit_version     : '2.9.0',
+        okhttp3_version      : '5.0.0-alpha.3',
+        hilt_version         : '2.38.1',
+        coroutines_version   : '1.5.2',
+        lifecycle_version    : '2.4.0',
+        fragment_version     : '1.4.0',
+        glide_version        : '4.12.0',
+        fragment_uitestingktx: '1.4.1',
+        fragment_testing     : '1.4.1',
+        android_unittesting  : '1.4.0',
+        android_testing : '1.1.3'
+
+
 ]

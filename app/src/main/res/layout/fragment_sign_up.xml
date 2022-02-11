@@ -1,64 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/signupLayout"
     android:layout_width="match_parent"
+    android:padding="15dp"
     android:layout_height="match_parent"
-    android:background="#0066F5"
-    android:orientation="vertical"
+    android:background="@color/deep_sky_blue"
     tools:context=".presentation.ui.SignUpFragment">
 
 
     <ImageView
-        android:id="@+id/cladImage"
-        android:layout_width="143dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="109dp"
-        android:layout_marginTop="202dp"
-        android:src="@drawable/groups" />
+        android:id="@+id/cladImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/all_clads_logo141"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
 
     <TextView
-        android:id="@+id/txtLorem"
+        android:id="@+id/lorem_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="16dp"
         android:text="@string/lorem_ipsum_ipsum_sum"
         android:textColor="@color/white"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cladImageView" />
 
     <Button
         android:id="@+id/sign_up_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="15dp"
         android:backgroundTint="@color/white"
         android:paddingVertical="9dp"
         android:text="@string/sign_up"
         android:textColor="#0066F5"
         android:textSize="16sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/lorem_text_view"
+        tools:layout_editor_absoluteX="15dp" />
 
     <Button
         android:id="@+id/login_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="184dp"
         android:backgroundTint="#0066F5"
         android:paddingVertical="9dp"
         android:text="@string/login"
         android:textSize="16sp"
         android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/sign_up_button"
         app:strokeColor="@color/white"
         app:strokeWidth="2dp" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25307798" />
 
-</LinearLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
