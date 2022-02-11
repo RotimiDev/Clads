@@ -14,6 +14,7 @@ import com.decagonhq.clads_client.databinding.ActivityDashboardBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
+
 class DashboardActivity : AppCompatActivity() {
     private lateinit var mDrawer: DrawerLayout
     private lateinit var bottomNavigationView: BottomNavigationView
@@ -32,7 +33,7 @@ class DashboardActivity : AppCompatActivity() {
         bottomNavigationView = binding.bottomNavigationView
         navView = binding.mainActivityNavView
         mDrawer = binding.drawerLayout
-        setSupportActionBar(binding.include.toolbar)
+        setSupportActionBar(binding.toolbarInclude.toolbar)
 
         navHostFragment =
             (supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment?)!!
@@ -56,4 +57,6 @@ class DashboardActivity : AppCompatActivity() {
         return navHostFragment.navController
             .navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
+
 }
