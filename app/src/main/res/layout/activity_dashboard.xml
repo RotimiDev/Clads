@@ -11,36 +11,36 @@
         android:layout_height="match_parent"
         tools:context=".presentation.ui.DashboardActivity">
 
-        <include
-            android:id="@+id/include"
-            layout="@layout/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <include
+                android:id="@+id/toolbar_include"
+                layout="@layout/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragmentContainerView"
-            android:name="androidx.navigation.fragment.NavHostFragment"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:defaultNavHost="true"
-            app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/include"
-            app:navGraph="@navigation/dashboard_navigation" />
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fragmentContainerView"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:defaultNavHost="true"
+                app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/toolbar_include"
+                app:navGraph="@navigation/dashboard_navigation" />
 
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottomNavigationView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:menu="@menu/bottom_nav_menu" />
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomNavigationView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:menu="@menu/bottom_nav_menu" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -48,15 +48,126 @@
         android:id="@+id/mainActivity_navView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="left"
+        android:layout_gravity = "start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="parent" >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            >
 
+                        <ImageView
+                            android:id="@+id/nav_drawer_cancel_icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/nav_drawer_cancel_icon_marginTop"
+                            android:layout_marginEnd="@dimen/nav_drawer_cancel_icon_marginEnd"
+                            android:src="@drawable/ic_union"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/nav_drawer_avatar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/nav_drawer_avatar_marginTop"
+                            android:src="@drawable/ic_avatar"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/nav_drawer_editProfile_name_textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/nav_drawer_editProfile_name_textView_marginTop"
+                            android:text="@string/ijeoma_ibukun_babangida"
+                            android:textColor="@color/app_color_blue_text"
+                            android:textSize="@dimen/nav_drawer_editProfile_name_textView_textSise"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="@+id/nav_drawer_avatar"
+                            app:layout_constraintStart_toStartOf="@+id/nav_drawer_avatar"
+                            app:layout_constraintTop_toBottomOf="@+id/nav_drawer_avatar" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/nav_drawer_editProfile_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/nav_drawer_editProfile_button_marginTop"
+                            android:backgroundTint="@color/app_color_blue"
+                            android:paddingStart="@dimen/nav_drawer_editProfile_button_paddingStart"
+                            android:paddingEnd="@dimen/nav_drawer_editProfile_button_paddingEnd"
+                            android:text="@string/edit_profile"
+                            android:textSize="@dimen/nav_drawer_editProfile_button_textSize"
+                            android:textStyle="bold"
+                            app:cornerRadius="@dimen/nav_drawer_editProfile_button_radius"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/nav_drawer_editProfile_name_textView" />
+
+                        <ImageView
+                            android:id="@+id/nav_drawer_editProfile_topLine"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/nav_drawer_editProfile_topLine_marginTop"
+                            android:src="@drawable/ic_line"
+                            app:layout_constraintEnd_toEndOf="@+id/nav_drawer_editProfile_button"
+                            app:layout_constraintStart_toStartOf="@+id/nav_drawer_editProfile_button"
+                            app:layout_constraintTop_toBottomOf="@+id/nav_drawer_editProfile_button" />
+
+                        <ImageView
+                            android:id="@+id/nav_drawer_editProfile_logOut_icon"
+                            android:layout_width="@dimen/nav_drawer_editProfile_logOut_icon_width"
+                            android:layout_height="@dimen/nav_drawer_editProfile_logOut_icon_width"
+                            android:layout_marginStart="@dimen/nav_drawer_editProfile_logOut_icon_marginStart"
+                            android:layout_marginTop="@dimen/nav_drawer_editProfile_logOut_icon_marginTop"
+                            android:src="@drawable/ic_power"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/nav_drawer_editProfile_topLine" />
+
+                        <TextView
+                            android:id="@+id/nav_drawer_editProfile_LogOut_textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/nav_drawer_editProfile_LogOut_textView_marginStart"
+                            android:text="@string/logout"
+                            app:layout_constraintBottom_toBottomOf="@+id/nav_drawer_editProfile_logOut_icon"
+                            app:layout_constraintStart_toEndOf="@+id/nav_drawer_editProfile_logOut_icon"
+                            app:layout_constraintTop_toTopOf="@+id/nav_drawer_editProfile_logOut_icon" />
+
+                        <ImageView
+                            android:id="@+id/nav_drawer_editProfile_BottomLine"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_line"
+                            android:layout_marginTop="@dimen/nav_drawer_editProfile_BottomLine_margin_top"
+                            app:layout_constraintEnd_toEndOf="@+id/nav_drawer_editProfile_topLine"
+                            app:layout_constraintStart_toStartOf="@+id/nav_drawer_editProfile_topLine"
+                            app:layout_constraintTop_toBottomOf="@+id/nav_drawer_editProfile_LogOut_textView" />
+
+                        <ImageView
+                            android:id="@+id/nav_drawer_editProfile_nextIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_shape"
+                            android:layout_marginEnd="@dimen/nav_drawer_editProfile_nextIcon_margin_end"
+                            app:layout_constraintTop_toTopOf="@id/nav_drawer_editProfile_LogOut_textView"
+                            app:layout_constraintBottom_toBottomOf="@id/nav_drawer_editProfile_LogOut_textView"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            />
+
+                        <TextView
+                            android:id="@+id/nav_drawer_version_textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/version_1_0"
+                            android:layout_marginEnd="@dimen/nav_drawer_version_textView_margin_end"
+                            android:layout_marginBottom="@dimen/nav_drawer_version_textView_margin_bottom"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.navigation.NavigationView>
