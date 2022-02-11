@@ -32,5 +32,5 @@ class EditProfileSecurityFragmentTest : TestCase() {
             .perform(ViewActions.typeText(OLDPASSWORD), ViewActions.closeSoftKeyboard())
         Espresso.onView(ViewMatchers.withId(R.id.security_new_password_edit_text))
             .perform(ViewActions.typeText(NEWPASSWORD), ViewActions.closeSoftKeyboard())
-    } 
+    }
 }
