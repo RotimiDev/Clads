@@ -28,10 +28,17 @@
     <string name="choose_category">Choose account category</string>
     <string name="phone_number">Phone</string>
     <string name="email_">Email:</string>
+    <string name="email_confirmation_message">Hey Ijeoma, you are almost ready to start\nenjoying Clads.
+        Simply click the big blue\nbutton below to verify your email address.</string>
     <string name="name">Name:</string>
+    <string name="email_sent_by_clads">Email sent by Clads</string>
     <string name="lets_know_you">Lets get to know you</string>
     <string name="verify_email">Verify Email Address</string>
     <string name="create_account">Create an account</string>
     <string name="have_an_account">Have an account? </string>
     <string name="login">Login</string>
+    <string name="email_confirmation">Email Confirmation</string>
+    <string name="copyright2020">Copyright 2020. All Rights Reserved</string>
+    <string name="stay_in_touch">Stay in touch</string>
+    <string name="view_in_browser">View in browser</string>
 </resources>

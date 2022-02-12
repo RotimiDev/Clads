@@ -7,8 +7,6 @@ import com.decagonhq.clads_client.R
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_signup)
-
-
+        setContentView(R.layout.fragment_sign_up)
     }
 }

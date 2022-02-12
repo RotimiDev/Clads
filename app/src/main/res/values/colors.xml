@@ -13,5 +13,7 @@
     <color name="grey">#ADBACD</color>
     <color name="hex_grey">#F2F2F2</color>
     <color name="box_stroke">#F2F2F2</color>
+    <color name="menu_text_color">#506992</color>
+    <color name="grey3">#828282</color>
 
 </resources>

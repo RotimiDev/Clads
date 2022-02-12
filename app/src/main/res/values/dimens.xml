@@ -9,6 +9,7 @@
     <dimen name="margin_default">16dp</dimen>
     <dimen name="margin_default_small">8dp</dimen>
     <dimen name="margin_left">18dp</dimen>
+    <dimen name="margin_33dp">33dp</dimen>
     <dimen name="margin_top">73dp</dimen>
     <dimen name="margin_top2">43dp</dimen>
     <dimen name="margin_right">263dp</dimen>
@@ -18,5 +19,12 @@
     <dimen name="signup_button_margin">133dp</dimen>
     <dimen name="margin_signup_confirm_password">75.5dp</dimen>
     <dimen name="size_8_dp">8dp</dimen>
+    <dimen name="text_size">12sp</dimen>
+    <dimen name="copyright_textsize">11sp</dimen>
+    <dimen name="email_confirmation_textsize">13sp</dimen>
+    <dimen name="margin_36dp">36dp</dimen>
+    <dimen name="margin_6dp">6dp</dimen>
+    <dimen name="margin_28dp">28dp</dimen>
+    <dimen name="padding_15dp">15dp</dimen>
 
 </resources>

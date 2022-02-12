@@ -3,6 +3,8 @@
 
     <array name="preloaded_fonts" translatable="false">
         <item>@font/poppins</item>
+        <item>@font/poppins_bold</item>
+        <item>@font/raleway_bold_italic</item>
         <item>@font/roboto</item>
     </array>
 

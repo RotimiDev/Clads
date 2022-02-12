@@ -30,15 +30,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="18dp"
                 android:layout_marginTop="46dp"
-                android:layout_marginEnd="200dp"
                 android:fontFamily="@font/poppins"
                 android:text="@string/create_account"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/guideline3"/>
+                app:layout_constraintTop_toBottomOf="@id/guideline3" />
 
             <TextView
                 android:id="@+id/letsKnowYou"
@@ -46,14 +44,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="18dp"
                 android:layout_marginTop="9dp"
-                android:layout_marginEnd="200dp"
                 android:fontFamily="@font/poppins"
                 android:text="@string/lets_know_you"
                 android:textAlignment="viewStart"
                 android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ivCreateAccount"/>
+                app:layout_constraintTop_toBottomOf="@+id/ivCreateAccount" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/firstNameLayout"
@@ -67,18 +63,17 @@
                 app:hintTextColor="@color/hex_grey"
                 app:errorEnabled="true"
                 app:backgroundTint="@color/hex_grey"
+                app:boxStrokeColor="@color/hex_grey"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/letsKnowYou">
 
-                <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/firstName"
+                <EditText
+                    android:id="@+id/firstNameEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:drawablePadding="@dimen/margin_default_small"
                     android:fontFamily="@font/roboto"
                     android:inputType="text"
-                    android:padding="@dimen/margin_default_small"
                     android:textColor="@color/hex_grey"
                     android:textColorHighlight="@color/white"
                     android:textColorHint="@color/white"
@@ -144,15 +139,17 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
-            <androidx.appcompat.widget.AppCompatSpinner
+            <Spinner
                 android:id="@+id/spinner"
-                style="@style/Widget.AppCompat.Spinner.Underlined"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_default"
+                android:layout_marginBottom="@dimen/margin_33dp"
                 android:dropDownWidth="wrap_content"
                 android:entries="@array/Account"
+                android:layout_marginHorizontal="@dimen/margin_default"
+                app:layout_constraintBottom_toTopOf="@id/emailAddressLayout"
                 android:minHeight="48dp"
+                android:theme="@style/Spinner"
                 android:spinnerMode="dropdown"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -256,12 +253,14 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btSignup"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="45dp"
+                android:paddingVertical="9dp"
                 android:backgroundTint="@color/white"
                 android:fontFamily="@font/poppins"
                 android:text="@string/sign_up"
+                android:textStyle="bold"
                 android:textColor="@color/deep_sky_blue"
                 android:visibility="visible"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -275,9 +274,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="21dp"
                 android:fontFamily="@font/poppins"
-                android:paddingBottom="40dp"
+                android:layout_marginBottom="40dp"
                 android:text="@string/have_an_account"
                 android:textColor="@color/hex_grey"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btSignup" />
@@ -286,7 +286,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins"
-                android:paddingBottom="40dp"
                 android:text="@string/login"
                 android:textColor="@color/hex_grey"
                 android:textStyle="bold"
