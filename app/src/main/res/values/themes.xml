@@ -2,10 +2,12 @@
     <!-- Base application theme. -->
     <style name="Theme.CladsClient" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/app_color_blue</item>
+        <item name="colorPrimary">@color/deep_sky_blue</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
 
         <item name="colorOnPrimary">@color/white</item>
+        <!--Font Family-->
+        <item name="android:fontFamily">@font/poppins</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
@@ -24,7 +26,7 @@
 
     <style name="DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
         <item name ="spinBars">true</item>
-        <item name="color">@color/app_color_blue</item>
+        <item name="color">@color/deep_sky_blue</item>
     </style>
 
 
