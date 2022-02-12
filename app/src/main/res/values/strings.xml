@@ -20,6 +20,28 @@
     <string name="all_sign_up_with_google">Sign up with google</string>
     <string name="all_have_an_account">Have an account?</string>
     <string name="all_login">Login</string>
+    <string name="login_fragment_welcome_text">Welcome back</string>
+    <string name="login_fragment_subHeading">Login to continue</string>
+    <string name="all_signup_with_google">Signup with Google</string>
+    <string name="all_email_address">Email Address</string>
+    <string name="all_password">Password</string>
+    <string name="all_forgot_password">Forgot Password</string>
+    <string name="all_submit">Submit</string>
+    <string name="all_i_can_remember_my_password">I can remember my password.</string>
+    <string name="reset_email_view_in_browser">view in browser</string>
+    <string name="reset_password_card_view_text_long">You’re almost there. To finish resetting
+        your password, please click on the
+        reset button below</string>
+    <string name="reset_password_card_view_text_hi">Hi,</string>
+    <string name="all_reset_password">Reset Password</string>
+    <string name="all_stay_in_touch">Stay in touch</string>
+    <string name="reset_email_fragment_sentBy">email sent by Obioma</string>
+    <string name="all_copyright_2020">copyright 2020. All Rights Reserved</string>
+    <string name="Login_fragment_use_phone">Use Phone</string>
+    <string name="login_fragment_new_user">New user?</string>
+    <string name="login_fragment_signup_for_free">Signup for free</string>
+    <string name="all_new_password">New Password</string>
+    <string name="reset_password_fragment_confirm_new_password">Confirm New Password</string>
     <string name="ijeoma_ibukun_babangida">Ijeoma Ibukun Babangida</string>
     <string name="edit_profile">Edit Profile</string>
     <string name="version_1_0">version 1.0</string>
