@@ -14,6 +14,5 @@ class AuthenticationActivity : AppCompatActivity() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             window.navigationBarColor = resources.getColor(R.color.deep_sky_blue, this.theme)
         }
-
     }
 }
