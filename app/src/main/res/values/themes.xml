@@ -26,10 +26,15 @@
 
     <style name="DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
         <item name ="spinBars">true</item>
-        <item name="color">@color/deep_sky_blue</item>
     </style>
 
 
     <style name="Theme.CladsClient.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="Theme.CladsClient.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Theme.Splash_screen_theme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+        <item name="android:statusBarColor">@color/deep_sky_blue</item>
+    </style>
+
 </resources>

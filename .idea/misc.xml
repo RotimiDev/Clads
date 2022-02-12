@@ -3,6 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< HEAD
+        <entry key="app/src/main/res/drawable/home.xml" value="0.2630208333333333" />
+        <entry key="app/src/main/res/drawable/splash_screen.xml" value="0.2630208333333333" />
+        <entry key="app/src/main/res/layout/activity_authentication.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_choice_screen.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/fragment_media.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/fragment_message.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/fragment_s_ign_up.xml" value="0.29583333333333334" />
+        <entry key="app/src/main/res/layout/fragment_sign_up.xml" value="0.4211309523809524" />
+=======
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1165" />
         <entry key="app/src/main/res/drawable-v24/item_background.xml" value="0.12" />
         <entry key="app/src/main/res/drawable/camera.xml" value="0.1" />
@@ -30,6 +42,7 @@
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.2101851851851852" />
         <entry key="app/src/main/res/menu/bottom_navmenu.xml" value="0.1" />
         <entry key="app/src/main/res/menu/main_activity2.xml" value="0.25" />
+>>>>>>> origin
       </map>
     </option>
   </component>

@@ -3,7 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/authentication_navigation"
-    app:startDestination="@id/supplyResetEmailFragment">
+    app:startDestination="@id/signUpFragment">
+
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.decagonhq.clads_client.presentation.ui.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_choiceScreenFragment"
+            app:destination="@id/choiceScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/choiceScreenFragment"
+        android:name="com.decagonhq.clads_client.presentation.ui.ChoiceLoginFragment"
+        android:label="fragment_choice_screen"
+        tools:layout="@layout/fragment_choice_screen" />
+
 
     <fragment
         android:id="@+id/supplyResetEmailFragment"
