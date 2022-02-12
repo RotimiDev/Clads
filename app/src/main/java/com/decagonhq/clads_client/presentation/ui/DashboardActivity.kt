@@ -32,7 +32,7 @@ class DashboardActivity : AppCompatActivity() {
         bottomNavigationView = binding.bottomNavigationView
         navView = binding.mainActivityNavView
         mDrawer = binding.drawerLayout
-        setSupportActionBar(binding.include.toolbar)
+        setSupportActionBar(binding.toolbarInclude.toolbar)
 
         navHostFragment =
             (supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment?)!!

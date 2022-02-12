@@ -1,6 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/authentication_navigation">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/authentication_navigation"
+    app:startDestination="@id/signUpFragment">
 
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.decagonhq.clads_client.presentation.ui.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_choiceScreenFragment"
+            app:destination="@id/choiceScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/choiceScreenFragment"
+        android:name="com.decagonhq.clads_client.presentation.ui.ChoiceLoginFragment"
+        android:label="fragment_choice_screen"
+        tools:layout="@layout/fragment_choice_screen" />
+
+
+    <fragment
+        android:id="@+id/supplyResetEmailFragment"
+        android:name="com.decagonhq.clads_client.presentation.ui.SupplyResetEmailFragment"
+        android:label="fragment_supply_reset_email"
+        tools:layout="@layout/fragment_supply_reset_email" />
+    <fragment
+        android:id="@+id/resetEmailTemplateFragment"
+        android:name="com.decagonhq.clads_client.presentation.ui.ResetEmailTemplateFragment"
+        android:label="fragment_reset_email_template"
+        tools:layout="@layout/fragment_reset_email_template" >
+        <action
+            android:id="@+id/action_resetEmailTemplateFragment_to_newPasswordFragment"
+            app:destination="@id/newPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newPasswordFragment"
+        android:name="com.decagonhq.clads_client.presentation.ui.NewPasswordFragment"
+        android:label="fragment_new_password"
+        tools:layout="@layout/fragment_new_password" >
+        <action
+            android:id="@+id/action_newPasswordFragment_to_resetEmailTemplateFragment"
+            app:destination="@id/resetEmailTemplateFragment" />
+    </fragment>
 </navigation>
