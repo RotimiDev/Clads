@@ -2,11 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_signup"
+    android:id="@+id/fragment_signup"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/deep_sky_blue"
-    tools:context=".presentation.ui.SignupActivity">
+    tools:context=".presentation.ui.SignUpFragment">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -62,7 +62,6 @@
                 android:textColorHint="@color/hex_grey"
                 app:hintTextColor="@color/hex_grey"
                 app:errorEnabled="true"
-                app:backgroundTint="@color/hex_grey"
                 app:boxStrokeColor="@color/hex_grey"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -77,7 +76,8 @@
                     android:textColor="@color/hex_grey"
                     android:textColorHighlight="@color/white"
                     android:textColorHint="@color/white"
-                    android:textColorLink="@color/light_sky_blue" />
+                    android:textColorLink="@color/light_sky_blue"
+                    tools:ignore="SpeakableTextPresentCheck" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -90,22 +90,24 @@
                 android:hint="@string/last_name"
                 android:textColorHint="@color/white"
                 app:errorEnabled="true"
-                app:helperTextEnabled="true"
+                app:boxStrokeColor="@color/hex_grey"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/firstNameLayout">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <EditText
                     android:id="@+id/lastName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
                     android:drawablePadding="@dimen/margin_default_small"
                     android:inputType="text"
                     android:padding="@dimen/margin_default_small"
                     android:textColor="@color/hex_grey"
                     android:textColorHighlight="@color/white"
                     android:textColorHint="@color/white"
-                    android:textColorLink="@color/white" />
+                    android:textColorLink="@color/light_sky_blue"
+                    tools:ignore="SpeakableTextPresentCheck" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -119,11 +121,12 @@
                 android:textColorHint="@color/hex_grey"
                 app:errorEnabled="true"
                 app:helperTextEnabled="true"
+                app:boxStrokeColor="@color/hex_grey"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/lastNameLayout">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <EditText
                     android:id="@+id/OtherNameText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -139,18 +142,19 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
-            <Spinner
+            <androidx.appcompat.widget.AppCompatSpinner
                 android:id="@+id/spinner"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_default"
                 android:layout_marginBottom="@dimen/margin_33dp"
                 android:dropDownWidth="wrap_content"
                 android:entries="@array/Account"
-                android:layout_marginHorizontal="@dimen/margin_default"
-                app:layout_constraintBottom_toTopOf="@id/emailAddressLayout"
                 android:minHeight="48dp"
-                android:theme="@style/Spinner"
                 android:spinnerMode="dropdown"
+
+                app:layout_constraintBottom_toTopOf="@id/emailAddressLayout"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/OtherName" />
@@ -166,11 +170,12 @@
                 android:textColorHint="@color/hex_grey"
                 app:errorEnabled="true"
                 app:helperTextEnabled="true"
+                app:boxStrokeColor="@color/hex_grey"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/spinner">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <EditText
                     android:id="@+id/emailAddress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -194,13 +199,14 @@
                 android:hint="@string/password"
                 android:textColorHint="@color/hex_grey"
                 app:errorEnabled="true"
+                app:boxStrokeColor="@color/hex_grey"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/emailAddressLayout"
                 app:passwordToggleDrawable="@drawable/ic_visibility"
                 app:passwordToggleEnabled="true">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <EditText
                     android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -210,7 +216,8 @@
                     android:textColor="@color/hex_grey"
                     android:textColorHighlight="@color/white"
                     android:textColorHint="@color/white"
-                    android:textColorLink="@color/white" />
+                    android:textColorLink="@color/white"
+                    tools:ignore="TextFields" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -223,13 +230,14 @@
                 android:hint="@string/confirm_password"
                 android:textColorHint="@color/white"
                 app:errorEnabled="true"
+                app:boxStrokeColor="@color/hex_grey"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/PasswordLayout"
                 app:passwordToggleDrawable="@drawable/ic_visibility"
                 app:passwordToggleEnabled="true">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <EditText
                     android:id="@+id/confirm_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -239,7 +247,8 @@
                     android:textColor="@color/hex_grey"
                     android:textColorHighlight="@color/white"
                     android:textColorHint="@color/white"
-                    android:textColorLink="@color/white" />
+                    android:textColorLink="@color/white"
+                    tools:ignore="TextFields" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
