@@ -27,7 +27,7 @@
             android:layout_marginTop="@dimen/margin_7dp"
             android:text="@string/tap_to_change_picture"
             android:textColor="@color/menu_text_colour"
-            android:textSize="9sp" />
+            android:textSize="@dimen/text_size_9sp" />
 
         <View
             android:id="@+id/account_views"
@@ -186,8 +186,8 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="18dp"
+                android:layout_height="@dimen/height_1dp"
+                android:layout_marginTop="@dimen/margin_18dp"
                 android:background="@color/gray"
                 app:layout_constraintTop_toBottomOf="@+id/account_gender_text_view" />
 

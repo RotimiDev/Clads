@@ -22,9 +22,9 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        view.findViewById<Button>(R.id.button).setOnClickListener {
-
-            findNavController().navigate(R.id.editProfileFragment)
-        }
+//        view.findViewById<Button>(R.id.button).setOnClickListener {
+//
+//            findNavController().navigate(R.id.editProfileFragment)
+//        }
     }
 }
