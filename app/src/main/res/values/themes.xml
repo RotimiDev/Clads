@@ -2,16 +2,21 @@
     <!-- Base application theme. -->
     <style name="Theme.CladsClient" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">@color/deep_sky_blue</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
+
         <item name="colorOnPrimary">@color/white</item>
+        <!--Font Family-->
+        <item name="android:fontFamily">@font/poppins</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/deep_sky_blue</item>
         <item name="colorSecondaryVariant">@color/deep_sky_blue</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="23">true</item>
         <!-- Customize your theme here. -->
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
     </style>
 
     <style name="Theme.CladsClient.NoActionBar">
@@ -19,7 +24,17 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.CladsClient.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
+        <item name ="spinBars">true</item>
+    </style>
 
+
+    <style name="Theme.CladsClient.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="Theme.CladsClient.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Theme.Splash_screen_theme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+        <item name="android:statusBarColor">@color/deep_sky_blue</item>
+    </style>
+
 </resources>
