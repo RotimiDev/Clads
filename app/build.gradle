@@ -43,6 +43,7 @@ android {
     }
 }
 
+
 dependencies {
 
     implementation 'androidx.core:core-ktx:1.7.0'
@@ -85,4 +86,14 @@ dependencies {
     //Glide + Kapt
     implementation "com.github.bumptech.glide:glide:$versions.glide_version"
     kapt "com.github.bumptech.glide:compiler:$versions.glide_version"
+
+    //Unit testing
+    androidTestImplementation "androidx.test:runner:$versions.android_unittesting"
+    androidTestImplementation "androidx.test:core:$versions.android_unittesting1"
+    androidTestImplementation "androidx.test.ext:junit-ktx:$versions.android_testing"
+
+
+    //Fragment Testing
+    debugImplementation "androidx.fragment:fragment-testing:$versions.fragment_testing_version"
+
 }

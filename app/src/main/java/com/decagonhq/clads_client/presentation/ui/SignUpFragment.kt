@@ -9,17 +9,15 @@ import androidx.navigation.fragment.findNavController
 import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.databinding.FragmentSignUpBinding
 
-class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
 
+class SignUpFragment : Fragment() {
     private var _binding: FragmentSignUpBinding? = null
     private val binding get() = _binding!!
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-
+    ): View? {
         // Inflate the layout for this fragment
         _binding = FragmentSignUpBinding.inflate(inflater, container, false)
         return binding.root
@@ -28,11 +26,11 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btSignup.setOnClickListener {
-            val signUpDirections = SignUpFragmentDirections.actionSignupFragmentToEmailConfirmationFragment()
-            findNavController().navigate(signUpDirections)
+        binding.signUpButton.setOnClickListener {
+            findNavController().navigate(R.id.choiceScreenFragment)
         }
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

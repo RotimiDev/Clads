@@ -9,24 +9,23 @@
         android:id="@+id/signUpFragment"
         android:name="com.decagonhq.clads_client.presentation.ui.SignUpFragment"
         android:label="fragment_sign_up"
-        tools:layout="@layout/fragment_sign_up"
-        app:startDestination="@id/signUpFragment" />
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_choiceScreenFragment"
+            app:destination="@id/choiceScreenFragment" />
+    </fragment>
     <fragment
-        android:id="@+id/emailConfirmationFragment"
-        android:name="com.decagonhq.clads_client.presentation.ui.EmailConfirmationFragment"
-        android:label="fragment_email_confirmation"
-        tools:layout="@layout/fragment_email_confirmation" />
-    <action
-        android:id="@+id/action_signup_fragment_to_email_confirmation_fragment"
-        app:destination="@id/emailConfirmationFragment" />
+        android:id="@+id/choiceScreenFragment"
+        android:name="com.decagonhq.clads_client.presentation.ui.ChoiceLoginFragment"
+        android:label="fragment_choice_screen"
+        tools:layout="@layout/fragment_choice_screen" />
 
 
     <fragment
         android:id="@+id/supplyResetEmailFragment"
         android:name="com.decagonhq.clads_client.presentation.ui.SupplyResetEmailFragment"
         android:label="fragment_supply_reset_email"
-        tools:layout="@layout/fragment_supply_reset_email"
-        app:startDestination="@id/supplyResetEmailFragment"/>
+        tools:layout="@layout/fragment_supply_reset_email" />
     <fragment
         android:id="@+id/resetEmailTemplateFragment"
         android:name="com.decagonhq.clads_client.presentation.ui.ResetEmailTemplateFragment"
@@ -45,4 +44,16 @@
             android:id="@+id/action_newPasswordFragment_to_resetEmailTemplateFragment"
             app:destination="@id/resetEmailTemplateFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/signUpAFragment"
+        android:name="com.decagonhq.clads_client.presentation.ui.SignUpAFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" />
+    <fragment
+        android:id="@+id/emailConfirmationFragment"
+        android:name="com.decagonhq.clads_client.presentation.ui.EmailConfirmationFragment"
+        android:label="fragment_email_confirmation"
+        tools:layout="@layout/fragment_email_confirmation" />
+
 </navigation>
