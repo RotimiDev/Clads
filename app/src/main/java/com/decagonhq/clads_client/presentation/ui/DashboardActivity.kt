@@ -50,7 +50,9 @@ class DashboardActivity : AppCompatActivity() {
 
         setupActionBarWithNavController(navHostFragment.navController, appBarConfiguration)
         navHostFragment?.navController.let { navView.setupWithNavController(it) }
+
     }
+
 
     override fun onSupportNavigateUp(): Boolean {
         return navHostFragment.navController
