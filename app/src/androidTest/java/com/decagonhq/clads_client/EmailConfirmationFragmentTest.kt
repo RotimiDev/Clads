@@ -5,7 +5,7 @@ import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.test.espresso.Espresso
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
-import com.decagonhq.clads_client.presentation.ui.SignUpFragment
+import com.decagonhq.clads_client.presentation.ui.SignUpOptionsFragment
 import junit.framework.TestCase
 import org.junit.Before
 import org.junit.Test
@@ -15,11 +15,11 @@ import org.junit.runner.RunWith
 
 class EmailConfirmationFragmentTest : TestCase() {
 
-    private lateinit var fragmentScenario: FragmentScenario<SignUpFragment>
+    private lateinit var optionsFragmentScenario: FragmentScenario<SignUpOptionsFragment>
 
     @Before
     fun setup() {
-        fragmentScenario = launchFragmentInContainer(themeResId = R.style.Theme_CladsClient)
+        optionsFragmentScenario = launchFragmentInContainer(themeResId = R.style.Theme_CladsClient)
     }
 
     // Test signup text visibility

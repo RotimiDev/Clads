@@ -15,6 +15,6 @@ class ChoiceLoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_choice_screen, container, false)
+        return inflater.inflate(R.layout.fragment_choice_login, container, false)
     }
 }
