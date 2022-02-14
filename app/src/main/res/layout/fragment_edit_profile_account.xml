@@ -240,7 +240,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="State"
+                android:hint="@string/all_state"
                 app:hintTextColor="@color/gray"
                 android:backgroundTint="@color/gray"
                 app:layout_constraintEnd_toEndOf="@id/account_city_edit_text"

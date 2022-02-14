@@ -105,5 +105,6 @@
     <string name="edit_profile">Edit Profile</string>
     <string name="version_1_0">version 1.0</string>
     <string name="logout">Logout</string>
+    <string name="all_state">State</string>
 
 </resources>
