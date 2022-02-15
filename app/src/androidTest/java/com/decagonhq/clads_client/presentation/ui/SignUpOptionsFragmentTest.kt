@@ -13,12 +13,12 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
-class SignUpFragmentTest {
+class SignUpOptionsFragmentTest {
 
     //    launching AND TESTING A FRAGMENT WHICH CONTAINS UI
     @Before
     fun setUp() {
-        launchFragmentInContainer<SignUpFragment>(
+        launchFragmentInContainer<SignUpOptionsFragment>(
             themeResId = R.style.Theme_AppCompat
         )
     }

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="24dp"
+    android:background="@color/hex_grey"
+    tools:context=".presentation.ui.EmailConfirmationFragment">
+
+
+    <ImageView
+        android:id="@+id/clads_logo_image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/all_clads_logo35"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/reset_password_vertical_guideline2" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:src="@drawable/all_clads_text65"
+        app:layout_constraintBottom_toBottomOf="@+id/clads_logo_image_view"
+        app:layout_constraintStart_toEndOf="@+id/clads_logo_image_view"
+        app:layout_constraintTop_toTopOf="@+id/clads_logo_image_view" />
+
+    <TextView
+        android:id="@+id/view_in_browser_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/view_in_browser"
+        android:textColor="@color/menu_text_color"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@+id/clads_logo_image_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/reset_password_vertical_guideline2" />
+
+    <ImageView
+        android:id="@+id/email_heading_image_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/reset_mail_header_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clads_logo_image_view" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/reset_password_card_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardElevation="23dp"
+        app:layout_constraintEnd_toEndOf="@+id/email_heading_image_view"
+        app:layout_constraintStart_toStartOf="@+id/email_heading_image_view"
+        app:layout_constraintTop_toBottomOf="@+id/email_heading_image_view">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/email_confirmation_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_28dp"
+                android:fontFamily="@font/poppins_bold"
+                android:paddingHorizontal="@dimen/padding_15dp"
+                android:text="@string/email_confirmation"
+                android:textColor="@color/menu_text_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/email_confirm_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="27dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/margin_33dp"
+                android:gravity="center"
+                android:text="@string/email_confirmation_message"
+                android:textColor="@color/menu_text_color"
+                android:textSize="@dimen/email_confirmation_textsize"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/email_confirmation_text_view" />
+
+            <Button
+                android:id="@+id/verify_email_address_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_36dp"
+                android:backgroundTint="@color/deep_sky_blue"
+                android:text="@string/verify_email"
+                android:textAllCaps="false"
+                android:layout_marginBottom="46dp"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/email_confirm_text_view" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/stay_in_touch_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_28dp"
+        android:fontFamily="@font/raleway_bold_italic"
+        android:text="@string/stay_in_touch"
+        android:textColor="@color/grey3"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reset_password_card_view" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stay_in_touch_text_view">
+
+        <ImageView
+            android:id="@+id/facebook_logo_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/facebook_icon"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/twitter_logo_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/size_8_dp"
+            android:src="@drawable/all_twitter_logo"
+            app:layout_constraintStart_toEndOf="@+id/facebook_logo_image_view" />
+
+        <ImageView
+            android:id="@+id/instagram_logo_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/size_8_dp"
+            android:src="@drawable/all_instagram_logo"
+            app:layout_constraintStart_toEndOf="@+id/twitter_logo_image_view" />
+
+        <ImageView
+            android:id="@+id/gmail_icon_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/size_8_dp"
+            android:src="@drawable/all_gmail_logo"
+            app:layout_constraintStart_toEndOf="@+id/instagram_logo_image_view" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/reset_password_vertical_guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.07387141" />
+
+    <TextView
+        android:id="@+id/email_sent_by_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_left"
+        android:fontFamily="@font/poppins"
+        android:text="@string/email_sent_by_clads"
+        android:textColor="@color/menu_text_color"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    <TextView
+        android:id="@+id/copyright_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="@string/copyright2020"
+        android:layout_marginTop="@dimen/margin_6dp"
+        android:textColor="@color/menu_text_color"
+        android:textSize="@dimen/copyright_textsize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email_sent_by_text_view" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
