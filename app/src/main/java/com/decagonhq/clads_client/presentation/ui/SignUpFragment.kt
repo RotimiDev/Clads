@@ -27,7 +27,7 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btSignup.setOnClickListener {
+        binding.SignupButton.setOnClickListener {
             val signUpDirections = SignUpFragmentDirections.actionSignUpFragmentToEmailConfirmationFragment()
             findNavController().navigate(signUpDirections)
         }

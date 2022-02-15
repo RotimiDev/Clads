@@ -1,88 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-    <component name="DesignSurface">
-        <option name="filePathToZoomLevelMap">
-            <map>
-                <entry key="app/src/main/res/drawable-v24/ic_keyboard_arrow_down.xml"
-                    value="0.17395833333333333" />
-                <entry key="app/src/main/res/drawable-v24/ic_visibility.xml"
-                    value="0.17395833333333333" />
-                <entry key="app/src/main/res/drawable/all_clads_logo35.xml"
-                    value="0.16018518518518518" />
-                <entry key="app/src/main/res/drawable/all_clads_text65.xml"
-                    value="0.16018518518518518" />
-                <entry key="app/src/main/res/drawable/all_instagram_logo.xml"
-                    value="0.16018518518518518" />
-                <entry key="app/src/main/res/drawable/home.xml" value="0.2630208333333333" />
-                <entry key="app/src/main/res/drawable/splash_screen.xml"
-                    value="0.2630208333333333" />
-                <entry key="app/src/main/res/layout/activity_authentication.xml"
-                    value="0.3098958333333333" />
-                <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
-                <entry key="app/src/main/res/layout/fragment_choice_screen.xml" value="0.33" />
-                <entry key="app/src/main/res/layout/fragment_home.xml" value="0.3098958333333333" />
-                <entry key="app/src/main/res/layout/fragment_media.xml"
-                    value="0.3098958333333333" />
-                <entry key="app/src/main/res/layout/fragment_message.xml"
-                    value="0.3098958333333333" />
-                <entry key="app/src/main/res/layout/fragment_s_ign_up.xml"
-                    value="0.29583333333333334" />
-                <entry key="app/src/main/res/layout/fragment_sign_up.xml"
-                    value="0.4211309523809524" />
-                <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml"
-                    value="0.1165" />
-                <entry key="app/src/main/res/drawable-v24/item_background.xml" value="0.12" />
-                <entry key="app/src/main/res/drawable/camera.xml" value="0.1" />
-                <entry key="app/src/main/res/drawable/ic_line_10.xml" value="0.1" />
-                <entry key="app/src/main/res/drawable/ic_menu_camera.xml" value="0.1" />
-                <entry key="app/src/main/res/drawable/ic_menu_gallery.xml" value="0.1" />
-                <entry key="app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.1" />
-                <entry key="app/src/main/res/drawable/ic_shape.xml" value="0.20677083333333332" />
-                <entry key="app/src/main/res/drawable/ic_visibility.xml"
-                    value="0.17395833333333333" />
-                <entry key="app/src/main/res/drawable/reset_mail_header_image.xml"
-                    value="0.11666666666666667" />
-                <entry key="app/src/main/res/drawable/side_nav_bar.xml" value="0.1" />
-                <entry key="app/src/main/res/font/raleway_bold_italic.xml"
-                    value="0.11666666666666667" />
-                <entry key="app/src/main/res/font/roboto.xml" value="0.18802083333333333" />
-                <entry key="app/src/main/res/layout/activity_authentication.xml" value="0.22" />
-                <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.22" />
-                <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
-                <entry key="app/src/main/res/layout/activity_signup.xml" value="0.25" />
-                <entry key="app/src/main/res/layout/content_main.xml" value="0.2791666666666667" />
-                <entry key="app/src/main/res/layout/fragment_email_confirmation.xml" value="0.25" />
-                <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2640625" />
-                <entry key="app/src/main/res/layout/fragment_main.xml" value="0.1" />
-                <entry key="app/src/main/res/layout/fragment_media.xml"
-                    value="0.2101851851851852" />
-                <entry key="app/src/main/res/layout/fragment_message.xml" value="0.1" />
-                <entry key="app/src/main/res/layout/fragment_new_password.xml"
-                    value="0.18489583333333334" />
-                <entry key="app/src/main/res/layout/fragment_reset_email_template.xml"
-                    value="0.18489583333333334" />
-                <entry key="app/src/main/res/layout/fragment_sign_up.xml" value="0.22" />
-                <entry key="app/src/main/res/layout/toolbar.xml" value="0.2640625" />
-                <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.2640625" />
-                <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.2101851851851852" />
-                <entry key="app/src/main/res/menu/bottom_navmenu.xml" value="0.1" />
-                <entry key="app/src/main/res/menu/main_activity2.xml" value="0.25" />
-            </map>
-        </option>
-    </component>
-    <component name="ExternalStorageConfigurationManager" enabled="true" />
-    <component name="ProjectRootManager" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK"
-        version="2">
-        <output url="file://$PROJECT_DIR$/build/classes" />
-    </component>
-    <component name="ProjectType">
-        <option name="id" value="Android" />
-    </component>
-    <component name="VisualizationToolProject">
-        <option name="state">
-            <ProjectState>
-                <option name="scale" value="0.22" />
-            </ProjectState>
-        </option>
-    </component>
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable-v24/ic_keyboard_arrow_down.xml" value="0.17395833333333333" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1165" />
+        <entry key="app/src/main/res/drawable-v24/ic_visibility.xml" value="0.17395833333333333" />
+        <entry key="app/src/main/res/drawable-v24/item_background.xml" value="0.12" />
+        <entry key="app/src/main/res/drawable/all_clads_logo35.xml" value="0.16018518518518518" />
+        <entry key="app/src/main/res/drawable/all_clads_text65.xml" value="0.16018518518518518" />
+        <entry key="app/src/main/res/drawable/all_instagram_logo.xml" value="0.16018518518518518" />
+        <entry key="app/src/main/res/drawable/camera.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/home.xml" value="0.2630208333333333" />
+        <entry key="app/src/main/res/drawable/ic_line_10.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_menu_camera.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_menu_gallery.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_shape.xml" value="0.20677083333333332" />
+        <entry key="app/src/main/res/drawable/ic_visibility.xml" value="0.17395833333333333" />
+        <entry key="app/src/main/res/drawable/reset_mail_header_image.xml" value="0.11666666666666667" />
+        <entry key="app/src/main/res/drawable/side_nav_bar.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/splash_screen.xml" value="0.2630208333333333" />
+        <entry key="app/src/main/res/font/raleway_bold_italic.xml" value="0.11666666666666667" />
+        <entry key="app/src/main/res/font/roboto.xml" value="0.18802083333333333" />
+        <entry key="app/src/main/res/layout/activity_authentication.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_signup.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/content_main.xml" value="0.2791666666666667" />
+        <entry key="app/src/main/res/layout/fragment_choice_screen.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_email_confirmation.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2640625" />
+        <entry key="app/src/main/res/layout/fragment_login_form.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_media.xml" value="0.2101851851851852" />
+        <entry key="app/src/main/res/layout/fragment_message.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_new_password.xml" value="0.18489583333333334" />
+        <entry key="app/src/main/res/layout/fragment_reset_email_template.xml" value="0.18489583333333334" />
+        <entry key="app/src/main/res/layout/fragment_s_ign_up.xml" value="0.29583333333333334" />
+        <entry key="app/src/main/res/layout/fragment_sign_up.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/toolbar.xml" value="0.2640625" />
+        <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.2640625" />
+        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.2101851851851852" />
+        <entry key="app/src/main/res/menu/bottom_navmenu.xml" value="0.1" />
+        <entry key="app/src/main/res/menu/main_activity2.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.22" />
+      </ProjectState>
+    </option>
+  </component>
 </project>
