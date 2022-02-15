@@ -11,19 +11,28 @@
         android:theme="@style/Theme.Splash_screen_theme">
         <activity
             android:name=".presentation.ui.AuthenticationActivity"
-            android:exported="true">
+            android:exported="true" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".presentation.ui.SplashScreenActivity"
-            android:exported="false" />
+
         <activity
             android:name=".presentation.ui.DashboardActivity"
             android:exported="true"
-            android:theme="@style/Theme.CladsClient.NoActionBar"/>
+            android:theme="@style/Theme.CladsClient.NoActionBar">
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <activity
+            android:name=".presentation.ui.SplashScreenActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>

@@ -11,15 +11,9 @@
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" >
         <action
-            android:id="@+id/action_signUpFragment_to_choiceScreenFragment"
-            app:destination="@id/choiceScreenFragment" />
+            android:id="@+id/action_signUpFragment_to_emailConfirmationFragment"
+            app:destination="@id/emailConfirmationFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/choiceScreenFragment"
-        android:name="com.decagonhq.clads_client.presentation.ui.ChoiceLoginFragment"
-        android:label="fragment_choice_screen"
-        tools:layout="@layout/fragment_choice_screen" />
-
 
     <fragment
         android:id="@+id/supplyResetEmailFragment"
@@ -44,9 +38,27 @@
             android:id="@+id/action_newPasswordFragment_to_resetEmailTemplateFragment"
             app:destination="@id/resetEmailTemplateFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/signUpOptionsFragment"
+        android:name="com.decagonhq.clads_client.presentation.ui.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up_options" />
+    <fragment
+        android:id="@+id/emailConfirmationFragment"
+        android:name="com.decagonhq.clads_client.presentation.ui.EmailConfirmationFragment"
+        android:label="fragment_email_confirmation"
+        tools:layout="@layout/fragment_email_confirmation" />
+    <fragment
+        android:id="@+id/choiceLoginFragment"
+        android:name="com.decagonhq.clads_client.presentation.ui.ChoiceLoginFragment"
+        android:label="fragment_choice_login"
+        tools:layout="@layout/fragment_choice_login" />
+
     <fragment
         android:id="@+id/loginFormFragment"
         android:name="com.decagonhq.clads_client.presentation.ui.LoginFormFragment"
         android:label="fragment_login_form"
         tools:layout="@layout/fragment_login_form" />
+
 </navigation>

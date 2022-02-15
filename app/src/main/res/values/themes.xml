@@ -28,13 +28,20 @@
         <item name ="spinBars">true</item>
     </style>
 
-
     <style name="Theme.CladsClient.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="Theme.CladsClient.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="Theme.Splash_screen_theme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:windowBackground">@drawable/splash_screen</item>
         <item name="android:statusBarColor">@color/deep_sky_blue</item>
+    </style>
+
+    <style name="Spinner" parent="Widget.AppCompat.Light.DropDownItem.Spinner">
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:textColor">@color/hex_grey</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">@color/deep_sky_blue</item>
     </style>
 
 </resources>
