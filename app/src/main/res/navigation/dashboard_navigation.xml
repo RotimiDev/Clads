@@ -23,7 +23,7 @@
     <fragment
         android:id="@+id/editProfileFragment"
         android:name="com.decagonhq.clads_client.presentation.ui.EditProfileFragment"
-        android:label="fragment_edit_profile"
+        android:label="Edit Profile"
         tools:layout="@layout/fragment_edit_profile" />
 
 </navigation>

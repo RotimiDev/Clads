@@ -1,7 +1,6 @@
 package com.decagonhq.clads_client.presentation.ui
 
 import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.fragment.NavHostFragment
@@ -57,7 +56,6 @@ class DashboardActivity : AppCompatActivity() {
         editProfileButton.setOnClickListener {
             navHostFragment.navController.navigate(R.id.editProfileFragment)
         }
-
     }
 
     override fun onSupportNavigateUp(): Boolean {
