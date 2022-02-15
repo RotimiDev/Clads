@@ -97,6 +97,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/padding_10dp"
             android:text="@string/all_login"
+            android:paddingRight="@dimen/padding_10dp"
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_12sp"
             android:textStyle="bold"

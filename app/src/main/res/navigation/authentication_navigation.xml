@@ -44,4 +44,9 @@
             android:id="@+id/action_newPasswordFragment_to_resetEmailTemplateFragment"
             app:destination="@id/resetEmailTemplateFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/loginFormFragment"
+        android:name="com.decagonhq.clads_client.presentation.ui.LoginFormFragment"
+        android:label="fragment_login_form"
+        tools:layout="@layout/fragment_login_form" />
 </navigation>
