@@ -51,7 +51,7 @@ class DashboardActivity : AppCompatActivity() {
         )
 
         setupActionBarWithNavController(navHostFragment.navController, appBarConfiguration)
-g
+
         navHostFragment?.navController.let { navView.setupWithNavController(it) }
 
         editProfileButton.setOnClickListener {
