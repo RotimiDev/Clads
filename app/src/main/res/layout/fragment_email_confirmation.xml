@@ -90,7 +90,7 @@
                 android:textColor="@color/menu_text_color"
                 android:textSize="@dimen/email_confirmation_textsize"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/EmailConfirmation" />
+                app:layout_constraintTop_toBottomOf="@+id/email_confirmation_text_view" />
 
             <Button
                 android:id="@+id/verify_email_address_button"
@@ -105,7 +105,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/emailConfirmText" />
+                app:layout_constraintTop_toBottomOf="@+id/email_confirm_text_view" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
@@ -130,7 +130,7 @@
         android:layout_marginTop="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/stayTouch">
+        app:layout_constraintTop_toBottomOf="@+id/stay_in_touch_text_view">
 
         <ImageView
             android:id="@+id/facebook_logo_image_view"
@@ -145,7 +145,7 @@
             android:layout_height="match_parent"
             android:layout_marginStart="@dimen/size_8_dp"
             android:src="@drawable/all_twitter_logo"
-            app:layout_constraintStart_toEndOf="@+id/facebookLogo" />
+            app:layout_constraintStart_toEndOf="@+id/facebook_logo_image_view" />
 
         <ImageView
             android:id="@+id/instagram_logo_image_view"
@@ -153,7 +153,7 @@
             android:layout_height="match_parent"
             android:layout_marginStart="@dimen/size_8_dp"
             android:src="@drawable/all_instagram_logo"
-            app:layout_constraintStart_toEndOf="@+id/twitterLogo" />
+            app:layout_constraintStart_toEndOf="@+id/twitter_logo_image_view" />
 
         <ImageView
             android:id="@+id/gmail_icon_image_view"
@@ -161,7 +161,7 @@
             android:layout_height="match_parent"
             android:layout_marginStart="@dimen/size_8_dp"
             android:src="@drawable/all_gmail_logo"
-            app:layout_constraintStart_toEndOf="@+id/instagramLogo" />
+            app:layout_constraintStart_toEndOf="@+id/instagram_logo_image_view" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -197,6 +197,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailSentBy" />
+        app:layout_constraintTop_toBottomOf="@+id/email_sent_by_text_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
