@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Clads-Client</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_main2">MainActivity2</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -71,5 +70,7 @@
     <string name="edit_profile">Edit Profile</string>
     <string name="version_1_0">version 1.0</string>
     <string name="logout">Logout</string>
+    <string name="media_fragment">Media Fragment</string>
+
 
 </resources>

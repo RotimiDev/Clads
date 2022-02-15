@@ -31,6 +31,10 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
             val signUpDirections = SignUpFragmentDirections.actionSignUpFragmentToEmailConfirmationFragment()
             findNavController().navigate(signUpDirections)
         }
+
+        binding.loginButton.setOnClickListener {
+            findNavController().navigate(R.id.loginFormFragment)
+        }
     }
     override fun onDestroyView() {
         super.onDestroyView()
