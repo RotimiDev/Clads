@@ -64,7 +64,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/EmailConfirmation"
+                android:id="@+id/email_confirmation_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_28dp"
@@ -79,7 +79,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/emailConfirmText"
+                android:id="@+id/email_confirm_text_view"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="27dp"
@@ -93,7 +93,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/EmailConfirmation" />
 
             <Button
-                android:id="@+id/verifyEmailAddress"
+                android:id="@+id/verify_email_address_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_36dp"
@@ -111,7 +111,7 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/stayTouch"
+        android:id="@+id/stay_in_touch_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_28dp"
@@ -133,14 +133,14 @@
         app:layout_constraintTop_toBottomOf="@+id/stayTouch">
 
         <ImageView
-            android:id="@+id/facebookLogo"
+            android:id="@+id/facebook_logo_image_view"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:src="@drawable/facebook_icon"
             app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
-            android:id="@+id/twitterLogo"
+            android:id="@+id/twitter_logo_image_view"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="@dimen/size_8_dp"
@@ -148,7 +148,7 @@
             app:layout_constraintStart_toEndOf="@+id/facebookLogo" />
 
         <ImageView
-            android:id="@+id/instagramLogo"
+            android:id="@+id/instagram_logo_image_view"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="@dimen/size_8_dp"
@@ -156,7 +156,7 @@
             app:layout_constraintStart_toEndOf="@+id/twitterLogo" />
 
         <ImageView
-            android:id="@+id/gmailIcon"
+            android:id="@+id/gmail_icon_image_view"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="@dimen/size_8_dp"
@@ -173,7 +173,7 @@
         app:layout_constraintGuide_percent="0.07387141" />
 
     <TextView
-        android:id="@+id/emailSentBy"
+        android:id="@+id/email_sent_by_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_left"
@@ -186,7 +186,7 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
     <TextView
-        android:id="@+id/copyrightText"
+        android:id="@+id/copyright_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins"
