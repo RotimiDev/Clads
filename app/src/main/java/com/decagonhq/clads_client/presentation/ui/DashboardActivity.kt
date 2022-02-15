@@ -40,9 +40,7 @@ class DashboardActivity : AppCompatActivity() {
 
         navHostFragment =
             (supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment?)!!
-        if (navHostFragment != null) {
-            NavigationUI.setupWithNavController(bottomNavigationView, navHostFragment.navController)
-        }
+        NavigationUI.setupWithNavController(bottomNavigationView, navHostFragment.navController)
 
 // Setup drawer layout
         val drawerLayout: DrawerLayout = binding.drawerLayout
@@ -53,11 +51,13 @@ class DashboardActivity : AppCompatActivity() {
         )
 
         setupActionBarWithNavController(navHostFragment.navController, appBarConfiguration)
+g
         navHostFragment?.navController.let { navView.setupWithNavController(it) }
 
         editProfileButton.setOnClickListener {
             navHostFragment.navController.navigate(R.id.editProfileFragment)
         }
+
     }
 
     override fun onSupportNavigateUp(): Boolean {
