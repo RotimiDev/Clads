@@ -46,5 +46,8 @@
     <string name="edit_profile">Edit Profile</string>
     <string name="version_1_0">version 1.0</string>
     <string name="logout">Logout</string>
+    <string name="_5">5</string>
+    <string name="ratings_jj_fashionista_limited">JJ Fashionista Limited</string>
+    <string name="reviews">Reviews</string>
 
 </resources>

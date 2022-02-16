@@ -26,6 +26,7 @@
         <entry key="app/src/main/res/layout/fragment_media.xml" value="0.2101851851851852" />
         <entry key="app/src/main/res/layout/fragment_message.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_new_password.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_rating.xml" value="0.29583333333333334" />
         <entry key="app/src/main/res/layout/fragment_reset_email_template.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_sign_up.xml" value="0.12" />
         <entry key="app/src/main/res/layout/fragment_supply_reset_email.xml" value="0.26785714285714285" />
