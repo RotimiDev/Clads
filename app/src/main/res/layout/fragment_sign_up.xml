@@ -231,6 +231,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/PasswordLayout"
                 app:passwordToggleDrawable="@drawable/ic_visibility"
+                app:passwordToggleTint="@color/gray"
                 app:passwordToggleEnabled="true">
 
                 <EditText
