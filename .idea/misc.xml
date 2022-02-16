@@ -3,33 +3,62 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< HEAD
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1165" />
         <entry key="app/src/main/res/drawable-v24/item_background.xml" value="0.12" />
         <entry key="app/src/main/res/drawable/camera.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_line.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_line_10.xml" value="0.1" />
+=======
+        <entry key="../../Library/Android/sdk/platforms/android-31/data/res/layout/simple_spinner_item.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/drawable/button_background.xml" value="0.2734375" />
+        <entry key="app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.18177083333333333" />
+>>>>>>> f373dc378374253d09429a46c74ca63add6135e6
         <entry key="app/src/main/res/drawable/ic_menu_camera.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_menu_gallery.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/side_nav_bar.xml" value="0.1" />
+        <entry key="app/src/main/res/font/.xml" value="0.1984375" />
+        <entry key="app/src/main/res/font/montserrat.xml" value="0.1984375" />
+        <entry key="app/src/main/res/font/montserrat_bold.xml" value="0.1" />
+        <entry key="app/src/main/res/font/poppins.xml" value="0.10925925925925926" />
+        <entry key="app/src/main/res/font/roboto_light.xml" value="0.10925925925925926" />
         <entry key="app/src/main/res/layout/activity_authentication.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+<<<<<<< HEAD
         <entry key="app/src/main/res/layout/activity_reset_password.xml" value="0.29583333333333334" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.16302083333333334" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.2791666666666667" />
         <entry key="app/src/main/res/layout/drawer_menu.xml" value="0.265625" />
         <entry key="app/src/main/res/layout/fragment_choice_screen.xml" value="0.16302083333333334" />
+=======
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.2667572463768116" />
+        <entry key="app/src/main/res/layout/content_main.xml" value="0.2791666666666667" />
+        <entry key="app/src/main/res/layout/fragment_account.xml" value="0.16770833333333332" />
+        <entry key="app/src/main/res/layout/fragment_choice_screen.xml" value="0.2667572463768116" />
+        <entry key="app/src/main/res/layout/fragment_edit_profile.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_edit_profile_account.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_edit_profile_security.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_email_confirmation.xml" value="0.1068840579710145" />
+>>>>>>> f373dc378374253d09429a46c74ca63add6135e6
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2640625" />
-        <entry key="app/src/main/res/layout/fragment_login_form.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_login_form.xml" value="0.2667572463768116" />
         <entry key="app/src/main/res/layout/fragment_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_media.xml" value="0.2101851851851852" />
         <entry key="app/src/main/res/layout/fragment_message.xml" value="0.1" />
+<<<<<<< HEAD
         <entry key="app/src/main/res/layout/fragment_new_password.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_rating.xml" value="0.29583333333333334" />
         <entry key="app/src/main/res/layout/fragment_reset_email_template.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_sign_up.xml" value="0.12" />
         <entry key="app/src/main/res/layout/fragment_supply_reset_email.xml" value="0.26785714285714285" />
+=======
+        <entry key="app/src/main/res/layout/fragment_new_password.xml" value="0.2667572463768116" />
+        <entry key="app/src/main/res/layout/fragment_reset_email_template.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_sign_up.xml" value="0.2667572463768116" />
+        <entry key="app/src/main/res/layout/fragment_supply_reset_email.xml" value="0.2667572463768116" />
+>>>>>>> f373dc378374253d09429a46c74ca63add6135e6
         <entry key="app/src/main/res/layout/toolbar.xml" value="0.2640625" />
         <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.2640625" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.2101851851851852" />
@@ -43,12 +72,5 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
-  </component>
-  <component name="VisualizationToolProject">
-    <option name="state">
-      <ProjectState>
-        <option name="scale" value="0.33" />
-      </ProjectState>
-    </option>
   </component>
 </project>

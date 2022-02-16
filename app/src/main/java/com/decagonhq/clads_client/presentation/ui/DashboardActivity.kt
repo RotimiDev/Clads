@@ -12,6 +12,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.databinding.ActivityDashboardBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.button.MaterialButton
 import com.google.android.material.navigation.NavigationView
 
 class DashboardActivity : AppCompatActivity() {
@@ -21,6 +22,7 @@ class DashboardActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityDashboardBinding
     private lateinit var navHostFragment: NavHostFragment
+    private lateinit var editProfileButton: MaterialButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,13 +34,12 @@ class DashboardActivity : AppCompatActivity() {
         bottomNavigationView = binding.bottomNavigationView
         navView = binding.mainActivityNavView
         mDrawer = binding.drawerLayout
+        editProfileButton = binding.navDrawerEditProfileButton
         setSupportActionBar(binding.toolbarInclude.toolbar)
 
         navHostFragment =
             (supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment?)!!
-        if (navHostFragment != null) {
-            NavigationUI.setupWithNavController(bottomNavigationView, navHostFragment.navController)
-        }
+        NavigationUI.setupWithNavController(bottomNavigationView, navHostFragment.navController)
 
 // Setup drawer layout
         val drawerLayout: DrawerLayout = binding.drawerLayout
@@ -49,7 +50,12 @@ class DashboardActivity : AppCompatActivity() {
         )
 
         setupActionBarWithNavController(navHostFragment.navController, appBarConfiguration)
+
         navHostFragment?.navController.let { navView.setupWithNavController(it) }
+
+        editProfileButton.setOnClickListener {
+            navHostFragment.navController.navigate(R.id.editProfileFragment)
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
