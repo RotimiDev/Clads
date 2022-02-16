@@ -134,7 +134,14 @@
     <string name="all_state">State</string>
 
     <string name="media_fragment">Media Fragment</string>
-
+    <string name="_4">4</string>
+    <string name="_4_0">4.0</string>
+    <string name="rate_jj_fashionista_limited">Rate JJ Fashionista Limited</string>
+    <string name="describe_your_experience_optional">Describe your experience (optional)</string>
+    <string name="all_post">Post</string>
+    <string name="o">O</string>
+    <string name="olaleye_david">Olaleye David</string>
+    <string name="_01_09_2020">01-09-2020</string>
 
 
 </resources>

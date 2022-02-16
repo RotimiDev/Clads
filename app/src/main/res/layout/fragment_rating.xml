@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -44,7 +45,7 @@
         android:layout_marginStart="@dimen/margin_20dp"
         android:layout_marginTop="@dimen/margin_22dp"
         android:src="@drawable/ic_launcher_background"
-        app:layout_constraintStart_toStartOf="@+id/guideline11"
+        app:layout_constraintStart_toStartOf="@+id/rating_vertical_guideline1"
         app:layout_constraintTop_toBottomOf="@+id/ratings_horizontal_guideline1"
         app:shapeAppearanceOverlay="@style/circleImageView" />
 
@@ -60,21 +61,55 @@
         app:layout_constraintStart_toEndOf="@+id/ratings_artisan_shapeableImageView"
         app:layout_constraintTop_toTopOf="@+id/ratings_artisan_shapeableImageView" />
 
+    <TextView
+        android:id="@+id/rating_number_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_4_0"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/first_rating_textView"
+        app:layout_constraintStart_toStartOf="@+id/rating_vertical_guideline1"
+        app:layout_constraintTop_toTopOf="@+id/first_progressBar" />
+
+    <RatingBar
+        android:id="@+id/artisian_ratingBar"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="4"
+        app:layout_constraintEnd_toEndOf="@+id/rating_number_textView"
+        app:layout_constraintStart_toStartOf="@+id/rating_number_textView"
+        app:layout_constraintTop_toBottomOf="@+id/rating_number_textView" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="325"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/artisian_ratingBar"
+        app:layout_constraintStart_toStartOf="@+id/artisian_ratingBar"
+        app:layout_constraintTop_toBottomOf="@+id/artisian_ratingBar" />
+
     <ProgressBar
         android:id="@+id/first_progressBar"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/margin_20dp"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="@dimen/size_0_dp"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toStartOf="@+id/guideline12"
-        app:layout_constraintStart_toStartOf="@+id/guideline13"
+        app:layout_constraintEnd_toStartOf="@+id/rating_vertical_guideline2"
+        app:layout_constraintStart_toStartOf="@+id/rating_vertical_guideline3"
         app:layout_constraintTop_toBottomOf="@+id/ratings_artisan_shapeableImageView" />
 
     <TextView
+        android:id="@+id/first_rating_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/_5"
         android:layout_marginHorizontal="@dimen/margin_8dp"
+        android:text="@string/_5"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="@+id/first_progressBar"
         app:layout_constraintEnd_toStartOf="@+id/first_progressBar"
@@ -85,9 +120,133 @@
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="@dimen/size_0_dp"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toStartOf="@+id/guideline12"
-        app:layout_constraintStart_toStartOf="@+id/guideline13"
+        app:layout_constraintEnd_toStartOf="@+id/rating_vertical_guideline2"
+        app:layout_constraintStart_toStartOf="@+id/rating_vertical_guideline3"
         app:layout_constraintTop_toBottomOf="@+id/first_progressBar" />
+
+    <TextView
+        android:id="@+id/second_rating_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_8dp"
+        android:text="@string/_4"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/second_progressBar"
+        app:layout_constraintEnd_toStartOf="@+id/second_progressBar"
+        app:layout_constraintTop_toBottomOf="@+id/first_progressBar" />
+
+    <ProgressBar
+        android:id="@+id/third_progressBar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="@dimen/size_0_dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/rating_vertical_guideline2"
+        app:layout_constraintStart_toStartOf="@+id/rating_vertical_guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/second_progressBar" />
+
+    <TextView
+        android:id="@+id/third_rating_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/_4"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/third_progressBar"
+        app:layout_constraintEnd_toStartOf="@+id/third_progressBar"
+        app:layout_constraintTop_toBottomOf="@+id/second_progressBar" />
+
+    <ProgressBar
+        android:id="@+id/fourth_progressBar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="@dimen/size_0_dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/rating_vertical_guideline2"
+        app:layout_constraintStart_toStartOf="@+id/rating_vertical_guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/third_progressBar" />
+
+    <TextView
+        android:id="@+id/fourth_rating_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/_4"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/fourth_progressBar"
+        app:layout_constraintEnd_toStartOf="@+id/fourth_progressBar"
+        app:layout_constraintTop_toBottomOf="@+id/third_progressBar" />
+
+    <ProgressBar
+        android:id="@+id/fifth_progressBar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="@dimen/size_0_dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/rating_vertical_guideline2"
+        app:layout_constraintStart_toStartOf="@+id/rating_vertical_guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/fourth_progressBar" />
+
+    <TextView
+        android:id="@+id/fifth_rating_textView"
+        android:layout_width="8dp"
+        android:layout_height="16dp"
+        android:layout_marginHorizontal="@dimen/margin_8dp"
+        android:text="@string/_4"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/fifth_progressBar"
+        app:layout_constraintEnd_toStartOf="@+id/fifth_progressBar"
+        app:layout_constraintTop_toBottomOf="@+id/fourth_progressBar" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/margin_20dp"
+        android:layout_height="@dimen/height_1dp"
+        android:background="@color/line_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fifth_progressBar" />
+
+    <TextView
+        android:id="@+id/rate_artisan_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rate_jj_fashionista_limited"
+        android:textColor="#506992"
+        android:layout_marginTop="@dimen/margin_20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <RatingBar
+        android:id="@+id/enter_rating_ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        app:layout_constraintEnd_toEndOf="@+id/rate_artisan_textView"
+        app:layout_constraintStart_toStartOf="@+id/rate_artisan_textView"
+        app:layout_constraintTop_toBottomOf="@+id/rate_artisan_textView" />
+
+    <EditText
+        android:id="@+id/experience_details_editText"
+        android:layout_width="@dimen/size_0_dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/deep_sky_blue"
+        android:hint="@string/describe_your_experience_optional"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/rating_vertical_guideline2"
+        app:layout_constraintStart_toStartOf="@+id/rating_vertical_guideline1"
+        app:layout_constraintTop_toBottomOf="@+id/enter_rating_ratingBar" />
+
+    <Button
+        android:id="@+id/rating_post_button"
+        android:layout_width="@dimen/size_0_dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_11dp"
+        android:backgroundTint="@color/deep_sky_blue"
+        android:text="@string/all_post"
+        app:layout_constraintEnd_toStartOf="@+id/rating_vertical_guideline2"
+        app:layout_constraintStart_toStartOf="@+id/rating_vertical_guideline1"
+        app:layout_constraintTop_toBottomOf="@+id/experience_details_editText" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/ratings_horizontal_guideline1"
@@ -97,21 +256,21 @@
         app:layout_constraintGuide_percent="0.124487005" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline11"
+        android:id="@+id/rating_vertical_guideline1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.09245742" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline12"
+        android:id="@+id/rating_vertical_guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.85" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline13"
+        android:id="@+id/rating_vertical_guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
