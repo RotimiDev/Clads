@@ -131,7 +131,16 @@
     <string name="all_state">State</string>
 
     <string name="media_fragment">Media Fragment</string>
-
+    <string name="artisan_profile">Artisan Profile</string>
+    <string name="jj_fashionista_limited">JJ Fashionista Limited</string>
+    <string name="amet_minim_mollit_non_deserunt_ullamco_est_sit_aliqua_dolor_do_amet_sint_velit_officia_consequat_duis_enim_enim_velit_mollit">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim enim velit mollit.</string>
+    <string name="chat">Chat</string>
+    <string name="_24_akowoje_road_egbeda">24 Akowoje Road, Egbeda.</string>
+    <string name="call">Call</string>
+    <string name="rating">Rating</string>
+    <string name="_4_0">4.0</string>
+    <string name="see_reviews">See Reviews</string>
+    <string name="go_to_gallery">Go to gallery</string>
 
 
 </resources>
