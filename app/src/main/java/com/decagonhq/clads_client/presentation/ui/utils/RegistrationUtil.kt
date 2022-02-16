@@ -5,7 +5,7 @@ object RegistrationUtil {
 
     // Function to verify the name of the intended user
     fun verifyName(name: String): Boolean {
-        val regex = Regex("\\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+")
+        val regex = Regex("^[a-zA-Z]*\$")
         return name.isNotBlank() && name.matches(regex)
     }
 
@@ -29,5 +29,15 @@ object RegistrationUtil {
     // Function to verify the country name of the intended user
     fun verifyCountryName(countryName: String): Boolean {
         return countryName.isNotBlank()
+    }
+
+    // Function to verify the password of the intended user
+    fun verifyPassword(password: String): Boolean {
+        val regex = Regex("^" +
+                "(?=.*[@#$%^&+=])" +     // at least 1 special character
+                "(?=\\S+$)" +            // no white spaces
+                ".{4,}" +                // at least 4 characters
+                "$")
+        return password.isNotBlank() && password.matches(regex)
     }
 }
