@@ -26,4 +26,5 @@
     <color name="default_background">#E5E5E5</color>
     <color name="gray_3">#828282</color>
     <color name="orange">#F2994A</color>
+    <color name="rating_yellow">#F4C54A</color>
 </resources>

@@ -40,8 +40,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/olaleye_david"
+        android:paddingTop="@dimen/margin_8dp"
         app:layout_constraintBottom_toTopOf="@+id/ratingBar"
-        app:layout_constraintStart_toStartOf="@+id/ratingBar" />
+        app:layout_constraintStart_toStartOf="@+id/ratingBar"
+        app:layout_constraintTop_toTopOf="@+id/cardView" />
 
     <RatingBar
         android:id="@+id/ratingBar"
@@ -50,6 +52,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_11dp"
         android:numStars="4"
+        android:rating="4"
+        android:progressTint="@color/rating_yellow"
         app:layout_constraintBottom_toBottomOf="@+id/cardView"
         app:layout_constraintStart_toEndOf="@+id/cardView" />
 
@@ -66,12 +70,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/_01_09_2020"
+        app:layout_constraintBottom_toBottomOf="@+id/ratingBar"
         app:layout_constraintEnd_toStartOf="@+id/more_imageView"
         app:layout_constraintStart_toEndOf="@+id/ratingBar"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
+        android:id="@+id/rating_details_textView"
         android:layout_width="match_parent"
+        android:padding="@dimen/padding_9dp"
         android:layout_height="wrap_content"
         android:text="@string/lorem_ipsum_ipsum_sum"
         app:layout_constraintStart_toStartOf="parent"
