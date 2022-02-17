@@ -44,4 +44,12 @@
         <item name="android:background">@color/deep_sky_blue</item>
     </style>
 
+    <style name="TextInputLayoutStyle"
+        parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/deep_sky_blue</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="errorEnabled">true</item>
+        <item name="hintTextColor">@color/gray</item>
+    </style>
+
 </resources>

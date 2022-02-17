@@ -1,13 +1,226 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/white"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".presentation.ui.HomeFragment">
 
-    <FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/frame" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_24dp">
 
-</FrameLayout>
+        <LinearLayout
+            android:id="@+id/home_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/margin_25dp"
+            android:weightSum="7">
+
+            <EditText
+                android:id="@+id/textField"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/search"
+                app:hintEnabled="false"
+                android:textSize="@dimen/text_size_18sp"
+                android:background="@drawable/home_search_drawable"
+                android:paddingStart="@dimen/padding_17dp"
+                android:layout_weight="6.7"
+                android:layout_marginEnd="@dimen/margin_10dp">
+            </EditText>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_form_input_long"
+                android:layout_weight="0.3"
+                android:scaleType="centerCrop"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10dp">
+
+            <ImageView
+                android:id="@+id/bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16dp"
+                android:src="@drawable/ic_bar_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
+
+            <TextView
+                android:id="@+id/home_artisan_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_17dp"
+                android:layout_toEndOf="@id/bar"
+                android:text="@string/artisan"
+                android:textColor="@color/navy_blue"
+                android:textSize="@dimen/size_13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/home_style_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_toEndOf="@id/home_artisan_text_view"
+                android:text="@string/style"
+                android:textColor="@color/navy_blue"
+                android:textSize="@dimen/text_size_13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/home_location_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_50dp"
+                android:layout_toEndOf="@id/home_style_text_view"
+                android:text="@string/location"
+                android:textColor="@color/navy_blue"
+                android:textSize="@dimen/text_size_13sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/home_artisan_text_input"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_below="@id/home_artisan_text_view"
+                android:layout_alignEnd="@+id/home_artisan_text_view"
+                android:layout_marginTop="@dimen/margin_8dp"
+                android:background="@drawable/home_search_drawable"
+                app:endIconDrawable="@drawable/ic_baseline_arrow_drop_down_24"/>
+
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    app:hintTextColor="@color/navy_blue"
+                    android:backgroundTint="@color/white"/>
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/home_style_text_input"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_below="@id/home_style_text_view"
+                android:layout_toEndOf="@id/home_artisan_text_input"
+                android:background="@drawable/home_search_drawable"
+                android:layout_marginTop="@dimen/margin_8dp"
+                android:layout_marginStart="@dimen/margin_28dp"
+                app:endIconDrawable="@drawable/ic_baseline_arrow_drop_down_24"/>
+
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_30dp"
+                android:backgroundTint="@color/white"
+                android:inputType="none"
+                app:hintTextColor="@color/navy_blue" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/home_location_text_input"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_below="@id/home_location_text_view"
+                android:layout_toEndOf="@id/home_style_text_input"
+                android:background="@drawable/home_search_drawable"
+                android:layout_marginTop="@dimen/margin_8dp"
+                android:layout_marginStart="@dimen/margin_28dp"
+                app:endIconDrawable="@drawable/ic_baseline_arrow_drop_down_24"/>
+
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_30dp"
+                android:backgroundTint="@color/white"
+                android:gravity="end"
+                android:inputType="none"
+                app:hintTextColor="@color/navy_blue" />
+
+
+        </RelativeLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="@dimen/margin_38dp"
+            android:background="@color/gray"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_21dp"
+            android:fontFamily="@font/poppins"
+            android:text="@string/tailors"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_16sp" />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="@dimen/margin_5dp"
+            android:background="@color/gray"/>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/home_tailors_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/margin_7dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
+
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_21dp"
+            android:fontFamily="@font/poppins"
+            android:text="@string/weavers"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_16sp" />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="@dimen/margin_5dp"
+            android:background="@color/gray"/>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/home_weavers_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/margin_7dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
+
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

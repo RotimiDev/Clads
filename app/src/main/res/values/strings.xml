@@ -131,7 +131,14 @@
     <string name="all_state">State</string>
 
     <string name="media_fragment">Media Fragment</string>
-
+    <string name="search">Search...</string>
+    <string name="artisan">Artisan</string>
+    <string name="style">Style</string>
+    <string name="location">Location</string>
+    <string name="tailors">TAILORS</string>
+    <string name="weavers">WEAVERS</string>
+    <string name="jj_fashionista_limited">JJ Fashionista Limited</string>
+    <string name="egbeda_lagos">Egbeda, Lagos</string>
 
 
 </resources>
