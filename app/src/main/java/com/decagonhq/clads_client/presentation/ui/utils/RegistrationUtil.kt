@@ -36,7 +36,7 @@ object RegistrationUtil {
         val regex = Regex("^" +
                 "(?=.*[@#$%^&+=])" +     // at least 1 special character
                 "(?=\\S+$)" +            // no white spaces
-                ".{4,}" +                // at least 4 characters
+                ".{6,}" +                // at least 6 characters
                 "$")
         return password.isNotBlank() && password.matches(regex)
     }
