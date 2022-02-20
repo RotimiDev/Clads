@@ -35,7 +35,14 @@ class RatingFragment : Fragment() {
         ratingsAdapter = PreviousRatingsRecyclerAdapter(message)
         binding.previousRatingRecycler.apply {
             adapter = ratingsAdapter
-            layoutManager = LinearLayoutManager(activity)
+            layoutManager = LinearLayoutManager(requireContext())
         }
+
+
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
