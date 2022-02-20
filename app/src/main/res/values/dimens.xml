@@ -93,4 +93,5 @@
     <dimen name="pivot_0dp">0dp</dimen>
     <dimen name="padding_14dp">14dp</dimen>
     <dimen name="padding_12dp">12dp</dimen>
+    <dimen name="padding_32dp">32dp</dimen>
 </resources>

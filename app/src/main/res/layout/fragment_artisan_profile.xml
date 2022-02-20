@@ -1,34 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/margin_32dp"
     android:background="@color/white"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.5"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
+    android:fillViewport="true">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolBarActivity"
+            android:id="@+id/tool_bar_activity"
             android:layout_width="match_parent"
             android:layout_height="?android:attr/actionBarSize"
             android:background="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:navigationIcon="@drawable/ic_baseline_arrow_back_24">
 
             <TextView
-                android:id="@+id/artisan_pro"
+                android:id="@+id/artisan_profile_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_extralight"
@@ -38,120 +32,120 @@
                 android:textStyle="bold" />
         </androidx.appcompat.widget.Toolbar>
 
-
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/shapeableImageView"
+            android:id="@+id/shape_able_image_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginTop="@dimen/margin_32dp"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_launcher_background"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolBarActivity"
             app:shapeAppearanceOverlay="@style/ImageStyle_Circle" />
 
         <TextView
-            android:id="@+id/jj_fashioni_text_view"
+            android:id="@+id/artisan_name_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginTop="@dimen/margin_12dp"
             android:text="@string/jj_fashionista_limited"
             android:textColor="@color/dark_black"
             android:textSize="15sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/shapeableImageView" />
+            android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/akowonjo_ro_text_view"
+            android:id="@+id/artisan_address_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="@string/_24_akowoje_road_egbeda"
             android:textColor="@color/menu_text_color"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/jj_fashioni_text_view" />
+            android:textSize="12sp" />
 
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_32dp"
-            android:layout_marginEnd="@dimen/margin_32dp"
-            android:layout_marginTop="@dimen/margin_32dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/akowonjo_ro_text_view">
+            android:layout_marginTop="@dimen/margin_20dp">
 
             <TextView
-                android:id="@+id/amet_minim_textView"
+                android:id="@+id/amet_minim_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:lines="3"
-                android:text="@string/amet_minim_mollit_non_deserunt_ullamco_est_sit_aliqua_dolor_do_amet_sint_velit_officia_consequat_duis_enim_enim_velit_mollit"
-                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/margin_32dp"
                 android:layout_marginTop="@dimen/margin_20dp"
+                android:layout_marginEnd="@dimen/margin_32dp"
+                android:lines="3"
+                android:text="@string/dummy_text_amet"
+                android:textAlignment="center"
                 android:textColor="@color/menu_text_color"
-                android:textSize="11sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_32dp"
+            android:orientation="horizontal"
+            android:padding="@dimen/padding_12dp">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/chat_button"
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_32dp"
+                android:layout_marginTop="@dimen/margin_20dp"
+                android:layout_marginEnd="@dimen/margin_32dp"
                 android:background="@drawable/button_round"
                 android:drawableStart="@drawable/ic_vector"
-                android:paddingHorizontal="@dimen/margin_32dp"
-                android:paddingVertical="@dimen/padding_12dp"
+                android:paddingHorizontal="@dimen/padding_32dp"
                 android:text="@string/chat"
                 android:textAllCaps="false"
                 android:textColor="@color/stroke_color"
                 android:textSize="12sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/amet_minim_textView" />
+                android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/call_button"
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_32dp"
+                android:layout_marginTop="@dimen/margin_20dp"
                 android:background="@drawable/call_background"
                 android:drawableStart="@drawable/ic_call"
-                android:paddingHorizontal="@dimen/margin_32dp"
-                android:paddingVertical="@dimen/padding_12dp"
+                android:paddingHorizontal="@dimen/padding_32dp"
                 android:text="@string/call"
                 android:textAllCaps="false"
                 android:textColor="@color/green_border"
                 android:textSize="12sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/amet_minim_textView" />
+                android:textStyle="bold" />
+        </LinearLayout>
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/margin_32dp"
+            android:layout_marginTop="@dimen/margin_32dp"
+            android:layout_marginEnd="@dimen/margin_32dp">
 
             <TextView
                 android:id="@+id/rating_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/padding_14dp"
+                android:layout_marginStart="@dimen/margin_32dp"
                 android:layout_marginTop="@dimen/margin_32dp"
                 android:text="@string/rating"
                 android:textColor="@color/menu_text_color"
                 android:textSize="12sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/chat_button" />
+                app:layout_constraintTop_toBottomOf="@id/linear_layout"
+                tools:ignore="NotSibling" />
 
             <TextView
-                android:id="@+id/number_id"
+                android:id="@+id/number_id_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/padding_14dp"
+                android:layout_marginStart="@dimen/margin_32dp"
                 android:text="@string/_4_0"
                 android:textColor="@color/navy_blue"
                 android:textSize="20sp"
@@ -160,7 +154,7 @@
                 app:layout_constraintTop_toBottomOf="@id/rating_text_view" />
 
             <RatingBar
-                android:id="@+id/rating_start"
+                android:id="@+id/rating_bar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:isIndicator="false"
@@ -174,27 +168,7 @@
                 android:transformPivotX="@dimen/pivot_0dp"
                 android:transformPivotY="@dimen/pivot_0dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/number_id" />
-
-            <CheckBox
-                android:id="@+id/favorite_check_box"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:button="@drawable/ic_baseline_favorite_24"
-                app:layout_constraintBottom_toBottomOf="@+id/rating_start"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-            <TextView
-                android:id="@+id/add_favourite_test_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_12dp"
-                android:text="Add Favourites"
-                android:textColor="@color/navy_blue"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/favorite_check_box" />
-
+                app:layout_constraintTop_toBottomOf="@+id/number_id_text_view" />
 
             <TextView
                 android:id="@+id/see_review_text_view"
@@ -203,9 +177,29 @@
                 android:text="@string/see_reviews"
                 android:textColor="@color/stroke_color"
                 android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="@+id/add_favourite_test_view"
+                app:layout_constraintBottom_toBottomOf="@+id/add_favorite_test_view"
                 app:layout_constraintStart_toStartOf="parent" />
 
+            <CheckBox
+                android:id="@+id/favorite_check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_12dp"
+                android:button="@drawable/ic_baseline_favorite_24"
+                app:layout_constraintBottom_toBottomOf="@+id/rating_bar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/add_favorite_test_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_12dp"
+                android:text="@string/add_favourites"
+                android:textColor="@color/navy_blue"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/favorite_check_box" />
 
             <Button
                 android:id="@+id/go_to_gallery_button"
@@ -221,9 +215,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/see_review_text_view" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-</androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+</ScrollView>

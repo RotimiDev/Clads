@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.databinding.FragmentArtisanProfileBinding
 
 class ArtisanProfileFragment : Fragment() {
@@ -53,7 +54,7 @@ class ArtisanProfileFragment : Fragment() {
                     ).toString()
             )
         ) {
-            Toast.makeText(requireContext(), "This need background permission", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), R.string.this_need_background_permission, Toast.LENGTH_SHORT).show()
         }
         ActivityCompat.requestPermissions(
             requireActivity(),
@@ -75,13 +76,13 @@ class ArtisanProfileFragment : Fragment() {
             if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 Toast.makeText(
                     requireContext(),
-                    "Permission granted now you can read the storage",
+                    R.string.permission_granted_now_you_can_read_the_storage,
                     Toast.LENGTH_SHORT
                 ).show()
             } else {
                 Toast.makeText(
                     requireContext(),
-                    "oops permission is not granted",
+                    R.string.oops_permission_is_not_granted,
                     Toast.LENGTH_SHORT
                 ).show()
             }
