@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.decagonhq.clads_client.databinding.FragmentRatingBinding
 import com.decagonhq.clads_client.presentation.adapters.PreviousRatingsRecyclerAdapter
+import com.decagonhq.clads_client.presentation.model.RatingDataSource
 
 class RatingFragment : Fragment() {
     private var _binding: FragmentRatingBinding? = null
@@ -27,18 +28,13 @@ class RatingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val message = listOf(
-            "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
-            "Two amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint."
-        )
+        val message = RatingDataSource.createDataSet()
 
         ratingsAdapter = PreviousRatingsRecyclerAdapter(message)
-        binding.previousRatingRecycler.apply {
+        binding.previousRatingRecyclerView.apply {
             adapter = ratingsAdapter
             layoutManager = LinearLayoutManager(requireContext())
         }
-
-
     }
 
     override fun onDestroyView() {

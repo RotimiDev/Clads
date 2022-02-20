@@ -58,7 +58,7 @@
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/first_rating_textView"
+        app:layout_constraintEnd_toStartOf="@+id/first_rating_number_text_view"
         app:layout_constraintStart_toStartOf="@+id/rating_vertical_guideline1"
         app:layout_constraintTop_toTopOf="@+id/rating_first_rating_progress_bar" />
 
@@ -97,7 +97,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ratings_artisan_shapeable_Image_view" />
 
     <TextView
-        android:id="@+id/first_rating_textView"
+        android:id="@+id/first_rating_number_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/margin_8dp"
@@ -119,7 +119,7 @@
         app:layout_constraintTop_toBottomOf="@+id/rating_first_rating_progress_bar" />
 
     <TextView
-        android:id="@+id/second_rating_textView"
+        android:id="@+id/second_rating_number_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/margin_8dp"
@@ -141,7 +141,7 @@
         app:layout_constraintTop_toBottomOf="@+id/rating_second_rating_progress_bar" />
 
     <TextView
-        android:id="@+id/third_rating_textView"
+        android:id="@+id/third_rating_number_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/margin_8dp"
@@ -164,12 +164,12 @@
         app:layout_constraintTop_toBottomOf="@+id/ratings_third_rating_progress_bar" />
 
     <TextView
-        android:id="@+id/fourth_rating_textView"
+        android:id="@+id/fourth_rating_number_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/margin_8dp"
         android:layout_marginEnd="8dp"
-        android:text="2"
+        android:text="@string/_2"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="@+id/ratings_fourth_rating_progress_bar"
         app:layout_constraintEnd_toStartOf="@+id/ratings_fourth_rating_progress_bar"
@@ -187,7 +187,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ratings_fourth_rating_progress_bar" />
 
     <TextView
-        android:id="@+id/fifth_rating_textView"
+        android:id="@+id/fifth_rating_number_text_view"
         android:layout_width="8dp"
         android:layout_height="16dp"
         android:layout_marginHorizontal="@dimen/margin_8dp"

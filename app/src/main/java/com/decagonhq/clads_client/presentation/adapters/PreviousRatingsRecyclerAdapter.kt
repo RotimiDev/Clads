@@ -2,35 +2,35 @@ package com.decagonhq.clads_client.presentation.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.decagonhq.clads_client.databinding.SingleRatingRecyclerItemBinding
+import com.decagonhq.clads_client.presentation.model.Rating
 
 class PreviousRatingsRecyclerAdapter(
-    private val message: List<String>
-) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-
-    private lateinit var messageTextView: TextView
+    private var ratingDataSource: List<Rating>
+) : RecyclerView.Adapter<PreviousRatingsRecyclerAdapter.RatingViewHolder>() {
 
     inner class RatingViewHolder(binding: SingleRatingRecyclerItemBinding) : RecyclerView.ViewHolder(binding.root) {
-        init {
-            messageTextView = binding.ratingDetailsTextView
+        private var messageTextView = binding.ratingDetailsTextView
+        private var dateTextView = binding.ratingDateTextView
+
+        fun bindData(message: Rating) {
+            messageTextView.text = message.rating
+            dateTextView.text = message.date
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        val binding = SingleRatingRecyclerItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return RatingViewHolder(binding)
-    }
+    override fun onBindViewHolder(holder: RatingViewHolder, position: Int) {
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-
-        holder.itemView.apply {
-            messageTextView.text = message[position]
-        }
+        holder.bindData(ratingDataSource[position])
     }
 
     override fun getItemCount(): Int {
-        return message.size
+        return ratingDataSource.size
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RatingViewHolder {
+        val binding = SingleRatingRecyclerItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return RatingViewHolder(binding)
     }
 }
