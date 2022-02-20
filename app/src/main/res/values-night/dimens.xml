@@ -9,4 +9,6 @@
     <dimen name="nav_drawer_avatar_marginTop">45dp</dimen>
     <dimen name="nav_drawer_cancel_icon_marginEnd">20dp</dimen>
     <dimen name="nav_drawer_cancel_icon_marginTop">20dp</dimen>
+    <dimen name="dp_180">180dp</dimen>
+    <dimen name="sp_18">18sp</dimen>
 </resources>

@@ -13,7 +13,9 @@ import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.databinding.ActivityDashboardBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DashboardActivity : AppCompatActivity() {
     private lateinit var mDrawer: DrawerLayout
     private lateinit var bottomNavigationView: BottomNavigationView
@@ -36,23 +38,19 @@ class DashboardActivity : AppCompatActivity() {
 
         navHostFragment =
             (supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment?)!!
-        if (navHostFragment != null) {
-            NavigationUI.setupWithNavController(bottomNavigationView, navHostFragment.navController)
-        }
+        NavigationUI.setupWithNavController(bottomNavigationView, navHostFragment.navController)
 
 // Setup drawer layout
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.mainActivityNavView
-        supportActionBar?.setDisplayShowTitleEnabled(false)
+
         appBarConfiguration = AppBarConfiguration(
             navHostFragment.navController.graph, drawerLayout
         )
 
         setupActionBarWithNavController(navHostFragment.navController, appBarConfiguration)
         navHostFragment?.navController.let { navView.setupWithNavController(it) }
-
     }
-
 
     override fun onSupportNavigateUp(): Boolean {
         return navHostFragment.navController

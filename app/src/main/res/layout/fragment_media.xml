@@ -7,25 +7,69 @@
     tools:context=".presentation.ui.MediaFragment">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/mediaFragment_emptyAvatar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_140"
         android:src="@drawable/ic_gallery"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.926" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/mediaFragment_emptyAvatar_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:text="@string/you_have_no_photo_in_your_gallery"
+        app:layout_constraintEnd_toEndOf="@+id/mediaFragment_emptyAvatar"
+        app:layout_constraintStart_toStartOf="@+id/mediaFragment_emptyAvatar"
+        app:layout_constraintTop_toBottomOf="@+id/mediaFragment_emptyAvatar" />
 
-        android:text="You have no photo in your gallery"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        tools:layout_editor_absoluteY="373dp" />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/mediaFragment_fab"
+        android:layout_width="@dimen/dp_48"
+        android:layout_height="@dimen/dp_48"
+        android:layout_marginEnd="@dimen/dp_36"
+        android:layout_marginBottom="@dimen/dp_40"
+        android:backgroundTint="@color/app_color_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
 
+    <ImageView
+        android:id="@+id/mediaFragment_fab_icon"
+        android:layout_width="@dimen/dp_110"
+        android:layout_height="@dimen/dp_110"
+        android:elevation="@dimen/dp_10"
+        android:src="@drawable/fab"
+        app:layout_constraintBottom_toBottomOf="@id/mediaFragment_fab"
+        app:layout_constraintEnd_toEndOf="@id/mediaFragment_fab"
+        app:layout_constraintStart_toStartOf="@id/mediaFragment_fab"
+        app:layout_constraintTop_toTopOf="@id/mediaFragment_fab"
+         />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/mediaFragment_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:listitem="@layout/media_fragment_recyclerview_item_layout"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

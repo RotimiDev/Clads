@@ -3,28 +3,51 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-v24/edit_text_background.xml" value="0.1465" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1165" />
         <entry key="app/src/main/res/drawable-v24/item_background.xml" value="0.12" />
         <entry key="app/src/main/res/drawable/camera.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/fab.xml" value="0.1125" />
+        <entry key="app/src/main/res/drawable/home.xml" value="0.1125" />
+        <entry key="app/src/main/res/drawable/ic_avatar.xml" value="0.1125" />
+        <entry key="app/src/main/res/drawable/ic_fab.xml" value="0.1495" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_line_10.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_menu_camera.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_menu_gallery.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_power.xml" value="0.1125" />
+        <entry key="app/src/main/res/drawable/ic_rectangle_25.xml" value="0.1125" />
+        <entry key="app/src/main/res/drawable/ic_rectangle_26.xml" value="0.1125" />
+        <entry key="app/src/main/res/drawable/ic_shape.xml" value="0.1125" />
+        <entry key="app/src/main/res/drawable/img_background.xml" value="0.1465" />
+        <entry key="app/src/main/res/drawable/message.xml" value="0.1125" />
         <entry key="app/src/main/res/drawable/side_nav_bar.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_authentication.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.2791666666666667" />
         <entry key="app/src/main/res/layout/drawer_menu.xml" value="0.265625" />
+        <entry key="app/src/main/res/layout/fragment_choice_screen.xml" value="0.75" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2640625" />
+        <entry key="app/src/main/res/layout/fragment_login_form.xml" value="0.2671875" />
         <entry key="app/src/main/res/layout/fragment_main.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_media.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/fragment_media.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_media_details.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/fragment_media_middle.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_message.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_new_password.xml" value="0.2671875" />
+        <entry key="app/src/main/res/layout/media_fragment_recyclerview_item_layout.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/mediafragment_recyclerview_itemlayout.xml" value="0.25" />
         <entry key="app/src/main/res/layout/toolbar.xml" value="0.2640625" />
         <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.2640625" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.2101851851851852" />
         <entry key="app/src/main/res/menu/bottom_navmenu.xml" value="0.1" />
         <entry key="app/src/main/res/menu/main_activity2.xml" value="0.25" />
+        <entry key="app/src/main/res/menu/toolbar_menu.xml" value="0.2526041666666667" />
+        <entry key="app/src/main/res/menu/toolbar_mmenu.xml" value="0.2526041666666667" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
       </map>
     </option>
   </component>

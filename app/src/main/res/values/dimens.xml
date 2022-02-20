@@ -27,6 +27,21 @@
     <dimen name="nav_drawer_avatar_marginTop">45dp</dimen>
     <dimen name="nav_drawer_cancel_icon_marginEnd">20dp</dimen>
     <dimen name="nav_drawer_cancel_icon_marginTop">20dp</dimen>
+    <dimen name="dp_160">160dp</dimen>
+    <dimen name="dp_230">230dp</dimen>
+    <dimen name="dp_180">180dp</dimen>
+    <dimen name="sp_18">18sp</dimen>
+    <dimen name="dp_140">140dp</dimen>
+    <dimen name="dp_20">20dp</dimen>
+    <dimen name="dp_48">48dp</dimen>
+    <dimen name="dp_36">36dp</dimen>
+    <dimen name="dp_40">40dp</dimen>
+    <dimen name="dp_110">110dp</dimen>
+    <dimen name="dp_10">10dp</dimen>
+    <dimen name="dp_450">450dp</dimen>
+    <dimen name="dp_5">5dp</dimen>
+    <dimen name="dp_55">55dp</dimen>
+    <dimen name="dp_500">500dp</dimen>
 
 
 </resources>

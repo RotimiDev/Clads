@@ -8,17 +8,27 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.decagonhq.clads_client.presentation.ui.HomeFragment"
-        android:label="fragment_main"
+        android:label="Dashboard"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/mediaFragment"
         android:name="com.decagonhq.clads_client.presentation.ui.MediaFragment"
-        android:label="fragment_media"
+        android:label="Photo Gallery"
         tools:layout="@layout/fragment_media" />
     <fragment
         android:id="@+id/messageFragment"
         android:name="com.decagonhq.clads_client.presentation.ui.MessageFragment"
-        android:label="fragment_message"
+        android:label="Messages"
         tools:layout="@layout/fragment_message" />
+    <fragment
+        android:id="@+id/mediaMiddleFragment"
+        android:name="com.decagonhq.clads_client.presentation.ui.MediaMiddleFragment"
+        android:label="Captions"
+        tools:layout="@layout/fragment_media_middle" />
+    <fragment
+        android:id="@+id/mediaDetailsFragment"
+        android:name="com.decagonhq.clads_client.presentation.ui.MediaDetailsFragment"
+        android:label="Photo Gallery"
+        tools:layout="@layout/fragment_media_details" />
 
 </navigation>

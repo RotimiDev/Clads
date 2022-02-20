@@ -17,4 +17,14 @@
     <string name="edit_profile">Edit Profile</string>
     <string name="version_1_0">version 1.0</string>
     <string name="logout">Logout</string>
+    <string name="you_have_no_photo_in_your_gallery">You have no photo in your gallery</string>
+    <string name="elegant_suit_for_men">Elegant suit for men</string>
+    <string name="empty_text">Empty Text</string>
+    <string name="please_enter_caption">Please enter Caption</string>
+    <string name="add_caption">Add Caption</string>
+    <string name="share">Share</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="delete_image">Delete Image</string>
+    <string name="message">Do you wish to delete image ?</string>
 </resources>
