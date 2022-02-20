@@ -12,11 +12,16 @@ class PreviousRatingsRecyclerAdapter(
 
     inner class RatingViewHolder(binding: SingleRatingRecyclerItemBinding) : RecyclerView.ViewHolder(binding.root) {
         private var messageTextView = binding.ratingDetailsTextView
-        private var dateTextView = binding.ratingDateTextView
+        private var dateTextView = binding.recyclerRatingDateTextView
+        private val itemBinding = binding
 
         fun bindData(message: Rating) {
             messageTextView.text = message.rating
             dateTextView.text = message.date
+
+            itemView.setOnClickListener {
+                // Click code implementation
+            }
         }
     }
 
