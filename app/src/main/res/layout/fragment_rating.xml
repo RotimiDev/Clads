@@ -31,7 +31,9 @@
         android:id="@+id/ratings_artisan_shapeable_Image_view"
         android:layout_width="@dimen/size_0_dp"
         android:layout_height="@dimen/size_0_dp"
+        android:scaleType="centerCrop"
         android:src="@drawable/dummy_profile_picture"
+        android:layout_marginTop="@dimen/margin_10dp"
         app:layout_constraintBottom_toTopOf="@+id/ratings_horizontal_guideline2"
         app:layout_constraintEnd_toStartOf="@+id/rating_vertical_guideline2"
         app:layout_constraintStart_toStartOf="@+id/rating_vertical_guideline1"
@@ -273,7 +275,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.14" />
+        app:layout_constraintGuide_percent="0.15458277" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/rating_vertical_guideline1"

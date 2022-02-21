@@ -6,12 +6,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.decagonhq.clads_client.databinding.SingleRatingRecyclerItemBinding
 import com.decagonhq.clads_client.presentation.model.Rating
 
-class PreviousRatingsRecyclerAdapter(
+class RatingsAdapter(
     private var ratingDataSource: List<Rating>
-) : RecyclerView.Adapter<PreviousRatingsRecyclerAdapter.RatingViewHolder>() {
+) : RecyclerView.Adapter<RatingsAdapter.RatingViewHolder>() {
 
     inner class RatingViewHolder(binding: SingleRatingRecyclerItemBinding) : RecyclerView.ViewHolder(binding.root) {
-        private var messageTextView = binding.ratingDetailsTextView
+        private var messageTextView = binding.singleRatingDetailsTextView
         private var dateTextView = binding.recyclerRatingDateTextView
 
         fun bindData(message: Rating) {
