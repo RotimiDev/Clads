@@ -22,11 +22,6 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val button = view.findViewById<Button>(R.id.button)
 
-        button.setOnClickListener {
-            val directions = HomeFragmentDirections.actionHomeFragmentToRatingFragment()
-            findNavController().navigate(directions)
-        }
     }
 }

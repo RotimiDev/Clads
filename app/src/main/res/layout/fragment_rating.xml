@@ -28,7 +28,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/ratings_artisan_shapeable_Image_view"
+        android:id="@+id/ratings_artisan_shapeable_image_view"
         android:layout_width="@dimen/size_0_dp"
         android:layout_height="@dimen/size_0_dp"
         android:scaleType="centerCrop"
@@ -48,9 +48,9 @@
         android:text="@string/ratings_jj_fashionista_limited"
         android:textColor="@color/black"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/ratings_artisan_shapeable_Image_view"
-        app:layout_constraintStart_toEndOf="@+id/ratings_artisan_shapeable_Image_view"
-        app:layout_constraintTop_toTopOf="@+id/ratings_artisan_shapeable_Image_view" />
+        app:layout_constraintBottom_toBottomOf="@+id/ratings_artisan_shapeable_image_view"
+        app:layout_constraintStart_toEndOf="@+id/ratings_artisan_shapeable_image_view"
+        app:layout_constraintTop_toTopOf="@+id/ratings_artisan_shapeable_image_view" />
 
     <TextView
         android:id="@+id/rating_number_text_view"
@@ -96,7 +96,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toStartOf="@+id/rating_vertical_guideline3"
         app:layout_constraintStart_toStartOf="@+id/rating_vertical_guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/ratings_artisan_shapeable_Image_view" />
+        app:layout_constraintTop_toBottomOf="@+id/ratings_artisan_shapeable_image_view" />
 
     <TextView
         android:id="@+id/first_rating_number_text_view"
