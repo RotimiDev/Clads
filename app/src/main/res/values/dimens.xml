@@ -91,5 +91,9 @@
     <dimen name="nav_drawer_cancel_icon_marginTop">20dp</dimen>
     <dimen name="size_35dp">35dp</dimen>
     <dimen name="margin_10dp">10dp</dimen>
-
+    <dimen name="margin_12dp">12dp</dimen>
+    <dimen name="pivot_0dp">0dp</dimen>
+    <dimen name="padding_14dp">14dp</dimen>
+    <dimen name="padding_12dp">12dp</dimen>
+    <dimen name="padding_32dp">32dp</dimen>
 </resources>
