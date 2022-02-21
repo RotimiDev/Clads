@@ -30,5 +30,10 @@
         android:name="com.decagonhq.clads_client.presentation.ui.MediaDetailsFragment"
         android:label="Photo Gallery"
         tools:layout="@layout/fragment_media_details" />
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.decagonhq.clads_client.presentation.ui.EditProfileFragment"
+        android:label="Edit Profile"
+        tools:layout="@layout/fragment_edit_profile" />
 
 </navigation>
