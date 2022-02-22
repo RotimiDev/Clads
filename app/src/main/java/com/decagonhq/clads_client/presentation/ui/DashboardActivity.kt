@@ -40,7 +40,7 @@ class DashboardActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbarInclude.toolbar)
 
         navHostFragment =
-            (supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment?)!!
+            supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         NavigationUI.setupWithNavController(bottomNavigationView, navHostFragment.navController)
 
 // Setup drawer layout

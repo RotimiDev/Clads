@@ -19,8 +19,9 @@ import com.decagonhq.clads_client.databinding.FragmentMediaDetailsBinding
 class MediaDetailsFragment : Fragment() {
     private var _binding: FragmentMediaDetailsBinding? = null
     private val binding get() = _binding!!
-    private lateinit var imageView: ImageView
+    private lateinit var mediaDetailsFragmentImage: ImageView
     private lateinit var file: String
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,9 +37,9 @@ class MediaDetailsFragment : Fragment() {
         setHasOptionsMenu(true)
 
         // Initialize imageView and set Image
-        imageView = binding.mediaDetailsFragmentImageView
+        mediaDetailsFragmentImage = binding.mediaDetailsFragmentImageView
         file = requireArguments().getString("key").toString()
-        imageView.setImageURI(file?.toUri())
+        mediaDetailsFragmentImage.setImageURI(file?.toUri())
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -74,13 +75,13 @@ class MediaDetailsFragment : Fragment() {
         builder.setIcon(android.R.drawable.ic_dialog_alert)
 
         // performing positive action
-        builder.setPositiveButton("Yes") { dialogInterface, which ->
+        builder.setPositiveButton(requireContext().getString(R.string.yes)) { dialogInterface, which ->
             // deleteContact()
-            Toast.makeText(requireContext(), "Image deleted Successfully", Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(), getString(R.string.deleted), Toast.LENGTH_LONG).show()
         }
         // performing negative action
-        builder.setNegativeButton("No") { dialogInterface, which ->
-            Toast.makeText(requireContext(), "Action aborted...", Toast.LENGTH_LONG).show()
+        builder.setNegativeButton(getString(R.string.no)) { dialogInterface, which ->
+            Toast.makeText(requireContext(), getString(R.string.abort), Toast.LENGTH_LONG).show()
         }
         // Create the AlertDialog
         val alertDialog: AlertDialog = builder.create()
@@ -94,6 +95,6 @@ class MediaDetailsFragment : Fragment() {
         val i = Intent(Intent.ACTION_SEND)
         i.type = "image/*"
         i.putExtra(Intent.EXTRA_STREAM, file)
-        startActivity(Intent.createChooser(i, "Share Image"))
+        startActivity(Intent.createChooser(i, getString(R.string.share_image)))
     }
 }

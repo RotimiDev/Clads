@@ -16,16 +16,15 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.decagonhq.clads_client.R
-import com.decagonhq.clads_client.data.model.MediaFragmentModel
+import com.decagonhq.clads_client.data.model.PhotoGalleryModel
 import com.decagonhq.clads_client.databinding.FragmentMediaBinding
-import com.decagonhq.clads_client.presentation.ui.adapters.MediaFragmentRecyclerViewAdapter
+import com.decagonhq.clads_client.presentation.ui.adapters.PhotoGalleryAdapter
 import com.decagonhq.clads_client.presentation.viewModel.MediaGalleryViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
-class MediaFragment @Inject constructor() : Fragment(), MediaFragmentRecyclerViewAdapter.OnItemClickListener {
+class MediaFragment : Fragment(), PhotoGalleryAdapter.OnItemClickListener {
     private val viewModel: MediaGalleryViewModel by activityViewModels()
     private val requestWriteStorage = 0
     private lateinit var recyclerView: RecyclerView
@@ -33,7 +32,7 @@ class MediaFragment @Inject constructor() : Fragment(), MediaFragmentRecyclerVie
     private lateinit var fab: FloatingActionButton
     private var _binding: FragmentMediaBinding? = null
     private val binding get() = _binding!!
-    lateinit var galleryAdapter: MediaFragmentRecyclerViewAdapter
+    private lateinit var galleryAdapter: PhotoGalleryAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -48,7 +47,7 @@ class MediaFragment @Inject constructor() : Fragment(), MediaFragmentRecyclerVie
         initViews()
 
         // Observing my recyclerView from viewModel, and updating accordingly
-        viewModel.mediaGallery.observe(viewLifecycleOwner) {
+        viewModel.photoGallery.observe(viewLifecycleOwner) {
             galleryAdapter.submitList(it)
             if (galleryAdapter.itemCount > 0) {
                 binding.mediaFragmentEmptyAvatar.isVisible = false
@@ -68,7 +67,7 @@ class MediaFragment @Inject constructor() : Fragment(), MediaFragmentRecyclerVie
         with(binding) {
             fab = mediaFragmentFab
             recyclerView = mediaFragmentRecyclerView
-            galleryAdapter = MediaFragmentRecyclerViewAdapter(this@MediaFragment)
+            galleryAdapter = PhotoGalleryAdapter(this@MediaFragment)
         }
     }
 
@@ -146,9 +145,9 @@ class MediaFragment @Inject constructor() : Fragment(), MediaFragmentRecyclerVie
     }
 
 // Add contact details to bundle and navigates to targeted fragment
-    override fun onClick(gallery: MediaFragmentModel) {
+    override fun onClick(gallery: PhotoGalleryModel) {
         val mediaBundle = Bundle()
-        mediaBundle.putString("key", gallery.image)
+        mediaBundle.putString("key", gallery.imageUrl)
         findNavController().navigate(R.id.mediaDetailsFragment, mediaBundle)
     }
 }
