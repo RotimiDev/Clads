@@ -15,7 +15,6 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
     private var _binding: FragmentSignUpBinding? = null
     private val binding get() = _binding!!
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -40,7 +39,7 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
 
         // Verify the first name provided by the user.
         fun verifyFirstName(): Boolean {
-            return if (RegistrationUtil.verifyName(sampleFirstName?.text.toString().trim())){
+            return if (RegistrationUtil.verifyName(sampleFirstName?.text.toString().trim())) {
                 true
             } else {
                 sampleFirstName?.error = "Please enter a valid name"
@@ -50,7 +49,7 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
 
         // Verify the other name provided by the user.
         fun verifyOtherName(): Boolean {
-            return if (RegistrationUtil.verifyName(sampleOtherName?.text.toString().trim())){
+            return if (RegistrationUtil.verifyName(sampleOtherName?.text.toString().trim())) {
                 true
             } else {
                 sampleOtherName?.error = "Please enter a valid name"
@@ -60,7 +59,7 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
 
         // Verify the last name provided by the user.
         fun verifyLastName(): Boolean {
-            return if (RegistrationUtil.verifyName(sampleLastName?.text.toString().trim())){
+            return if (RegistrationUtil.verifyName(sampleLastName?.text.toString().trim())) {
                 true
             } else {
                 sampleLastName?.error = "Please enter a valid name"
@@ -75,7 +74,7 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
 
         // Verify the email provided by the user.
         fun verifyEmail(): Boolean {
-            return if (RegistrationUtil.verifyEmail(sampleEmailAddress?.text.toString().trim())){
+            return if (RegistrationUtil.verifyEmail(sampleEmailAddress?.text.toString().trim())) {
                 sampleEmailAddress?.error = null
                 true
             } else {
@@ -86,20 +85,21 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
 
         // Verify the initial password provided by the user.
         fun verifyPassword(): Boolean {
-            return if (RegistrationUtil.verifyPassword(samplePassword?.text.toString().trim())){
+            return if (RegistrationUtil.verifyPassword(samplePassword?.text.toString().trim())) {
                 samplePassword?.error = null
                 true
             } else {
                 samplePassword?.error = "Password must have at least one special character, " +
-                        "no white spaces and at least 4 characters."
+                    "no white spaces and at least 4 characters."
                 false
             }
         }
 
         // Verify the second confirmation
         fun verifyConfirmPassword(): Boolean {
-            return if (RegistrationUtil.verifyPassword(sampleConfirmPassword?.text.toString().trim())
-                && (sampleConfirmPassword?.text.toString().trim() == samplePassword?.text.toString().trim())){
+            return if (RegistrationUtil.verifyPassword(sampleConfirmPassword?.text.toString().trim()) &&
+                (sampleConfirmPassword?.text.toString().trim() == samplePassword?.text.toString().trim())
+            ) {
                 _binding?.ConfirmPasswordLayout?.error = null
                 _binding?.ConfirmPasswordLayout?.isErrorEnabled = false
                 true
@@ -110,10 +110,11 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
         }
 
         // Registers user, when the verification methods are all valid.
-        fun registerUser (){
-            if (verifyFirstName() && verifyLastName() && verifyOtherName()
-                && verifyEmail() && verifyPassword() && verifyConfirmPassword()){
-                Toast.makeText(context, "Account successfully created!",Toast.LENGTH_SHORT).show()
+        fun registerUser() {
+            if (verifyFirstName() && verifyLastName() && verifyOtherName() &&
+                verifyEmail() && verifyPassword() && verifyConfirmPassword()
+            ) {
+                Toast.makeText(context, "Account successfully created!", Toast.LENGTH_SHORT).show()
 
                 // Navigates to email confirmation page, if registration is successful.
                 val signUpDirections = SignUpFragmentDirections.actionSignUpFragmentToEmailConfirmationFragment()
@@ -132,12 +133,10 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
             verifyConfirmPassword()
 
             registerUser()
-
         }
     }
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
-
 }

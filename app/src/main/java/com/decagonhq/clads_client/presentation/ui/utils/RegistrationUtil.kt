@@ -33,11 +33,13 @@ object RegistrationUtil {
 
     // Function to verify the password of the intended user
     fun verifyPassword(password: String): Boolean {
-        val regex = Regex("^" +
-                "(?=.*[@#$%^&+=])" +     // at least 1 special character
-                "(?=\\S+$)" +            // no white spaces
-                ".{6,}" +                // at least 6 characters
-                "$")
+        val regex = Regex(
+            "^" +
+                "(?=.*[@#$%^&+=])" + // at least 1 special character
+                "(?=\\S+$)" + // no white spaces
+                ".{6,}" + // at least 6 characters
+                "$"
+        )
         return password.isNotBlank() && password.matches(regex)
     }
 }
