@@ -14,14 +14,14 @@ import androidx.navigation.fragment.findNavController
 import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.data.model.MediaFragmentModel
 import com.decagonhq.clads_client.databinding.FragmentMediaMiddleBinding
-import com.decagonhq.clads_client.presentation.viewModel.PostIntentViewModel
+import com.decagonhq.clads_client.presentation.viewModel.MediaGalleryViewModel
 import com.google.android.material.button.MaterialButton
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
 class MediaMiddleFragment @Inject constructor() : Fragment() {
-    private val viewModel: PostIntentViewModel by activityViewModels()
+    private val viewModel: MediaGalleryViewModel by activityViewModels()
     private var _binding: FragmentMediaMiddleBinding? = null
     private val binding get() = _binding!!
     private lateinit var image: ImageView

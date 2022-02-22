@@ -8,7 +8,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class PostIntentViewModel @Inject constructor() : ViewModel() {
+class MediaGalleryViewModel @Inject constructor() : ViewModel() {
     private var _mediaGallery = MutableLiveData<List<MediaFragmentModel>>()
     val mediaGallery: LiveData<List<MediaFragmentModel>> get() = _mediaGallery
 

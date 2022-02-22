@@ -19,14 +19,14 @@ import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.data.model.MediaFragmentModel
 import com.decagonhq.clads_client.databinding.FragmentMediaBinding
 import com.decagonhq.clads_client.presentation.ui.adapters.MediaFragmentRecyclerViewAdapter
-import com.decagonhq.clads_client.presentation.viewModel.PostIntentViewModel
+import com.decagonhq.clads_client.presentation.viewModel.MediaGalleryViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
 class MediaFragment @Inject constructor() : Fragment(), MediaFragmentRecyclerViewAdapter.OnItemClickListener {
-    private val viewModel: PostIntentViewModel by activityViewModels()
+    private val viewModel: MediaGalleryViewModel by activityViewModels()
     private val requestWriteStorage = 0
     private lateinit var recyclerView: RecyclerView
     private var selectedImageUri: Uri? = null
