@@ -127,10 +127,22 @@
     <string name="edit_profile">Edit Profile</string>
     <string name="version_1_0">version 1.0</string>
     <string name="logout">Logout</string>
-
+    <string name="_5">5</string>
+    <string name="ratings_jj_fashionista_limited">JJ Fashionista Limited</string>
+    <string name="reviews">Reviews</string>
     <string name="all_state">State</string>
-
     <string name="media_fragment">Media Fragment</string>
+    <string name="_4">4</string>
+    <string name="rate_jj_fashionista_limited">Rate JJ Fashionista Limited</string>
+    <string name="describe_your_experience_optional">Describe your experience (optional)</string>
+    <string name="all_post">Post</string>
+    <string name="o">O</string>
+    <string name="olaleye_david">Olaleye David</string>
+    <string name="_01_09_2020">01-09-2020</string>
+    <string name="_325">325</string>
+    <string name="_3">3</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
     <string name="artisan_profile">Artisan Profile</string>
     <string name="jj_fashionista_limited">JJ Fashionista Limited</string>
     <string name="dummy_text_amet">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim enim velit mollit.</string>
