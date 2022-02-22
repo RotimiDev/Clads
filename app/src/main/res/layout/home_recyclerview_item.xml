@@ -11,10 +11,9 @@
 
     <ImageView
         android:id="@+id/home_item_image_view"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="@dimen/sze_100dp"
+        android:layout_height="@dimen/size_100dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/image_one"
         android:layout_marginTop="@dimen/margin_16dp"
         android:layout_marginBottom="@dimen/margin_16dp"
         app:layout_constraintBottom_toBottomOf="parent"

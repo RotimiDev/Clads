@@ -98,7 +98,11 @@
     <dimen name="margin_21dp">21dp</dimen>
     <dimen name="margin_5dp">5dp</dimen>
     <dimen name="text_size_10sp">10sp</dimen>
-    <dimen name="size_26">26</dimen>
+    <dimen name="text_size_26">26</dimen>
     <dimen name="margin_12dp">12dp</dimen>
     <dimen name="size_6_dp">6dp</dimen>
+    <dimen name="height_2dp">2dp</dimen>
+    <dimen name="height_20dp">20dp</dimen>
+    <dimen name="sze_100dp">100dp</dimen>
+    <dimen name="size_100dp">100dp</dimen>
 </resources>

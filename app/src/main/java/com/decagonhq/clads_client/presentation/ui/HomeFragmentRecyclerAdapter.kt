@@ -2,42 +2,38 @@ package com.decagonhq.clads_client.presentation.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.decagonhq.clads_client.databinding.HomeRecyclerviewItemBinding
+import com.decagonhq.clads_client.presentation.ui.model.Tailor
 
 class HomeFragmentRecyclerAdapter(
-    private val name: List<String>,
-    private val locations: List<String>,
-    private val image: List<Int>
-) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-    private lateinit var locationsTextView: TextView
-    private lateinit var nameTextView: TextView
-    private lateinit var imageView: ImageView
+    private var tailorDataSource: List<Tailor>
+) : RecyclerView.Adapter<HomeFragmentRecyclerAdapter.HomeArtisanViewHolder>() {
+
     inner class HomeArtisanViewHolder(binding: HomeRecyclerviewItemBinding) : RecyclerView.ViewHolder(binding.root) {
-        init {
-            locationsTextView = binding.homeLocationItemTextView
-            nameTextView = binding.homeItemNameTextView
-            imageView = binding.homeItemImageView
+
+        private var locationsTextView = binding.homeLocationItemTextView
+        private var nameTextView = binding.homeItemNameTextView
+        private var imageView = binding.homeItemImageView
+
+        fun bind(data: Tailor) = with(itemView) {
+            locationsTextView.text = data.location
+            nameTextView.text = data.name
+            Glide.with(context).load(data.image).into(imageView)
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeArtisanViewHolder {
         val binding = HomeRecyclerviewItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return HomeArtisanViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        holder.itemView.apply {
-            locationsTextView.text = locations[position]
-            nameTextView.text = name[position]
-            Glide.with(context).load(image[position]).into(imageView)
-        }
+    override fun onBindViewHolder(holder: HomeArtisanViewHolder, position: Int) {
+        holder.bind(tailorDataSource[position])
     }
 
     override fun getItemCount(): Int {
-        return name.size
+        return tailorDataSource.size
     }
 }

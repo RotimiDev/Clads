@@ -22,7 +22,7 @@
             android:weightSum="7">
 
             <EditText
-                android:id="@+id/textField"
+                android:id="@+id/home_search_text_field"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="@string/search"
@@ -49,7 +49,7 @@
             android:layout_marginTop="@dimen/margin_10dp">
 
             <ImageView
-                android:id="@+id/bar"
+                android:id="@+id/home_bar_image_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_16dp"
@@ -62,7 +62,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_17dp"
-                android:layout_toEndOf="@id/bar"
+                android:layout_toEndOf="@id/home_bar_image_view"
                 android:text="@string/artisan"
                 android:textColor="@color/navy_blue"
                 android:textSize="@dimen/size_13sp"
@@ -72,7 +72,7 @@
                 android:id="@+id/home_style_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="36dp"
+                android:layout_marginStart="@dimen/margin_36dp"
                 android:layout_toEndOf="@id/home_artisan_text_view"
                 android:text="@string/style"
                 android:textColor="@color/navy_blue"
@@ -94,7 +94,7 @@
                 android:id="@+id/home_artisan_text_input"
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
                 android:layout_width="wrap_content"
-                android:layout_height="20dp"
+                android:layout_height="@dimen/height_20dp"
                 android:layout_below="@id/home_artisan_text_view"
                 android:layout_alignEnd="@+id/home_artisan_text_view"
                 android:layout_marginTop="@dimen/margin_8dp"
@@ -115,7 +115,7 @@
                 android:id="@+id/home_style_text_input"
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
                 android:layout_width="wrap_content"
-                android:layout_height="20dp"
+                android:layout_height="@dimen/height_20dp"
                 android:layout_below="@id/home_style_text_view"
                 android:layout_toEndOf="@id/home_artisan_text_input"
                 android:background="@drawable/home_search_drawable"
@@ -137,7 +137,7 @@
                 android:id="@+id/home_location_text_input"
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
                 android:layout_width="wrap_content"
-                android:layout_height="20dp"
+                android:layout_height="@dimen/height_20dp"
                 android:layout_below="@id/home_location_text_view"
                 android:layout_toEndOf="@id/home_style_text_input"
                 android:background="@drawable/home_search_drawable"
@@ -161,7 +161,7 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="2dp"
+            android:layout_height="@dimen/height_2dp"
             android:layout_marginTop="@dimen/margin_38dp"
             android:background="@color/gray"/>
 
@@ -178,7 +178,7 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="2dp"
+            android:layout_height="@dimen/height_2dp"
             android:layout_marginTop="@dimen/margin_5dp"
             android:background="@color/gray"/>
 
@@ -218,9 +218,6 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="@dimen/margin_7dp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
-
-
-        </androidx.recyclerview.widget.RecyclerView>
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.databinding.FragmentHomeBinding
+import com.decagonhq.clads_client.presentation.ui.model.TailorDataSource
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
@@ -25,13 +25,15 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val name = listOf("JJ Fashionista Limited", "Lola Jegede Threads", "Amina Yusuf Fashion")
-        val locations = listOf("Egbeda, Lagos", "Lekki, Lagos", "Zaria, Kaduna")
-        val image = listOf(R.drawable.image_one, R.drawable.image_two, R.drawable.image_three)
 
-        homeFragmentRecyclerAdapter = HomeFragmentRecyclerAdapter(name, locations, image)
+        val data = TailorDataSource.createDataSet()
+        homeFragmentRecyclerAdapter = HomeFragmentRecyclerAdapter(data)
         binding.homeTailorsRecyclerView.adapter = homeFragmentRecyclerAdapter
 
         binding.homeWeaversRecyclerView.adapter = homeFragmentRecyclerAdapter
+    }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
