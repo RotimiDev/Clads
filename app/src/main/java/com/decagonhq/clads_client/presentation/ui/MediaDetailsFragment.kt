@@ -35,7 +35,7 @@ class MediaDetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         setHasOptionsMenu(true)
 
-        // Initialize imageView and set Image
+        // Initialize imageView and set Image.
         mediaDetailsFragmentImage = binding.mediaDetailsFragmentImageView
         file = requireArguments().getString("key").toString()
         mediaDetailsFragmentImage.setImageURI(file?.toUri())
