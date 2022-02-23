@@ -1,6 +1,6 @@
 package com.decagonhq.clads_client
 
-import com.decagonhq.clads_client.presentation.ui.utils.RegistrationUtil
+import com.decagonhq.clads_client.presentation.utils.RegistrationUtil
 import org.junit.Assert
 import org.junit.Test
 

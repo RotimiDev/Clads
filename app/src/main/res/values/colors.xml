@@ -3,7 +3,7 @@
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_200">#DA032E</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
@@ -22,7 +22,14 @@
     <color name="light_color">#8DFFFFFF</color>
     <color name="app_color_blue">#0066f5</color>
     <color name="app_color_blue_text">#0a2e65</color>
+    <color name="silver">#D3D6DB</color>
     <color name="gray_6">#F2F2F2</color>
     <color name="default_background">#E5E5E5</color>
     <color name="gray_3">#828282</color>
+    <color name="orange">#F2994A</color>
+    <color name="rating_yellow">#F4C54A</color>
+    <color name ="dark_black">#000000</color>
+    <color name="stroke_color">#0066F5</color>
+    <color name="green_border">#219563</color>
+    <color name="rating_color">#F4C54A</color>
 </resources>
