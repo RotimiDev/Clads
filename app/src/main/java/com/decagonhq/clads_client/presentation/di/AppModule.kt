@@ -18,15 +18,15 @@ import javax.inject.Singleton
 object AppModule {
     @Provides
     @Singleton
-    fun provideLogger(): HttpLoggingInterceptor{
+    fun provideLogger(): HttpLoggingInterceptor {
         return HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY }
     }
 
     @Provides
     @Singleton
-    fun provideClient (logger: HttpLoggingInterceptor): OkHttpClient{
-        return OkHttpClient.Builder().
-        addInterceptor(logger)
+    fun provideClient(logger: HttpLoggingInterceptor): OkHttpClient {
+        return OkHttpClient.Builder()
+            .addInterceptor(logger)
             .build()
     }
 
