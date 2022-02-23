@@ -139,7 +139,7 @@ class MediaFragment : Fragment(), PhotoGalleryAdapter.OnItemClickListener {
                 // my code
                 openImageChooser()
             } else {
-                // Permission request was denied.
+                // Permission request was denied for now
             }
         }
     }

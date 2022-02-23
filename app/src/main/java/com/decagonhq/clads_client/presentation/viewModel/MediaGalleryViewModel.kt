@@ -19,4 +19,3 @@ class MediaGalleryViewModel @Inject constructor() : ViewModel() {
         _mediaGallery.value = tempGallery
     }
 }
-

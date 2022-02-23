@@ -22,7 +22,6 @@ class MediaDetailsFragment : Fragment() {
     private lateinit var mediaDetailsFragmentImage: ImageView
     private lateinit var file: String
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

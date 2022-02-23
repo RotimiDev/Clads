@@ -2,9 +2,10 @@ package com.decagonhq.clads_client.presentation.ui.utils
 
 import androidx.recyclerview.widget.DiffUtil
 
-
-class PhotoGalleryDiffUtils<T>(private val oldList: List<T>,
-                               private val newList: List<T>):DiffUtil.Callback() {
+class PhotoGalleryDiffUtils<T>(
+    private val oldList: List<T>,
+    private val newList: List<T>
+) : DiffUtil.Callback() {
 
     override fun getOldListSize(): Int {
         return oldList.size

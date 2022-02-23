@@ -19,7 +19,7 @@ import com.google.android.material.button.MaterialButton
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MediaMiddleFragment  : Fragment() {
+class MediaMiddleFragment : Fragment() {
     private val viewModel: MediaGalleryViewModel by activityViewModels()
     private var _binding: FragmentMediaMiddleBinding? = null
     private val binding get() = _binding!!

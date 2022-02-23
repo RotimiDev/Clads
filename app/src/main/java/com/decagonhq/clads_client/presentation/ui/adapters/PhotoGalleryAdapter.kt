@@ -16,17 +16,17 @@ class PhotoGalleryAdapter(private val listener: OnItemClickListener) :
 
     inner class PhotoGalleryViewHolder(
         val binding: MediaFragmentRecyclerviewItemLayoutBinding
-    ) : RecyclerView.ViewHolder(binding.root){
+    ) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(photoGalleryModel: PhotoGalleryModel){
+        fun bind(photoGalleryModel: PhotoGalleryModel) {
             with(binding) {
                 Glide.with(mediaFragmentRecyclerViewItemLayoutCardViewImage.context)
                     .load(photoGalleryModel.imageUrl)
                     .into(mediaFragmentRecyclerViewItemLayoutCardViewImage)
-                     mediaFragmentRecyclerViewItemLayoutCardViewTextView.text =
+                mediaFragmentRecyclerViewItemLayoutCardViewTextView.text =
                     photoGalleryModel.description
 
-                    mediaFragmentRecyclerViewItemLayoutCardView.setOnClickListener {
+                mediaFragmentRecyclerViewItemLayoutCardView.setOnClickListener {
                     listener.onClick(photoGalleryModel)
                 }
             }
@@ -44,30 +44,25 @@ class PhotoGalleryAdapter(private val listener: OnItemClickListener) :
         return PhotoGalleryViewHolder(binding)
     }
 
-
     override fun onBindViewHolder(
         holder: PhotoGalleryAdapter.PhotoGalleryViewHolder,
         position: Int
-    ) { val currentItem = recyclerViewList[position]
+    ) {
+        val currentItem = recyclerViewList[position]
         holder.bind(currentItem)
     }
-
 
     override fun getItemCount(): Int {
         return recyclerViewList.size
     }
 
-
     fun submitList(gallery: List<PhotoGalleryModel>) {
-            val photoGalleryDiffUtils =
-                PhotoGalleryDiffUtils(recyclerViewList, gallery)
-            val diffUtilResult = DiffUtil.calculateDiff(photoGalleryDiffUtils)
-            recyclerViewList = gallery
-            diffUtilResult.dispatchUpdatesTo(this)
-
-
+        val photoGalleryDiffUtils =
+            PhotoGalleryDiffUtils(recyclerViewList, gallery)
+        val diffUtilResult = DiffUtil.calculateDiff(photoGalleryDiffUtils)
+        recyclerViewList = gallery
+        diffUtilResult.dispatchUpdatesTo(this)
     }
-
 
     interface OnItemClickListener {
         fun onClick(gallery: PhotoGalleryModel)
