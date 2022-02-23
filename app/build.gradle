@@ -96,7 +96,6 @@ dependencies {
     androidTestImplementation "androidx.test:core:$versions.android_unittesting1"
     androidTestImplementation "androidx.test.ext:junit-ktx:$versions.android_testing"
 
-
     //Fragment Testing
     debugImplementation "androidx.fragment:fragment-testing:$versions.fragment_testing_version"
 
