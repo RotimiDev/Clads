@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".presentation.ui.MediaDetailsFragment">
+
+
+    <ImageView
+        android:id="@+id/media_details_fragment_ImageView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/Zero"
+        android:elevation="@dimen/dp_10"
+        android:scaleType="fitXY"
+        android:src="@drawable/rectangle_25"
+        app:layout_constraintTop_toBottomOf="@id/fragment_media_details_top_guide"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/fragment_media_details_base_guide" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/fragment_media_details_top_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/fragment_media_details_base_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".85" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -127,6 +127,16 @@
     <string name="edit_profile">Edit Profile</string>
     <string name="version_1_0">version 1.0</string>
     <string name="logout">Logout</string>
+    <string name="you_have_no_photo_in_your_gallery">You have no photo in your gallery</string>
+    <string name="elegant_suit_for_men">Elegant suit for men</string>
+    <string name="empty_text">Empty Text</string>
+    <string name="please_enter_caption">Please enter Caption</string>
+    <string name="add_caption">Add Caption</string>
+    <string name="share">Share</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="delete_image">Delete Image</string>
+    <string name="message">Do you wish to delete image ?</string>
     <string name="_5">5</string>
     <string name="ratings_jj_fashionista_limited">JJ Fashionista Limited</string>
     <string name="reviews">Reviews</string>
@@ -161,5 +171,10 @@
     <string name="this_need_background_permission">This need background permission</string>
     <string name="permission_granted_now_you_can_read_the_storage">Permission granted now you can read the storage</string>
     <string name="oops_permission_is_not_granted">oops permission is not granted</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="abort">Action aborted...</string>
+    <string name="deleted">Image deleted Successfully</string>
+    <string name="share_image">Share Image</string>
 
 </resources>
