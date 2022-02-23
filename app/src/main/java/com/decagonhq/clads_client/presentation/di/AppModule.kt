@@ -1,6 +1,6 @@
 package com.decagonhq.clads_client.presentation.di
 
-import com.decagonhq.clads_client.presentation.network.CladsClientApi
+import com.decagonhq.clads_client.presentation.network.ClientAPI
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -41,6 +41,6 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideClientAPI(retrofit: Retrofit): CladsClientApi =
-        retrofit.create(CladsClientApi::class.java)
+    fun provideClientAPI(retrofit: Retrofit): ClientAPI =
+        retrofit.create(ClientAPI::class.java)
 }
