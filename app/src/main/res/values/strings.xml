@@ -131,7 +131,10 @@
     <string name="all_state">State</string>
 
     <string name="media_fragment">Media Fragment</string>
-
+    <string name="enter_valid_name_str">Please enter a valid name</string>
+    <string name="enter_valid_email_str">Please enter a valid email</string>
+    <string name="enter_valid_password_str">Password must have at least one special character, no white spaces and at least 4 characters.</string>
+    <string name="enter_valid_confirm_password_str">Password does not match.</string>
 
 
 </resources>

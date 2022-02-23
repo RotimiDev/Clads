@@ -1,4 +1,6 @@
-package com.decagonhq.clads_client.presentation.ui.utils
+package com.decagonhq.clads_client.presentation.utils
+
+import android.util.Log
 
 // Validation object for Sign-Up
 object RegistrationUtil {
@@ -6,7 +8,7 @@ object RegistrationUtil {
     // Function to verify the name of the intended user
     fun verifyName(name: String): Boolean {
         val regex = Regex("^[a-zA-Z]*\$")
-        return name.isNotBlank() && name.matches(regex)
+        return name.isNotBlank() && name.matches(regex) && name.length >= 2
     }
 
     // Function to verify the e-mail of the intended user
@@ -35,11 +37,15 @@ object RegistrationUtil {
     fun verifyPassword(password: String): Boolean {
         val regex = Regex(
             "^" +
-                "(?=.*[@#$%^&+=])" + // at least 1 special character
-                "(?=\\S+$)" + // no white spaces
-                ".{6,}" + // at least 6 characters
-                "$"
+                    "(?=.*[@#$%^&+=])" + // at least 1 special character
+                    "(?=\\S+$)" + // no white spaces
+                    ".{6,}" + // at least 6 characters
+                    "$"
         )
         return password.isNotBlank() && password.matches(regex)
+    }
+
+    fun validateConfirmPassword(password: String, confirmPassword: String): Boolean {
+        return password == confirmPassword
     }
 }
