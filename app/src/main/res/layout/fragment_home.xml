@@ -13,6 +13,7 @@
         android:orientation="vertical"
         android:padding="@dimen/margin_24dp">
 
+
         <LinearLayout
             android:id="@+id/home_layout"
             android:layout_width="match_parent"
