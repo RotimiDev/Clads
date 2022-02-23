@@ -22,6 +22,7 @@
     <color name="light_color">#8DFFFFFF</color>
     <color name="app_color_blue">#0066f5</color>
     <color name="app_color_blue_text">#0a2e65</color>
+    <color name="silver">#D3D6DB</color>
     <color name="gray_6">#F2F2F2</color>
     <color name="default_background">#E5E5E5</color>
     <color name="gray_3">#828282</color>

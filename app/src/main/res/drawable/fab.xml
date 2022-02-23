@@ -1,0 +1,49 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="84dp"
+    android:height="98dp"
+    android:viewportWidth="84"
+    android:viewportHeight="98">
+  <path
+      android:pathData="M42,70C57.464,70 70,57.464 70,42C70,26.536 57.464,14 42,14C26.536,14 14,26.536 14,42C14,57.464 26.536,70 42,70Z"
+      android:fillColor="#0066F5"
+      android:fillType="evenOdd"/>
+  <path
+      android:pathData="M69.75,42C69.75,57.3259 57.3259,69.75 42,69.75C26.6741,69.75 14.25,57.3259 14.25,42C14.25,26.6741 26.6741,14.25 42,14.25C57.3259,14.25 69.75,26.6741 69.75,42Z"
+      android:strokeWidth="0.5"
+      android:fillColor="#00000000">
+    <aapt:attr name="android:strokeColor">
+      <gradient 
+          android:startY="14"
+          android:startX="14.274"
+          android:endY="69.452"
+          android:endX="14.274"
+          android:type="linear">
+        <item android:offset="0" android:color="#00000000"/>
+        <item android:offset="0.8" android:color="#05000000"/>
+        <item android:offset="1" android:color="#0A000000"/>
+      </gradient>
+    </aapt:attr>
+  </path>
+  <path
+      android:pathData="M69.75,42C69.75,57.3259 57.3259,69.75 42,69.75C26.6741,69.75 14.25,57.3259 14.25,42C14.25,26.6741 26.6741,14.25 42,14.25C57.3259,14.25 69.75,26.6741 69.75,42Z"
+      android:strokeWidth="0.5"
+      android:fillColor="#00000000">
+    <aapt:attr name="android:strokeColor">
+      <gradient 
+          android:startY="14"
+          android:startX="14"
+          android:endY="70"
+          android:endX="14"
+          android:type="linear">
+        <item android:offset="0" android:color="#1EFFFFFF"/>
+        <item android:offset="0.2" android:color="#0FFFFFFF"/>
+        <item android:offset="1" android:color="#00FFFFFF"/>
+      </gradient>
+    </aapt:attr>
+  </path>
+  <path
+      android:pathData="M49,41H43V35H41V41H35V43H41V49H43V43H49V41Z"
+      android:fillColor="#ffffff"
+      android:fillType="evenOdd"/>
+</vector>
