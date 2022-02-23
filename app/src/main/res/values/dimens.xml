@@ -89,24 +89,18 @@
     <dimen name="nav_drawer_avatar_marginTop">45dp</dimen>
     <dimen name="nav_drawer_cancel_icon_marginEnd">20dp</dimen>
     <dimen name="nav_drawer_cancel_icon_marginTop">20dp</dimen>
-<<<<<<< HEAD
     <dimen name="size_10_sp">10sp</dimen>
     <dimen name="padding_17dp">17dp</dimen>
     <dimen name="width_69dp">69dp</dimen>
-    <dimen name="margin_25dp">25dp</dimen>
-    <dimen name="margin_10dp">10dp</dimen>
     <dimen name="margin_50dp">50dp</dimen>
     <dimen name="margin_21dp">21dp</dimen>
-    <dimen name="margin_5dp">5dp</dimen>
     <dimen name="text_size_10sp">10sp</dimen>
     <dimen name="text_size_26">26</dimen>
-    <dimen name="margin_12dp">12dp</dimen>
     <dimen name="size_6_dp">6dp</dimen>
     <dimen name="height_2dp">2dp</dimen>
     <dimen name="height_20dp">20dp</dimen>
     <dimen name="sze_100dp">100dp</dimen>
     <dimen name="size_100dp">100dp</dimen>
-=======
     <dimen name="dp_160">160dp</dimen>
     <dimen name="dp_230">230dp</dimen>
     <dimen name="dp_180">180dp</dimen>
@@ -140,5 +134,5 @@
     <dimen name="margin_14dp">14dp</dimen>
     <dimen name="width_15dp">15dp</dimen>
     <dimen name="margin_25dp">25dp</dimen>
->>>>>>> eaa0d4c1b557a07e34b85cf4c49c1fcbca2c26d3
+
 </resources>

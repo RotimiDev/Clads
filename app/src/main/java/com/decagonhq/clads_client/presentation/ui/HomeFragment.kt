@@ -22,7 +22,6 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
-<<<<<<< HEAD
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -37,6 +36,4 @@ class HomeFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-=======
->>>>>>> eaa0d4c1b557a07e34b85cf4c49c1fcbca2c26d3
 }
