@@ -26,6 +26,8 @@
     <color name="gray_6">#F2F2F2</color>
     <color name="default_background">#E5E5E5</color>
     <color name="gray_3">#828282</color>
+    <color name="orange">#F2994A</color>
+    <color name="rating_yellow">#F4C54A</color>
     <color name ="dark_black">#000000</color>
     <color name="stroke_color">#0066F5</color>
     <color name="green_border">#219563</color>
