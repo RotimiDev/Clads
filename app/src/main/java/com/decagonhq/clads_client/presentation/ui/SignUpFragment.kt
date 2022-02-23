@@ -10,12 +10,12 @@ import androidx.navigation.fragment.findNavController
 import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.databinding.FragmentSignUpBinding
 import com.decagonhq.clads_client.presentation.utils.FieldValidationTracker
-import com.decagonhq.clads_client.presentation.utils.validateConfirmPassword
-import com.decagonhq.clads_client.presentation.utils.validateField
 import com.decagonhq.clads_client.presentation.utils.FieldValidationTracker.FieldType
 import com.decagonhq.clads_client.presentation.utils.RegistrationUtil.verifyEmail
 import com.decagonhq.clads_client.presentation.utils.RegistrationUtil.verifyName
 import com.decagonhq.clads_client.presentation.utils.RegistrationUtil.verifyPassword
+import com.decagonhq.clads_client.presentation.utils.validateConfirmPassword
+import com.decagonhq.clads_client.presentation.utils.validateField
 
 class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
     private var _binding: FragmentSignUpBinding? = null
@@ -86,7 +86,6 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
                 val signUpDirections =
                     SignUpFragmentDirections.actionSignUpFragmentToEmailConfirmationFragment()
                 findNavController().navigate(signUpDirections)
-
             }
         }
     }

@@ -12,7 +12,7 @@ object FieldValidationTracker {
         populateFieldTypeMap()
     }
 
-    private fun populateFieldTypeMap()  {
+    private fun populateFieldTypeMap() {
         fieldTypeMap[FieldType.FIRSTNAME] = false
         fieldTypeMap[FieldType.LASTNAME] = false
         fieldTypeMap[FieldType.OTHER_NAME] = false
@@ -21,7 +21,7 @@ object FieldValidationTracker {
         fieldTypeMap[FieldType.CONFIRM_PASSWORD] = false
     }
 
-    enum class FieldType{
+    enum class FieldType {
         FIRSTNAME, LASTNAME, OTHER_NAME, EMAIL, PASSWORD, CONFIRM_PASSWORD
     }
 }

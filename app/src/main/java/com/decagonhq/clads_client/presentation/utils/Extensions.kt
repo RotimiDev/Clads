@@ -5,12 +5,11 @@ import com.decagonhq.clads_client.presentation.utils.FieldValidationTracker.Fiel
 import com.decagonhq.clads_client.presentation.utils.FieldValidationTracker.fieldTypeMap
 import com.google.android.material.textfield.TextInputLayout
 
-
 inline fun TextInputLayout.validateField(
     errorMessage: String,
     fieldType: FieldType,
     crossinline action: (String) -> Boolean
-){
+) {
     this.editText?.doAfterTextChanged {
         if (!action.invoke(it.toString().trim())) {
             this.error = errorMessage
@@ -23,7 +22,6 @@ inline fun TextInputLayout.validateField(
         }
     }
 }
-
 
 fun TextInputLayout.validateConfirmPassword(
     passwordInputLayout: TextInputLayout,

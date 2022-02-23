@@ -1,7 +1,5 @@
 package com.decagonhq.clads_client.presentation.utils
 
-import android.util.Log
-
 // Validation object for Sign-Up
 object RegistrationUtil {
 
@@ -37,10 +35,10 @@ object RegistrationUtil {
     fun verifyPassword(password: String): Boolean {
         val regex = Regex(
             "^" +
-                    "(?=.*[@#$%^&+=])" + // at least 1 special character
-                    "(?=\\S+$)" + // no white spaces
-                    ".{6,}" + // at least 6 characters
-                    "$"
+                "(?=.*[@#$%^&+=])" + // at least 1 special character
+                "(?=\\S+$)" + // no white spaces
+                ".{6,}" + // at least 6 characters
+                "$"
         )
         return password.isNotBlank() && password.matches(regex)
     }
