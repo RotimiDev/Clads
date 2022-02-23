@@ -19,7 +19,7 @@ import com.google.android.material.button.MaterialButton
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MediaMiddleFragment : Fragment() {
+class MediaCaptionFragment : Fragment() {
     private val viewModel: MediaGalleryViewModel by activityViewModels()
     private var _binding: FragmentMediaMiddleBinding? = null
     private val binding get() = _binding!!
@@ -57,9 +57,9 @@ class MediaMiddleFragment : Fragment() {
 
     private fun initViews() {
         with(binding) {
-            image = mediaMiddleFragmentImage
-            captionButton = mediaMiddleFragmentButton
-            captionEditText = mediaMiddleFragmentEditText
+            image = mediaCaptionFragmentImage
+            captionButton = mediaCaptionFragmentButton
+            captionEditText = mediaCaptionFragmentEditText
         }
     }
 }

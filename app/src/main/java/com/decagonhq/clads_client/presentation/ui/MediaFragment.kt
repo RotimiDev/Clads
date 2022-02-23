@@ -96,8 +96,8 @@ class MediaFragment : Fragment(), PhotoGalleryAdapter.OnItemClickListener {
                     val stringUri = selectedImageUri.toString()
                     val bundle = Bundle()
                     bundle.putString("Image", stringUri)
-                    MediaMiddleFragment().arguments = bundle
-                    findNavController().navigate(R.id.mediaMiddleFragment, bundle)
+                    MediaCaptionFragment().arguments = bundle
+                    findNavController().navigate(R.id.mediaCaptionFragment, bundle)
                 }
             }
         }
