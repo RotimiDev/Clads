@@ -142,6 +142,13 @@
     <string name="reviews">Reviews</string>
     <string name="all_state">State</string>
     <string name="media_fragment">Media Fragment</string>
+    <string name="search">Search...</string>
+    <string name="artisan">Artisan</string>
+    <string name="style">Style</string>
+    <string name="location">Location</string>
+    <string name="tailors">TAILORS</string>
+    <string name="weavers">WEAVERS</string>
+    <string name="egbeda_lagos">Egbeda, Lagos</string>
     <string name="enter_valid_name_str">Please enter a valid name</string>
     <string name="enter_valid_email_str">Please enter a valid email</string>
     <string name="enter_valid_password_str">Password must have at least one special character, no white spaces and at least 4 characters.</string>
@@ -178,5 +185,6 @@
     <string name="share_image">Share Image</string>
     <string name="no_favorites_str">You do not have any favorites</string>
     <string name="favorites">Favorites</string>
+    <string name="all">All</string>
 
 </resources>
