@@ -122,4 +122,5 @@
     <dimen name="margin_14dp">14dp</dimen>
     <dimen name="width_15dp">15dp</dimen>
     <dimen name="margin_25dp">25dp</dimen>
+    <dimen name="size_50dp">50dp</dimen>
 </resources>

@@ -32,4 +32,5 @@
     <color name="stroke_color">#0066F5</color>
     <color name="green_border">#219563</color>
     <color name="rating_color">#F4C54A</color>
+    <color name="primary_grey">#F1F1F1</color>
 </resources>
