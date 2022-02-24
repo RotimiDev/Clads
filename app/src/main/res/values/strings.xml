@@ -177,5 +177,6 @@
     <string name="deleted">Image deleted Successfully</string>
     <string name="share_image">Share Image</string>
     <string name="no_favorites_str">You do not have any favorites</string>
+    <string name="favorites">Favorites</string>
 
 </resources>

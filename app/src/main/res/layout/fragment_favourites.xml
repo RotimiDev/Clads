@@ -24,7 +24,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/no_favourite_details"
         android:layout_width="match_parent"
-        android:visibility="visible"
+        android:visibility="gone"
         android:layout_height="match_parent">
 
         <ImageView

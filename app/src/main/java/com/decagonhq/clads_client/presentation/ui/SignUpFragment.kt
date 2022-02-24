@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -20,6 +21,7 @@ import com.decagonhq.clads_client.presentation.utils.validateField
 class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
     private var _binding: FragmentSignUpBinding? = null
     private val binding get() = _binding!!
+    private lateinit var loginTextView : TextView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,6 +39,11 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
 
         // Verify the first name provided by the user
         validateFields()
+        loginTextView = binding.loginTextView
+        loginTextView.setOnClickListener {
+            findNavController().navigate(R.id.loginFormFragment)
+        }
+
     }
 
     private fun validateFields() {
@@ -88,6 +95,7 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
                 findNavController().navigate(signUpDirections)
             }
         }
+
     }
 
     override fun onDestroyView() {
