@@ -1,7 +1,6 @@
 package com.decagonhq.clads_client.presentation.ui
 
 import android.os.Bundle
-import android.view.Gravity
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity

@@ -7,7 +7,6 @@ import com.bumptech.glide.Glide
 import com.decagonhq.clads_client.databinding.FavouritesItemBinding
 import com.decagonhq.clads_client.presentation.model.FavouritesItem
 
-
 class FavouritesRecyclerViewAdapter(private val message: ArrayList<FavouritesItem>) :
     RecyclerView.Adapter<FavouritesRecyclerViewAdapter.FavouritesViewHolder>() {
 

@@ -32,10 +32,9 @@ class FavouritesFragment : Fragment() {
         binding.apply {
             favouriteRecyclerview.adapter = FavouritesRecyclerViewAdapter(message)
         }
-        if (message.isEmpty()){
+        if (message.isEmpty()) {
             binding.favouriteLoveIcon.isVisible = false
         }
-
     }
 
     override fun onDestroyView() {

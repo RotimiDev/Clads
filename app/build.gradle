@@ -63,7 +63,7 @@ dependencies {
 
 
     //ViewPager2
-    implementation "androidx.viewpager2:viewpager2:$versions.viewpager2_version"
+    //implementation "androidx.viewpager2:viewpager2:$versions.viewpager2_version"
 
     //Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$versions.nav_version"
@@ -89,7 +89,7 @@ dependencies {
 
     //Glide + Kapt
     implementation "com.github.bumptech.glide:glide:$versions.glide_version"
-    annotationProcessor "com.github.bumptech.glide:compiler:$versions.glide_version"
+    kapt "com.github.bumptech.glide:compiler:$versions.glide_version"
 
     //Unit testing
     androidTestImplementation "androidx.test:runner:$versions.android_unittesting"

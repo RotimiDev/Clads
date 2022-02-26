@@ -21,7 +21,7 @@ import com.decagonhq.clads_client.presentation.utils.validateField
 class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
     private var _binding: FragmentSignUpBinding? = null
     private val binding get() = _binding!!
-    private lateinit var loginTextView : TextView
+    private lateinit var loginTextView: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -43,7 +43,6 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
         loginTextView.setOnClickListener {
             findNavController().navigate(R.id.loginFormFragment)
         }
-
     }
 
     private fun validateFields() {
@@ -95,7 +94,6 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
                 findNavController().navigate(signUpDirections)
             }
         }
-
     }
 
     override fun onDestroyView() {
