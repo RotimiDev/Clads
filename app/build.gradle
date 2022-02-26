@@ -95,7 +95,7 @@ dependencies {
     androidTestImplementation "androidx.test:runner:$versions.android_unittesting"
     androidTestImplementation "androidx.test:core:$versions.android_unittesting1"
     androidTestImplementation "androidx.test.ext:junit-ktx:$versions.android_testing"
-    androidTestImplementation "androidx.test.espresso:espresso-contrib:$versions.espressoVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:$versions.espresso_version"
 
     //Fragment Testing
     debugImplementation "androidx.fragment:fragment-testing:$versions.fragment_testing_version"
