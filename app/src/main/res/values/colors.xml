@@ -17,7 +17,6 @@
     <color name="grey">#ADBACD</color>
     <color name="hex_grey">#F2F2F2</color>
     <color name="box_stroke">#F2F2F2</color>
-    <color name="menu_text_color">#506992</color>
     <color name="grey3">#828282</color>
     <color name="light_color">#8DFFFFFF</color>
     <color name="app_color_blue">#0066f5</color>
@@ -32,5 +31,7 @@
     <color name="stroke_color">#0066F5</color>
     <color name="green_border">#219563</color>
     <color name="rating_color">#F4C54A</color>
+    <color name="primary_grey">#F1F1F1</color>
+    <color name="menu_text_color">#506992</color>
     <color name="light_blue">#E8F0FE</color>
 </resources>

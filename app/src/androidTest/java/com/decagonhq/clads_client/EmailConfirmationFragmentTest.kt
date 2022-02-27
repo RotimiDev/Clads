@@ -26,6 +26,6 @@ class EmailConfirmationFragmentTest : TestCase() {
 
     @Test
     fun testVerifyEmailButton() {
-        Espresso.onView(ViewMatchers.withText(R.id.verifyEmailAddress))
+        Espresso.onView(ViewMatchers.withText(R.id.verify_email_address_button))
     }
 }

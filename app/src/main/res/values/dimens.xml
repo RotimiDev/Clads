@@ -134,6 +134,8 @@
     <dimen name="margin_14dp">14dp</dimen>
     <dimen name="width_15dp">15dp</dimen>
     <dimen name="margin_25dp">25dp</dimen>
+    <dimen name="size_50dp">50dp</dimen>
+    <dimen name="padding_20dp">20dp</dimen>
     <dimen name="padding_8dp">8dp</dimen>
     <dimen name="margin_47dp">47dp</dimen>
     <dimen name="width_60dp">60dp</dimen>
