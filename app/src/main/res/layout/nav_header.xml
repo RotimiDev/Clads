@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/padding_20dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+        <ImageView
+            android:id="@+id/nav_drawer_cancel_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_30dp"
+            android:layout_marginEnd="@dimen/margin_20dp"
+            android:src="@drawable/ic_union"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/nav_drawer_avatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/nav_drawer_avatar_marginTop"
+            android:src="@drawable/ic_avatar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/nav_drawer_editProfile_name_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_14dp"
+            android:text="@string/ijeoma_ibukun_babangida"
+            android:textColor="@color/navy_blue"
+            android:textSize="@dimen/size_12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/nav_drawer_avatar"
+            app:layout_constraintStart_toStartOf="@+id/nav_drawer_avatar"
+            app:layout_constraintTop_toBottomOf="@+id/nav_drawer_avatar" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/nav_drawer_editProfile_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_12dp"
+            android:backgroundTint="@color/deep_sky_blue"
+            android:paddingStart="@dimen/padding_13dp"
+            android:paddingEnd="@dimen/padding_13dp"
+            android:text="@string/edit_profile"
+            android:textSize="@dimen/text_size_11sp"
+            android:textStyle="bold"
+            app:cornerRadius="@dimen/nav_drawer_editProfile_button_radius"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nav_drawer_editProfile_name_textView" />
+
+        <ImageView
+            android:id="@+id/nav_drawer_editProfile_topLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_30dp"
+            android:src="@drawable/ic_line"
+            android:layout_marginHorizontal="@dimen/padding_20dp"
+            app:layout_constraintEnd_toEndOf="@+id/nav_drawer_editProfile_button"
+            app:layout_constraintStart_toStartOf="@+id/nav_drawer_editProfile_button"
+            app:layout_constraintTop_toBottomOf="@+id/nav_drawer_editProfile_button" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
