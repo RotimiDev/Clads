@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "852808191550",
+    "project_id": "clads-client",
+    "storage_bucket": "clads-client.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:852808191550:android:2140a97dcde3a676da0b6f",
+        "android_client_info": {
+          "package_name": "com.decagonhq.clads_client"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "852808191550-se1mrgc126hdfvgpg721t446sc2ri38p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.decagonhq.clads_client",
+            "certificate_hash": "39e506353c45dd9bdc81e79bff029bca58d3abce"
+          }
+        },
+        {
+          "client_id": "852808191550-udp5bctefh2c956pad16sj95hav69act.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwuWuRZN-tbTs2KomczxtB5jqMej-UbxE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "852808191550-udp5bctefh2c956pad16sj95hav69act.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
