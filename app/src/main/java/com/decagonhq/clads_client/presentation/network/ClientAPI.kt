@@ -9,11 +9,8 @@ import retrofit2.http.POST
 
 interface ClientAPI {
 
-    @POST("/login")
+    @POST("/api/v1/customer/login")
     suspend fun loginUser(@Body loginRequest: LoginRequest): GenericResult<String>
-
-    @POST("/register")
-    suspend fun registerUser(@Body registrationRequest: RegistrationRequest): GenericResult<RegistrationPayload>
 
 
 }

@@ -17,11 +17,12 @@ import com.decagonhq.clads_client.presentation.utils.RegistrationUtil.verifyName
 import com.decagonhq.clads_client.presentation.utils.RegistrationUtil.verifyPassword
 import com.decagonhq.clads_client.presentation.utils.validateConfirmPassword
 import com.decagonhq.clads_client.presentation.utils.validateField
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
     private var _binding: FragmentSignUpBinding? = null
     private val binding get() = _binding!!
-    private lateinit var loginTextView: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,8 +40,8 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
 
         // Verify the first name provided by the user
         validateFields()
-        loginTextView = binding.loginTextView
-        loginTextView.setOnClickListener {
+
+        binding.loginTextView.setOnClickListener {
             findNavController().navigate(R.id.loginFormFragment)
         }
     }

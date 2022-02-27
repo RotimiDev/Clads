@@ -1,5 +1,6 @@
 package com.decagonhq.clads_client.presentation.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -65,7 +66,8 @@ class LoginFormFragment : Fragment() {
         viewModel.loginResponse.observe(viewLifecycleOwner) {
             when(it) {
                 is Resource.Success -> {
-                    findNavController().navigate(R.id.homeFragment)
+                    val intent = Intent(requireContext(), DashboardActivity::class.java)
+                    startActivity(intent)
                 }
                  is Resource.Error -> {
                     Snackbar.make(requireView(), getString(R.string.failed_login),
