@@ -59,7 +59,7 @@ class ChoiceLoginFragment : Fragment() {
         mGoogleSignInClient = GoogleSignIn.getClient(requireActivity(), googleSignInOptions)
 
         mAuth = FirebaseAuth.getInstance()
-        //google SignIn Button, click to begin Google sign up
+        // google SignIn Button, click to begin Google sign up
         binding.googleSignupButton.setOnClickListener {
             val signIntent = mGoogleSignInClient.signInIntent
             startActivityForResult(signIntent, Constants.RC_SIGN_IN)
@@ -115,11 +115,8 @@ class ChoiceLoginFragment : Fragment() {
             }
     }
 
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
 }
-
-

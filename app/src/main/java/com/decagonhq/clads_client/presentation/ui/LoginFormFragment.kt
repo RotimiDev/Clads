@@ -59,13 +59,12 @@ class LoginFormFragment : Fragment() {
         mGoogleSignInClient = GoogleSignIn.getClient(requireActivity(), googleSignInOptions)
 
         mAuth = FirebaseAuth.getInstance()
-        //google SignIn Button, click to begin Google sign up
+        // google SignIn Button, click to begin Google sign up
         binding.signupWithGoogleTextView.setOnClickListener {
             val signIntent = mGoogleSignInClient.signInIntent
             startActivityForResult(signIntent, Constants.RC_SIGN_IN)
             signIn()
         }
-
     }
 
     private fun signIn() {
@@ -124,5 +123,4 @@ class LoginFormFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
 }
