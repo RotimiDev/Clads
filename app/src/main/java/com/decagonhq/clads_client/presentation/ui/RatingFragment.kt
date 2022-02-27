@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.decagonhq.clads_client.data.model.RatingDataSource
 import com.decagonhq.clads_client.databinding.FragmentRatingBinding
 import com.decagonhq.clads_client.presentation.adapters.RatingsAdapter
-import com.decagonhq.clads_client.data.model.RatingDataSource
 
 class RatingFragment : Fragment() {
     private var _binding: FragmentRatingBinding? = null

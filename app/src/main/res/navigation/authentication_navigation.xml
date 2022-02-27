@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/authentication_navigation"
-    app:startDestination="@id/signUpFragment">
+    app:startDestination="@id/signUpOptionsFragment">
 
     <fragment
         android:id="@+id/signUpFragment"
@@ -43,7 +43,11 @@
         android:id="@+id/signUpOptionsFragment"
         android:name="com.decagonhq.clads_client.presentation.ui.SignUpFragment"
         android:label="fragment_sign_up"
-        tools:layout="@layout/fragment_sign_up_options" />
+        tools:layout="@layout/fragment_sign_up_options" >
+        <action
+            android:id="@+id/action_signUpOptionsFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+    </fragment>
     <fragment
         android:id="@+id/emailConfirmationFragment"
         android:name="com.decagonhq.clads_client.presentation.ui.EmailConfirmationFragment"

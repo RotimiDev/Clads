@@ -28,6 +28,9 @@ class ChoiceLoginFragment : Fragment() {
         binding?.loginTextView?.setOnClickListener {
             findNavController().navigate(R.id.loginFormFragment)
         }
+        binding?.emailSignupButton?.setOnClickListener {
+            findNavController().navigate(R.id.signUpFragment)
+        }
     }
 
     override fun onDestroyView() {

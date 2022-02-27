@@ -49,5 +49,10 @@
         android:name="com.decagonhq.clads_client.presentation.ui.RatingFragment"
         android:label="fragment_rating"
         tools:layout="@layout/fragment_rating" />
+    <fragment
+        android:id="@+id/favouritesFragment"
+        android:name="com.decagonhq.clads_client.presentation.ui.FavouritesFragment"
+        android:label="Favorites"
+        tools:layout="@layout/fragment_favourites" />
 
 </navigation>

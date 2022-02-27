@@ -34,49 +34,44 @@ class SignUpOptionsFragmentTest : TestCase() {
     // Test if views are working correctly
     @Test
     fun testSignUpViews() {
-        onView(ViewMatchers.withId(R.id.firstNameEditText))
+        onView(ViewMatchers.withId(R.id.firstName_textView))
             .perform(
                 ViewActions.typeText(FIRST_NAME),
                 ViewActions.closeSoftKeyboard()
             )
 
-        onView(ViewMatchers.withId(R.id.lastName))
+        onView(ViewMatchers.withId(R.id.lastName_textView))
             .perform(
                 ViewActions.typeText(LAST_NAME),
                 ViewActions.closeSoftKeyboard()
             )
 
-        onView(ViewMatchers.withId(R.id.OtherNameText))
+        onView(ViewMatchers.withId(R.id.OtherName_TextView))
             .perform(
                 ViewActions.typeText(OTHER_NAME),
                 ViewActions.closeSoftKeyboard()
             )
 
-        onView(ViewMatchers.withId(R.id.emailAddress))
+        onView(ViewMatchers.withId(R.id.emailAddress_textview))
             .perform(
                 ViewActions.typeText(EMAIL_ADDRESS),
                 ViewActions.closeSoftKeyboard()
             )
 
-        onView(ViewMatchers.withId(R.id.password))
+        onView(ViewMatchers.withId(R.id.password_textview))
             .perform(
                 ViewActions.typeText(PASSWORD),
                 ViewActions.closeSoftKeyboard()
             )
     }
 
-    // Test signup text visibility
+    // Test signup text view visibility
 
     @Test
     fun testSignUpVisibility() {
-        onView(ViewMatchers.withText(R.string.first_name))
-        onView(ViewMatchers.withText(R.string.last_name))
-        onView(ViewMatchers.withText(R.string.other_name))
-        onView(ViewMatchers.withText(R.string.email_address))
-        onView(ViewMatchers.withText(R.string.password))
 
         // Test button and spinner visibility
-        onView(ViewMatchers.withText(R.id.btSignup))
+        onView(ViewMatchers.withText(R.id.sign_up_button))
         onView(ViewMatchers.withText(R.id.spinner))
     }
 }

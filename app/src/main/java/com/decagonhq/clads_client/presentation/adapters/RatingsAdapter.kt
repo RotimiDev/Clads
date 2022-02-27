@@ -3,8 +3,8 @@ package com.decagonhq.clads_client.presentation.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.decagonhq.clads_client.databinding.SingleRatingRecyclerItemBinding
 import com.decagonhq.clads_client.data.model.Rating
+import com.decagonhq.clads_client.databinding.SingleRatingRecyclerItemBinding
 
 class RatingsAdapter(
     private var ratingDataSource: List<Rating>
