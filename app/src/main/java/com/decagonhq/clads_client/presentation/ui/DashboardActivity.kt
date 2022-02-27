@@ -3,7 +3,9 @@ package com.decagonhq.clads_client.presentation.ui
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.navigateUp
@@ -53,7 +55,7 @@ class DashboardActivity : AppCompatActivity() {
 
         setupActionBarWithNavController(navHostFragment.navController, appBarConfiguration)
 
-        navHostFragment?.navController.let { navView.setupWithNavController(it) }
+        navHostFragment.navController.let { navView.setupWithNavController(it) }
 
         editProfileButton.setOnClickListener {
             navHostFragment.navController.navigate(R.id.editProfileFragment)

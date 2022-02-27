@@ -73,14 +73,14 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
                 getString(R.string.enter_valid_confirm_password_str)
             )
 
-            FieldValidationTracker.isFieldsValidated.observe(viewLifecycleOwner, {
+            FieldValidationTracker.isFieldsValidated.observe(viewLifecycleOwner) {
                 signUpSubmitButton.apply {
                     isEnabled = !it.values.contains(false)
                     backgroundTintList = if (!it.values.contains(false))
                         ContextCompat.getColorStateList(requireContext(), R.color.white) else
                         ContextCompat.getColorStateList(requireContext(), R.color.grey)
                 }
-            })
+            }
 
             signUpSubmitButton.setOnClickListener {
                 val signUpDirections =
