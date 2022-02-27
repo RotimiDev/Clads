@@ -144,7 +144,6 @@ class MediaFragment : Fragment(), PhotoGalleryAdapter.OnItemClickListener {
         }
     }
 
-
 // Add contact details to bundle and navigates to targeted fragment
     override fun onClick(gallery: PhotoGalleryModel) {
         val mediaBundle = Bundle()

@@ -7,10 +7,9 @@ import com.decagonhq.clads_client.presentation.utils.ApiCallHandler
 import com.decagonhq.clads_client.presentation.utils.Resource
 import javax.inject.Inject
 
+class AuthRepository @Inject constructor(private val api: ClientAPI) {
 
-class AuthRepository @Inject constructor(private  val api: ClientAPI) {
-
-    suspend fun loginUser( loginRequest: LoginRequest): Resource<GenericResult<String>> {
+    suspend fun loginUser(loginRequest: LoginRequest): Resource<GenericResult<String>> {
         return ApiCallHandler.safeApiCall {
             api.loginUser(loginRequest)
         }
