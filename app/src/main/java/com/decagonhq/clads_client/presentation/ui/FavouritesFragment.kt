@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import com.decagonhq.clads_client.databinding.FragmentFavouritesBinding
-import com.decagonhq.clads_client.presentation.ui.adapters.FavouritesRecyclerViewAdapter
+import com.decagonhq.clads_client.presentation.adapters.FavouritesRecyclerViewAdapter
 import com.decagonhq.clads_client.presentation.ui.utils.FavouritesDataSource
 
 class FavouritesFragment : Fragment() {

@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.decagonhq.clads_client.data.model.TailorDataSource
 import com.decagonhq.clads_client.databinding.FragmentHomeBinding
-import com.decagonhq.clads_client.presentation.ui.model.TailorDataSource
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null

@@ -1,6 +1,6 @@
 package com.decagonhq.clads_client.presentation.ui.utils
 
-import com.decagonhq.clads_client.presentation.model.FavouritesItem
+import com.decagonhq.clads_client.data.model.FavouritesItem
 
 class FavouritesDataSource {
 
