@@ -89,9 +89,7 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
             }
 
             signUpSubmitButton.setOnClickListener {
-                val signUpDirections =
-                    SignUpFragmentDirections.actionSignUpFragmentToEmailConfirmationFragment()
-                findNavController().navigate(signUpDirections)
+                findNavController().navigate(R.id.emailConfirmationFragment)
             }
         }
     }
