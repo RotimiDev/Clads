@@ -1,4 +1,4 @@
-package com.decagonhq.clads_client.presentation.utils
+package com.decagonhq.clads_client.presentation.utils.validation
 
 import androidx.lifecycle.MutableLiveData
 import java.util.EnumMap
@@ -22,6 +22,6 @@ object FieldValidationTracker {
     }
 
     enum class FieldType {
-        FIRSTNAME, LASTNAME, OTHER_NAME, EMAIL, PASSWORD, CONFIRM_PASSWORD
+        FIRSTNAME, LASTNAME, OTHER_NAME, EMAIL, PASSWORD, CONFIRM_PASSWORD, PHONE_NUMBER
     }
 }
