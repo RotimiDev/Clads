@@ -22,6 +22,6 @@ object FieldValidationTracker {
     }
 
     enum class FieldType {
-        FIRSTNAME, LASTNAME, OTHER_NAME, EMAIL, PASSWORD, CONFIRM_PASSWORD
+        FIRSTNAME, LASTNAME, OTHER_NAME, EMAIL, PASSWORD, CONFIRM_PASSWORD, PHONE_NUMBER
     }
 }

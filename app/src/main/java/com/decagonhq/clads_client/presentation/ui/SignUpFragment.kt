@@ -14,6 +14,7 @@ import com.decagonhq.clads_client.presentation.utils.FieldValidationTracker.Fiel
 import com.decagonhq.clads_client.presentation.utils.RegistrationUtil.verifyEmail
 import com.decagonhq.clads_client.presentation.utils.RegistrationUtil.verifyName
 import com.decagonhq.clads_client.presentation.utils.RegistrationUtil.verifyPassword
+import com.decagonhq.clads_client.presentation.utils.observeFieldsValidationToEnableButton
 import com.decagonhq.clads_client.presentation.utils.validateConfirmPassword
 import com.decagonhq.clads_client.presentation.utils.validateField
 
@@ -73,14 +74,11 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
                 getString(R.string.enter_valid_confirm_password_str)
             )
 
-            FieldValidationTracker.isFieldsValidated.observe(viewLifecycleOwner, {
-                signUpSubmitButton.apply {
-                    isEnabled = !it.values.contains(false)
-                    backgroundTintList = if (!it.values.contains(false))
-                        ContextCompat.getColorStateList(requireContext(), R.color.white) else
-                        ContextCompat.getColorStateList(requireContext(), R.color.grey)
-                }
-            })
+            signUpSubmitButton.observeFieldsValidationToEnableButton(
+                requireContext(),
+                viewLifecycleOwner
+            )
+
 
             signUpSubmitButton.setOnClickListener {
                 val signUpDirections =
