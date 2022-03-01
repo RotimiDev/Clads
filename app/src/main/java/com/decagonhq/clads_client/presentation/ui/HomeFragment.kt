@@ -5,9 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.decagonhq.clads_client.R
+import com.decagonhq.clads_client.data.model.TailorDataSource
+import com.decagonhq.clads_client.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding!!
+    lateinit var homeFragmentRecyclerAdapter: HomeFragmentRecyclerAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -15,6 +19,21 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val data = TailorDataSource.createDataSet()
+        homeFragmentRecyclerAdapter = HomeFragmentRecyclerAdapter(data)
+        binding.homeTailorsRecyclerView.adapter = homeFragmentRecyclerAdapter
+
+        binding.homeWeaversRecyclerView.adapter = homeFragmentRecyclerAdapter
+    }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

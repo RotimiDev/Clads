@@ -40,7 +40,7 @@
             android:layout_marginTop="@dimen/margin_32dp"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_launcher_background"
-            app:shapeAppearanceOverlay="@style/ImageStyle_Circle" />
+            app:shapeAppearanceOverlay="@style/image_style_circle" />
 
         <TextView
             android:id="@+id/artisan_name_text_view"
