@@ -1,13 +1,12 @@
-package com.decagonhq.clads_client.presentation.utils
+package com.decagonhq.clads_client.presentation.utils.validation
 
 import android.content.Context
 import androidx.core.content.ContextCompat
 import androidx.core.widget.doAfterTextChanged
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleOwner
 import com.decagonhq.clads_client.R
-import com.decagonhq.clads_client.presentation.utils.FieldValidationTracker.FieldType
-import com.decagonhq.clads_client.presentation.utils.FieldValidationTracker.fieldTypeMap
+import com.decagonhq.clads_client.presentation.utils.validation.FieldValidationTracker.FieldType
+import com.decagonhq.clads_client.presentation.utils.validation.FieldValidationTracker.fieldTypeMap
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputLayout
 
@@ -35,7 +34,7 @@ fun TextInputLayout.validateConfirmPassword(
     errorMessage: String,
 ) {
     this.editText?.doAfterTextChanged {
-        if (!RegistrationUtil.validateConfirmPassword(
+        if (!FieldsValidation.validateConfirmPassword(
                 it.toString().trim(),
                 passwordInputLayout.editText?.text.toString().trim()
             )
@@ -53,7 +52,8 @@ fun TextInputLayout.validateConfirmPassword(
 
 fun MaterialButton.observeFieldsValidationToEnableButton(
     context: Context,
-    lifecycleOwner: LifecycleOwner
+    lifecycleOwner: LifecycleOwner,
+    fieldValidationTracker: FieldValidationTracker = FieldValidationTracker
 ) {
 
     FieldValidationTracker.isFieldsValidated.observe(lifecycleOwner, {

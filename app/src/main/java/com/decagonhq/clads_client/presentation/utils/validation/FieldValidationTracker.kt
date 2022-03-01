@@ -1,4 +1,4 @@
-package com.decagonhq.clads_client.presentation.utils
+package com.decagonhq.clads_client.presentation.utils.validation
 
 import androidx.lifecycle.MutableLiveData
 import java.util.EnumMap
