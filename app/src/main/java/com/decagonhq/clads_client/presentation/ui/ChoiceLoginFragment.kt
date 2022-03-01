@@ -91,7 +91,7 @@ class ChoiceLoginFragment : Fragment() {
                     Log.w("SignInActivity", "Google sign in failed", e)
                 }
             } else {
-                Log.d("SignInActivity", exception.toString())
+                Log.d("SignInActivity", task.exception.toString())
             }
         }
     }
