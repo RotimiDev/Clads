@@ -64,6 +64,4 @@ fun MaterialButton.observeFieldsValidationToEnableButton(
                 ContextCompat.getColorStateList(context, R.color.grey)
         }
     })
-
 }
-
