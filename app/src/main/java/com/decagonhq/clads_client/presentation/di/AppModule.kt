@@ -45,6 +45,7 @@ object AppModule {
     @Singleton
     fun provideClientAPI(retrofit: Retrofit): ClientAPI =
         retrofit.create(ClientAPI::class.java)
+
     @Provides
     @Singleton
     fun provideAuthRepository(api: ClientAPI): ProfileRepository =

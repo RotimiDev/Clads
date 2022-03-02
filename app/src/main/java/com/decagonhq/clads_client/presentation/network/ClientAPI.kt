@@ -9,5 +9,5 @@ import retrofit2.http.Header
 interface ClientAPI{
 
     @GET(PROFILE_URL)
-    suspend fun getProfileDetails(@Header("Authorization") token: String):Response<Profile>
+    suspend fun getProfileDetails(@Header("Authorization") token: String): Response<Profile>
 }

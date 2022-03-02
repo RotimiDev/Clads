@@ -96,8 +96,8 @@
     <string name="copyright2020">Copyright 2020. All Rights Reserved</string>
     <string name="stay_in_touch">Stay in touch</string>
     <string name="view_in_browser">View in browser</string>
-    <string name="splash_screen_loading">Loading...</string>
-    <string name="lorem_ipsum_ipsum_sum">lorem ipsum ipsum sum</string>
+    <string name="splash_screen_loading">Loading…</string>
+    <string name="lorem_ipsum_ipsum_sum">lorem ipsum sum</string>
     <string name="all_sign_up">sign up</string>
     <string name="fragment_sign_up_sign_up_with_email">Sign up with email</string>
     <string name="all_sign_up_with_google">Sign up with google</string>
@@ -142,7 +142,7 @@
     <string name="reviews">Reviews</string>
     <string name="all_state">State</string>
     <string name="media_fragment">Media Fragment</string>
-    <string name="search">Search...</string>
+    <string name="search">Search…</string>
     <string name="artisan">Artisan</string>
     <string name="style">Style</string>
     <string name="location">Location</string>
@@ -180,7 +180,7 @@
     <string name="oops_permission_is_not_granted">oops permission is not granted</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
-    <string name="abort">Action aborted...</string>
+    <string name="abort">Action aborted…</string>
     <string name="deleted">Image deleted Successfully</string>
     <string name="share_image">Share Image</string>
     <string name="no_favorites_str">You do not have any favorites</string>
