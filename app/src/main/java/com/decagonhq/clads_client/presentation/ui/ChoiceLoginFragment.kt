@@ -11,7 +11,7 @@ import com.decagonhq.clads_client.databinding.FragmentChoiceLoginBinding
 
 class ChoiceLoginFragment : Fragment() {
     private var _binding: FragmentChoiceLoginBinding? = null
-    private val binding: FragmentChoiceLoginBinding? get() = _binding
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -19,16 +19,17 @@ class ChoiceLoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_choice_login, container, false)
+        _binding = FragmentChoiceLoginBinding.inflate(inflater,container,false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding?.loginTextView?.setOnClickListener {
+        binding.loginTextView.setOnClickListener {
             findNavController().navigate(R.id.loginFormFragment)
         }
-        binding?.emailSignupButton?.setOnClickListener {
+        binding.emailSignupButton.setOnClickListener {
             findNavController().navigate(R.id.signUpFragment)
         }
     }

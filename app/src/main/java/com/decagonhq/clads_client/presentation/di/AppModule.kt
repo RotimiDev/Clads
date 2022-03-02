@@ -1,6 +1,8 @@
 package com.decagonhq.clads_client.presentation.di
 
+import com.decagonhq.clads_client.data.repsitory.ProfileRepository
 import com.decagonhq.clads_client.presentation.network.ClientAPI
+import com.decagonhq.clads_client.presentation.utils.Constants.Companion.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -34,7 +36,7 @@ object AppModule {
     @Singleton
     fun provideRetrofit(client: OkHttpClient): Retrofit =
         Retrofit.Builder()
-            .baseUrl("")
+            .baseUrl(BASE_URL)
             .client(client)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
@@ -43,4 +45,8 @@ object AppModule {
     @Singleton
     fun provideClientAPI(retrofit: Retrofit): ClientAPI =
         retrofit.create(ClientAPI::class.java)
+    @Provides
+    @Singleton
+    fun provideAuthRepository(api: ClientAPI): ProfileRepository =
+        ProfileRepository(api)
 }
