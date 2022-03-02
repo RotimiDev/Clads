@@ -5,20 +5,20 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.WindowManager
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.databinding.FragmentSignUpBinding
-import com.decagonhq.clads_client.presentation.utils.FieldValidationTracker
-import com.decagonhq.clads_client.presentation.utils.FieldValidationTracker.FieldType
-import com.decagonhq.clads_client.presentation.utils.FieldValidationTracker.populateFieldTypeMap
-import com.decagonhq.clads_client.presentation.utils.RegistrationUtil.verifyEmail
-import com.decagonhq.clads_client.presentation.utils.RegistrationUtil.verifyName
-import com.decagonhq.clads_client.presentation.utils.RegistrationUtil.verifyPassword
-import com.decagonhq.clads_client.presentation.utils.validateConfirmPassword
-import com.decagonhq.clads_client.presentation.utils.validateField
+import com.decagonhq.clads_client.presentation.utils.validation.FieldValidationTracker
+import com.decagonhq.clads_client.presentation.utils.validation.FieldValidationTracker.FieldType
+import com.decagonhq.clads_client.presentation.utils.validation.FieldValidationTracker.populateFieldTypeMap
+import com.decagonhq.clads_client.presentation.utils.validation.RegistrationUtil.verifyEmail
+import com.decagonhq.clads_client.presentation.utils.validation.RegistrationUtil.verifyName
+import com.decagonhq.clads_client.presentation.utils.validation.RegistrationUtil.verifyPassword
+import com.decagonhq.clads_client.presentation.utils.validation.observeFieldsValidationToEnableButton
+import com.decagonhq.clads_client.presentation.utils.validation.validateConfirmPassword
+import com.decagonhq.clads_client.presentation.utils.validation.validateField
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -107,6 +107,15 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
                         ContextCompat.getColorStateList(requireContext(), R.color.grey)
                 }
             }
+            /** This method observes the validation of the fields
+             *  disables and enables the button as appropriate
+             *  materialButton must be set to default [enable = false]
+             *  [backgroundTint = "@color/grey"]
+             */
+            signUpSubmitButton.observeFieldsValidationToEnableButton(
+                requireContext(),
+                viewLifecycleOwner
+            )
 
             signUpSubmitButton.setOnClickListener {
                 findNavController().navigate(R.id.emailConfirmationFragment)

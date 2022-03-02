@@ -2,7 +2,6 @@ package com.decagonhq.clads_client.presentation.ui
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,10 +10,12 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.decagonhq.clads_client.R
-import com.decagonhq.clads_client.presentation.utils.validateField
 import com.decagonhq.clads_client.databinding.FragmentLoginFormBinding
 import com.decagonhq.clads_client.presentation.model.LoginRequest
-import com.decagonhq.clads_client.presentation.utils.*
+import com.decagonhq.clads_client.presentation.utils.Resource
+import com.decagonhq.clads_client.presentation.utils.validation.FieldValidationTracker
+import com.decagonhq.clads_client.presentation.utils.validation.RegistrationUtil
+import com.decagonhq.clads_client.presentation.utils.validation.validateField
 import com.decagonhq.clads_client.presentation.viewModel.LoginViewModel
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
@@ -27,7 +28,9 @@ class LoginFormFragment : Fragment() {
     private lateinit var password: EditText
     private val viewModel: LoginViewModel by viewModels()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
@@ -36,7 +39,8 @@ class LoginFormFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        with(binding) { email = enterEmailEditText
+        with(binding) {
+            email = enterEmailEditText
             password = passwordEditText
         }
 
@@ -44,8 +48,7 @@ class LoginFormFragment : Fragment() {
         validateFields()
     }
 
-
-    //viewModel Observer
+    // viewModel Observer
     private fun setUpObservers() {
         viewModel.loginResponse.observe(viewLifecycleOwner) {
             when (it) {
@@ -55,7 +58,7 @@ class LoginFormFragment : Fragment() {
                 }
                 is Resource.Error -> {
                     Snackbar.make(
-                        requireView(),it.message!!,
+                        requireView(), it.message!!,
                         Snackbar.LENGTH_LONG
                     ).show()
                 }
@@ -68,9 +71,6 @@ class LoginFormFragment : Fragment() {
             }
         }
     }
-
-
-
 
     private fun validateFields() {
         binding.apply {
@@ -86,7 +86,7 @@ class LoginFormFragment : Fragment() {
 
             FieldValidationTracker.isFieldsValidated.observe(viewLifecycleOwner) {
                 loginButton.apply {
-                    //Log.d("TAG_SIGN", "validateFields: $it")
+                    // Log.d("TAG_SIGN", "validateFields: $it")
                     isEnabled = !it.values.contains(false)
                     backgroundTintList = if (!it.values.contains(false))
                         ContextCompat.getColorStateList(requireContext(), R.color.white) else
@@ -96,19 +96,20 @@ class LoginFormFragment : Fragment() {
 
             loginButton.setOnClickListener {
 
-                if(!RegistrationUtil.validateLoginPassword(password.text.toString())){
+                if (!RegistrationUtil.validateLoginPassword(password.text.toString())) {
                     Snackbar.make(
-                    requireView(), getString(R.string.wrong_password),
-                    Snackbar.LENGTH_LONG
-                ).show() }
-                else {
-                    viewModel.loginUser(LoginRequest(email.text.toString(),
-                        password.text.toString()))
-                    }
-
+                        requireView(), getString(R.string.wrong_password),
+                        Snackbar.LENGTH_LONG
+                    ).show()
+                } else {
+                    viewModel.loginUser(
+                        LoginRequest(
+                            email.text.toString(),
+                            password.text.toString()
+                        )
+                    )
                 }
             }
         }
     }
-
-
+}

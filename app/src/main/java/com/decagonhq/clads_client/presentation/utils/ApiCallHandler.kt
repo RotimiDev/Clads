@@ -12,19 +12,19 @@ object ApiCallHandler {
     private const val MESSAGE_KEY = "message"
     suspend fun <T> safeApiCall(apiCall: suspend () -> T): Resource<T> {
         return withContext(Dispatchers.IO) {
-            var apiResponse : T? = null
+            var apiResponse: T? = null
             try {
                 apiResponse = apiCall.invoke()
                 Resource.Success(apiResponse)
             } catch (t: Throwable) {
                 when (t) {
                     is HttpException -> {
-                        val errorResponse = t.response()?.errorBody().let{
+                        val errorResponse = t.response()?.errorBody().let {
                             if (it != null) {
                                 getErrorMessage(it)
                             }
                         }
-                        Resource.Error(apiResponse,"$errorResponse")
+                        Resource.Error(apiResponse, "$errorResponse")
                     }
                     is IOException -> {
                         Resource.Error(apiResponse, "IO Error! Could not connect to the internet")
@@ -48,6 +48,4 @@ object ApiCallHandler {
             "Something wrong happened"
         }
     }
-
-
 }
