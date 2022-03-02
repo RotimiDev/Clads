@@ -43,7 +43,21 @@ object RegistrationUtil {
         return password.isNotBlank() && password.matches(regex)
     }
 
-    fun validateConfirmPassword(password: String, confirmPassword: String): Boolean {
-        return password == confirmPassword
+
+    fun validateLoginPassword(password: String) : Boolean{
+        if (password.isBlank()){
+            return false
+        }
+        return true
     }
+
+
+    fun validateConfirmPassword(password: String, confirmPassword: String): Boolean {
+        return password == confirmPassword && password.isNotBlank()
+    }
+
+    fun validateLoginInputs(email: String, password: String): Boolean{
+        return verifyEmail(email) && validateLoginPassword(password)
+    }
+
 }

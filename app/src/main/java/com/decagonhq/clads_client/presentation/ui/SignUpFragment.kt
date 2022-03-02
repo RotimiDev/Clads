@@ -1,9 +1,11 @@
 package com.decagonhq.clads_client.presentation.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -11,6 +13,7 @@ import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.databinding.FragmentSignUpBinding
 import com.decagonhq.clads_client.presentation.utils.FieldValidationTracker
 import com.decagonhq.clads_client.presentation.utils.FieldValidationTracker.FieldType
+import com.decagonhq.clads_client.presentation.utils.FieldValidationTracker.populateFieldTypeMap
 import com.decagonhq.clads_client.presentation.utils.RegistrationUtil.verifyEmail
 import com.decagonhq.clads_client.presentation.utils.RegistrationUtil.verifyName
 import com.decagonhq.clads_client.presentation.utils.RegistrationUtil.verifyPassword
@@ -45,7 +48,23 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        binding.firstNameTextView.clearFocus()
+    }
+
     private fun validateFields() {
+
+        val fieldTypesToValidate = listOf(
+            FieldType.FIRSTNAME,
+            FieldType.LASTNAME,
+            FieldType.OTHER_NAME,
+            FieldType.EMAIL,
+            FieldType.PASSWORD,
+            FieldType.CONFIRM_PASSWORD
+        )
+        populateFieldTypeMap(fieldTypesToValidate)
+
         binding.apply {
             firstNameLayout.validateField(
                 getString(R.string.enter_valid_name_str), FieldType.FIRSTNAME
@@ -81,6 +100,7 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
 
             FieldValidationTracker.isFieldsValidated.observe(viewLifecycleOwner) {
                 signUpSubmitButton.apply {
+                    Log.d("TAG_SIGN", "validateFields: $it")
                     isEnabled = !it.values.contains(false)
                     backgroundTintList = if (!it.values.contains(false))
                         ContextCompat.getColorStateList(requireContext(), R.color.white) else
