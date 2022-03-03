@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/deep_sky_blue"
     android:padding="@dimen/padding_13dp"
-    tools:context=".presentation.ui.LoginFormFragment">
+    tools:context=".presentation.ui.LoginFragment">
 
     <TextView
         android:id="@+id/welcome_back_text_view"

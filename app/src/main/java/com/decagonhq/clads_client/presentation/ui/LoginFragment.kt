@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.decagonhq.clads_client.R
@@ -14,14 +13,15 @@ import com.decagonhq.clads_client.databinding.FragmentLoginFormBinding
 import com.decagonhq.clads_client.presentation.model.LoginRequest
 import com.decagonhq.clads_client.presentation.utils.Resource
 import com.decagonhq.clads_client.presentation.utils.validation.FieldValidationTracker
-import com.decagonhq.clads_client.presentation.utils.validation.RegistrationUtil
+import com.decagonhq.clads_client.presentation.utils.validation.FieldValidations
+import com.decagonhq.clads_client.presentation.utils.validation.observeFieldsValidationToEnableButton
 import com.decagonhq.clads_client.presentation.utils.validation.validateField
 import com.decagonhq.clads_client.presentation.viewModel.LoginViewModel
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class LoginFormFragment : Fragment() {
+class LoginFragment : Fragment() {
     private var _binding: FragmentLoginFormBinding? = null
     private val binding get() = _binding!!
     private lateinit var email: EditText
@@ -74,41 +74,29 @@ class LoginFormFragment : Fragment() {
 
     private fun validateFields() {
         binding.apply {
-            val fieldTypesToValidate = listOf(FieldValidationTracker.FieldType.EMAIL)
+            val fieldTypesToValidate =
+                listOf(FieldValidationTracker.FieldType.EMAIL)
             FieldValidationTracker.populateFieldTypeMap(fieldTypesToValidate)
 
             emailAddressLayout.validateField(
                 getString(R.string.enter_valid_email_str),
                 FieldValidationTracker.FieldType.EMAIL
             ) { input ->
-                RegistrationUtil.verifyEmail(input)
+                FieldValidations.verifyEmail(input)
             }
 
-            FieldValidationTracker.isFieldsValidated.observe(viewLifecycleOwner) {
-                loginButton.apply {
-                    // Log.d("TAG_SIGN", "validateFields: $it")
-                    isEnabled = !it.values.contains(false)
-                    backgroundTintList = if (!it.values.contains(false))
-                        ContextCompat.getColorStateList(requireContext(), R.color.white) else
-                        ContextCompat.getColorStateList(requireContext(), R.color.grey)
-                }
-            }
+            loginButton.observeFieldsValidationToEnableButton(
+                requireContext(),
+                viewLifecycleOwner
+            )
 
             loginButton.setOnClickListener {
-
-                if (!RegistrationUtil.validateLoginPassword(password.text.toString())) {
-                    Snackbar.make(
-                        requireView(), getString(R.string.wrong_password),
-                        Snackbar.LENGTH_LONG
-                    ).show()
-                } else {
-                    viewModel.loginUser(
-                        LoginRequest(
-                            email.text.toString(),
-                            password.text.toString()
-                        )
+                viewModel.loginUser(
+                    LoginRequest(
+                        email.text.toString(),
+                        password.text.toString()
                     )
-                }
+                )
             }
         }
     }

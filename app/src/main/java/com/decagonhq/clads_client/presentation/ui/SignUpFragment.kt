@@ -1,21 +1,18 @@
 package com.decagonhq.clads_client.presentation.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.databinding.FragmentSignUpBinding
-import com.decagonhq.clads_client.presentation.utils.validation.FieldValidationTracker
 import com.decagonhq.clads_client.presentation.utils.validation.FieldValidationTracker.FieldType
 import com.decagonhq.clads_client.presentation.utils.validation.FieldValidationTracker.populateFieldTypeMap
-import com.decagonhq.clads_client.presentation.utils.validation.RegistrationUtil.verifyEmail
-import com.decagonhq.clads_client.presentation.utils.validation.RegistrationUtil.verifyName
-import com.decagonhq.clads_client.presentation.utils.validation.RegistrationUtil.verifyPassword
+import com.decagonhq.clads_client.presentation.utils.validation.FieldValidations.verifyEmail
+import com.decagonhq.clads_client.presentation.utils.validation.FieldValidations.verifyName
+import com.decagonhq.clads_client.presentation.utils.validation.FieldValidations.verifyPassword
 import com.decagonhq.clads_client.presentation.utils.validation.observeFieldsValidationToEnableButton
 import com.decagonhq.clads_client.presentation.utils.validation.validateConfirmPassword
 import com.decagonhq.clads_client.presentation.utils.validation.validateField
@@ -98,15 +95,6 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
                 getString(R.string.enter_valid_confirm_password_str)
             )
 
-            FieldValidationTracker.isFieldsValidated.observe(viewLifecycleOwner) {
-                signUpSubmitButton.apply {
-                    Log.d("TAG_SIGN", "validateFields: $it")
-                    isEnabled = !it.values.contains(false)
-                    backgroundTintList = if (!it.values.contains(false))
-                        ContextCompat.getColorStateList(requireContext(), R.color.white) else
-                        ContextCompat.getColorStateList(requireContext(), R.color.grey)
-                }
-            }
             /** This method observes the validation of the fields
              *  disables and enables the button as appropriate
              *  materialButton must be set to default [enable = false]

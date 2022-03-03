@@ -1,7 +1,7 @@
 package com.decagonhq.clads_client.presentation.utils.validation
 
 // Validation object for Sign-Up
-object RegistrationUtil {
+object FieldValidations {
 
     // Function to verify the name of the intended user
     fun verifyName(name: String): Boolean {
@@ -43,18 +43,7 @@ object RegistrationUtil {
         return password.isNotBlank() && password.matches(regex)
     }
 
-    fun validateLoginPassword(password: String): Boolean {
-        if (password.isBlank()) {
-            return false
-        }
-        return true
-    }
-
     fun validateConfirmPassword(password: String, confirmPassword: String): Boolean {
         return password == confirmPassword && password.isNotBlank()
-    }
-
-    fun validateLoginInputs(email: String, password: String): Boolean {
-        return verifyEmail(email) && validateLoginPassword(password)
     }
 }
