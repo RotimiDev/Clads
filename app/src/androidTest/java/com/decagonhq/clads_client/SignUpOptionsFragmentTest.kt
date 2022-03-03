@@ -58,7 +58,7 @@ class SignUpOptionsFragmentTest : TestCase() {
                 ViewActions.closeSoftKeyboard()
             )
 
-        onView(ViewMatchers.withId(R.id.password_textview))
+        onView(ViewMatchers.withId(R.id.password_editText))
             .perform(
                 ViewActions.typeText(PASSWORD),
                 ViewActions.closeSoftKeyboard()

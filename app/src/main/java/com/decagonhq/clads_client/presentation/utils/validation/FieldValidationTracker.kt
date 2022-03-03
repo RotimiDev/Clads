@@ -8,17 +8,15 @@ object FieldValidationTracker {
 
     val fieldTypeMap: EnumMap<FieldType, Boolean> = EnumMap(FieldType::class.java)
 
-    init {
-        populateFieldTypeMap()
+    fun populateFieldTypeMap(fieldTypes: List<FieldType>) {
+        clearFieldTypeMap()
+        for (fieldType in fieldTypes) {
+            fieldTypeMap[fieldType] = false
+        }
     }
 
-    private fun populateFieldTypeMap() {
-        fieldTypeMap[FieldType.FIRSTNAME] = false
-        fieldTypeMap[FieldType.LASTNAME] = false
-        fieldTypeMap[FieldType.OTHER_NAME] = false
-        fieldTypeMap[FieldType.EMAIL] = false
-        fieldTypeMap[FieldType.PASSWORD] = false
-        fieldTypeMap[FieldType.CONFIRM_PASSWORD] = false
+    private fun clearFieldTypeMap() {
+        fieldTypeMap.clear()
     }
 
     enum class FieldType {

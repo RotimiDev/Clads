@@ -10,8 +10,8 @@ import junit.framework.TestCase
 import org.junit.Before
 import org.junit.Test
 
-class LoginFormFragmentTest : TestCase() {
-    private lateinit var fragmentScenario: FragmentScenario<LoginFormFragment>
+class LoginFragmentTest : TestCase() {
+    private lateinit var fragmentScenario: FragmentScenario<LoginFragment>
 
     companion object {
         const val EMAIL = "jmweltokg@gmail.com"
@@ -31,7 +31,7 @@ class LoginFormFragmentTest : TestCase() {
                 ViewActions.closeSoftKeyboard()
             )
 
-        onView(ViewMatchers.withId(R.id.login_password_edit_text))
+        onView(ViewMatchers.withId(R.id.password_editText))
             .perform(
                 ViewActions.typeText(PASSWORD),
                 ViewActions.closeSoftKeyboard()
