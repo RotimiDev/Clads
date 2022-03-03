@@ -24,8 +24,6 @@ import dagger.hilt.android.AndroidEntryPoint
 class LoginFragment : Fragment() {
     private var _binding: FragmentLoginFormBinding? = null
     private val binding get() = _binding!!
-    private lateinit var email: EditText
-    private lateinit var password: EditText
     private val viewModel: LoginViewModel by viewModels()
 
     override fun onCreateView(
@@ -39,13 +37,19 @@ class LoginFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        with(binding) {
-            email = enterEmailEditText
-            password = passwordEditText
+        binding.apply {
+            setUpObservers()
+            validateFields()
+            
+            loginButton.setOnClickListener {
+                    viewModel.loginUser(
+                        LoginRequest(
+                            enterEmailEditText.text.toString(),
+                            passwordEditText.text.toString()
+                        )
+                    )
+                }
         }
-
-        setUpObservers()
-        validateFields()
     }
 
     // viewModel Observer
@@ -89,15 +93,6 @@ class LoginFragment : Fragment() {
                 requireContext(),
                 viewLifecycleOwner
             )
-
-            loginButton.setOnClickListener {
-                viewModel.loginUser(
-                    LoginRequest(
-                        email.text.toString(),
-                        password.text.toString()
-                    )
-                )
-            }
         }
     }
 }
