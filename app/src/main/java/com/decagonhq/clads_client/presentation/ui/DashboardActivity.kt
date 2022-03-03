@@ -2,28 +2,24 @@ package com.decagonhq.clads_client.presentation.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
+import androidx.navigation.ui.*
 import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.databinding.ActivityDashboardBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.ktx.Firebase
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class DashboardActivity : AppCompatActivity() {
     lateinit var mAuth: FirebaseAuth
+
     private lateinit var mDrawer: DrawerLayout
     private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var navView: NavigationView
@@ -41,7 +37,8 @@ class DashboardActivity : AppCompatActivity() {
 
         mAuth = FirebaseAuth.getInstance()
 
-// Initialized views with binding
+
+        // Initialized views with binding
         bottomNavigationView = binding.bottomNavigationView
         navView = binding.mainActivityNavView
         mDrawer = binding.drawerLayout
@@ -52,7 +49,7 @@ class DashboardActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         NavigationUI.setupWithNavController(bottomNavigationView, navHostFragment.navController)
 
-// Setup drawer layout
+        // Setup drawer layout
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.mainActivityNavView
 
@@ -69,6 +66,20 @@ class DashboardActivity : AppCompatActivity() {
         }
 
     }
+    //if the user is not authenticated send him to choiceLoginScreen to authenticate first else send him to dashboard activity
+//    override fun onStart() {
+//        super.onStart()
+//        // Check if user is signed in or not
+//        val currentUser = mAuth.currentUser
+//        if (currentUser != null) {
+//            val intent = Intent(this, DashboardActivity::class.java)
+//            startActivity(intent)
+//        }else{
+//            val intent = Intent(this, ChoiceLoginFragment::class.java)
+//            startActivity(intent)
+//        }
+//
+//    }
 
     override fun onSupportNavigateUp(): Boolean {
         return navHostFragment.navController

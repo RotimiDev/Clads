@@ -112,7 +112,7 @@ class LoginFormFragment : Fragment() {
                     // If sign in fails, display a message to the user.
                     Toast.makeText(
                         requireContext(),
-                        R.string.loggin_failed_message,
+                        R.string.authentication_failed,
                         Toast.LENGTH_SHORT
                     ).show()
                     findNavController().navigate(R.id.choiceLoginFragment)

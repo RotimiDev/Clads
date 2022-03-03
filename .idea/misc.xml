@@ -17,7 +17,7 @@
         <entry key="app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/side_nav_bar.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_authentication.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.12" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_reset_password.xml" value="0.29583333333333334" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.16302083333333334" />

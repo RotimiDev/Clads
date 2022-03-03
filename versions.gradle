@@ -14,7 +14,7 @@ ext.versions = [
         viewpager2_version      : '1.0.0',
         fragment_testing_version: '1.4.1',
         junit_version           : '4.13.2',
-        play_services_auth      : '17.0.1',
+        play_services_auth      : '20.1.0'
 
 
 ]

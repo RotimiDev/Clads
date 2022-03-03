@@ -183,9 +183,9 @@
     <string name="abort">Action aborted...</string>
     <string name="deleted">Image deleted Successfully</string>
     <string name="share_image">Share Image</string>
-    <string name="web_client_id">"852808191550-se1mrgc126hdfvgpg721t446sc2ri38p.apps.googleusercontent.com"</string>
+    <string name="web_client_id">"357950509536-q10b9skchtgvkjaktl90j1k1vnjtpljk.apps.googleusercontent.com"</string>
     <string name="all">All</string>
     <string name="account_created">Account Created…\n$email</string>
-    <string name="loggin_failed_message">Loggin Failed</string>
+    <string name="authentication_failed">Authentication failed</string>
 
 </resources>
