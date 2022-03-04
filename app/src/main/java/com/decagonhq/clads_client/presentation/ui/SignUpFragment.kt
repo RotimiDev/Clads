@@ -4,23 +4,30 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.databinding.FragmentSignUpBinding
+import com.decagonhq.clads_client.presentation.model.RegistrationRequest
+import com.decagonhq.clads_client.presentation.utils.Resource
 import com.decagonhq.clads_client.presentation.utils.validation.FieldValidationTracker.FieldType
-import com.decagonhq.clads_client.presentation.utils.validation.FieldsValidation.verifyEmail
-import com.decagonhq.clads_client.presentation.utils.validation.FieldsValidation.verifyName
-import com.decagonhq.clads_client.presentation.utils.validation.FieldsValidation.verifyPassword
+import com.decagonhq.clads_client.presentation.utils.validation.FieldValidationTracker.populateFieldTypeMap
+import com.decagonhq.clads_client.presentation.utils.validation.FieldValidations.verifyEmail
+import com.decagonhq.clads_client.presentation.utils.validation.FieldValidations.verifyName
+import com.decagonhq.clads_client.presentation.utils.validation.FieldValidations.verifyPassword
 import com.decagonhq.clads_client.presentation.utils.validation.observeFieldsValidationToEnableButton
 import com.decagonhq.clads_client.presentation.utils.validation.validateConfirmPassword
 import com.decagonhq.clads_client.presentation.utils.validation.validateField
+import com.decagonhq.clads_client.presentation.viewModel.RegisterViewModel
+import com.google.android.material.snackbar.Snackbar
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
     private var _binding: FragmentSignUpBinding? = null
     private val binding get() = _binding!!
-    private lateinit var loginTextView: TextView
+    private val viewModel: RegisterViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,13 +45,31 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
 
         // Verify the first name provided by the user
         validateFields()
-        loginTextView = binding.loginTextView
-        loginTextView.setOnClickListener {
+
+        binding.loginTextView.setOnClickListener {
             findNavController().navigate(R.id.loginFormFragment)
         }
+
+        setUpObservers()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        binding.firstNameTextView.clearFocus()
     }
 
     private fun validateFields() {
+
+        val fieldTypesToValidate = listOf(
+            FieldType.FIRSTNAME,
+            FieldType.LASTNAME,
+            FieldType.OTHER_NAME,
+            FieldType.EMAIL,
+            FieldType.PASSWORD,
+            FieldType.CONFIRM_PASSWORD
+        )
+        populateFieldTypeMap(fieldTypesToValidate)
+
         binding.apply {
             firstNameLayout.validateField(
                 getString(R.string.enter_valid_name_str), FieldType.FIRSTNAME
@@ -89,7 +114,36 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
             )
 
             signUpSubmitButton.setOnClickListener {
-                findNavController().navigate(R.id.emailConfirmationFragment)
+                viewModel.registerUser(
+                    RegistrationRequest(
+                        binding.firstNameTextView.text.toString(),
+                        binding.lastNameTextView.text.toString(),
+                        binding.OtherNameTextView.text.toString(),
+                        binding.emailAddressTextview.text.toString(),
+                        binding.passwordEditText.text.toString(),
+                    )
+                )
+            }
+        }
+    }
+    private fun setUpObservers() {
+        viewModel.registerResponse.observe(viewLifecycleOwner) {
+            when (it) {
+                is Resource.Success -> {
+                    findNavController().navigate(R.id.emailConfirmationFragment)
+                }
+                is Resource.Error -> {
+                    Snackbar.make(
+                        requireView(), getString(R.string.call_failed),
+                        Snackbar.LENGTH_LONG
+                    ).show()
+                }
+                is Resource.Loading -> {
+                    Snackbar.make(
+                        requireView(), getString(R.string.loading),
+                        Snackbar.LENGTH_LONG
+                    ).show()
+                }
             }
         }
     }

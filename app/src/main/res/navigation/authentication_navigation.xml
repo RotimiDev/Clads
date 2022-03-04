@@ -61,7 +61,7 @@
 
     <fragment
         android:id="@+id/loginFormFragment"
-        android:name="com.decagonhq.clads_client.presentation.ui.LoginFormFragment"
+        android:name="com.decagonhq.clads_client.presentation.ui.LoginFragment"
         android:label="fragment_login_form"
         tools:layout="@layout/fragment_login_form" />
 
