@@ -40,9 +40,9 @@ class EditProfileAccountFragment : Fragment() {
 
         viewModel.getProfileDetails()
         viewModel.profileDetails.observe(viewLifecycleOwner,{profile->
-           binding.accountCityEditText.text = profile.data?.payload?.showroomAddress.city
-            binding.accountStreetEditText.text = profile.data?.payload.showroomAddress.state
-            binding.accountLastNameTextView.text =profile.data?.payload?.lastName
+           binding.accountCityEditText.text = profile.data?.payload?.showroomAddress?.city
+            binding.accountStreetEditText.text = profile.data?.payload?.showroomAddress?.state
+            binding.accountLastNameTextView.text = profile.data?.payload?.lastName
             binding.editFirstNameEditText.text = profile.data?.payload?.firstName
         })
     }

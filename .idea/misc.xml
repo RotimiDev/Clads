@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< HEAD
         <entry key="../../Library/Android/sdk/platforms/android-31/data/res/layout/simple_spinner_item.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1165" />
         <entry key="app/src/main/res/drawable-v24/item_background.xml" value="0.12" />
@@ -48,12 +49,15 @@
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.2101851851851852" />
         <entry key="app/src/main/res/menu/bottom_navmenu.xml" value="0.1" />
         <entry key="app/src/main/res/menu/main_activity2.xml" value="0.25" />
+=======
+        <entry key="app/src/main/res/layout/fragment_login_form.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_sign_up.xml" value="0.20277777777777778" />
+>>>>>>> 7beb0185693eb04794797aae9fe3aba9db4f8f50
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/build/classes" />
-  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK" />
   <component name="ProjectType">
     <option name="id" value="Android" />
   </component>
