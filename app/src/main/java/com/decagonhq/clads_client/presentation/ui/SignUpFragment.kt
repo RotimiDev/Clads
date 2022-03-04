@@ -19,7 +19,7 @@ import com.decagonhq.clads_client.presentation.utils.validation.FieldValidations
 import com.decagonhq.clads_client.presentation.utils.validation.observeFieldsValidationToEnableButton
 import com.decagonhq.clads_client.presentation.utils.validation.validateConfirmPassword
 import com.decagonhq.clads_client.presentation.utils.validation.validateField
-import com.decagonhq.clads_client.presentation.viewModel.RegisterViewModel
+import com.decagonhq.clads_client.presentation.viewmodel.RegisterViewModel
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -43,14 +43,26 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Verify the first name provided by the user
-        validateFields()
+        binding.apply {
+            validateFields()
+            setUpObservers()
 
-        binding.loginTextView.setOnClickListener {
-            findNavController().navigate(R.id.loginFormFragment)
+            loginTextView.setOnClickListener {
+                findNavController().navigate(R.id.loginFormFragment)
+            }
+
+            signUpSubmitButton.setOnClickListener {
+                viewModel.registerUser(
+                    RegistrationRequest(
+                        firstNameTextView.text.toString(),
+                        lastNameTextView.text.toString(),
+                        OtherNameTextView.text.toString(),
+                        emailAddressTextview.text.toString(),
+                        passwordEditText.text.toString(),
+                    )
+                )
+            }
         }
-
-        setUpObservers()
     }
 
     override fun onResume() {
@@ -112,18 +124,6 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
                 requireContext(),
                 viewLifecycleOwner
             )
-
-            signUpSubmitButton.setOnClickListener {
-                viewModel.registerUser(
-                    RegistrationRequest(
-                        binding.firstNameTextView.text.toString(),
-                        binding.lastNameTextView.text.toString(),
-                        binding.OtherNameTextView.text.toString(),
-                        binding.emailAddressTextview.text.toString(),
-                        binding.passwordEditText.text.toString(),
-                    )
-                )
-            }
         }
     }
     private fun setUpObservers() {
