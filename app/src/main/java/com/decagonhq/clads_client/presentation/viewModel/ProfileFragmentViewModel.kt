@@ -6,7 +6,4 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class ProfileFragmentViewModel @Inject constructor(private val repository: ProfileRepository) : ViewModel(){
-
-
-}
+class ProfileFragmentViewModel @Inject constructor(private val repository: ProfileRepository) : ViewModel()

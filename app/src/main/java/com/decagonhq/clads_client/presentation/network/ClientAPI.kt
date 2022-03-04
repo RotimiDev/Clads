@@ -1,16 +1,15 @@
 package com.decagonhq.clads_client.presentation.network
 
-import com.decagonhq.clads_client.presentation.network.NetworkConstants.Companion.PROFILE_URL
-
 import com.decagonhq.clads_client.data.model.Profile
-import retrofit2.Response
-import retrofit2.http.GET
-import retrofit2.http.Header
 import com.decagonhq.clads_client.presentation.model.GenericResult
 import com.decagonhq.clads_client.presentation.model.LoginRequest
 import com.decagonhq.clads_client.presentation.model.RegistrationPayload
 import com.decagonhq.clads_client.presentation.model.RegistrationRequest
+import com.decagonhq.clads_client.presentation.network.NetworkConstants.Companion.PROFILE_URL
+import retrofit2.Response
 import retrofit2.http.Body
+import retrofit2.http.GET
+import retrofit2.http.Header
 import retrofit2.http.POST
 
 interface ClientAPI {

@@ -13,7 +13,7 @@ import retrofit2.Response
 import javax.inject.Inject
 
 @HiltViewModel
-class EditProfileViewModel @Inject constructor(private val repository: ProfileRepository) :ViewModel() {
+class EditProfileViewModel @Inject constructor(private val repository: ProfileRepository) : ViewModel() {
 
     var profileDetails: MutableLiveData<Resource<Profile>> = MutableLiveData()
 
@@ -24,11 +24,11 @@ class EditProfileViewModel @Inject constructor(private val repository: ProfileRe
     }
 
     private fun handleUserData(userData: Response<Profile>): Resource<Profile> {
-        if (userData.isSuccessful){
-            userData.body()?.let{data ->
+        if (userData.isSuccessful) {
+            userData.body()?.let { data ->
                 return Resource.Success(data)
             }
         }
-        return Resource.Error(null,userData.message())
+        return Resource.Error(null, userData.message())
     }
 }

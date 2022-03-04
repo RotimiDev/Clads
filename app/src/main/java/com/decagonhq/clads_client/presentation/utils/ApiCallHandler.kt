@@ -37,7 +37,6 @@ object ApiCallHandler {
         }
     }
 
-
     private fun getErrorMessage(responseBody: ResponseBody): String {
         return try {
             val jsonObject = JSONObject(responseBody.string())

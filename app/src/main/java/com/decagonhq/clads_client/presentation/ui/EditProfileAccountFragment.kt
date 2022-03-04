@@ -11,7 +11,6 @@ import androidx.fragment.app.activityViewModels
 import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.databinding.FragmentEditProfileAccountBinding
 import com.decagonhq.clads_client.presentation.viewModel.EditProfileViewModel
-import com.decagonhq.clads_client.presentation.viewModel.ProfileFragmentViewModel
 
 class EditProfileAccountFragment : Fragment() {
     private val viewModel: EditProfileViewModel by activityViewModels()
@@ -39,8 +38,8 @@ class EditProfileAccountFragment : Fragment() {
         }
 
         viewModel.getProfileDetails()
-        viewModel.profileDetails.observe(viewLifecycleOwner,{profile->
-           binding.accountCityEditText.text = profile.data?.payload?.showroomAddress?.city
+        viewModel.profileDetails.observe(viewLifecycleOwner, { profile ->
+            binding.accountCityEditText.text = profile.data?.payload?.showroomAddress?.city
             binding.accountStreetEditText.text = profile.data?.payload?.showroomAddress?.state
             binding.accountLastNameTextView.text = profile.data?.payload?.lastName
             binding.editFirstNameEditText.text = profile.data?.payload?.firstName
