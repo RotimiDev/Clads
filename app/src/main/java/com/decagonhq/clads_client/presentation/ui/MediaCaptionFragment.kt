@@ -50,7 +50,11 @@ class MediaCaptionFragment : Fragment() {
                 viewModel.addToGallery(PhotoGalleryModel(file, editTextMessage.toString()))
                 findNavController().navigate(R.id.mediaFragment)
             } else {
-                Toast.makeText(requireContext(), "Please enter a Caption fro the image", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    requireContext(),
+                    "Please enter a Caption fro the image",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
     }
