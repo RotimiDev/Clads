@@ -15,7 +15,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.databinding.FragmentArtisanProfileBinding
-import com.decagonhq.clads_client.presentation.viewModel.MediaGalleryViewModel
 import com.decagonhq.clads_client.presentation.viewModel.ProfileFragmentViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -47,9 +46,6 @@ class ArtisanProfileFragment : Fragment() {
                 requestStoragePermission()
             }
         }
-        viewModel.profileDetails.observe(viewLifecycleOwner,{ profile->
-           profile.data?.payload?.country.toString()
-        })
     }
 
     private fun requestStoragePermission() {
