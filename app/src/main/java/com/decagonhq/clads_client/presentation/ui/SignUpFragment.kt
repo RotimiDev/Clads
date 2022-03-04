@@ -4,22 +4,23 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.databinding.FragmentSignUpBinding
-import com.decagonhq.clads_client.presentation.utils.FieldValidationTracker
-import com.decagonhq.clads_client.presentation.utils.FieldValidationTracker.FieldType
-import com.decagonhq.clads_client.presentation.utils.RegistrationUtil.verifyEmail
-import com.decagonhq.clads_client.presentation.utils.RegistrationUtil.verifyName
-import com.decagonhq.clads_client.presentation.utils.RegistrationUtil.verifyPassword
-import com.decagonhq.clads_client.presentation.utils.validateConfirmPassword
-import com.decagonhq.clads_client.presentation.utils.validateField
+import com.decagonhq.clads_client.presentation.utils.validation.FieldValidationTracker.FieldType
+import com.decagonhq.clads_client.presentation.utils.validation.FieldsValidation.verifyEmail
+import com.decagonhq.clads_client.presentation.utils.validation.FieldsValidation.verifyName
+import com.decagonhq.clads_client.presentation.utils.validation.FieldsValidation.verifyPassword
+import com.decagonhq.clads_client.presentation.utils.validation.observeFieldsValidationToEnableButton
+import com.decagonhq.clads_client.presentation.utils.validation.validateConfirmPassword
+import com.decagonhq.clads_client.presentation.utils.validation.validateField
 
-class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
+class SignUpFragment : Fragment() {
     private var _binding: FragmentSignUpBinding? = null
     private val binding get() = _binding!!
+    private lateinit var loginTextView: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,6 +38,10 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
 
         // Verify the first name provided by the user
         validateFields()
+        loginTextView = binding.loginTextView
+        loginTextView.setOnClickListener {
+            findNavController().navigate(R.id.loginFormFragment)
+        }
     }
 
     private fun validateFields() {
@@ -73,19 +78,18 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
                 getString(R.string.enter_valid_confirm_password_str)
             )
 
-            FieldValidationTracker.isFieldsValidated.observe(viewLifecycleOwner, {
-                signUpSubmitButton.apply {
-                    isEnabled = !it.values.contains(false)
-                    backgroundTintList = if (!it.values.contains(false))
-                        ContextCompat.getColorStateList(requireContext(), R.color.white) else
-                        ContextCompat.getColorStateList(requireContext(), R.color.grey)
-                }
-            })
+            /** This method observes the validation of the fields
+             *  disables and enables the button as appropriate
+             *  materialButton must be set to default [enable = false]
+             *  [backgroundTint = "@color/grey"]
+             */
+            signUpSubmitButton.observeFieldsValidationToEnableButton(
+                requireContext(),
+                viewLifecycleOwner
+            )
 
             signUpSubmitButton.setOnClickListener {
-                val signUpDirections =
-                    SignUpFragmentDirections.actionSignUpFragmentToEmailConfirmationFragment()
-                findNavController().navigate(signUpDirections)
+                findNavController().navigate(R.id.emailConfirmationFragment)
             }
         }
     }

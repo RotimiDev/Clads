@@ -3,11 +3,20 @@ package com.decagonhq.clads_client.presentation.ui
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.*
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.databinding.ActivityDashboardBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -27,6 +36,7 @@ class DashboardActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDashboardBinding
     private lateinit var navHostFragment: NavHostFragment
     private lateinit var editProfileButton: MaterialButton
+    private lateinit var favouriteText: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,13 +46,12 @@ class DashboardActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         mAuth = FirebaseAuth.getInstance()
-
-
         // Initialized views with binding
         bottomNavigationView = binding.bottomNavigationView
         navView = binding.mainActivityNavView
         mDrawer = binding.drawerLayout
-        editProfileButton = binding.navDrawerEditProfileButton
+        val navViewHeader = navView.getHeaderView(0)
+        editProfileButton = navViewHeader.findViewById(R.id.nav_drawer_editProfile_button)
         setSupportActionBar(binding.toolbarInclude.toolbar)
 
         navHostFragment =
@@ -59,27 +68,30 @@ class DashboardActivity : AppCompatActivity() {
 
         setupActionBarWithNavController(navHostFragment.navController, appBarConfiguration)
 
-        navHostFragment?.navController.let { navView.setupWithNavController(it) }
+        navHostFragment.navController.let { navView.setupWithNavController(it) }
 
         editProfileButton.setOnClickListener {
             navHostFragment.navController.navigate(R.id.editProfileFragment)
+            drawerLayout.closeDrawer(GravityCompat.START)
+        }
+
+        binding.mainActivityNavView.setNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.favouritesFragment -> {
+                    Toast.makeText(this, "CLICKED", Toast.LENGTH_SHORT).show()
+                    findNavController(R.id.fragmentContainerView).navigate(R.id.favouritesFragment)
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                    return@setNavigationItemSelectedListener true
+                }
+                R.id.logout -> {
+                    mAuth.signOut()
+                    return@setNavigationItemSelectedListener true
+                }
+                else -> return@setNavigationItemSelectedListener true
+            }
         }
 
     }
-    //if the user is not authenticated send him to choiceLoginScreen to authenticate first else send him to dashboard activity
-//    override fun onStart() {
-//        super.onStart()
-//        // Check if user is signed in or not
-//        val currentUser = mAuth.currentUser
-//        if (currentUser != null) {
-//            val intent = Intent(this, DashboardActivity::class.java)
-//            startActivity(intent)
-//        }else{
-//            val intent = Intent(this, ChoiceLoginFragment::class.java)
-//            startActivity(intent)
-//        }
-//
-//    }
 
     override fun onSupportNavigateUp(): Boolean {
         return navHostFragment.navController

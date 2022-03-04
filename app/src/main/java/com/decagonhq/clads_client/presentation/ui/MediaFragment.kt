@@ -18,7 +18,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.data.model.PhotoGalleryModel
 import com.decagonhq.clads_client.databinding.FragmentMediaBinding
-import com.decagonhq.clads_client.presentation.ui.adapters.PhotoGalleryAdapter
+import com.decagonhq.clads_client.presentation.adapters.PhotoGalleryAdapter
 import com.decagonhq.clads_client.presentation.viewModel.MediaGalleryViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import dagger.hilt.android.AndroidEntryPoint

@@ -183,7 +183,9 @@
     <string name="abort">Action aborted...</string>
     <string name="deleted">Image deleted Successfully</string>
     <string name="share_image">Share Image</string>
-    <string name="web_client_id">"357950509536-q10b9skchtgvkjaktl90j1k1vnjtpljk.apps.googleusercontent.com"</string>
+    <string name="web_client_id">"357950509536-8j15dm0c5ia528jtlgtosg3fbmnlqqvu.apps.googleusercontent.com"</string>
+    <string name="no_favorites_str">You do not have any favorites</string>
+    <string name="favorites">Favorites</string>
     <string name="all">All</string>
     <string name="account_created">Account Created…\n$email</string>
     <string name="authentication_failed">Authentication failed</string>

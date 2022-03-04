@@ -1,4 +1,4 @@
-package com.decagonhq.clads_client.presentation.ui.adapters
+package com.decagonhq.clads_client.presentation.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -36,7 +36,7 @@ class PhotoGalleryAdapter(private val listener: OnItemClickListener) :
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): PhotoGalleryAdapter.PhotoGalleryViewHolder {
+    ): PhotoGalleryViewHolder {
         val binding = MediaFragmentRecyclerviewItemLayoutBinding.inflate(
             LayoutInflater.from(parent.context), parent,
             false
@@ -45,7 +45,7 @@ class PhotoGalleryAdapter(private val listener: OnItemClickListener) :
     }
 
     override fun onBindViewHolder(
-        holder: PhotoGalleryAdapter.PhotoGalleryViewHolder,
+        holder: PhotoGalleryViewHolder,
         position: Int
     ) {
         val currentItem = recyclerViewList[position]

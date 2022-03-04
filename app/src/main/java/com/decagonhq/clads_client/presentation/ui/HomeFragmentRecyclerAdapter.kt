@@ -4,8 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.decagonhq.clads_client.data.model.Tailor
 import com.decagonhq.clads_client.databinding.HomeRecyclerviewItemBinding
-import com.decagonhq.clads_client.presentation.ui.model.Tailor
 
 class HomeFragmentRecyclerAdapter(
     private var tailorDataSource: List<Tailor>

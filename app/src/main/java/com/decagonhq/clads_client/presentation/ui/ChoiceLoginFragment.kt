@@ -20,6 +20,7 @@ import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 
+
 @Suppress("DEPRECATION")
 class ChoiceLoginFragment : Fragment() {
     private var _binding: FragmentChoiceLoginBinding? = null
@@ -41,36 +42,35 @@ class ChoiceLoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.loginTextView.setOnClickListener {
-            findNavController().navigate(R.id.loginFormFragment)
-        }
+        binding.apply {
+            emailSignupButton.setOnClickListener {
+                findNavController().navigate(R.id.signUpFragment)
+            }
+            loginTextView.setOnClickListener {
+                findNavController().navigate(R.id.loginFormFragment)
+            }
+            val googleSignInOptions =
+                GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                    .requestIdToken(getString(R.string.default_web_client_id))
+                    .requestEmail()
+                    .build()
 
+            // Build a GoogleSignInClient with the options specified by gso.
+            mGoogleSignInClient = GoogleSignIn.getClient(requireActivity(), googleSignInOptions)
 
-//        val googleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-//            .requestIdToken(getString(R.string.web_client_id))
-//            .requestEmail()
-//            .build()
-
-        val googleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id))
-            .requestEmail()
-            .build()
-
-        // Build a GoogleSignInClient with the options specified by gso.
-        mGoogleSignInClient = GoogleSignIn.getClient(requireActivity(), googleSignInOptions)
-
-        mAuth = FirebaseAuth.getInstance()
-        // google SignIn Button, click to begin Google sign up
-        binding.googleSignupButton.setOnClickListener {
-            signIn()
+            mAuth = FirebaseAuth.getInstance()
+            // google SignIn Button, click to begin Google sign up
+            googleSignupButton.setOnClickListener {
+                signIn()
+            }
         }
     }
-
 
     private fun signIn() {
         val signInIntent = mGoogleSignInClient.signInIntent
         startActivityForResult(signInIntent, Constants.RC_SIGN_IN)
     }
+
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -80,10 +80,7 @@ class ChoiceLoginFragment : Fragment() {
             try {
                 // Google Sign In was successful, authenticate with Firebase
                 val account = task.getResult(ApiException::class.java)!!
-                Log.d("SignInActivity", "firebaseAuthWithGoogle:" + account.id)
                 firebaseAuthWithGoogle(account.idToken!!)
-                Log.d(TAG, "requestToken: ${account.idToken}")
-                Log.d("success", account.displayName.toString())
                 Toast.makeText(requireContext(), account.displayName.toString(), Toast.LENGTH_LONG)
                     .show()
             } catch (e: ApiException) {
@@ -94,12 +91,23 @@ class ChoiceLoginFragment : Fragment() {
             }
         }
     }
+//    override fun onStart() {
+//        super.onStart()
+//        // Check if user is signed in (non-null) and update UI accordingly.
+//        val currentUser = mAuth.currentUser
+//        if (currentUser!= null) {
+//            val intent = Intent(requireContext(), DashboardActivity::class.java)
+//            startActivity(intent)
+//        }
+//    }
+
 
     private fun firebaseAuthWithGoogle(idToken: String) {
         val credential = GoogleAuthProvider.getCredential(idToken, null)
         mAuth.signInWithCredential(credential)
             .addOnCompleteListener(requireActivity()) { task ->
                 if (task.isSuccessful) {
+                    Log.d(TAG, "successful:${task.isSuccessful}")
                     // Sign in success, update UI with the signed-in user's information
                     Toast.makeText(requireContext(), R.string.account_created, Toast.LENGTH_SHORT)
                         .show()
@@ -112,9 +120,10 @@ class ChoiceLoginFragment : Fragment() {
                         R.string.authentication_failed,
                         Toast.LENGTH_SHORT
                     ).show()
-                    findNavController().navigate(R.id.choiceLoginFragment)
+                    findNavController().navigate(R.id.signUpOptionsFragment)
                 }
             }
+
     }
 
     override fun onDestroyView() {

@@ -1,7 +1,7 @@
-package com.decagonhq.clads_client.presentation.utils
+package com.decagonhq.clads_client.presentation.utils.validation
 
 // Validation object for Sign-Up
-object RegistrationUtil {
+object FieldsValidation {
 
     // Function to verify the name of the intended user
     fun verifyName(name: String): Boolean {
