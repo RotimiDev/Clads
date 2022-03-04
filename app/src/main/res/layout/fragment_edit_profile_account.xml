@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.ui.EditProfileAccountFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/account_image_View"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/margin_24dp"
+            android:scaleType="center"
+            android:src="@drawable/ic_profileimage" />
+
+        <TextView
+            android:id="@+id/account_tap_to_change_picture_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/margin_7dp"
+            android:text="@string/tap_to_change_picture"
+            android:textColor="@color/menu_text_colour"
+            android:textSize="@dimen/text_size_9sp" />
+
+        <View
+            android:id="@+id/account_views"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/margin_18dp"
+            android:background="@android:color/darker_gray" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_24dp">
+
+
+            <TextView
+                android:id="@+id/account_first_name_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/first_name"
+                android:textColor="@color/navy_blue"
+                android:fontFamily="@font/poppins_light"
+                android:textSize="@dimen/text_size_12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <EditText
+                android:id="@+id/edit_first_name_edit_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/ijeoma"
+                android:fontFamily="@font/poppins_light"
+                android:textColor="@color/navy_blue"
+                android:textSize="@dimen/text_size_12sp"
+                android:background="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/account_first_name_text_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <View
+                android:id="@+id/account_view_0ne"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/margin_18dp"
+                android:background="@color/gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/account_first_name_text_view" />
+
+
+            <TextView
+                android:id="@+id/account_last_name_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_28dp"
+                android:text="@string/lastname"
+                android:textColor="@color/navy_blue"
+                android:fontFamily="@font/poppins_light"
+                android:textSize="@dimen/text_size_12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/account_first_name_text_view" />
+
+
+            <EditText
+                android:id="@+id/edit_last_name_edit_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/ibukun"
+                android:textColor="@color/navy_blue"
+                android:background="@color/white"
+                android:fontFamily="@font/poppins_light"
+                android:textSize="@dimen/text_size_12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/account_last_name_text_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/account_last_name_text_view" />
+
+            <View
+                android:id="@+id/account_view_two"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="18dp"
+                android:background="@color/gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/account_last_name_text_view" />
+
+            <TextView
+                android:id="@+id/account_other_name_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_28dp"
+                android:text="@string/other_name"
+                android:textColor="@color/navy_blue"
+                android:fontFamily="@font/poppins_light"
+                android:textSize="@dimen/text_size_12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/account_last_name_text_view" />
+
+
+            <EditText
+                android:id="@+id/edit_other_name_edit_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/babangida"
+                android:background="@color/white"
+                android:textColor="@color/navy_blue"
+                android:fontFamily="@font/poppins_light"
+                android:textSize="@dimen/text_size_12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/account_other_name_text_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/account_other_name_text_view" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="18dp"
+                android:background="@color/gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/account_other_name_text_view" />
+
+            <TextView
+                android:id="@+id/account_gender_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_28dp"
+                android:text="@string/gender"
+                android:textColor="@color/navy_blue"
+                android:fontFamily="@font/poppins_light"
+                android:textSize="@dimen/text_size_12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/account_other_name_text_view" />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@+id/account_gender_text_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/account_gender_text_view">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/male"
+                    android:textSize="@dimen/text_size_12sp" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/female"
+                    android:textSize="@dimen/text_size_12sp" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_1dp"
+                android:layout_marginTop="@dimen/margin_18dp"
+                android:background="@color/gray"
+                app:layout_constraintTop_toBottomOf="@+id/account_gender_text_view" />
+
+
+            <TextView
+                android:id="@+id/account_delivery_address_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_28dp"
+                android:text="@string/delivery_address"
+                android:textColor="@color/navy_blue"
+                android:fontFamily="@font/poppins_light"
+                android:textSize="@dimen/text_size_12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/account_gender_text_view" />
+
+            <EditText
+                android:id="@+id/account_street_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:hint="@string/street"
+                app:hintTextColor="@color/gray"
+                android:fontFamily="@font/poppins_light"
+                android:inputType="textPersonName"
+                android:backgroundTint="@color/gray"
+                android:singleLine="true"
+                android:textSize="@dimen/text_size_12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/account_delivery_address_text_view" />
+
+
+            <EditText
+                android:id="@+id/account_city_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_24dp"
+                android:hint="@string/city"
+                app:hintTextColor="@color/gray"
+                android:backgroundTint="@color/gray"
+                android:fontFamily="@font/poppins_light"
+                android:singleLine="true"
+                android:textSize="@dimen/text_size_12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/account_street_edit_text" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/account_state_text_input"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/all_state"
+                app:hintTextColor="@color/gray"
+                android:backgroundTint="@color/gray"
+                app:layout_constraintEnd_toEndOf="@id/account_city_edit_text"
+                app:layout_constraintStart_toStartOf="@id/account_city_edit_text"
+                app:layout_constraintTop_toBottomOf="@+id/account_city_edit_text">
+
+                <AutoCompleteTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:backgroundTint="@color/white"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <Button
+                android:id="@+id/account_save_change_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/deep_sky_blue"
+                android:text="@string/save_change"
+                android:fontFamily="@font/poppins_light"
+                android:textSize="@dimen/text_size_12sp"
+                android:layout_marginTop="@dimen/margin_49dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/account_state_text_input"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

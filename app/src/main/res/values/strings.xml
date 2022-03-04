@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Clads-Client</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_main2">MainActivity2</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -9,8 +8,188 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="ijeoma">Ijeoma</string>
+    <string name="lastname">LastName</string>
+    <string name="ibukun">Ibukun</string>
+    <string name="babangida">Babangida</string>
+    <string name="gender">Gender</string>
+    <string name="tap_to_change_picture">Tap to change picture</string>
+    <string name="delivery_address">Delivery Address</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+    <string name="street">Street</string>
+    <string name="city">City</string>
+    <string name="save_change">Save Change</string>
+    <string name="all_new_password">New Password</string>
+    <string name="fragment_security_old_password">Old Password</string>
+    <string name="fragment_security_change_password">Change Password</string>
+    <string name="all_password">Password</string>
+    <string name="fragement_security_phone_number">Phone Number</string>
+    <string name="fragment_security_verified_information">Verified Information</string>
+    <string name="all_edit_profile">Edit Profile</string>
+
+    <string-array name="State">
+        <item>Abia</item>
+        <item>Adamawa</item>
+        <item>Akwa Ibom</item>
+        <item>Anambra</item>
+        <item>Bauchi</item>
+        <item>Bayelsa</item>
+        <item>Benue</item>
+        <item>Borno</item>
+        <item>Cross River</item>
+        <item>Delta</item>
+        <item>Ebonyi</item>
+        <item>Edo</item>
+        <item>Ekiti</item>
+        <item>Enugu</item>
+        <item>Gombe</item>
+        <item>Imo</item>
+        <item>Jigawa</item>
+        <item>Kaduna</item>
+        <item>Kano</item>
+        <item>Katsina</item>
+        <item>Kebbi</item>
+        <item>Kogi</item>
+        <item>Kwara</item>
+        <item>Lagos</item>
+        <item>Nasarawa</item>
+        <item>Niger</item>
+        <item>Ogun</item>
+        <item>Ondo</item>
+        <item>Osun</item>
+        <item>Oyo</item>
+        <item>Plateau</item>
+        <item>Rivers</item>
+        <item>Sokoto</item>
+        <item>Taraba</item>
+        <item>Yobe</item>
+        <item>Zamfara</item>
+    </string-array>
+
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="other_name">Other Name</string>
+    <string name="email">Email</string>
+    <string name="sign_up">Sign up</string>
+    <string name="phone_number_work">Phone</string>
+    <string name="sex">Sex</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="email_address">Email Address</string>
+    <string name="choose_category">Choose account category</string>
+    <string name="phone_number">Phone</string>
+    <string name="email_">Email:</string>
+    <string name="email_confirmation_message">Hey Ijeoma, you are almost ready to start\nenjoying Clads.
+        Simply click the big blue\nbutton below to verify your email address.</string>
+    <string name="name">Name:</string>
+    <string name="email_sent_by_clads">Email sent by Clads</string>
+    <string name="lets_know_you">Lets get to know you</string>
+    <string name="verify_email">Verify Email Address</string>
+    <string name="create_account">Create an account</string>
+    <string name="have_an_account">Have an account? </string>
+    <string name="login">Login</string>
+    <string name="email_confirmation">Email Confirmation</string>
+    <string name="copyright2020">Copyright 2020. All Rights Reserved</string>
+    <string name="stay_in_touch">Stay in touch</string>
+    <string name="view_in_browser">View in browser</string>
+    <string name="splash_screen_loading">Loading...</string>
+    <string name="lorem_ipsum_ipsum_sum">lorem ipsum ipsum sum</string>
+    <string name="all_sign_up">sign up</string>
+    <string name="fragment_sign_up_sign_up_with_email">Sign up with email</string>
+    <string name="all_sign_up_with_google">Sign up with google</string>
+    <string name="all_have_an_account">Have an account?</string>
+    <string name="all_login">Login</string>
+    <string name="login_fragment_welcome_text">Welcome back</string>
+    <string name="login_fragment_subHeading">Login to continue</string>
+    <string name="all_signup_with_google">Signup with Google</string>
+    <string name="all_email_address">Email Address</string>
+    <string name="all_forgot_password">Forgot Password</string>
+    <string name="all_submit">Submit</string>
+    <string name="all_i_can_remember_my_password">I can remember my password.</string>
+    <string name="reset_email_view_in_browser">view in browser</string>
+    <string name="reset_password_card_view_text_long">You’re almost there. To finish resetting
+        your password, please click on the
+        reset button below</string>
+    <string name="reset_password_card_view_text_hi">Hi,</string>
+    <string name="all_reset_password">Reset Password</string>
+    <string name="all_stay_in_touch">Stay in touch</string>
+    <string name="reset_email_fragment_sentBy">email sent by Obioma</string>
+    <string name="all_copyright_2020">copyright 2020. All Rights Reserved</string>
+    <string name="Login_fragment_use_phone">Use Phone</string>
+    <string name="login_fragment_new_user">New user?</string>
+    <string name="login_fragment_signup_for_free">Signup for free</string>
+    <string name="reset_password_fragment_confirm_new_password">Confirm New Password</string>
+    <string name="ijeoma_ibukun_babangida">Ijeoma Ibukun Babangida</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="version_1_0">version 1.0</string>
+    <string name="logout">Logout</string>
+    <string name="you_have_no_photo_in_your_gallery">You have no photo in your gallery</string>
+    <string name="elegant_suit_for_men">Elegant suit for men</string>
+    <string name="empty_text">Empty Text</string>
+    <string name="please_enter_caption">Please enter Caption</string>
+    <string name="add_caption">Add Caption</string>
+    <string name="share">Share</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="delete_image">Delete Image</string>
+    <string name="message">Do you wish to delete image ?</string>
+    <string name="_5">5</string>
+    <string name="ratings_jj_fashionista_limited">JJ Fashionista Limited</string>
+    <string name="reviews">Reviews</string>
+    <string name="all_state">State</string>
+    <string name="media_fragment">Media Fragment</string>
+    <string name="search">Search...</string>
+    <string name="artisan">Artisan</string>
+    <string name="style">Style</string>
+    <string name="location">Location</string>
+    <string name="tailors">TAILORS</string>
+    <string name="weavers">WEAVERS</string>
+    <string name="egbeda_lagos">Egbeda, Lagos</string>
+    <string name="enter_valid_name_str">Please enter a valid name</string>
+    <string name="enter_valid_email_str">Please enter a valid email</string>
+    <string name="enter_valid_password_str">Password must have at least one special character, no white spaces and at least 4 characters.</string>
+    <string name="enter_valid_confirm_password_str">Password does not match.</string>
+    <string name="_4">4</string>
+    <string name="rate_jj_fashionista_limited">Rate JJ Fashionista Limited</string>
+    <string name="describe_your_experience_optional">Describe your experience (optional)</string>
+    <string name="all_post">Post</string>
+    <string name="o">O</string>
+    <string name="olaleye_david">Olaleye David</string>
+    <string name="_01_09_2020">01-09-2020</string>
+    <string name="_325">325</string>
+    <string name="_3">3</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="artisan_profile">Artisan Profile</string>
+    <string name="jj_fashionista_limited">JJ Fashionista Limited</string>
+    <string name="dummy_text_amet">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim enim velit mollit.</string>
+    <string name="chat">Chat</string>
+    <string name="_24_akowoje_road_egbeda">24 Akowoje Road, Egbeda.</string>
+    <string name="call">Call</string>
+    <string name="rating">Rating</string>
+    <string name="_4_0">4.0</string>
+    <string name="see_reviews">See Reviews</string>
+    <string name="go_to_gallery">Go to gallery</string>
+    <string name="add_favourites">Add Favourites</string>
+    <string name="this_need_background_permission">This need background permission</string>
+    <string name="permission_granted_now_you_can_read_the_storage">Permission granted now you can read the storage</string>
+    <string name="oops_permission_is_not_granted">oops permission is not granted</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="abort">Action aborted...</string>
+    <string name="deleted">Image deleted Successfully</string>
+    <string name="share_image">Share Image</string>
+    <string name="no_favorites_str">You do not have any favorites</string>
+    <string name="favorites">Favorites</string>
+    <string name="all">All</string>
+    <string name="failed_login">\"Failed Login \"</string>
+    <string name="loading">... Loading</string>
+    <string name="wrong_email">Please input valid email</string>
+    <string name="wrong_password">Please input password</string>
+    <string name="call_failed">Call failed</string>
+
 </resources>
