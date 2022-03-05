@@ -49,10 +49,9 @@ class ArtisanProfileFragment : Fragment() {
                 requestStoragePermission()
             }
         }
-        viewModel.profileImage.observe(viewLifecycleOwner,{
+        viewModel.profileImage.observe(viewLifecycleOwner, {
             Glide.with(requireContext()).load(it.data?.payload?.get(0)?.fileName).into(binding.shapeAbleImageView)
         })
-
     }
 
     private fun requestStoragePermission() {

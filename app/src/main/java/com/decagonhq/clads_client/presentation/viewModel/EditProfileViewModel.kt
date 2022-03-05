@@ -11,7 +11,6 @@ import okhttp3.MultipartBody
 import retrofit2.Response
 import javax.inject.Inject
 
-
 class EditProfileViewModel@Inject constructor(private val repository: ProfileRepository) : ViewModel() {
     var postImage: MutableLiveData<Resource<UploadImage>> = MutableLiveData()
     fun uploadImage(token: String, image: MultipartBody.Part) = viewModelScope.launch {
@@ -19,12 +18,11 @@ class EditProfileViewModel@Inject constructor(private val repository: ProfileRep
         val sent = repository.postProfileImage(token, image)
 
         postImage.postValue(handleSentPost(sent))
-
     }
     private fun handleSentPost(sent: Response<UploadImage>): Resource<UploadImage>? {
 
-        if(sent.isSuccessful){
-            sent.body()?.let{sentPost->
+        if (sent.isSuccessful) {
+            sent.body()?.let { sentPost ->
                 return Resource.Success(sentPost)
             }
         }

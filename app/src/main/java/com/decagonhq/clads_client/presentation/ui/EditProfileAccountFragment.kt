@@ -14,14 +14,11 @@ import android.widget.AutoCompleteTextView
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.fragment.findNavController
 import com.decagonhq.clads_client.R
-import com.decagonhq.clads_client.data.model.PhotoGalleryModel
 import com.decagonhq.clads_client.databinding.FragmentEditProfileAccountBinding
 import com.decagonhq.clads_client.presentation.viewModel.EditProfileViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import okhttp3.MultipartBody
-
 
 @AndroidEntryPoint
 
@@ -69,7 +66,8 @@ class EditProfileAccountFragment : Fragment() {
             when (requestCode) {
                 REQUEST_CODE_PICK_IMAGE -> {
                     selectedImageUri = data?.data
-                    val stringUri = MultipartBody.Part.createFormData("image",
+                    val stringUri = MultipartBody.Part.createFormData(
+                        "image",
                         selectedImageUri.toString()
                     )
                     viewModel.uploadImage("", stringUri)

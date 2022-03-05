@@ -12,25 +12,24 @@ import retrofit2.Response
 import javax.inject.Inject
 
 @HiltViewModel
-class ProfileFragmentViewModel @Inject constructor(private val repository: ProfileRepository) : ViewModel(){
+class ProfileFragmentViewModel @Inject constructor(private val repository: ProfileRepository) : ViewModel() {
 
+    init {
+        getProfileImage()
+    }
+    var profileImage: MutableLiveData<Resource<GetImage>> = MutableLiveData()
 
-        init {
-            getProfileImage()
-        }
-        var profileImage: MutableLiveData<Resource<GetImage>> = MutableLiveData()
-
-        private fun getProfileImage() = viewModelScope.launch {
-            profileImage.postValue(Resource.Loading())
-            val profilePicture = repository.getProfileImage("")
-            profileImage.postValue(handleUserData(profilePicture))
-        }
-        private fun handleUserData(userImage: Response<GetImage>): Resource<GetImage> {
-            if (userImage.isSuccessful){
-                userImage.body()?.let{ data ->
-                    return Resource.Success(data)
-                }
+    private fun getProfileImage() = viewModelScope.launch {
+        profileImage.postValue(Resource.Loading())
+        val profilePicture = repository.getProfileImage("")
+        profileImage.postValue(handleUserData(profilePicture))
+    }
+    private fun handleUserData(userImage: Response<GetImage>): Resource<GetImage> {
+        if (userImage.isSuccessful) {
+            userImage.body()?.let { data ->
+                return Resource.Success(data)
             }
-            return Resource.Error(null,userImage.message())
         }
+        return Resource.Error(null, userImage.message())
+    }
 }
