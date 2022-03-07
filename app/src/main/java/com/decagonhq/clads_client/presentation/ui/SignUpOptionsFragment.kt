@@ -9,7 +9,7 @@ import androidx.navigation.fragment.findNavController
 import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.databinding.FragmentSignUpOptionsBinding
 
-class SignUpOptionsFragment : Fragment() {
+class SignUpOptionsFragment : Fragment(R.layout.fragment_sign_up_options) {
     private var _binding: FragmentSignUpOptionsBinding? = null
     private val binding get() = _binding!!
     override fun onCreateView(
@@ -25,11 +25,14 @@ class SignUpOptionsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.signUpButton.setOnClickListener {
-            findNavController().navigate(R.id.choiceLoginFragment)
-        }
-        binding.loginButton.setOnClickListener {
-            findNavController().navigate(R.id.loginFormFragment)
+        binding.apply {
+
+            signUpButton.setOnClickListener {
+                findNavController().navigate(R.id.choiceLoginFragment)
+            }
+            loginButton.setOnClickListener {
+                findNavController().navigate(R.id.loginFormFragment)
+            }
         }
     }
 
