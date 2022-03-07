@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "754161366376",
+    "project_id": "clads-client-c5879",
+    "storage_bucket": "clads-client-c5879.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:754161366376:android:c58463b10f244bf966d2dd",
+        "android_client_info": {
+          "package_name": "com.decagonhq.clads_client"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "754161366376-c7is60v4i50ppb779qf2q0rnosbuascn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.decagonhq.clads_client",
+            "certificate_hash": "39e506353c45dd9bdc81e79bff029bca58d3abce"
+          }
+        },
+        {
+          "client_id": "754161366376-k8pcf44rl3q1cnsd1gi6fqf0dd0egku8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.decagonhq.clads_client",
+            "certificate_hash": "0b8955520f5b18080ffcbaf6da4216548c179c30"
+          }
+        },
+        {
+          "client_id": "754161366376-vmad83gopka7icbo0lvvbs3i9acqv6ao.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDLESWeW09PKePu2V-YP60boCBj5-Gh9g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "754161366376-vmad83gopka7icbo0lvvbs3i9acqv6ao.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
