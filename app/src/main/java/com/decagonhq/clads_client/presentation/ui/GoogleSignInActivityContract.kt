@@ -10,9 +10,9 @@ import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 
 class GoogleSignInActivityContract : ActivityResultContract<
-        GoogleSignInOptions,
-        GoogleSignInActivityContract.Result
-        >() {
+    GoogleSignInOptions,
+    GoogleSignInActivityContract.Result
+    >() {
     override fun createIntent(context: Context, input: GoogleSignInOptions?): Intent {
         val client = GoogleSignIn.getClient(context, input ?: error("No GoogleSignInOptions Provided"))
         return client.signInIntent

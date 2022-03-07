@@ -29,7 +29,7 @@ object AppModule {
     fun provideClient(logger: HttpLoggingInterceptor): OkHttpClient {
         return OkHttpClient.Builder()
             .addInterceptor(logger)
-             .build()
+            .build()
     }
 
     @Provides

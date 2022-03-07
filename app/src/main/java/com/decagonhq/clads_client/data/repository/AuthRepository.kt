@@ -16,7 +16,7 @@ class AuthRepository @Inject constructor(private val api: ClientAPI,) {
         }
     }
 
-    suspend fun googleUser(bearer: String, role: Role): Resource<GenericResult<String>>{
+    suspend fun googleUser(bearer: String, role: Role): Resource<GenericResult<String>> {
         return ApiCallHandler.safeApiCall {
             api.googleData(bearer, role)
         }

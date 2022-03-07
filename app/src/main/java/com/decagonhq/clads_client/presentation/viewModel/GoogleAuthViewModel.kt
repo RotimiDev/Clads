@@ -21,7 +21,6 @@ class GoogleAuthViewModel @Inject constructor(private val authRepository: AuthRe
         _loginResponse.value = Resource.Loading()
         viewModelScope.launch {
             _loginResponse.value = authRepository.googleUser(bearer, role)
-
         }
     }
 }
