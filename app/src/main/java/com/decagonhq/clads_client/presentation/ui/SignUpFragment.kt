@@ -4,23 +4,25 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.databinding.FragmentSignUpBinding
 import com.decagonhq.clads_client.presentation.utils.validation.FieldValidationTracker.FieldType
-import com.decagonhq.clads_client.presentation.utils.validation.FieldsValidation.verifyEmail
-import com.decagonhq.clads_client.presentation.utils.validation.FieldsValidation.verifyName
-import com.decagonhq.clads_client.presentation.utils.validation.FieldsValidation.verifyPassword
+import com.decagonhq.clads_client.presentation.utils.validation.FieldValidationTracker.populateFieldTypeMap
+import com.decagonhq.clads_client.presentation.utils.validation.FieldValidations.verifyEmail
+import com.decagonhq.clads_client.presentation.utils.validation.FieldValidations.verifyName
+import com.decagonhq.clads_client.presentation.utils.validation.FieldValidations.verifyPassword
 import com.decagonhq.clads_client.presentation.utils.validation.observeFieldsValidationToEnableButton
 import com.decagonhq.clads_client.presentation.utils.validation.validateConfirmPassword
 import com.decagonhq.clads_client.presentation.utils.validation.validateField
+import dagger.hilt.android.AndroidEntryPoint
 
-class SignUpFragment : Fragment() {
+@AndroidEntryPoint
+class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
+
     private var _binding: FragmentSignUpBinding? = null
     private val binding get() = _binding!!
-    private lateinit var loginTextView: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,13 +40,29 @@ class SignUpFragment : Fragment() {
 
         // Verify the first name provided by the user
         validateFields()
-        loginTextView = binding.loginTextView
-        loginTextView.setOnClickListener {
+
+        binding.loginTextView.setOnClickListener {
             findNavController().navigate(R.id.loginFormFragment)
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        binding.firstNameTextView.clearFocus()
+    }
+
     private fun validateFields() {
+
+        val fieldTypesToValidate = listOf(
+            FieldType.FIRSTNAME,
+            FieldType.LASTNAME,
+            FieldType.OTHER_NAME,
+            FieldType.EMAIL,
+            FieldType.PASSWORD,
+            FieldType.CONFIRM_PASSWORD
+        )
+        populateFieldTypeMap(fieldTypesToValidate)
+
         binding.apply {
             firstNameLayout.validateField(
                 getString(R.string.enter_valid_name_str), FieldType.FIRSTNAME

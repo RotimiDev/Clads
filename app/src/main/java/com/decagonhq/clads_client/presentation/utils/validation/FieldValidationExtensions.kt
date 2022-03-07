@@ -34,7 +34,7 @@ fun TextInputLayout.validateConfirmPassword(
     errorMessage: String,
 ) {
     this.editText?.doAfterTextChanged {
-        if (!FieldsValidation.validateConfirmPassword(
+        if (!FieldValidations.validateConfirmPassword(
                 it.toString().trim(),
                 passwordInputLayout.editText?.text.toString().trim()
             )
@@ -56,12 +56,12 @@ fun MaterialButton.observeFieldsValidationToEnableButton(
     fieldValidationTracker: FieldValidationTracker = FieldValidationTracker
 ) {
 
-    FieldValidationTracker.isFieldsValidated.observe(lifecycleOwner, {
+    fieldValidationTracker.isFieldsValidated.observe(lifecycleOwner) {
         this.apply {
             this.isEnabled = !it.values.contains(false)
             backgroundTintList = if (!it.values.contains(false))
                 ContextCompat.getColorStateList(context, R.color.white) else
                 ContextCompat.getColorStateList(context, R.color.grey)
         }
-    })
+    }
 }
