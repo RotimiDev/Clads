@@ -3,8 +3,10 @@ package com.decagonhq.clads_client.presentation.viewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.decagonhq.clads_client.data.model.Profile
 import com.decagonhq.clads_client.data.model.UploadImage
 import com.decagonhq.clads_client.data.repository.ProfileRepository
+import com.decagonhq.clads_client.presentation.network.NetworkConstants.Companion.TOKEN
 import com.decagonhq.clads_client.presentation.utils.Resource
 import kotlinx.coroutines.launch
 import okhttp3.MultipartBody
@@ -27,5 +29,21 @@ class EditProfileViewModel@Inject constructor(private val repository: ProfileRep
             }
         }
         return Resource.Error(null, sent.message())
+    }
+
+    var profileDetails: MutableLiveData<Resource<Profile>> = MutableLiveData()
+
+    fun getProfileDetails() = viewModelScope.launch {
+        profileDetails.postValue(Resource.Loading())
+        val profileData = repository.getProfile(TOKEN)
+        profileDetails.postValue(handleUserData(profileData))
+    }
+    private fun handleUserData(userData: Response<Profile>): Resource<Profile> {
+        if (userData.isSuccessful) {
+            userData.body()?.let { data ->
+                return Resource.Success(data)
+            }
+        }
+        return Resource.Error(null, userData.message())
     }
 }

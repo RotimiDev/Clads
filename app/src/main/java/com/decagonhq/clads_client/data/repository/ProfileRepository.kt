@@ -8,4 +8,6 @@ class ProfileRepository @Inject constructor(private val api: ClientAPI) {
     suspend fun getProfileImage(token: String) = api.getProfileImage(token)
 
     suspend fun postProfileImage(token: String, image: MultipartBody.Part) = api.postProfileImage(token, image)
+
+    suspend fun getProfile(token: String) = api.getProfileDetails(token)
 }

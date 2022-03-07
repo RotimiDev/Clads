@@ -21,13 +21,12 @@ import dagger.hilt.android.AndroidEntryPoint
 import okhttp3.MultipartBody
 
 @AndroidEntryPoint
-
 class EditProfileAccountFragment : Fragment() {
+    private val viewModel: EditProfileViewModel by activityViewModels()
     private var _binding: FragmentEditProfileAccountBinding? = null
     private val binding get() = _binding!!
     private val requestWriteStorage = 0
     private var selectedImageUri: Uri? = null
-    private val viewModel: EditProfileViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -48,6 +47,14 @@ class EditProfileAccountFragment : Fragment() {
                 ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, states)
             (accountStateTextInput.editText as? AutoCompleteTextView)?.setAdapter(arrayAdapter)
         }
+
+        viewModel.getProfileDetails()
+        viewModel.profileDetails.observe(viewLifecycleOwner, { profile ->
+            binding.accountCityEditText.text = profile.data?.payload?.showroomAddress?.city
+            binding.accountStreetEditText.text = profile.data?.payload?.showroomAddress?.state
+            binding.accountLastNameTextView.text = profile.data?.payload?.lastName
+            binding.editFirstNameEditText.text = profile.data?.payload?.firstName
+        })
     }
 
     // This is my Image Picker
