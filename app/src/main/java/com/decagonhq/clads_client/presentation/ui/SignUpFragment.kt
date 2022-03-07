@@ -5,9 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.databinding.FragmentSignUpBinding
+import com.decagonhq.clads_client.presentation.model.RegistrationRequest
+import com.decagonhq.clads_client.presentation.utils.Resource
 import com.decagonhq.clads_client.presentation.utils.validation.FieldValidationTracker.FieldType
 import com.decagonhq.clads_client.presentation.utils.validation.FieldValidationTracker.populateFieldTypeMap
 import com.decagonhq.clads_client.presentation.utils.validation.FieldValidations.verifyEmail
@@ -16,6 +19,8 @@ import com.decagonhq.clads_client.presentation.utils.validation.FieldValidations
 import com.decagonhq.clads_client.presentation.utils.validation.observeFieldsValidationToEnableButton
 import com.decagonhq.clads_client.presentation.utils.validation.validateConfirmPassword
 import com.decagonhq.clads_client.presentation.utils.validation.validateField
+import com.decagonhq.clads_client.presentation.viewmodel.RegisterViewModel
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -23,6 +28,7 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
 
     private var _binding: FragmentSignUpBinding? = null
     private val binding get() = _binding!!
+    private val viewModel: RegisterViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,11 +44,25 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Verify the first name provided by the user
-        validateFields()
+        binding.apply {
+            validateFields()
+            setUpObservers()
 
-        binding.loginTextView.setOnClickListener {
-            findNavController().navigate(R.id.loginFormFragment)
+            loginTextView.setOnClickListener {
+                findNavController().navigate(R.id.loginFormFragment)
+            }
+
+            signUpSubmitButton.setOnClickListener {
+                viewModel.registerUser(
+                    RegistrationRequest(
+                        firstNameTextView.text.toString(),
+                        lastNameTextView.text.toString(),
+                        OtherNameTextView.text.toString(),
+                        emailAddressTextview.text.toString(),
+                        passwordEditText.text.toString(),
+                    )
+                )
+            }
         }
     }
 
@@ -105,9 +125,26 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
                 requireContext(),
                 viewLifecycleOwner
             )
-
-            signUpSubmitButton.setOnClickListener {
-                findNavController().navigate(R.id.emailConfirmationFragment)
+        }
+    }
+    private fun setUpObservers() {
+        viewModel.registerResponse.observe(viewLifecycleOwner) {
+            when (it) {
+                is Resource.Success -> {
+                    findNavController().navigate(R.id.emailConfirmationFragment)
+                }
+                is Resource.Error -> {
+                    Snackbar.make(
+                        requireView(), getString(R.string.call_failed),
+                        Snackbar.LENGTH_LONG
+                    ).show()
+                }
+                is Resource.Loading -> {
+                    Snackbar.make(
+                        requireView(), getString(R.string.loading),
+                        Snackbar.LENGTH_LONG
+                    ).show()
+                }
             }
         }
     }
