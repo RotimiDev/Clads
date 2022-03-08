@@ -1,7 +1,5 @@
 package com.decagonhq.clads_client.data.model
 
-import android.text.Editable
-
 data class EditProfilePayload(
     val country: String,
     val deliveryTime: Any,

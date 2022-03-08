@@ -51,7 +51,7 @@ class EditProfileAccountFragment : Fragment() {
                     binding.accountStreetEditText.setText(profile.data?.payload?.showroomAddress?.state)
                     binding.editLastNameEditText.setText(profile.data?.payload?.lastName)
                     binding.editFirstNameEditText.setText(profile.data?.payload?.firstName)
-                    if(profile.data?.payload?.gender === R.string.male.toString()){
+                    if (profile.data?.payload?.gender === R.string.male.toString()) {
                         binding.profileGenderRadioGroup.check(R.id.profile_male_radio_button)
                     }
                 }
