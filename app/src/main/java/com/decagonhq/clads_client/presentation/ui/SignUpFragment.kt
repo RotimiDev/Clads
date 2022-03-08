@@ -19,7 +19,7 @@ import com.decagonhq.clads_client.presentation.utils.validation.FieldValidations
 import com.decagonhq.clads_client.presentation.utils.validation.observeFieldsValidationToEnableButton
 import com.decagonhq.clads_client.presentation.utils.validation.validateConfirmPassword
 import com.decagonhq.clads_client.presentation.utils.validation.validateField
-import com.decagonhq.clads_client.presentation.viewmodel.RegisterViewModel
+import com.decagonhq.clads_client.presentation.viewModel.RegisterViewModel
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 
