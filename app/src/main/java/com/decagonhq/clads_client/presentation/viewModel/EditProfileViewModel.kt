@@ -5,7 +5,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.decagonhq.clads_client.data.model.Profile
 import com.decagonhq.clads_client.data.repsitory.ProfileRepository
-import com.decagonhq.clads_client.presentation.network.NetworkConstants.Companion.TOKEN
 import com.decagonhq.clads_client.presentation.utils.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -17,9 +16,9 @@ class EditProfileViewModel @Inject constructor(private val repository: ProfileRe
 
     var profileDetails: MutableLiveData<Resource<Profile>> = MutableLiveData()
 
-    fun getProfileDetails() = viewModelScope.launch {
+    fun getProfileDetails(token: String) = viewModelScope.launch {
         profileDetails.postValue(Resource.Loading())
-        val profileData = repository.getProfile(TOKEN)
+        val profileData = repository.getProfile(token)
         profileDetails.postValue(handleUserData(profileData))
     }
 

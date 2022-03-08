@@ -25,7 +25,7 @@ interface ClientAPI {
     ): GenericResult<String>
 
     @GET(PROFILE_URL)
-    suspend fun getProfileDetails(@Header("Authorization") token: String): Response<Profile>
+    suspend fun getProfileDetails(@Header("Authorization") Bearer: String): Response<Profile>
 
     @POST("/api/v1/customer/register")
     suspend fun registerUser(@Body registrationRequest: RegistrationRequest): GenericResult<RegistrationPayload>

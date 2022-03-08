@@ -13,6 +13,7 @@ import com.decagonhq.clads_client.presentation.model.LoginRequest
 import com.decagonhq.clads_client.presentation.utils.Resource
 import com.decagonhq.clads_client.presentation.utils.validation.FieldValidationTracker
 import com.decagonhq.clads_client.presentation.utils.validation.FieldValidations
+import com.decagonhq.clads_client.presentation.utils.validation.SessionToken
 import com.decagonhq.clads_client.presentation.utils.validation.observeFieldsValidationToEnableButton
 import com.decagonhq.clads_client.presentation.utils.validation.validateField
 import com.decagonhq.clads_client.presentation.viewmodel.LoginViewModel
@@ -56,11 +57,11 @@ class LoginFragment : Fragment() {
         viewModel.loginResponse.observe(viewLifecycleOwner) {
             when (it) {
                 is Resource.Success -> {
+                    SessionToken.editSharedPref(it.data?.payload.toString())
                     val intent = Intent(requireContext(), DashboardActivity::class.java)
                     startActivity(intent)
                 }
                 is Resource.Error -> {
-
                 }
                 is Resource.Loading -> {
                     Snackbar.make(
