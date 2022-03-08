@@ -43,17 +43,19 @@ class EditProfileAccountFragment : Fragment() {
         }
 
         val token: String = SessionToken.cladsSharedPreferences.getString(R.string.app_name.toString(), "").toString()
-        Log.d("TOKEN",token)
         viewModel.getProfileDetails("Bearer $token")
         viewModel.profileDetails.observe(viewLifecycleOwner, { profile ->
 
             when (profile) {
 
                 is Resource.Success -> {
-                    binding.accountCityEditText.text = profile.data?.payload?.showroomAddress?.city
-                    binding.accountStreetEditText.text = profile.data?.payload?.showroomAddress?.state
-                    binding.accountLastNameTextView.text = profile.data?.payload?.lastName
-                    binding.editFirstNameEditText.text = profile.data?.payload?.firstName
+                    binding.accountCityEditText.setText(profile.data?.payload?.showroomAddress?.city)
+                    binding.accountStreetEditText.setText(profile.data?.payload?.showroomAddress?.state)
+                    binding.editLastNameEditText.setText(profile.data?.payload?.lastName)
+                    binding.editFirstNameEditText.setText(profile.data?.payload?.firstName)
+                    if(profile.data?.payload?.gender === R.string.male.toString()){
+                        binding.profileGenderRadioGroup.check(R.id.profile_male_radio_button)
+                    }
                 }
                 is Resource.Error -> {
                     Snackbar.make(

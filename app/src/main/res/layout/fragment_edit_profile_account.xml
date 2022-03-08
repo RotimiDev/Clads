@@ -161,6 +161,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/account_other_name_text_view" />
 
             <RadioGroup
+                android:id="@+id/profile_gender_radio_group"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -172,13 +173,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/male"
-                    android:textSize="@dimen/text_size_12sp" />
+                    android:textSize="@dimen/text_size_12sp"
+                    android:id="@+id/profile_male_radio_button"/>
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/female"
-                    android:textSize="@dimen/text_size_12sp" />
+                    android:textSize="@dimen/text_size_12sp"
+                    android:id="@+id/profile_female_radio_button"/>
             </RadioGroup>
 
             <View
