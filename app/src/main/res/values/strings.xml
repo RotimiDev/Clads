@@ -191,5 +191,6 @@
     <string name="wrong_email">Please input valid email</string>
     <string name="wrong_password">Please input password</string>
     <string name="call_failed">Call failed</string>
+    <string name="enter_caption_for_image">Please enter a Caption for the image</string>
 
 </resources>

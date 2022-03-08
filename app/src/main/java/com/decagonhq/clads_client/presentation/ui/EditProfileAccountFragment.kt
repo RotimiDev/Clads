@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.databinding.FragmentEditProfileAccountBinding
-import com.decagonhq.clads_client.presentation.viewModel.EditProfileViewModel
+import com.decagonhq.clads_client.presentation.viewmodel.EditProfileViewModel
 
 class EditProfileAccountFragment : Fragment() {
     private val viewModel: EditProfileViewModel by activityViewModels()
