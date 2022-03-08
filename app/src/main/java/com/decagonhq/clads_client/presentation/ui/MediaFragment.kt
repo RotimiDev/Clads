@@ -19,6 +19,7 @@ import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.data.model.PhotoGalleryModel
 import com.decagonhq.clads_client.databinding.FragmentMediaBinding
 import com.decagonhq.clads_client.presentation.adapters.PhotoGalleryAdapter
+import com.decagonhq.clads_client.presentation.utils.Constants.Companion.snack
 import com.decagonhq.clads_client.presentation.viewmodel.MediaGalleryViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import dagger.hilt.android.AndroidEntryPoint
@@ -45,7 +46,7 @@ class MediaFragment : Fragment(), PhotoGalleryAdapter.OnItemClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         initViews()
-
+        view.snack( view,"talk about something")
         // Observing my recyclerView from viewModel, and updating accordingly
         viewModel.photoGallery.observe(viewLifecycleOwner) {
             galleryAdapter.submitList(it)

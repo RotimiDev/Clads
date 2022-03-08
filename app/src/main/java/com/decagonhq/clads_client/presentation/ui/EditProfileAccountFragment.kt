@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.databinding.FragmentEditProfileAccountBinding
+import com.decagonhq.clads_client.presentation.utils.Resource
 import com.decagonhq.clads_client.presentation.viewModel.EditProfileViewModel
 
 class EditProfileAccountFragment : Fragment() {
@@ -39,10 +40,20 @@ class EditProfileAccountFragment : Fragment() {
 
         viewModel.getProfileDetails()
         viewModel.profileDetails.observe(viewLifecycleOwner, { profile ->
-            binding.accountCityEditText.text = profile.data?.payload?.showroomAddress?.city
-            binding.accountStreetEditText.text = profile.data?.payload?.showroomAddress?.state
-            binding.accountLastNameTextView.text = profile.data?.payload?.lastName
-            binding.editFirstNameEditText.text = profile.data?.payload?.firstName
+
+            when(profile) {
+
+                is Resource.Success ->{
+                    binding.accountCityEditText.text = profile.data?.payload?.showroomAddress?.city
+                    binding.accountStreetEditText.text =
+                        profile.data?.payload?.showroomAddress?.state
+                    binding.accountLastNameTextView.text = profile.data?.payload?.lastName
+                    binding.editFirstNameEditText.text = profile.data?.payload?.firstName
+                }
+                is Resource.Error->{
+
+                }
+            }
         })
     }
 }

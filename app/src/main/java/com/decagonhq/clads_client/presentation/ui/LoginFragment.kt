@@ -60,10 +60,7 @@ class LoginFragment : Fragment() {
                     startActivity(intent)
                 }
                 is Resource.Error -> {
-                    Snackbar.make(
-                        requireView(), it.message!!,
-                        Snackbar.LENGTH_LONG
-                    ).show()
+
                 }
                 is Resource.Loading -> {
                     Snackbar.make(
