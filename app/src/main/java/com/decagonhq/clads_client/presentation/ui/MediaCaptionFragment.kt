@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageView
-import android.widget.Toast
 import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -14,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.data.model.PhotoGalleryModel
 import com.decagonhq.clads_client.databinding.FragmentMediaMiddleBinding
+import com.decagonhq.clads_client.presentation.utils.viewextensions.showSnackBar
 import com.decagonhq.clads_client.presentation.viewmodel.MediaGalleryViewModel
 import com.google.android.material.button.MaterialButton
 import dagger.hilt.android.AndroidEntryPoint
@@ -50,8 +50,7 @@ class MediaCaptionFragment : Fragment() {
                 viewModel.addToGallery(PhotoGalleryModel(file, editTextMessage.toString()))
                 findNavController().navigate(R.id.mediaFragment)
             } else {
-
-                Toast.makeText(requireContext(), "Please enter a Caption from the image", Toast.LENGTH_SHORT).show()
+                requireView().showSnackBar(R.string.enter_caption_for_image)
             }
         }
     }
