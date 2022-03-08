@@ -12,7 +12,7 @@ import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.databinding.FragmentEditProfileAccountBinding
 import com.decagonhq.clads_client.presentation.utils.Resource
 import com.decagonhq.clads_client.presentation.utils.validation.SessionToken
-import com.decagonhq.clads_client.presentation.viewModel.EditProfileViewModel
+import com.decagonhq.clads_client.presentation.viewmodel.EditProfileViewModel
 import com.google.android.material.snackbar.Snackbar
 
 class EditProfileAccountFragment : Fragment() {

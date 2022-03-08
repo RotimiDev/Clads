@@ -1,5 +1,6 @@
 package com.decagonhq.clads_client.presentation.ui
 
+import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -19,8 +20,9 @@ import com.decagonhq.clads_client.presentation.utils.validation.FieldValidations
 import com.decagonhq.clads_client.presentation.utils.validation.observeFieldsValidationToEnableButton
 import com.decagonhq.clads_client.presentation.utils.validation.validateConfirmPassword
 import com.decagonhq.clads_client.presentation.utils.validation.validateField
-import com.decagonhq.clads_client.presentation.viewmodel.RegisterViewModel
-import com.google.android.material.snackbar.Snackbar
+import com.decagonhq.clads_client.presentation.utils.viewextensions.provideCustomAlertDialog
+import com.decagonhq.clads_client.presentation.utils.viewextensions.showSnackBar
+import com.decagonhq.clads_client.presentation.viewModel.RegisterViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -28,6 +30,7 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
 
     private var _binding: FragmentSignUpBinding? = null
     private val binding get() = _binding!!
+    private lateinit var dialog: Dialog
     private val viewModel: RegisterViewModel by viewModels()
 
     override fun onCreateView(
@@ -45,6 +48,8 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
         super.onViewCreated(view, savedInstanceState)
 
         binding.apply {
+            dialog = provideCustomAlertDialog()
+
             validateFields()
             setUpObservers()
 
@@ -131,19 +136,15 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
         viewModel.registerResponse.observe(viewLifecycleOwner) {
             when (it) {
                 is Resource.Success -> {
+                    dialog.dismiss()
                     findNavController().navigate(R.id.emailConfirmationFragment)
                 }
                 is Resource.Error -> {
-                    Snackbar.make(
-                        requireView(), getString(R.string.call_failed),
-                        Snackbar.LENGTH_LONG
-                    ).show()
+                    dialog.dismiss()
+                    requireView().showSnackBar(R.string.call_failed)
                 }
                 is Resource.Loading -> {
-                    Snackbar.make(
-                        requireView(), getString(R.string.loading),
-                        Snackbar.LENGTH_LONG
-                    ).show()
+                    dialog.show()
                 }
             }
         }
