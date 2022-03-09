@@ -12,7 +12,7 @@ import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.data.model.Role
 import com.decagonhq.clads_client.databinding.FragmentLoginFormBinding
 import com.decagonhq.clads_client.presentation.utils.Resource
-import com.decagonhq.clads_client.presentation.viewModel.GoogleAuthViewModel
+import com.decagonhq.clads_client.presentation.viewmodel.GoogleAuthViewModel
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.material.snackbar.Snackbar

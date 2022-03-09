@@ -22,7 +22,7 @@ import com.decagonhq.clads_client.presentation.utils.validation.validateConfirmP
 import com.decagonhq.clads_client.presentation.utils.validation.validateField
 import com.decagonhq.clads_client.presentation.utils.viewextensions.provideCustomAlertDialog
 import com.decagonhq.clads_client.presentation.utils.viewextensions.showSnackBar
-import com.decagonhq.clads_client.presentation.viewModel.RegisterViewModel
+import com.decagonhq.clads_client.presentation.viewmodel.RegisterViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

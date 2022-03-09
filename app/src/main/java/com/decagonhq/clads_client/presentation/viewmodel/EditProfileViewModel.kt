@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.decagonhq.clads_client.data.model.Profile
-import com.decagonhq.clads_client.data.repsitory.ProfileRepository
+import com.decagonhq.clads_client.data.repository.ProfileRepository
 import com.decagonhq.clads_client.presentation.utils.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch

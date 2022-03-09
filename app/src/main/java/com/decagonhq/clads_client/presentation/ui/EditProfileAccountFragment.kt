@@ -11,7 +11,8 @@ import androidx.fragment.app.activityViewModels
 import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.databinding.FragmentEditProfileAccountBinding
 import com.decagonhq.clads_client.presentation.utils.Resource
-import com.decagonhq.clads_client.presentation.utils.validation.SessionToken
+import com.decagonhq.clads_client.presentation.utils.validation.SessionManager
+import com.decagonhq.clads_client.presentation.utils.validation.SessionManager.TOKEN
 import com.decagonhq.clads_client.presentation.viewmodel.EditProfileViewModel
 import com.google.android.material.snackbar.Snackbar
 
@@ -40,8 +41,10 @@ class EditProfileAccountFragment : Fragment() {
             (accountStateTextInput.editText as? AutoCompleteTextView)?.setAdapter(arrayAdapter)
         }
 
-        val token: String = SessionToken.cladsSharedPreferences.getString(R.string.app_name.toString(), "").toString()
+        val token = SessionManager.readFromSharedPref(requireContext(), TOKEN)
+
         viewModel.getProfileDetails("Bearer $token")
+
         viewModel.profileDetails.observe(viewLifecycleOwner, { profile ->
 
             when (profile) {
