@@ -69,7 +69,10 @@ class EditProfileAccountFragment : Fragment() {
         updateViewModel.updateProfileResponse.observe(viewLifecycleOwner) {
             when (it) {
                 is Resource.Success -> {
-//                    findNavController().navigate(R.id.)
+                    Snackbar.make(
+                        requireView(), "Successful",
+                        Snackbar.LENGTH_LONG
+                    ).show()
                 }
                 is Resource.Error ->{
                     Snackbar.make(
