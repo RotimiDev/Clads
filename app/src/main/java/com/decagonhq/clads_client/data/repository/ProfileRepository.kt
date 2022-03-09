@@ -1,4 +1,4 @@
-package com.decagonhq.clads_client.data.repsitory
+package com.decagonhq.clads_client.data.repository
 
 import com.decagonhq.clads_client.presentation.network.ClientAPI
 import javax.inject.Inject
