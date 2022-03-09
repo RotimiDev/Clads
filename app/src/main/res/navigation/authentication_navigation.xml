@@ -67,5 +67,12 @@
         android:name="com.decagonhq.clads_client.presentation.ui.ChoiceLoginFragment"
         android:label="fragment_choice_login"
         tools:layout="@layout/fragment_choice_login" />
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.decagonhq.clads_client.presentation.ui.WelcomeFragment"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome">
+
+    </fragment>
 
 </navigation>

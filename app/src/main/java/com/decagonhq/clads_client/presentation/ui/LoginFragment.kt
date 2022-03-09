@@ -14,12 +14,12 @@ import com.decagonhq.clads_client.presentation.model.LoginRequest
 import com.decagonhq.clads_client.presentation.utils.Resource
 import com.decagonhq.clads_client.presentation.utils.validation.FieldValidationTracker
 import com.decagonhq.clads_client.presentation.utils.validation.FieldValidations
-import com.decagonhq.clads_client.presentation.utils.validation.SessionToken
+import com.decagonhq.clads_client.presentation.utils.validation.SessionManager
 import com.decagonhq.clads_client.presentation.utils.validation.observeFieldsValidationToEnableButton
 import com.decagonhq.clads_client.presentation.utils.validation.validateField
 import com.decagonhq.clads_client.presentation.utils.viewextensions.provideCustomAlertDialog
 import com.decagonhq.clads_client.presentation.utils.viewextensions.showSnackBar
-import com.decagonhq.clads_client.presentation.viewModel.LoginViewModel
+import com.decagonhq.clads_client.presentation.viewmodel.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -61,7 +61,8 @@ class LoginFragment : Fragment() {
         viewModel.loginResponse.observe(viewLifecycleOwner, {
             when (it) {
                 is Resource.Success -> {
-                    SessionToken.editSharedPref(it.data?.payload.toString())
+                    val token = it.data?.payload.toString()
+                    SessionManager.saveToSharedPref(requireContext(), SessionManager.TOKEN, token)
                     dialog.dismiss()
                     val intent = Intent(requireContext(), DashboardActivity::class.java)
                     startActivity(intent)
