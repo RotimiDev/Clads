@@ -18,8 +18,8 @@
     <string name="gender">Gender</string>
     <string name="tap_to_change_picture">Tap to change picture</string>
     <string name="delivery_address">Delivery Address</string>
-    <string name="female">Female</string>
-    <string name="male">Male</string>
+    <string name="female">female</string>
+    <string name="male">male</string>
     <string name="street">Street</string>
     <string name="city">City</string>
     <string name="save_change">Save Change</string>
@@ -197,6 +197,7 @@
     <string name="google_login_failed">Google login Failed</string>
     <string name="call_failed">Call failed</string>
     <string name="enter_caption_for_image">Please enter a Caption for the image</string>
+    <string name="empty_token">Empty Token</string>
 
 
 </resources>

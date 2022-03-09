@@ -14,6 +14,7 @@ import com.decagonhq.clads_client.presentation.model.LoginRequest
 import com.decagonhq.clads_client.presentation.utils.Resource
 import com.decagonhq.clads_client.presentation.utils.validation.FieldValidationTracker
 import com.decagonhq.clads_client.presentation.utils.validation.FieldValidations
+import com.decagonhq.clads_client.presentation.utils.validation.SessionManager
 import com.decagonhq.clads_client.presentation.utils.validation.observeFieldsValidationToEnableButton
 import com.decagonhq.clads_client.presentation.utils.validation.validateField
 import com.decagonhq.clads_client.presentation.utils.viewextensions.provideCustomAlertDialog
@@ -57,9 +58,11 @@ class LoginFragment : Fragment() {
 
     // viewModel Observer
     private fun setUpObservers() {
-        viewModel.loginResponse.observe(viewLifecycleOwner) {
+        viewModel.loginResponse.observe(viewLifecycleOwner, {
             when (it) {
                 is Resource.Success -> {
+                    val token = it.data?.payload.toString()
+                    SessionManager.saveToSharedPref(requireContext(), SessionManager.TOKEN, token)
                     dialog.dismiss()
                     val intent = Intent(requireContext(), DashboardActivity::class.java)
                     startActivity(intent)
@@ -72,7 +75,7 @@ class LoginFragment : Fragment() {
                     dialog.show()
                 }
             }
-        }
+        })
     }
 
     private fun validateFields() {

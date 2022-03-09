@@ -1,7 +1,7 @@
 package com.decagonhq.clads_client.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
-import com.decagonhq.clads_client.data.repsitory.ProfileRepository
+import com.decagonhq.clads_client.data.repository.ProfileRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
