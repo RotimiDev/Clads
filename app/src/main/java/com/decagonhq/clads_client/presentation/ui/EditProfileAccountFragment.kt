@@ -47,6 +47,7 @@ class EditProfileAccountFragment : Fragment() {
                 ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, states)
             (accountStateTextInput.editText as? AutoCompleteTextView)?.setAdapter(arrayAdapter)
         }
+            binding.accountImageView.setOnClickListener { requestWritePermission() }
 
         viewModel.getProfileDetails()
         viewModel.profileDetails.observe(viewLifecycleOwner, { profile ->
