@@ -26,7 +26,11 @@ class EmailConfirmationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.verifyEmailAddressButton.setOnClickListener {
-            val intent = Intent(requireContext(), DashboardActivity::class.java)
+            val intent = Intent(Intent.ACTION_MAIN).apply {
+                addCategory(Intent.CATEGORY_APP_EMAIL)
+                flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
+            }
+
             startActivity(intent)
             requireActivity().finish()
         }

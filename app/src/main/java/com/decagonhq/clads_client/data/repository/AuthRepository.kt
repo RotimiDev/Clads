@@ -8,6 +8,7 @@ import com.decagonhq.clads_client.presentation.model.RegistrationRequest
 import com.decagonhq.clads_client.presentation.network.ClientAPI
 import com.decagonhq.clads_client.presentation.utils.ApiCallHandler
 import com.decagonhq.clads_client.presentation.utils.Resource
+import retrofit2.Response
 import javax.inject.Inject
 
 class AuthRepository @Inject constructor(private val api: ClientAPI,) {
@@ -27,5 +28,9 @@ class AuthRepository @Inject constructor(private val api: ClientAPI,) {
         return ApiCallHandler.safeApiCall {
             api.registerUser(registrationRequest)
         }
+    }
+
+    suspend fun verifyUserMail(token: String): Response<GenericResult<String>> {
+        return api.verifyAuthToken(token)
     }
 }

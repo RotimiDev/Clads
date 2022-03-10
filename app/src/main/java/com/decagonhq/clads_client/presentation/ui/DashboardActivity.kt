@@ -26,8 +26,12 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class DashboardActivity : AppCompatActivity() {
+<<<<<<< HEAD
 
     private lateinit var sessionManager: SessionManager
+=======
+    lateinit var mAuth: FirebaseAuth
+>>>>>>> 393a322a2e4cb79ea6be7093c211a8a93c18d55a
     private lateinit var mDrawer: DrawerLayout
     private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var navView: NavigationView
