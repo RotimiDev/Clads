@@ -18,7 +18,7 @@ class WelcomeViewModel @Inject constructor(
     private val authRepository: AuthRepository
 ) : ViewModel() {
     private var _authenticationStatus = MutableLiveData<Resource<GenericResult<String>>>()
-    val authenticationToken: LiveData<Resource<GenericResult<String>>> get() =_authenticationStatus
+    val authenticationToken: LiveData<Resource<GenericResult<String>>> get() = _authenticationStatus
 
     fun verifyAuthToken(token: String) = viewModelScope.launch(Dispatchers.IO) {
         _authenticationStatus.postValue(Resource.Loading())

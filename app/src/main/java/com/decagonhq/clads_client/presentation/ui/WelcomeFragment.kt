@@ -1,5 +1,6 @@
 package com.decagonhq.clads_client.presentation.ui
 
+import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ import com.decagonhq.clads_client.databinding.FragmentWelcomeBinding
 import com.decagonhq.clads_client.presentation.utils.Resource
 import com.decagonhq.clads_client.presentation.utils.validation.SessionManager
 import com.decagonhq.clads_client.presentation.utils.validation.SessionManager.TOKEN
+import com.decagonhq.clads_client.presentation.utils.viewextensions.provideCustomAlertDialog
 import com.decagonhq.clads_client.presentation.utils.viewextensions.showSnackBar
 import com.decagonhq.clads_client.presentation.viewmodel.WelcomeViewModel
 
@@ -20,6 +22,7 @@ class WelcomeFragment : Fragment() {
     private lateinit var token: String
     private var _binding: FragmentWelcomeBinding? = null
     private val binding get() = _binding!!
+    private lateinit var dialog: Dialog
     private val viewModel: WelcomeViewModel by activityViewModels()
 
     override fun onCreateView(
@@ -36,26 +39,30 @@ class WelcomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //get token from fragment arguments and make the verification call
+        dialog = provideCustomAlertDialog()
+
+        // get token from fragment arguments and make the verification call
         token = arguments?.getString("token").toString()
         viewModel.verifyAuthToken(token)
         SessionManager.saveToSharedPref(requireContext(), TOKEN, token)
 
-        //observe the status of the verification
+        // observe the status of the verification
         viewModel.authenticationToken.observe(viewLifecycleOwner, { status ->
 
             when (status) {
                 is Resource.Success -> {
+                    dialog.dismiss()
                     requireView().showSnackBar(R.string.email_verified)
                     val intent = Intent(requireContext(), DashboardActivity::class.java)
                     startActivity(intent)
                     requireActivity().finish()
                 }
                 is Resource.Error -> {
+                    dialog.dismiss()
                     requireView().showSnackBar("Error:" + status.message.toString())
                 }
                 is Resource.Loading -> {
-                    requireView().showSnackBar(getString(R.string.loading))
+                    dialog.show()
                 }
             }
         })

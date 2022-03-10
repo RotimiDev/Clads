@@ -17,7 +17,7 @@ import javax.inject.Inject
 class EditProfileViewModel @Inject constructor(private val repository: ProfileRepository) : ViewModel() {
 
     private var _profile = MutableLiveData<Resource<Profile>>()
-    val profileDetails : LiveData<Resource<Profile>> get() =_profile
+    val profileDetails: LiveData<Resource<Profile>> get() = _profile
 
     fun getProfileDetails(token: String) = viewModelScope.launch(Dispatchers.IO) {
         _profile.postValue(Resource.Loading())
