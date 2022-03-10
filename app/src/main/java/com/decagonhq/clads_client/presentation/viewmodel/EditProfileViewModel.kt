@@ -15,10 +15,10 @@ import javax.inject.Inject
 
 class EditProfileViewModel@Inject constructor(private val repository: ProfileRepository) : ViewModel() {
     private var _image: MutableLiveData<Resource<UploadImage>> = MutableLiveData()
-            val postImage: LiveData<Resource<UploadImage>> get()= _image
+    val postImage: LiveData<Resource<UploadImage>> get() = _image
 
     fun uploadImage(token: String, image: MultipartBody.Part) = viewModelScope.launch {
-       _image.postValue(Resource.Loading())
+        _image.postValue(Resource.Loading())
         val sent = repository.postProfileImage(token, image)
 
         _image.postValue(handleSentPost(sent))
