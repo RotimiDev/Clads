@@ -14,11 +14,13 @@ import android.widget.AutoCompleteTextView
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import com.bumptech.glide.Glide
 import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.databinding.FragmentEditProfileAccountBinding
 import com.decagonhq.clads_client.presentation.utils.Resource
 import com.decagonhq.clads_client.presentation.utils.validation.SessionManager
 import com.decagonhq.clads_client.presentation.utils.validation.SessionManager.TOKEN
+import com.decagonhq.clads_client.presentation.utils.viewextensions.showSnackBar
 import com.decagonhq.clads_client.presentation.viewmodel.EditProfileViewModel
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
@@ -56,6 +58,20 @@ class EditProfileAccountFragment : Fragment() {
         val token = SessionManager.readFromSharedPref(requireContext(), TOKEN)
 
         viewModel.getProfileDetails("Bearer $token")
+
+        viewModel.postImage.observe(viewLifecycleOwner, {
+            when (it) {
+                is Resource.Success -> {
+                    Glide.with(requireContext()).load(it.data?.payload?.downloadUri).into(binding.accountImageView)
+                }
+                is Resource.Loading -> {
+                    requireView().showSnackBar(getString(R.string.loading))
+                }
+                is Resource.Error -> {
+                    requireView().showSnackBar(it.data?.message.toString())
+                }
+            }
+        })
 
         viewModel.profileDetails.observe(viewLifecycleOwner, { profile ->
 

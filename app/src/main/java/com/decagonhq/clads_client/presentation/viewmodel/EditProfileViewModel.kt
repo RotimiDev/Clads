@@ -1,5 +1,6 @@
 package com.decagonhq.clads_client.presentation.viewmodel
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -13,12 +14,14 @@ import retrofit2.Response
 import javax.inject.Inject
 
 class EditProfileViewModel@Inject constructor(private val repository: ProfileRepository) : ViewModel() {
-    var postImage: MutableLiveData<Resource<UploadImage>> = MutableLiveData()
+    private var _image: MutableLiveData<Resource<UploadImage>> = MutableLiveData()
+            val postImage: LiveData<Resource<UploadImage>> get()= _image
+
     fun uploadImage(token: String, image: MultipartBody.Part) = viewModelScope.launch {
-        postImage.postValue(Resource.Loading())
+       _image.postValue(Resource.Loading())
         val sent = repository.postProfileImage(token, image)
 
-        postImage.postValue(handleSentPost(sent))
+        _image.postValue(handleSentPost(sent))
     }
     private fun handleSentPost(sent: Response<UploadImage>): Resource<UploadImage>? {
 
