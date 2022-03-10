@@ -19,6 +19,10 @@ import com.decagonhq.clads_client.databinding.FragmentEditProfileAccountBinding
 import com.decagonhq.clads_client.presentation.viewmodel.EditProfileViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import okhttp3.MultipartBody
+import com.decagonhq.clads_client.presentation.utils.Resource
+import com.decagonhq.clads_client.presentation.utils.validation.SessionManager
+import com.decagonhq.clads_client.presentation.utils.validation.SessionManager.TOKEN
+import com.google.android.material.snackbar.Snackbar
 
 @AndroidEntryPoint
 class EditProfileAccountFragment : Fragment() {
@@ -49,12 +53,36 @@ class EditProfileAccountFragment : Fragment() {
         }
         binding.accountImageView.setOnClickListener { requestWritePermission() }
 
-        viewModel.getProfileDetails()
+        val token = SessionManager.readFromSharedPref(requireContext(), TOKEN)
+
+        viewModel.getProfileDetails("Bearer $token")
+
         viewModel.profileDetails.observe(viewLifecycleOwner, { profile ->
-            binding.accountCityEditText.text = profile.data?.payload?.showroomAddress?.city
-            binding.accountStreetEditText.text = profile.data?.payload?.showroomAddress?.state
-            binding.accountLastNameTextView.text = profile.data?.payload?.lastName
-            binding.editFirstNameEditText.text = profile.data?.payload?.firstName
+
+            when (profile) {
+
+                is Resource.Success -> {
+                    binding.accountCityEditText.setText(profile.data?.payload?.showroomAddress?.city)
+                    binding.accountStreetEditText.setText(profile.data?.payload?.showroomAddress?.state)
+                    binding.editLastNameEditText.setText(profile.data?.payload?.lastName)
+                    binding.editFirstNameEditText.setText(profile.data?.payload?.firstName)
+                    if (profile.data?.payload?.gender === R.string.male.toString()) {
+                        binding.profileGenderRadioGroup.check(R.id.profile_male_radio_button)
+                    }
+                }
+                is Resource.Error -> {
+                    Snackbar.make(
+                        requireView(), "Error:" + profile.message.toString(),
+                        Snackbar.LENGTH_LONG
+                    ).show()
+                }
+                is Resource.Loading -> {
+                    Snackbar.make(
+                        requireView(), getString(R.string.loading),
+                        Snackbar.LENGTH_LONG
+                    ).show()
+                }
+            }
         })
     }
 

@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.decagonhq.clads_client.data.model.TailorDataSource
 import com.decagonhq.clads_client.databinding.FragmentHomeBinding
+import com.decagonhq.clads_client.presentation.adapters.HomeFragmentRecyclerAdapter
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null

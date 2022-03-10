@@ -33,9 +33,9 @@ class EditProfileViewModel@Inject constructor(private val repository: ProfileRep
 
     var profileDetails: MutableLiveData<Resource<Profile>> = MutableLiveData()
 
-    fun getProfileDetails() = viewModelScope.launch {
+    fun getProfileDetails(token: String) = viewModelScope.launch {
         profileDetails.postValue(Resource.Loading())
-        val profileData = repository.getProfile(TOKEN)
+        val profileData = repository.getProfile(token)
         profileDetails.postValue(handleUserData(profileData))
     }
     private fun handleUserData(userData: Response<Profile>): Resource<Profile> {

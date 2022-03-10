@@ -1,12 +1,10 @@
 package com.decagonhq.clads_client.data.model
 
-import android.text.Editable
-
 data class EditProfilePayload(
     val country: String,
     val deliveryTime: Any,
     val email: String,
-    val firstName: Editable,
+    val firstName: String,
     val gender: String,
     val genderFocus: List<String>,
     val id: Int,

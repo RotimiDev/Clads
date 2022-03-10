@@ -45,7 +45,6 @@ class MediaFragment : Fragment(), PhotoGalleryAdapter.OnItemClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         initViews()
-
         // Observing my recyclerView from viewModel, and updating accordingly
         viewModel.photoGallery.observe(viewLifecycleOwner) {
             galleryAdapter.submitList(it)

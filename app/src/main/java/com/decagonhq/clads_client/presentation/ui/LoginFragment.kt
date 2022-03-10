@@ -1,5 +1,6 @@
 package com.decagonhq.clads_client.presentation.ui
 
+import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,16 +14,19 @@ import com.decagonhq.clads_client.presentation.model.LoginRequest
 import com.decagonhq.clads_client.presentation.utils.Resource
 import com.decagonhq.clads_client.presentation.utils.validation.FieldValidationTracker
 import com.decagonhq.clads_client.presentation.utils.validation.FieldValidations
+import com.decagonhq.clads_client.presentation.utils.validation.SessionManager
 import com.decagonhq.clads_client.presentation.utils.validation.observeFieldsValidationToEnableButton
 import com.decagonhq.clads_client.presentation.utils.validation.validateField
+import com.decagonhq.clads_client.presentation.utils.viewextensions.provideCustomAlertDialog
+import com.decagonhq.clads_client.presentation.utils.viewextensions.showSnackBar
 import com.decagonhq.clads_client.presentation.viewmodel.LoginViewModel
-import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class LoginFragment : Fragment() {
     private var _binding: FragmentLoginFormBinding? = null
     private val binding get() = _binding!!
+    private lateinit var dialog: Dialog
     private val viewModel: LoginViewModel by viewModels()
 
     override fun onCreateView(
@@ -37,6 +41,7 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.apply {
+            dialog = provideCustomAlertDialog()
             setUpObservers()
             validateFields()
 
@@ -53,26 +58,24 @@ class LoginFragment : Fragment() {
 
     // viewModel Observer
     private fun setUpObservers() {
-        viewModel.loginResponse.observe(viewLifecycleOwner) {
+        viewModel.loginResponse.observe(viewLifecycleOwner, {
             when (it) {
                 is Resource.Success -> {
+                    val token = it.data?.payload.toString()
+                    SessionManager.saveToSharedPref(requireContext(), SessionManager.TOKEN, token)
+                    dialog.dismiss()
                     val intent = Intent(requireContext(), DashboardActivity::class.java)
                     startActivity(intent)
                 }
                 is Resource.Error -> {
-                    Snackbar.make(
-                        requireView(), it.message!!,
-                        Snackbar.LENGTH_LONG
-                    ).show()
+                    dialog.dismiss()
+                    requireView().showSnackBar(it.message!!)
                 }
                 is Resource.Loading -> {
-                    Snackbar.make(
-                        requireView(), getString(R.string.loading),
-                        Snackbar.LENGTH_LONG
-                    ).show()
+                    dialog.show()
                 }
             }
-        }
+        })
     }
 
     private fun validateFields() {

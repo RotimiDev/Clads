@@ -8,7 +8,6 @@ import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -16,6 +15,7 @@ import androidx.fragment.app.activityViewModels
 import com.bumptech.glide.Glide
 import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.databinding.FragmentArtisanProfileBinding
+import com.decagonhq.clads_client.presentation.utils.viewextensions.showSnackBar
 import com.decagonhq.clads_client.presentation.viewmodel.ProfileFragmentViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -46,9 +46,6 @@ class ArtisanProfileFragment : Fragment() {
                 requestStoragePermission()
             }
         }
-        viewModel.profileImage.observe(viewLifecycleOwner, {
-            Glide.with(requireContext()).load(it.data?.payload?.get(0)?.fileName).into(binding.shapeAbleImageView)
-        })
     }
 
     private fun requestStoragePermission() {
@@ -60,7 +57,7 @@ class ArtisanProfileFragment : Fragment() {
                     ).toString()
             )
         ) {
-            Toast.makeText(requireContext(), R.string.this_need_background_permission, Toast.LENGTH_SHORT).show()
+            requireView().showSnackBar(R.string.this_need_background_permission)
         }
         ActivityCompat.requestPermissions(
             requireActivity(),
@@ -80,17 +77,9 @@ class ArtisanProfileFragment : Fragment() {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == STORAGE_PERMISSION_CODE) {
             if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(
-                    requireContext(),
-                    R.string.permission_granted_now_you_can_read_the_storage,
-                    Toast.LENGTH_SHORT
-                ).show()
+                requireView().showSnackBar(R.string.permission_granted_now_you_can_read_the_storage)
             } else {
-                Toast.makeText(
-                    requireContext(),
-                    R.string.oops_permission_is_not_granted,
-                    Toast.LENGTH_SHORT
-                ).show()
+                requireView().showSnackBar(R.string.oops_permission_is_not_granted)
             }
         }
     }
