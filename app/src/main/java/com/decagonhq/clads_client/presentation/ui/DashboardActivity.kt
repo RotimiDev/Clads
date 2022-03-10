@@ -23,7 +23,6 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.navigation.NavigationView
 import dagger.hilt.android.AndroidEntryPoint
 
-
 @AndroidEntryPoint
 class DashboardActivity : AppCompatActivity() {
     private lateinit var mDrawer: DrawerLayout
@@ -70,8 +69,6 @@ class DashboardActivity : AppCompatActivity() {
             drawerLayout.closeDrawer(GravityCompat.START)
         }
 
-
-
         binding.mainActivityNavView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.favouritesFragment -> {
@@ -98,7 +95,6 @@ class DashboardActivity : AppCompatActivity() {
                     return@setNavigationItemSelectedListener true
                 }
                 else -> return@setNavigationItemSelectedListener true
-
             }
         }
     }
