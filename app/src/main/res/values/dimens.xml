@@ -141,4 +141,5 @@
     <dimen name="width_60dp">60dp</dimen>
     <dimen name="height_24dp">24dp</dimen>
     <dimen name="margin_26dp">26dp</dimen>
+    <dimen name="dp88">88dp</dimen>
 </resources>

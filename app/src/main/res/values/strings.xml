@@ -196,6 +196,7 @@
     <string name="google_login_successful">Google login successful</string>
     <string name="google_login_failed">Google login Failed</string>
     <string name="call_failed">Call failed</string>
+    <string name="enter_caption_for_image">Please enter a Caption for the image</string>
 
 
 </resources>
