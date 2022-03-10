@@ -26,12 +26,6 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class DashboardActivity : AppCompatActivity() {
-<<<<<<< HEAD
-
-    private lateinit var sessionManager: SessionManager
-=======
-    lateinit var mAuth: FirebaseAuth
->>>>>>> 393a322a2e4cb79ea6be7093c211a8a93c18d55a
     private lateinit var mDrawer: DrawerLayout
     private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var navView: NavigationView
@@ -76,6 +70,8 @@ class DashboardActivity : AppCompatActivity() {
             drawerLayout.closeDrawer(GravityCompat.START)
         }
 
+
+
         binding.mainActivityNavView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.favouritesFragment -> {
@@ -89,7 +85,8 @@ class DashboardActivity : AppCompatActivity() {
                     val confirmationDialog = AlertDialog.Builder(this)
                     confirmationDialog.setMessage(R.string.logout_confirmation_dialog_message)
                     confirmationDialog.setPositiveButton(R.string.yes) { _: DialogInterface, _: Int ->
-                        sessionManager.clearSharedPref(this, "String")
+                        SessionManager.clearSharedPref(this, "String")
+                        findNavController(R.id.signUpOptionsFragment)
                     }
                     confirmationDialog.setNegativeButton(
                         R.string.no
@@ -101,6 +98,7 @@ class DashboardActivity : AppCompatActivity() {
                     return@setNavigationItemSelectedListener true
                 }
                 else -> return@setNavigationItemSelectedListener true
+
             }
         }
     }

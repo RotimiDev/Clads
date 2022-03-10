@@ -14,6 +14,7 @@ import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.data.model.PhotoGalleryModel
 import com.decagonhq.clads_client.databinding.FragmentMediaMiddleBinding
 import com.decagonhq.clads_client.presentation.utils.viewextensions.showSnackBar
+import com.decagonhq.clads_client.presentation.viewmodel.MediaGalleryViewModel
 import com.google.android.material.button.MaterialButton
 import dagger.hilt.android.AndroidEntryPoint
 
