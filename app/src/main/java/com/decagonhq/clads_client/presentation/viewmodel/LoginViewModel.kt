@@ -21,6 +21,7 @@ class LoginViewModel @Inject constructor(
     val loginResponse: LiveData<Resource<GenericResult<String>>> get() = _loginResponse
 
     fun loginUser(loginRequest: LoginRequest) {
+
         _loginResponse.value = Resource.Loading()
         viewModelScope.launch {
             _loginResponse.value = authRepository.loginUser(loginRequest)
