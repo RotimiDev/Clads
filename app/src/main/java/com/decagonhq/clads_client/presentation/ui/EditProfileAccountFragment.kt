@@ -59,7 +59,7 @@ class EditProfileAccountFragment : Fragment() {
                     }
                 }
                 is Resource.Error -> {
-                    requireView().showSnackBar("Error:" + profile.message.toString())
+                    requireView().showSnackBar("Error:" + profile.data?.message)
                 }
                 is Resource.Loading -> {
                     requireView().showSnackBar(getString(R.string.loading))

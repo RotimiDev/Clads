@@ -1,5 +1,6 @@
 package com.decagonhq.clads_client.presentation.viewmodel
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -15,12 +16,13 @@ import javax.inject.Inject
 @HiltViewModel
 class EditProfileViewModel @Inject constructor(private val repository: ProfileRepository) : ViewModel() {
 
-    var profileDetails: MutableLiveData<Resource<Profile>> = MutableLiveData()
+    private var _profile = MutableLiveData<Resource<Profile>>()
+    val profileDetails : LiveData<Resource<Profile>> get() =_profile
 
     fun getProfileDetails(token: String) = viewModelScope.launch(Dispatchers.IO) {
-        profileDetails.postValue(Resource.Loading())
+        _profile.postValue(Resource.Loading())
         val profileData = repository.getProfile(token)
-        profileDetails.postValue(handleUserData(profileData))
+        _profile.postValue(handleUserData(profileData))
     }
 
     private fun handleUserData(userData: Response<Profile>): Resource<Profile> {

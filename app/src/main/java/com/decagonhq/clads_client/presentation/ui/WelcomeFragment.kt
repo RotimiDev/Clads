@@ -36,25 +36,20 @@ class WelcomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //get token from fragment arguments and make the verification call
         token = arguments?.getString("token").toString()
+        viewModel.verifyAuthToken(token)
+        SessionManager.saveToSharedPref(requireContext(), TOKEN, token)
 
-        binding.welcomeFragmentVerifyButton.setOnClickListener {
-            viewModel.verifyAuthToken(token)
-        }
-
+        //observe the status of the verification
         viewModel.authenticationToken.observe(viewLifecycleOwner, { status ->
 
             when (status) {
-
                 is Resource.Success -> {
-
+                    requireView().showSnackBar(R.string.email_verified)
                     val intent = Intent(requireContext(), DashboardActivity::class.java)
                     startActivity(intent)
                     requireActivity().finish()
-                    if (status.data?.payload != null) {
-                        SessionManager.saveToSharedPref(requireContext(), TOKEN, token)
-                        requireView().showSnackBar(R.string.email_verified)
-                    }
                 }
                 is Resource.Error -> {
                     requireView().showSnackBar("Error:" + status.message.toString())

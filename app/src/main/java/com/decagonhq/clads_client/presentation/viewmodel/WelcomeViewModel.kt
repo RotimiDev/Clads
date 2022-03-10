@@ -1,5 +1,6 @@
 package com.decagonhq.clads_client.presentation.viewmodel
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -16,12 +17,13 @@ import javax.inject.Inject
 class WelcomeViewModel @Inject constructor(
     private val authRepository: AuthRepository
 ) : ViewModel() {
-    var authenticationToken: MutableLiveData<Resource<GenericResult<String>>> = MutableLiveData()
+    private var _authenticationStatus = MutableLiveData<Resource<GenericResult<String>>>()
+    val authenticationToken: LiveData<Resource<GenericResult<String>>> get() =_authenticationStatus
 
     fun verifyAuthToken(token: String) = viewModelScope.launch(Dispatchers.IO) {
-        authenticationToken.postValue(Resource.Loading())
+        _authenticationStatus.postValue(Resource.Loading())
         val tokenResponse = authRepository.verifyUserMail(token)
-        authenticationToken.postValue(handleToken(tokenResponse))
+        _authenticationStatus.postValue(handleToken(tokenResponse))
     }
 
     private fun handleToken(userData: Response<GenericResult<String>>): Resource<GenericResult<String>> {
