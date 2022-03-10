@@ -19,8 +19,8 @@ import com.decagonhq.clads_client.presentation.utils.validation.observeFieldsVal
 import com.decagonhq.clads_client.presentation.utils.validation.validateField
 import com.decagonhq.clads_client.presentation.utils.viewextensions.provideCustomAlertDialog
 import com.decagonhq.clads_client.presentation.utils.viewextensions.showSnackBar
+import com.decagonhq.clads_client.presentation.viewmodel.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
-
 @AndroidEntryPoint
 class LoginFragment : Fragment() {
     private var _binding: FragmentLoginFormBinding? = null

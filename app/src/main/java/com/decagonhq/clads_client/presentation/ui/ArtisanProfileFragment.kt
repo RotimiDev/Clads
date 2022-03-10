@@ -19,7 +19,6 @@ import com.decagonhq.clads_client.presentation.viewmodel.ProfileFragmentViewMode
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-
 class ArtisanProfileFragment : Fragment() {
     private val viewModel: ProfileFragmentViewModel by activityViewModels()
     private var _binding: FragmentArtisanProfileBinding? = null
