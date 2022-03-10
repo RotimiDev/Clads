@@ -22,7 +22,6 @@ import com.decagonhq.clads_client.presentation.utils.validation.SessionManager
 import com.decagonhq.clads_client.presentation.utils.validation.SessionManager.TOKEN
 import com.decagonhq.clads_client.presentation.utils.viewextensions.showSnackBar
 import com.decagonhq.clads_client.presentation.viewmodel.EditProfileViewModel
-import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import okhttp3.MultipartBody
 
@@ -87,16 +86,10 @@ class EditProfileAccountFragment : Fragment() {
                     }
                 }
                 is Resource.Error -> {
-                    Snackbar.make(
-                        requireView(), "Error:" + profile.message.toString(),
-                        Snackbar.LENGTH_LONG
-                    ).show()
+                    requireView().showSnackBar("Error:" + profile.data?.message)
                 }
                 is Resource.Loading -> {
-                    Snackbar.make(
-                        requireView(), getString(R.string.loading),
-                        Snackbar.LENGTH_LONG
-                    ).show()
+                    requireView().showSnackBar(getString(R.string.loading))
                 }
             }
         })

@@ -11,12 +11,14 @@ import com.decagonhq.clads_client.presentation.network.NetworkConstants.Companio
 import com.decagonhq.clads_client.presentation.network.NetworkConstants.Companion.GOOGLE_LOGIN_URL
 import com.decagonhq.clads_client.presentation.network.NetworkConstants.Companion.PROFILE_URL
 import com.decagonhq.clads_client.presentation.network.NetworkConstants.Companion.UPLOAD_PROFILE_IMAGE
+import com.decagonhq.clads_client.presentation.network.NetworkConstants.Companion.VERIFY_USER_URL
 import okhttp3.MultipartBody
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.POST
+import retrofit2.http.Query
 
 interface ClientAPI {
     @POST("/api/v1/customer/login")
@@ -33,6 +35,11 @@ interface ClientAPI {
 
     @POST("/api/v1/customer/register")
     suspend fun registerUser(@Body registrationRequest: RegistrationRequest): GenericResult<RegistrationPayload>
+
+    @GET(VERIFY_USER_URL)
+    suspend fun verifyAuthToken(
+        @Query("token") token: String
+    ): Response<GenericResult<String>>
 
     @GET(GET_PROFILE_IMAGE)
     suspend fun getProfileImage(@Header("Authorization") token: String): Response<GetImage>

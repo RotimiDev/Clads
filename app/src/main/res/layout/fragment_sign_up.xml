@@ -8,20 +8,18 @@
     android:background="@color/deep_sky_blue"
     tools:context=".presentation.ui.SignUpOptionsFragment">
 
-    <androidx.core.widget.NestedScrollView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:paddingHorizontal="@dimen/margin_default">
 
             <TextView
@@ -29,7 +27,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="18dp"
-                android:layout_marginTop="46dp"
                 android:fontFamily="@font/poppins"
                 android:text="@string/create_account"
                 android:textColor="@color/white"
@@ -56,7 +53,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_default"
-                android:layout_marginTop="43dp"
                 android:textColorHint="@color/hex_grey"
                 app:boxBackgroundColor="@color/deep_sky_blue"
                 app:boxStrokeColor="@color/hex_grey"
@@ -145,25 +141,6 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-
-            <androidx.appcompat.widget.AppCompatSpinner
-                android:id="@+id/spinner"
-                style="@style/Widget.AppCompat.Spinner.Underlined"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/margin_default"
-                android:layout_marginBottom="@dimen/margin_33dp"
-                android:backgroundTint="@color/white"
-                android:dropDownWidth="wrap_content"
-                android:entries="@array/Account"
-                android:minHeight="48dp"
-                android:spinnerMode="dropdown"
-                app:layout_constraintBottom_toTopOf="@id/emailAddressLayout"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/OtherName_Layout" />
-
-
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/emailAddressLayout"
                 android:layout_width="match_parent"
@@ -178,7 +155,7 @@
                 app:hintTextColor="@color/hex_grey"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/spinner">
+                app:layout_constraintTop_toBottomOf="@+id/OtherName_Layout">
 
                 <EditText
                     android:id="@+id/emailAddress_textview"
@@ -264,13 +241,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.0" />
+                app:layout_constraintGuide_percent="0.06" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/sign_up_submit_button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="45dp"
+                android:layout_marginTop="@dimen/margin_29dp"
                 android:backgroundTint="@color/grey"
                 android:enabled="false"
                 android:fontFamily="@font/poppins"
@@ -288,8 +265,8 @@
                 android:id="@+id/have_account_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="21dp"
-                android:layout_marginBottom="40dp"
+                android:layout_marginTop="@dimen/margin_29dp"
+                android:layout_marginBottom="@dimen/margin_29dp"
                 android:fontFamily="@font/poppins"
                 android:text="@string/have_an_account"
                 android:textColor="@color/hex_grey"
@@ -313,6 +290,6 @@
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.core.widget.NestedScrollView>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

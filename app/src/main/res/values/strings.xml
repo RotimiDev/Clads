@@ -159,7 +159,7 @@
     <string name="all_post">Post</string>
     <string name="o">O</string>
     <string name="olaleye_david">Olaleye David</string>
-    <string name="_01_09_2020">01-09-2020</string>
+    <string name="_01_09_2020">01–09-2020</string>
     <string name="_325">325</string>
     <string name="_3">3</string>
     <string name="_1">1</string>
@@ -198,6 +198,9 @@
     <string name="call_failed">Call failed</string>
     <string name="enter_caption_for_image">Please enter a Caption for the image</string>
     <string name="empty_token">Empty Token</string>
+    <string name="welcome">Welcome Back</string>
+    <string name="email_verified">Email Verified Successfully</string>
+    <string name="you_re_almost_done_just_tap_the_button_below_to_verify_your_account"> You\'re almost done, \ntap the button below to verify your account</string>
 
 
 </resources>
