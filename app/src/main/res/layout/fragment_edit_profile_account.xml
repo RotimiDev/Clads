@@ -60,7 +60,6 @@
                 android:id="@+id/edit_first_name_edit_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="@string/ijeoma"
                 android:fontFamily="@font/poppins_light"
                 android:textColor="@color/navy_blue"
                 android:textSize="@dimen/text_size_12sp"
@@ -98,7 +97,6 @@
                 android:id="@+id/edit_last_name_edit_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="@string/ibukun"
                 android:textColor="@color/navy_blue"
                 android:background="@color/white"
                 android:fontFamily="@font/poppins_light"
@@ -134,7 +132,6 @@
                 android:id="@+id/edit_other_name_edit_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="@string/babangida"
                 android:background="@color/white"
                 android:textColor="@color/navy_blue"
                 android:fontFamily="@font/poppins_light"
@@ -165,6 +162,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/account_other_name_text_view" />
 
             <RadioGroup
+                android:id="@+id/profile_gender_radio_group"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -176,13 +174,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/male"
-                    android:textSize="@dimen/text_size_12sp" />
+                    android:textSize="@dimen/text_size_12sp"
+                    android:id="@+id/profile_male_radio_button"/>
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/female"
-                    android:textSize="@dimen/text_size_12sp" />
+                    android:textSize="@dimen/text_size_12sp"
+                    android:id="@+id/profile_female_radio_button"/>
             </RadioGroup>
 
             <View

@@ -13,6 +13,8 @@ import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.databinding.FragmentEditProfileAccountBinding
 import com.decagonhq.clads_client.presentation.model.UpdateProfileRequest
 import com.decagonhq.clads_client.presentation.utils.Resource
+import com.decagonhq.clads_client.presentation.utils.validation.SessionManager
+import com.decagonhq.clads_client.presentation.utils.validation.SessionManager.TOKEN
 import com.decagonhq.clads_client.presentation.viewModel.UpdateProfileViewModel
 import com.decagonhq.clads_client.presentation.viewmodel.EditProfileViewModel
 import com.google.android.material.snackbar.Snackbar
@@ -35,7 +37,6 @@ class EditProfileAccountFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setUpObservers()
 
         binding.apply {
             val states = requireContext().resources.getStringArray(R.array.State)
@@ -56,32 +57,32 @@ class EditProfileAccountFragment : Fragment() {
             }
         }
 
-        viewModel.getProfileDetails()
+        val token = SessionManager.readFromSharedPref(requireContext(), TOKEN)
+
+        viewModel.getProfileDetails("Bearer $token")
+
         viewModel.profileDetails.observe(viewLifecycleOwner) { profile ->
-            binding.accountCityEditText.text = profile.data?.payload?.showroomAddress?.city
-            binding.accountStreetEditText.text = profile.data?.payload?.showroomAddress?.state
-            binding.accountLastNameTextView.text = profile.data?.payload?.lastName
-            binding.editFirstNameEditText.text = profile.data?.payload?.firstName
-        }
-    }
-    private fun setUpObservers() {
-        updateViewModel.updateProfileResponse.observe(viewLifecycleOwner) {
-            when (it) {
+
+            when (profile) {
+
                 is Resource.Success -> {
-                    Snackbar.make(
-                        requireView(), "Successful",
-                        Snackbar.LENGTH_LONG
-                    ).show()
+                    binding.accountCityEditText.setText(profile.data?.payload?.showroomAddress?.city)
+                    binding.accountStreetEditText.setText(profile.data?.payload?.showroomAddress?.state)
+                    binding.editLastNameEditText.setText(profile.data?.payload?.lastName)
+                    binding.editFirstNameEditText.setText(profile.data?.payload?.firstName)
+                    if (profile.data?.payload?.gender === R.string.male.toString()) {
+                        binding.profileGenderRadioGroup.check(R.id.profile_male_radio_button)
+                    }
                 }
-                is Resource.Error ->{
+                is Resource.Error -> {
                     Snackbar.make(
-                        requireView(), "Failed to save",
+                        requireView(), "Error:" + profile.message.toString(),
                         Snackbar.LENGTH_LONG
                     ).show()
                 }
                 is Resource.Loading -> {
                     Snackbar.make(
-                        requireView(), "Please wait...",
+                        requireView(), getString(R.string.loading),
                         Snackbar.LENGTH_LONG
                     ).show()
                 }

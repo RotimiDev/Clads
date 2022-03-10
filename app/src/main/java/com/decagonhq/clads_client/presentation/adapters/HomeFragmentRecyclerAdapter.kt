@@ -1,4 +1,4 @@
-package com.decagonhq.clads_client.presentation.ui
+package com.decagonhq.clads_client.presentation.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
