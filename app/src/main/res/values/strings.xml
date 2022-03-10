@@ -198,6 +198,9 @@
     <string name="call_failed">Call failed</string>
     <string name="enter_caption_for_image">Please enter a Caption for the image</string>
     <string name="empty_token">Empty Token</string>
+    <string name="logout_confirmation_dialog_message" />
+    <string name="login_status">LOGIN_STATUS</string>
+    <string name="log_out">LOGOUT</string>
 
 
 </resources>

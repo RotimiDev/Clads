@@ -21,7 +21,7 @@ object SessionManager {
         return sharedPreferences.getString(key, defaultValue).toString()
     }
 
-    fun clearSharedPref(context: Context) {
+    fun clearSharedPref(context: Context, token: String) {
         val sharedPreferences = context.getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE)
         sharedPreferences.edit().clear().apply()
     }
