@@ -1,8 +1,8 @@
 package com.decagonhq.clads_client.presentation.network
 import com.decagonhq.clads_client.data.model.GetImage
 import com.decagonhq.clads_client.data.model.Profile
-import com.decagonhq.clads_client.data.model.UploadImage
 import com.decagonhq.clads_client.data.model.Role
+import com.decagonhq.clads_client.data.model.UploadImage
 import com.decagonhq.clads_client.presentation.model.GenericResult
 import com.decagonhq.clads_client.presentation.model.LoginRequest
 import com.decagonhq.clads_client.presentation.model.RegistrationPayload

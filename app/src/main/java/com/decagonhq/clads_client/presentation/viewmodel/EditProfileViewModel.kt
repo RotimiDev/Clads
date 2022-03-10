@@ -6,7 +6,6 @@ import androidx.lifecycle.viewModelScope
 import com.decagonhq.clads_client.data.model.Profile
 import com.decagonhq.clads_client.data.model.UploadImage
 import com.decagonhq.clads_client.data.repository.ProfileRepository
-import com.decagonhq.clads_client.presentation.network.NetworkConstants.Companion.TOKEN
 import com.decagonhq.clads_client.presentation.utils.Resource
 import kotlinx.coroutines.launch
 import okhttp3.MultipartBody

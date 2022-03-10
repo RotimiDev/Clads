@@ -16,13 +16,13 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.databinding.FragmentEditProfileAccountBinding
-import com.decagonhq.clads_client.presentation.viewmodel.EditProfileViewModel
-import dagger.hilt.android.AndroidEntryPoint
-import okhttp3.MultipartBody
 import com.decagonhq.clads_client.presentation.utils.Resource
 import com.decagonhq.clads_client.presentation.utils.validation.SessionManager
 import com.decagonhq.clads_client.presentation.utils.validation.SessionManager.TOKEN
+import com.decagonhq.clads_client.presentation.viewmodel.EditProfileViewModel
 import com.google.android.material.snackbar.Snackbar
+import dagger.hilt.android.AndroidEntryPoint
+import okhttp3.MultipartBody
 
 @AndroidEntryPoint
 class EditProfileAccountFragment : Fragment() {
