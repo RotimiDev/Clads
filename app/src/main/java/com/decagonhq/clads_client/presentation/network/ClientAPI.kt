@@ -8,11 +8,13 @@ import com.decagonhq.clads_client.presentation.model.RegistrationPayload
 import com.decagonhq.clads_client.presentation.model.RegistrationRequest
 import com.decagonhq.clads_client.presentation.network.NetworkConstants.Companion.GOOGLE_LOGIN_URL
 import com.decagonhq.clads_client.presentation.network.NetworkConstants.Companion.PROFILE_URL
+import com.decagonhq.clads_client.presentation.network.NetworkConstants.Companion.VERIFY_USER_URL
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.POST
+import retrofit2.http.Query
 
 interface ClientAPI {
     @POST("/api/v1/customer/login")
@@ -29,4 +31,9 @@ interface ClientAPI {
 
     @POST("/api/v1/customer/register")
     suspend fun registerUser(@Body registrationRequest: RegistrationRequest): GenericResult<RegistrationPayload>
+
+    @GET(VERIFY_USER_URL)
+    suspend fun verifyAuthToken(
+        @Query("token") token: String
+    ): Response<GenericResult<String>>
 }
