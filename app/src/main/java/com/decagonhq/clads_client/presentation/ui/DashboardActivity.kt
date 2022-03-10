@@ -83,7 +83,7 @@ class DashboardActivity : AppCompatActivity() {
                     confirmationDialog.setMessage(R.string.logout_confirmation_dialog_message)
                     confirmationDialog.setPositiveButton(R.string.yes) { _: DialogInterface, _: Int ->
                         SessionManager.clearSharedPref(this, "String")
-                        findNavController(R.id.signUpOptionsFragment)
+                        findNavController(R.id.loginFormFragment)
                     }
                     confirmationDialog.setNegativeButton(
                         R.string.no
