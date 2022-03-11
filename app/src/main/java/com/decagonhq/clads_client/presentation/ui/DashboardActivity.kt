@@ -1,9 +1,11 @@
 package com.decagonhq.clads_client.presentation.ui
 
+import android.content.DialogInterface
 import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -22,12 +24,10 @@ import com.decagonhq.clads_client.utils.SessionManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.navigation.NavigationView
-import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class DashboardActivity : AppCompatActivity() {
-    lateinit var mAuth: FirebaseAuth
     private lateinit var mDrawer: DrawerLayout
     private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var navView: NavigationView
@@ -47,7 +47,6 @@ class DashboardActivity : AppCompatActivity() {
         binding = ActivityDashboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        mAuth = FirebaseAuth.getInstance()
         // Initialized views with binding
         bottomNavigationView = binding.bottomNavigationView
         navView = binding.mainActivityNavView
@@ -102,7 +101,20 @@ class DashboardActivity : AppCompatActivity() {
                     return@setNavigationItemSelectedListener true
                 }
                 R.id.logout -> {
-                    mAuth.signOut()
+                    // Using a dialog to ask the user for confirmation before logging out
+                    val confirmationDialog = AlertDialog.Builder(this)
+                    confirmationDialog.setMessage(R.string.logout_confirmation_dialog_message)
+                    confirmationDialog.setPositiveButton(R.string.yes) { _: DialogInterface, _: Int ->
+                        SessionManager.clearSharedPref(this)
+                        findNavController(R.id.loginFormFragment)
+                    }
+                    confirmationDialog.setNegativeButton(
+                        R.string.no
+                    ) { _: DialogInterface, _: Int ->
+                        drawerLayout.closeDrawer(GravityCompat.START)
+                    }
+                    confirmationDialog.create().show()
+
                     return@setNavigationItemSelectedListener true
                 }
                 else -> return@setNavigationItemSelectedListener true

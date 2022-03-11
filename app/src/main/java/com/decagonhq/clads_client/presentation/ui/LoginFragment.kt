@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.data.model.LoginRequest
 import com.decagonhq.clads_client.databinding.FragmentLoginFormBinding
@@ -21,7 +22,6 @@ import com.decagonhq.clads_client.utils.validation.validateField
 import com.decagonhq.clads_client.utils.viewextensions.provideCustomAlertDialog
 import com.decagonhq.clads_client.utils.viewextensions.showSnackBar
 import dagger.hilt.android.AndroidEntryPoint
-
 @AndroidEntryPoint
 class LoginFragment : Fragment() {
     private var _binding: FragmentLoginFormBinding? = null
@@ -58,24 +58,27 @@ class LoginFragment : Fragment() {
 
     // viewModel Observer
     private fun setUpObservers() {
-        viewModel.loginResponse.observe(viewLifecycleOwner, {
-            when (it) {
-                is Resource.Success -> {
-                    val token = it.data?.payload.toString()
-                    SessionManager.saveToSharedPref(requireContext(), SessionManager.TOKEN, token)
-                    dialog.dismiss()
-                    val intent = Intent(requireContext(), DashboardActivity::class.java)
-                    startActivity(intent)
-                }
-                is Resource.Error -> {
-                    dialog.dismiss()
-                    requireView().showSnackBar(it.message!!)
-                }
-                is Resource.Loading -> {
-                    dialog.show()
+        viewModel.loginResponse.observe(
+            viewLifecycleOwner,
+            Observer {
+                when (it) {
+                    is Resource.Success -> {
+                        val token = it.data?.payload.toString()
+                        SessionManager.saveToSharedPref(requireContext(), SessionManager.TOKEN, token)
+                        dialog.dismiss()
+                        val intent = Intent(requireContext(), DashboardActivity::class.java)
+                        startActivity(intent)
+                    }
+                    is Resource.Error -> {
+                        dialog.dismiss()
+                        requireView().showSnackBar(it.message!!)
+                    }
+                    is Resource.Loading -> {
+                        dialog.show()
+                    }
                 }
             }
-        })
+        )
     }
 
     private fun validateFields() {
