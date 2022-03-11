@@ -1,4 +1,4 @@
-package com.decagonhq.clads_client.presentation.utils
+package com.decagonhq.clads_client.utils
 
 sealed class Resource<T> (var data: T? = null, var message: String? = null) {
     class Loading<T>() : Resource<T>()

@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="@dimen/margin_32dp"
     android:background="@color/white"
     android:fillViewport="true">
 
@@ -34,8 +33,8 @@
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/shape_able_image_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/margin_32dp"
             android:scaleType="centerCrop"
@@ -123,7 +122,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_32dp"
             android:layout_marginTop="@dimen/margin_32dp"
             android:layout_marginEnd="@dimen/margin_32dp">
@@ -154,13 +153,13 @@
                 app:layout_constraintTop_toBottomOf="@id/rating_text_view" />
 
             <RatingBar
-                android:id="@+id/rating_bar"
+                android:id="@+id/single_artisan_profile_rating_bar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:isIndicator="false"
-                android:numStars="4"
+                android:numStars="5"
                 android:progressTint="@color/rating_color"
-                android:rating="2.5"
+                android:rating="4"
                 android:scaleX=".5"
                 android:scaleY=".5"
                 android:stepSize="0.5"
@@ -181,12 +180,12 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <CheckBox
-                android:id="@+id/favorite_check_box"
+                android:id="@+id/artisan_favorite_check_box"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/margin_12dp"
                 android:button="@drawable/ic_baseline_favorite_24"
-                app:layout_constraintBottom_toBottomOf="@+id/rating_bar"
+                app:layout_constraintBottom_toBottomOf="@+id/single_artisan_profile_rating_bar"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -199,7 +198,7 @@
                 android:textColor="@color/navy_blue"
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/favorite_check_box" />
+                app:layout_constraintTop_toBottomOf="@id/artisan_favorite_check_box" />
 
             <Button
                 android:id="@+id/go_to_gallery_button"

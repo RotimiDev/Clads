@@ -1,6 +1,6 @@
 package com.decagonhq.clads_client
 
-import com.decagonhq.clads_client.presentation.utils.validation.FieldValidations
+import com.decagonhq.clads_client.utils.validation.FieldValidations
 import org.junit.Assert
 import org.junit.Test
 

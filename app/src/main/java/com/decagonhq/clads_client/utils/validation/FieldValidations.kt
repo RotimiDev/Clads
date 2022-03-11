@@ -1,4 +1,4 @@
-package com.decagonhq.clads_client.presentation.utils.validation
+package com.decagonhq.clads_client.utils.validation
 
 // Validation object for Sign-Up
 object FieldValidations {

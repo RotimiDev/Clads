@@ -17,17 +17,18 @@ import androidx.fragment.app.activityViewModels
 import com.bumptech.glide.Glide
 import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.databinding.FragmentEditProfileAccountBinding
-import com.decagonhq.clads_client.presentation.utils.Resource
-import com.decagonhq.clads_client.presentation.utils.validation.SessionManager
-import com.decagonhq.clads_client.presentation.utils.validation.SessionManager.TOKEN
-import com.decagonhq.clads_client.presentation.utils.viewextensions.showSnackBar
+import com.decagonhq.clads_client.presentation.viewmodel.DashboardViewModel
 import com.decagonhq.clads_client.presentation.viewmodel.EditProfileViewModel
+import com.decagonhq.clads_client.utils.Resource
+import com.decagonhq.clads_client.utils.viewextensions.showSnackBar
 import dagger.hilt.android.AndroidEntryPoint
 import okhttp3.MultipartBody
 
 @AndroidEntryPoint
 class EditProfileAccountFragment : Fragment() {
+
     private val viewModel: EditProfileViewModel by activityViewModels()
+    private lateinit var profileViewModel: DashboardViewModel
     private var _binding: FragmentEditProfileAccountBinding? = null
     private val binding get() = _binding!!
     private val requestWriteStorage = 0
@@ -46,6 +47,8 @@ class EditProfileAccountFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        profileViewModel = (activity as DashboardActivity).viewModel
+
         binding.apply {
             val states = requireContext().resources.getStringArray(R.array.State)
             val arrayAdapter =
@@ -53,10 +56,6 @@ class EditProfileAccountFragment : Fragment() {
             (accountStateTextInput.editText as? AutoCompleteTextView)?.setAdapter(arrayAdapter)
         }
         binding.accountImageView.setOnClickListener { requestWritePermission() }
-
-        val token = SessionManager.readFromSharedPref(requireContext(), TOKEN)
-
-        viewModel.getProfileDetails("Bearer $token")
 
         viewModel.postImage.observe(viewLifecycleOwner, {
             when (it) {
@@ -72,7 +71,7 @@ class EditProfileAccountFragment : Fragment() {
             }
         })
 
-        viewModel.profileDetails.observe(viewLifecycleOwner, { profile ->
+        profileViewModel.dashboardProfileDetails.observe(viewLifecycleOwner, { profile ->
 
             when (profile) {
 

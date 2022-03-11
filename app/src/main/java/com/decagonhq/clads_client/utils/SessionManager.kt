@@ -1,4 +1,4 @@
-package com.decagonhq.clads_client.presentation.utils.validation
+package com.decagonhq.clads_client.utils
 
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
@@ -7,6 +7,8 @@ object SessionManager {
 
     private const val SHARED_PREF_NAME: String = "Clad_Client_Shared_Pref"
     internal const val TOKEN: String = "TOKEN"
+    internal const val FIRST_NAME: String = "FIRST_NAME"
+    internal const val LAST_NAME: String = "LAST_NAME"
 
     fun saveToSharedPref(context: Context, key: String, value: String) {
         val sharedPreferences = context.getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE)

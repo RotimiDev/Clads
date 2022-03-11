@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.decagonhq.clads_client.data.model.PhotoGalleryModel
 import com.decagonhq.clads_client.databinding.MediaFragmentRecyclerviewItemLayoutBinding
-import com.decagonhq.clads_client.presentation.ui.utils.PhotoGalleryDiffUtils
 
 class PhotoGalleryAdapter(private val listener: OnItemClickListener) :
     RecyclerView.Adapter<PhotoGalleryAdapter.PhotoGalleryViewHolder>() {

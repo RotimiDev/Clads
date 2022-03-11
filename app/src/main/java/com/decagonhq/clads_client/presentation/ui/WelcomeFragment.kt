@@ -10,12 +10,12 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.databinding.FragmentWelcomeBinding
-import com.decagonhq.clads_client.presentation.utils.Resource
-import com.decagonhq.clads_client.presentation.utils.validation.SessionManager
-import com.decagonhq.clads_client.presentation.utils.validation.SessionManager.TOKEN
-import com.decagonhq.clads_client.presentation.utils.viewextensions.provideCustomAlertDialog
-import com.decagonhq.clads_client.presentation.utils.viewextensions.showSnackBar
 import com.decagonhq.clads_client.presentation.viewmodel.WelcomeViewModel
+import com.decagonhq.clads_client.utils.Resource
+import com.decagonhq.clads_client.utils.SessionManager
+import com.decagonhq.clads_client.utils.SessionManager.TOKEN
+import com.decagonhq.clads_client.utils.viewextensions.provideCustomAlertDialog
+import com.decagonhq.clads_client.utils.viewextensions.showSnackBar
 
 class WelcomeFragment : Fragment() {
 
