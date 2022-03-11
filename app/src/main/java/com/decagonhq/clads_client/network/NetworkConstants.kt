@@ -1,4 +1,4 @@
-package com.decagonhq.clads_client.presentation.network
+package com.decagonhq.clads_client.network
 
 class NetworkConstants {
 

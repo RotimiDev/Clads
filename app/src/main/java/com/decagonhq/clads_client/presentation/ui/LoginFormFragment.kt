@@ -11,7 +11,7 @@ import androidx.lifecycle.lifecycleScope
 import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.data.model.Role
 import com.decagonhq.clads_client.databinding.FragmentLoginFormBinding
-import com.decagonhq.clads_client.presentation.utils.Resource
+import com.decagonhq.clads_client.utils.Resource
 import com.decagonhq.clads_client.presentation.viewmodel.GoogleAuthViewModel
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions

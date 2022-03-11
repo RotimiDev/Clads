@@ -1,14 +1,12 @@
 package com.decagonhq.clads_client.presentation.ui
 
 import android.os.Bundle
-import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -18,16 +16,12 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.databinding.ActivityDashboardBinding
-import com.decagonhq.clads_client.presentation.utils.Resource
-import com.decagonhq.clads_client.presentation.utils.validation.SessionManager
-import com.decagonhq.clads_client.presentation.utils.validation.SessionManager.FIRST_NAME
-import com.decagonhq.clads_client.presentation.utils.validation.SessionManager.LAST_NAME
-import com.decagonhq.clads_client.presentation.utils.viewextensions.showSnackBar
+import com.decagonhq.clads_client.utils.Resource
+import com.decagonhq.clads_client.utils.SessionManager
 import com.decagonhq.clads_client.presentation.viewmodel.DashboardViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.navigation.NavigationView
-import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -59,6 +53,7 @@ class DashboardActivity : AppCompatActivity() {
         navView = binding.mainActivityNavView
         mDrawer = binding.drawerLayout
         val navViewHeader = navView.getHeaderView(0)
+        name = navViewHeader.findViewById(R.id.nav_drawer_editProfile_name_textView)
         editProfileButton = navViewHeader.findViewById(R.id.nav_drawer_editProfile_button)
 
         setSupportActionBar(binding.toolbarInclude.toolbar)
@@ -67,9 +62,7 @@ class DashboardActivity : AppCompatActivity() {
         viewModel.dashboardProfileDetails.observe(this, { profile ->
 
             when (profile) {
-
                 is Resource.Success -> {
-                    name = navViewHeader.findViewById(R.id.nav_drawer_editProfile_name_textView)
                     fullName= profile.data?.payload?.firstName +" "+ profile.data?.payload?.lastName
                     name.text = fullName
                 }
@@ -105,7 +98,6 @@ class DashboardActivity : AppCompatActivity() {
         binding.mainActivityNavView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.favouritesFragment -> {
-                    Toast.makeText(this, "CLICKED", Toast.LENGTH_SHORT).show()
                     findNavController(R.id.fragmentContainerView).navigate(R.id.favouritesFragment)
                     drawerLayout.closeDrawer(GravityCompat.START)
                     return@setNavigationItemSelectedListener true

@@ -17,10 +17,8 @@ import androidx.fragment.app.activityViewModels
 import com.bumptech.glide.Glide
 import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.databinding.FragmentEditProfileAccountBinding
-import com.decagonhq.clads_client.presentation.utils.Resource
-import com.decagonhq.clads_client.presentation.utils.validation.SessionManager
-import com.decagonhq.clads_client.presentation.utils.validation.SessionManager.TOKEN
-import com.decagonhq.clads_client.presentation.utils.viewextensions.showSnackBar
+import com.decagonhq.clads_client.utils.Resource
+import com.decagonhq.clads_client.utils.viewextensions.showSnackBar
 import com.decagonhq.clads_client.presentation.viewmodel.DashboardViewModel
 import com.decagonhq.clads_client.presentation.viewmodel.EditProfileViewModel
 import dagger.hilt.android.AndroidEntryPoint

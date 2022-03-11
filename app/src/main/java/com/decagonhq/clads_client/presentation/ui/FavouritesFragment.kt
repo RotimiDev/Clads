@@ -6,9 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import com.decagonhq.clads_client.data.local.FavouritesDatabase
 import com.decagonhq.clads_client.databinding.FragmentFavouritesBinding
 import com.decagonhq.clads_client.presentation.adapters.FavouritesRecyclerViewAdapter
-import com.decagonhq.clads_client.presentation.ui.utils.FavouritesDataSource
+import com.decagonhq.clads_client.data.model.FavouritesDataSource
+import com.decagonhq.clads_client.data.repository.FavouritesRepository
 
 class FavouritesFragment : Fragment() {
 

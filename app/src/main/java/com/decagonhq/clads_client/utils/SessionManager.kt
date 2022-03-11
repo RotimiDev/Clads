@@ -1,4 +1,4 @@
-package com.decagonhq.clads_client.presentation.utils.validation
+package com.decagonhq.clads_client.utils
 
 import android.content.Context
 import android.content.Context.MODE_PRIVATE

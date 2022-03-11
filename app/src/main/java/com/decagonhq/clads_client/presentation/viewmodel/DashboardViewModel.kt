@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.decagonhq.clads_client.data.model.Profile
 import com.decagonhq.clads_client.data.repository.ProfileRepository
-import com.decagonhq.clads_client.presentation.utils.Resource
+import com.decagonhq.clads_client.utils.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
