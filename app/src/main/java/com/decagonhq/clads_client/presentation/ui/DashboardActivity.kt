@@ -3,9 +3,11 @@ package com.decagonhq.clads_client.presentation.ui
 import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -15,6 +17,10 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.databinding.ActivityDashboardBinding
+import com.decagonhq.clads_client.presentation.utils.validation.SessionManager
+import com.decagonhq.clads_client.presentation.utils.validation.SessionManager.FIRST_NAME
+import com.decagonhq.clads_client.presentation.utils.validation.SessionManager.LAST_NAME
+import com.decagonhq.clads_client.presentation.viewmodel.DashboardViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.navigation.NavigationView
@@ -31,10 +37,18 @@ class DashboardActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDashboardBinding
     private lateinit var navHostFragment: NavHostFragment
     private lateinit var editProfileButton: MaterialButton
-    private lateinit var favouriteText: TextView
+    private lateinit var name: TextView
+    private lateinit var firstName:String
+    private lateinit var lastName:String
+    private lateinit var fullName:String
+    val viewmodel : DashboardViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        firstName=SessionManager.readFromSharedPref(this,FIRST_NAME)
+        lastName=SessionManager.readFromSharedPref(this,LAST_NAME)
+        fullName= "$lastName $firstName"
 
         binding = ActivityDashboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -46,6 +60,8 @@ class DashboardActivity : AppCompatActivity() {
         mDrawer = binding.drawerLayout
         val navViewHeader = navView.getHeaderView(0)
         editProfileButton = navViewHeader.findViewById(R.id.nav_drawer_editProfile_button)
+        name = navViewHeader.findViewById(R.id.nav_drawer_editProfile_name_textView)
+        name.text = fullName
         setSupportActionBar(binding.toolbarInclude.toolbar)
 
         navHostFragment =
@@ -55,6 +71,7 @@ class DashboardActivity : AppCompatActivity() {
         // Setup drawer layout
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.mainActivityNavView
+
 
         appBarConfiguration = AppBarConfiguration(
             navHostFragment.navController.graph, drawerLayout
@@ -90,4 +107,5 @@ class DashboardActivity : AppCompatActivity() {
         return navHostFragment.navController
             .navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
 }

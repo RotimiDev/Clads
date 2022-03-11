@@ -17,6 +17,9 @@ import com.decagonhq.clads_client.presentation.utils.validation.FieldValidationT
 import com.decagonhq.clads_client.presentation.utils.validation.FieldValidations.verifyEmail
 import com.decagonhq.clads_client.presentation.utils.validation.FieldValidations.verifyName
 import com.decagonhq.clads_client.presentation.utils.validation.FieldValidations.verifyPassword
+import com.decagonhq.clads_client.presentation.utils.validation.SessionManager
+import com.decagonhq.clads_client.presentation.utils.validation.SessionManager.FIRST_NAME
+import com.decagonhq.clads_client.presentation.utils.validation.SessionManager.LAST_NAME
 import com.decagonhq.clads_client.presentation.utils.validation.observeFieldsValidationToEnableButton
 import com.decagonhq.clads_client.presentation.utils.validation.validateConfirmPassword
 import com.decagonhq.clads_client.presentation.utils.validation.validateField
@@ -58,10 +61,16 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
             }
 
             signUpSubmitButton.setOnClickListener {
+                 val firstName =firstNameTextView.text.toString()
+                 val lastName = lastNameTextView.text.toString()
+
+                SessionManager.saveToSharedPref(requireContext(),FIRST_NAME,firstName)
+                SessionManager.saveToSharedPref(requireContext(),LAST_NAME,lastName)
+
                 viewModel.registerUser(
                     RegistrationRequest(
-                        firstNameTextView.text.toString(),
-                        lastNameTextView.text.toString(),
+                        firstName,
+                        lastName,
                         OtherNameTextView.text.toString(),
                         emailAddressTextview.text.toString(),
                         passwordEditText.text.toString(),
