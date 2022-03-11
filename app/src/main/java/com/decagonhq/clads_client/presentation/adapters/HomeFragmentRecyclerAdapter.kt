@@ -2,10 +2,12 @@ package com.decagonhq.clads_client.presentation.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.decagonhq.clads_client.data.model.Tailor
 import com.decagonhq.clads_client.databinding.HomeRecyclerviewItemBinding
+import com.decagonhq.clads_client.presentation.ui.HomeFragmentDirections
 
 class HomeFragmentRecyclerAdapter(
     private var tailorDataSource: List<Tailor>
@@ -21,6 +23,10 @@ class HomeFragmentRecyclerAdapter(
             locationsTextView.text = data.location
             nameTextView.text = data.name
             Glide.with(context).load(data.image).into(imageView)
+            itemView.setOnClickListener {
+                val directions = HomeFragmentDirections.actionHomeFragmentToArtisanProfileFragment(data)
+                itemView.findNavController().navigate(directions)
+            }
         }
     }
 
