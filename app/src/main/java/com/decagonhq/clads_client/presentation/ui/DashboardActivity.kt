@@ -82,7 +82,7 @@ class DashboardActivity : AppCompatActivity() {
                     val confirmationDialog = AlertDialog.Builder(this)
                     confirmationDialog.setMessage(R.string.logout_confirmation_dialog_message)
                     confirmationDialog.setPositiveButton(R.string.yes) { _: DialogInterface, _: Int ->
-                        SessionManager.clearSharedPref(this, "String")
+                        SessionManager.clearSharedPref(this)
                         findNavController(R.id.loginFormFragment)
                     }
                     confirmationDialog.setNegativeButton(
