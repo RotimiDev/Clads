@@ -20,9 +20,6 @@ class EditProfileViewModel@Inject constructor(private val repository: ProfileRep
     private var _image: MutableLiveData<Resource<UploadImage>> = MutableLiveData()
     val postImage: LiveData<Resource<UploadImage>> get() = _image
 
-    private var _profile = MutableLiveData<Resource<Profile>>()
-    val profileDetails: LiveData<Resource<Profile>> get() = _profile
-
     fun uploadImage(token: String, image: MultipartBody.Part) = viewModelScope.launch {
         _image.postValue(Resource.Loading())
         val sent = repository.postProfileImage(token, image)
@@ -39,18 +36,4 @@ class EditProfileViewModel@Inject constructor(private val repository: ProfileRep
         return Resource.Error(null, sent.message())
     }
 
-
-    fun getProfileDetails(token: String) = viewModelScope.launch(Dispatchers.IO) {
-        _profile.postValue(Resource.Loading())
-        val profileData = repository.getProfile(token)
-        _profile.postValue(handleUserData(profileData))
-    }
-    private fun handleUserData(userData: Response<Profile>): Resource<Profile> {
-        if (userData.isSuccessful) {
-            userData.body()?.let { data ->
-                return Resource.Success(data)
-            }
-        }
-        return Resource.Error(null, userData.message())
-    }
 }

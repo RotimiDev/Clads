@@ -1,6 +1,7 @@
 package com.decagonhq.clads_client.presentation.ui
 
 import android.os.Bundle
+import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -17,13 +18,16 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.databinding.ActivityDashboardBinding
+import com.decagonhq.clads_client.presentation.utils.Resource
 import com.decagonhq.clads_client.presentation.utils.validation.SessionManager
 import com.decagonhq.clads_client.presentation.utils.validation.SessionManager.FIRST_NAME
 import com.decagonhq.clads_client.presentation.utils.validation.SessionManager.LAST_NAME
+import com.decagonhq.clads_client.presentation.utils.viewextensions.showSnackBar
 import com.decagonhq.clads_client.presentation.viewmodel.DashboardViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.navigation.NavigationView
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -38,17 +42,13 @@ class DashboardActivity : AppCompatActivity() {
     private lateinit var navHostFragment: NavHostFragment
     private lateinit var editProfileButton: MaterialButton
     private lateinit var name: TextView
-    private lateinit var firstName:String
-    private lateinit var lastName:String
     private lateinit var fullName:String
-    val viewmodel : DashboardViewModel by viewModels()
+    val viewModel : DashboardViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        firstName=SessionManager.readFromSharedPref(this,FIRST_NAME)
-        lastName=SessionManager.readFromSharedPref(this,LAST_NAME)
-        fullName= "$lastName $firstName"
+        val token = SessionManager.readFromSharedPref(this, SessionManager.TOKEN)
 
         binding = ActivityDashboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -60,9 +60,25 @@ class DashboardActivity : AppCompatActivity() {
         mDrawer = binding.drawerLayout
         val navViewHeader = navView.getHeaderView(0)
         editProfileButton = navViewHeader.findViewById(R.id.nav_drawer_editProfile_button)
-        name = navViewHeader.findViewById(R.id.nav_drawer_editProfile_name_textView)
-        name.text = fullName
+
         setSupportActionBar(binding.toolbarInclude.toolbar)
+
+        viewModel.getDetails("Bearer $token")
+        viewModel.dashboardProfileDetails.observe(this, { profile ->
+
+            when (profile) {
+
+                is Resource.Success -> {
+                    name = navViewHeader.findViewById(R.id.nav_drawer_editProfile_name_textView)
+                    fullName= profile.data?.payload?.firstName +" "+ profile.data?.payload?.lastName
+                    name.text = fullName
+                }
+                is Resource.Error -> {
+                    Toast.makeText(this,"Error:" + profile.data?.message,Toast.LENGTH_LONG).show()
+                }
+                is Resource.Loading -> { name.text= R.string.loading.toString()}
+            }
+        })
 
         navHostFragment =
             supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
