@@ -6,16 +6,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
-import com.decagonhq.clads_client.data.local.FavouritesDatabase
+import androidx.fragment.app.activityViewModels
 import com.decagonhq.clads_client.databinding.FragmentFavouritesBinding
 import com.decagonhq.clads_client.presentation.adapters.FavouritesRecyclerViewAdapter
-import com.decagonhq.clads_client.data.model.FavouritesDataSource
-import com.decagonhq.clads_client.data.repository.FavouritesRepository
+import com.decagonhq.clads_client.presentation.viewmodel.FavouritesViewModel
 
 class FavouritesFragment : Fragment() {
 
+    private val viewModel : FavouritesViewModel by activityViewModels()
     private var _binding: FragmentFavouritesBinding? = null
     private val binding get() = _binding!!
+    private var favouritesRecyclerViewAdapter = FavouritesRecyclerViewAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,14 +30,15 @@ class FavouritesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val message = FavouritesDataSource.createDataSet()
+
+        viewModel.getAllFavourites().observe(viewLifecycleOwner,{
+            favouritesRecyclerViewAdapter.differ.submitList(it)
+        })
 
         binding.apply {
-            favouriteRecyclerview.adapter = FavouritesRecyclerViewAdapter(message)
+            favouriteRecyclerview.adapter = favouritesRecyclerViewAdapter
         }
-        if (message.isEmpty()) {
-            binding.favouriteLoveIcon.isVisible = false
-        }
+
     }
 
     override fun onDestroyView() {

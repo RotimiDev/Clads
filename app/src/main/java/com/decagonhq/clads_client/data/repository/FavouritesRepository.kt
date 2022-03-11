@@ -9,6 +9,5 @@ class FavouritesRepository @Inject constructor(private val favouritesDatabase: F
 
     suspend fun insertFavourite (tailor: Tailor) = favouritesDatabase.getTailorDao().upsert(tailor)
     suspend fun deleteFavourite(tailor: Tailor) = favouritesDatabase.getTailorDao().deleteArtisan(tailor)
-    fun isFavourite(id:Int): LiveData<List<Tailor>> = favouritesDatabase.getTailorDao().isFavourite(id)
     fun getFavourites():LiveData<List<Tailor>> = favouritesDatabase.getTailorDao().getAllFavourites()
 }
