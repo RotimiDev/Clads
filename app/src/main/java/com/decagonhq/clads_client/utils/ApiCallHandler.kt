@@ -1,4 +1,4 @@
-package com.decagonhq.clads_client.presentation.utils
+package com.decagonhq.clads_client.utils
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

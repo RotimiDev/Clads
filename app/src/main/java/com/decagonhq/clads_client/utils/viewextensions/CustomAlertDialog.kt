@@ -1,4 +1,4 @@
-package com.decagonhq.clads_client.presentation.utils.viewextensions
+package com.decagonhq.clads_client.utils.viewextensions
 
 import android.app.Dialog
 import android.graphics.Color

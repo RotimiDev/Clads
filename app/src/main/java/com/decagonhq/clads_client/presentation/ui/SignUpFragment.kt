@@ -9,20 +9,23 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.decagonhq.clads_client.R
+import com.decagonhq.clads_client.data.model.RegistrationRequest
 import com.decagonhq.clads_client.databinding.FragmentSignUpBinding
-import com.decagonhq.clads_client.presentation.model.RegistrationRequest
-import com.decagonhq.clads_client.presentation.utils.Resource
-import com.decagonhq.clads_client.presentation.utils.validation.FieldValidationTracker.FieldType
-import com.decagonhq.clads_client.presentation.utils.validation.FieldValidationTracker.populateFieldTypeMap
-import com.decagonhq.clads_client.presentation.utils.validation.FieldValidations.verifyEmail
-import com.decagonhq.clads_client.presentation.utils.validation.FieldValidations.verifyName
-import com.decagonhq.clads_client.presentation.utils.validation.FieldValidations.verifyPassword
-import com.decagonhq.clads_client.presentation.utils.validation.observeFieldsValidationToEnableButton
-import com.decagonhq.clads_client.presentation.utils.validation.validateConfirmPassword
-import com.decagonhq.clads_client.presentation.utils.validation.validateField
-import com.decagonhq.clads_client.presentation.utils.viewextensions.provideCustomAlertDialog
-import com.decagonhq.clads_client.presentation.utils.viewextensions.showSnackBar
 import com.decagonhq.clads_client.presentation.viewmodel.RegisterViewModel
+import com.decagonhq.clads_client.utils.Resource
+import com.decagonhq.clads_client.utils.SessionManager
+import com.decagonhq.clads_client.utils.SessionManager.FIRST_NAME
+import com.decagonhq.clads_client.utils.SessionManager.LAST_NAME
+import com.decagonhq.clads_client.utils.validation.FieldValidationTracker.FieldType
+import com.decagonhq.clads_client.utils.validation.FieldValidationTracker.populateFieldTypeMap
+import com.decagonhq.clads_client.utils.validation.FieldValidations.verifyEmail
+import com.decagonhq.clads_client.utils.validation.FieldValidations.verifyName
+import com.decagonhq.clads_client.utils.validation.FieldValidations.verifyPassword
+import com.decagonhq.clads_client.utils.validation.observeFieldsValidationToEnableButton
+import com.decagonhq.clads_client.utils.validation.validateConfirmPassword
+import com.decagonhq.clads_client.utils.validation.validateField
+import com.decagonhq.clads_client.utils.viewextensions.provideCustomAlertDialog
+import com.decagonhq.clads_client.utils.viewextensions.showSnackBar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -58,10 +61,16 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
             }
 
             signUpSubmitButton.setOnClickListener {
+                val firstName = firstNameTextView.text.toString()
+                val lastName = lastNameTextView.text.toString()
+
+                SessionManager.saveToSharedPref(requireContext(), FIRST_NAME, firstName)
+                SessionManager.saveToSharedPref(requireContext(), LAST_NAME, lastName)
+
                 viewModel.registerUser(
                     RegistrationRequest(
-                        firstNameTextView.text.toString(),
-                        lastNameTextView.text.toString(),
+                        firstName,
+                        lastName,
                         OtherNameTextView.text.toString(),
                         emailAddressTextview.text.toString(),
                         passwordEditText.text.toString(),
