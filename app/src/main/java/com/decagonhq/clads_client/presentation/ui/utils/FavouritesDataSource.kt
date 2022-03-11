@@ -9,26 +9,26 @@ class FavouritesDataSource {
             val list = ArrayList<FavouritesItem>()
             list.add(
                 FavouritesItem(
-                    "JJ Fashionista Limited",
-                    "https://picsum.photos/id/1/200/300",
+                    "Deca Fashionista",
+                    "https://renystyles.com/wp-content/uploads/2021/06/Attractive-ankara-styles-2021-for-you-renystyles.com-25.jpg",
                 )
             )
             list.add(
                 FavouritesItem(
                     "Browndo Gowns",
-                    "https://picsum.photos/id/1/200/300",
+                    "https://renystyles.com/wp-content/uploads/2021/06/Attractive-ankara-styles-2021-for-you-renystyles.com-50.jpg",
                 )
             )
             list.add(
                 FavouritesItem(
                     "Ade and Johnson Suites",
-                    "https://picsum.photos/id/1/200/300",
+                    "https://renystyles.com/wp-content/uploads/2021/06/Attractive-ankara-styles-2021-for-you-renystyles.com-1.jpg",
                 )
             )
             list.add(
                 FavouritesItem(
                     "Simpson's place",
-                    "https://picsum.photos/id/1/200/300",
+                    "https://www.mynativefashion.com/wp-content/uploads/2020/10/Nigerian-Fashion-Dresses-16-1024x1024.jpg",
                 )
             )
             return list
