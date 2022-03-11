@@ -25,9 +25,9 @@ class AuthRepository @Inject constructor(private val api: ClientAPI,) {
             api.registerUser(registrationRequest)
         }
     }
-    suspend fun updateUserProfile(updateProfileRequest: UpdateProfileRequest): Resource<GenericResult<UpdateProfilePayload>> {
+    suspend fun updateUserProfile(bearer: String, updateProfileRequest: UpdateProfileRequest): Resource<GenericResult<UpdateProfilePayload>> {
         return ApiCallHandler.safeApiCall {
-            api.updateUserProfile(updateProfileRequest)
+            api.updateUserProfile(bearer, updateProfileRequest)
         }
     }
 }

@@ -25,5 +25,7 @@ interface ClientAPI {
     suspend fun registerUser(@Body registrationRequest: RegistrationRequest): GenericResult<RegistrationPayload>
 
     @PUT ("/api/v1/customer/me/profile")
-    suspend fun updateUserProfile(@Body updateProfileRequest: UpdateProfileRequest): GenericResult<UpdateProfilePayload>
+    suspend fun updateUserProfile(
+        @Header("Authorization") Bearer: String,
+        @Body updateProfileRequest: UpdateProfileRequest): GenericResult<UpdateProfilePayload>
 }

@@ -198,6 +198,8 @@
     <string name="call_failed">Call failed</string>
     <string name="enter_caption_for_image">Please enter a Caption for the image</string>
     <string name="empty_token">Empty Token</string>
+    <string name="failed_to_update">Failed To Update</string>
+    <string name="profile_update_successful">Profile Updated Successfully</string>
 
 
 </resources>

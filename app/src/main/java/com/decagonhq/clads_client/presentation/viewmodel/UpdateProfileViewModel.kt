@@ -21,10 +21,10 @@ class UpdateProfileViewModel @Inject constructor(
     private var _updateProfileResponse = MutableLiveData<Resource<GenericResult<UpdateProfilePayload>>>()
     val updateProfileResponse: LiveData<Resource<GenericResult<UpdateProfilePayload>>> get() = _updateProfileResponse
 
-    fun updateUserProfile (updateProfileRequest: UpdateProfileRequest){
+    fun updateUserProfile (bearer: String, updateProfileRequest: UpdateProfileRequest){
         _updateProfileResponse.value = Resource.Loading()
         viewModelScope.launch {
-            _updateProfileResponse.value = authRepository.updateUserProfile(updateProfileRequest)
+            _updateProfileResponse.value = authRepository.updateUserProfile(bearer, updateProfileRequest)
         }
     }
 

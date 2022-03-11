@@ -145,25 +145,6 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-
-            <androidx.appcompat.widget.AppCompatSpinner
-                android:id="@+id/spinner"
-                android:theme="@style/Spinner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/margin_default"
-                android:layout_marginBottom="@dimen/margin_33dp"
-                android:backgroundTint="@color/white"
-                android:dropDownWidth="wrap_content"
-                android:entries="@array/Account"
-                android:minHeight="48dp"
-                android:spinnerMode="dropdown"
-                app:layout_constraintBottom_toTopOf="@id/emailAddressLayout"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/OtherName_Layout" />
-
-
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/emailAddressLayout"
                 android:layout_width="match_parent"
@@ -178,7 +159,7 @@
                 app:hintTextColor="@color/hex_grey"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/spinner">
+                app:layout_constraintTop_toBottomOf="@+id/OtherName_Layout">
 
                 <EditText
                     android:id="@+id/emailAddress_textview"
