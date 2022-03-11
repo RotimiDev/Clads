@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -16,7 +15,6 @@ import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.data.model.Tailor
 import com.decagonhq.clads_client.databinding.FragmentArtisanProfileBinding
 import com.decagonhq.clads_client.presentation.viewmodel.ArtisanProfileViewModel
-import com.decagonhq.clads_client.presentation.viewmodel.EditProfileViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -26,8 +24,8 @@ class ArtisanProfileFragment : Fragment() {
     private var _binding: FragmentArtisanProfileBinding? = null
     private val binding get() = _binding!!
     private val args: ArtisanProfileFragmentArgs by navArgs()
-    private lateinit var tailor:Tailor
-    var likeStatus:Boolean = false
+    private lateinit var tailor: Tailor
+    var likeStatus: Boolean = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -62,11 +60,10 @@ class ArtisanProfileFragment : Fragment() {
                 likeStatus = true
             }
             binding.artisanFavoriteCheckBox.setOnClickListener {
-                if (favouriteList.isEmpty()){
+                if (favouriteList.isEmpty()) {
                     viewModel.insertFavourite(tailor)
                     binding.artisanFavoriteCheckBox.isChecked = true
-                }
-                else {
+                } else {
                     viewModel.deleteFavourite(tailor)
                     binding.artisanFavoriteCheckBox.isChecked = false
                 }

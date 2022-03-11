@@ -16,9 +16,9 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.databinding.ActivityDashboardBinding
+import com.decagonhq.clads_client.presentation.viewmodel.DashboardViewModel
 import com.decagonhq.clads_client.utils.Resource
 import com.decagonhq.clads_client.utils.SessionManager
-import com.decagonhq.clads_client.presentation.viewmodel.DashboardViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.navigation.NavigationView
@@ -36,8 +36,8 @@ class DashboardActivity : AppCompatActivity() {
     private lateinit var navHostFragment: NavHostFragment
     private lateinit var editProfileButton: MaterialButton
     private lateinit var name: TextView
-    private lateinit var fullName:String
-    val viewModel : DashboardViewModel by viewModels()
+    private lateinit var fullName: String
+    val viewModel: DashboardViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,13 +63,13 @@ class DashboardActivity : AppCompatActivity() {
 
             when (profile) {
                 is Resource.Success -> {
-                    fullName= profile.data?.payload?.firstName +" "+ profile.data?.payload?.lastName
+                    fullName = profile.data?.payload?.firstName + " " + profile.data?.payload?.lastName
                     name.text = fullName
                 }
                 is Resource.Error -> {
-                    Toast.makeText(this,"Error:" + profile.data?.message,Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Error:" + profile.data?.message, Toast.LENGTH_LONG).show()
                 }
-                is Resource.Loading -> { name.text= R.string.loading.toString()}
+                is Resource.Loading -> { name.text = R.string.loading.toString() }
             }
         })
 
@@ -80,7 +80,6 @@ class DashboardActivity : AppCompatActivity() {
         // Setup drawer layout
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.mainActivityNavView
-
 
         appBarConfiguration = AppBarConfiguration(
             navHostFragment.navController.graph, drawerLayout
@@ -115,5 +114,4 @@ class DashboardActivity : AppCompatActivity() {
         return navHostFragment.navController
             .navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
-
 }

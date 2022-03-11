@@ -17,10 +17,10 @@ import androidx.fragment.app.activityViewModels
 import com.bumptech.glide.Glide
 import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.databinding.FragmentEditProfileAccountBinding
-import com.decagonhq.clads_client.utils.Resource
-import com.decagonhq.clads_client.utils.viewextensions.showSnackBar
 import com.decagonhq.clads_client.presentation.viewmodel.DashboardViewModel
 import com.decagonhq.clads_client.presentation.viewmodel.EditProfileViewModel
+import com.decagonhq.clads_client.utils.Resource
+import com.decagonhq.clads_client.utils.viewextensions.showSnackBar
 import dagger.hilt.android.AndroidEntryPoint
 import okhttp3.MultipartBody
 
@@ -28,7 +28,7 @@ import okhttp3.MultipartBody
 class EditProfileAccountFragment : Fragment() {
 
     private val viewModel: EditProfileViewModel by activityViewModels()
-    private lateinit  var profileViewModel:DashboardViewModel
+    private lateinit var profileViewModel: DashboardViewModel
     private var _binding: FragmentEditProfileAccountBinding? = null
     private val binding get() = _binding!!
     private val requestWriteStorage = 0
@@ -70,7 +70,6 @@ class EditProfileAccountFragment : Fragment() {
                 }
             }
         })
-
 
         profileViewModel.dashboardProfileDetails.observe(viewLifecycleOwner, { profile ->
 

@@ -1,7 +1,6 @@
 package com.decagonhq.clads_client.presentation.di
 
 import com.decagonhq.clads_client.data.repository.AuthRepository
-import com.decagonhq.clads_client.data.repository.ProfileRepository
 import com.decagonhq.clads_client.network.ClientAPI
 import com.decagonhq.clads_client.network.NetworkConstants.Companion.BASE_URL
 import dagger.Module
@@ -51,5 +50,4 @@ object AppModule {
     @Singleton
     fun provideAuthRepository(api: ClientAPI): AuthRepository =
         AuthRepository(api)
-
 }

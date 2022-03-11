@@ -33,5 +33,4 @@ class EditProfileViewModel@Inject constructor(private val repository: ProfileRep
         }
         return Resource.Error(null, sent.message())
     }
-
 }

@@ -1,12 +1,12 @@
 package com.decagonhq.clads_client.network
-import com.decagonhq.clads_client.data.model.GetImage
-import com.decagonhq.clads_client.data.model.Profile
-import com.decagonhq.clads_client.data.model.Role
-import com.decagonhq.clads_client.data.model.UploadImage
 import com.decagonhq.clads_client.data.model.GenericResult
+import com.decagonhq.clads_client.data.model.GetImage
 import com.decagonhq.clads_client.data.model.LoginRequest
+import com.decagonhq.clads_client.data.model.Profile
 import com.decagonhq.clads_client.data.model.RegistrationPayload
 import com.decagonhq.clads_client.data.model.RegistrationRequest
+import com.decagonhq.clads_client.data.model.Role
+import com.decagonhq.clads_client.data.model.UploadImage
 import com.decagonhq.clads_client.network.NetworkConstants.Companion.GET_PROFILE_IMAGE
 import com.decagonhq.clads_client.network.NetworkConstants.Companion.GOOGLE_LOGIN_URL
 import com.decagonhq.clads_client.network.NetworkConstants.Companion.PROFILE_URL

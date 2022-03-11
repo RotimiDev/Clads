@@ -10,11 +10,11 @@ import javax.inject.Inject
 class ProfileRepository @Inject constructor(
     private val api: ClientAPI,
     private val favouritesDatabase: FavouritesDatabase
-    ) {
+) {
 
-    fun isFavourite(id:Int): LiveData<List<Tailor>> = favouritesDatabase.getTailorDao().isFavourite(id)
+    fun isFavourite(id: Int): LiveData<List<Tailor>> = favouritesDatabase.getTailorDao().isFavourite(id)
 
-    suspend fun insertFavourite (tailor: Tailor) = favouritesDatabase.getTailorDao().upsert(tailor)
+    suspend fun insertFavourite(tailor: Tailor) = favouritesDatabase.getTailorDao().upsert(tailor)
 
     suspend fun deleteFavourite(tailor: Tailor) = favouritesDatabase.getTailorDao().deleteArtisan(tailor)
 

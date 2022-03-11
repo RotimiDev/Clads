@@ -9,11 +9,11 @@ import com.decagonhq.clads_client.data.model.Tailor
     version = 1,
     exportSchema = false
 )
-abstract class FavouritesDatabase:RoomDatabase() {
+abstract class FavouritesDatabase : RoomDatabase() {
 
-    abstract fun getTailorDao():TailorDao
+    abstract fun getTailorDao(): TailorDao
 
-    companion object{
-      var DATABASE_NAME:String = "favourites_db"
+    companion object {
+        var DATABASE_NAME: String = "favourites_db"
     }
 }

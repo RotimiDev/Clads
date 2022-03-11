@@ -16,14 +16,13 @@ class FavouritesRecyclerViewAdapter() :
         private var favouriteItemTextView = binding.favouriteRecyclerItemTextview
         private var favouriteItemImageView = binding.favouriteRecyclerItemImageview
 
-        fun bindData(favourite:Tailor) = with(itemView) {
+        fun bindData(favourite: Tailor) = with(itemView) {
             Glide.with(context).load(favourite.image).into(favouriteItemImageView)
             favouriteItemTextView.text = favourite.name
         }
-
     }
 
-    private val differCallBack = object : DiffUtil.ItemCallback<Tailor>(){
+    private val differCallBack = object : DiffUtil.ItemCallback<Tailor>() {
         override fun areItemsTheSame(oldItem: Tailor, newItem: Tailor): Boolean {
             return oldItem.id == newItem.id
         }

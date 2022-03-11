@@ -19,7 +19,8 @@ object LocalModule {
     @Singleton
     @Provides
     fun providesFavouritesDataBase(@ApplicationContext context: Context): FavouritesDatabase {
-        return Room.databaseBuilder(context,
+        return Room.databaseBuilder(
+            context,
             FavouritesDatabase::class.java,
             FavouritesDatabase.DATABASE_NAME
         )

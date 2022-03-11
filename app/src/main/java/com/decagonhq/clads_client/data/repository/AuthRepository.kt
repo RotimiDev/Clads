@@ -1,10 +1,10 @@
 package com.decagonhq.clads_client.data.repository
 
-import com.decagonhq.clads_client.data.model.Role
 import com.decagonhq.clads_client.data.model.GenericResult
 import com.decagonhq.clads_client.data.model.LoginRequest
 import com.decagonhq.clads_client.data.model.RegistrationPayload
 import com.decagonhq.clads_client.data.model.RegistrationRequest
+import com.decagonhq.clads_client.data.model.Role
 import com.decagonhq.clads_client.network.ClientAPI
 import com.decagonhq.clads_client.utils.ApiCallHandler
 import com.decagonhq.clads_client.utils.Resource

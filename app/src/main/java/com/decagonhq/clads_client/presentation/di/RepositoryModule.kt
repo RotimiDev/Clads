@@ -19,7 +19,7 @@ object RepositoryModule {
     @Provides
     fun provideFavouritesRepository(
         favouritesDatabase: FavouritesDatabase
-    ):FavouritesRepository{
+    ): FavouritesRepository {
         return FavouritesRepository(favouritesDatabase)
     }
 
@@ -28,7 +28,7 @@ object RepositoryModule {
     fun provideProfileRepository(
         api: ClientAPI,
         favouritesDatabase: FavouritesDatabase
-    ): ProfileRepository{
-        return ProfileRepository(api,favouritesDatabase)
+    ): ProfileRepository {
+        return ProfileRepository(api, favouritesDatabase)
     }
 }

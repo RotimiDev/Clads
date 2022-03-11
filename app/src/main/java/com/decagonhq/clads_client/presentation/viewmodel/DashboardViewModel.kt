@@ -14,7 +14,7 @@ import retrofit2.Response
 import javax.inject.Inject
 
 @HiltViewModel
-class DashboardViewModel @Inject constructor(private val repository: ProfileRepository):ViewModel() {
+class DashboardViewModel @Inject constructor(private val repository: ProfileRepository) : ViewModel() {
 
     private var _profile = MutableLiveData<Resource<Profile>>()
     val dashboardProfileDetails: LiveData<Resource<Profile>> get() = _profile

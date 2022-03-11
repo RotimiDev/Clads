@@ -13,11 +13,11 @@ import javax.inject.Inject
 @HiltViewModel
 class ArtisanProfileViewModel @Inject constructor(private val repository: ProfileRepository) : ViewModel() {
 
-    fun isFavouriteCall(id:Int):LiveData<List<Tailor>>{
+    fun isFavouriteCall(id: Int): LiveData<List<Tailor>> {
         return repository.isFavourite(id)
     }
 
-    fun insertFavourite(tailor: Tailor) = viewModelScope.launch(Dispatchers.IO){
+    fun insertFavourite(tailor: Tailor) = viewModelScope.launch(Dispatchers.IO) {
         repository.insertFavourite(tailor)
     }
 

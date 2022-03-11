@@ -5,13 +5,13 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
 
-@Entity(tableName= "favourite artisans")
+@Entity(tableName = "favourite artisans")
 @Parcelize
 data class Tailor(
     @PrimaryKey
-    val id:Int,
+    val id: Int,
     var image: String,
     var name: String,
     var location: String,
-    var phone:String = "08146397088"
-):Parcelable
+    var phone: String = "08146397088"
+) : Parcelable

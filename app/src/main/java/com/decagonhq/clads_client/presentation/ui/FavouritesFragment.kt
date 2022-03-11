@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.decagonhq.clads_client.databinding.FragmentFavouritesBinding
@@ -13,7 +12,7 @@ import com.decagonhq.clads_client.presentation.viewmodel.FavouritesViewModel
 
 class FavouritesFragment : Fragment() {
 
-    private val viewModel : FavouritesViewModel by activityViewModels()
+    private val viewModel: FavouritesViewModel by activityViewModels()
     private var _binding: FragmentFavouritesBinding? = null
     private val binding get() = _binding!!
     private var favouritesRecyclerViewAdapter = FavouritesRecyclerViewAdapter()
@@ -31,14 +30,13 @@ class FavouritesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.getAllFavourites().observe(viewLifecycleOwner,{
+        viewModel.getAllFavourites().observe(viewLifecycleOwner, {
             favouritesRecyclerViewAdapter.differ.submitList(it)
         })
 
         binding.apply {
             favouriteRecyclerview.adapter = favouritesRecyclerViewAdapter
         }
-
     }
 
     override fun onDestroyView() {
