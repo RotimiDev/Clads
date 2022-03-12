@@ -1,6 +1,5 @@
 package com.decagonhq.clads_client.data.repository
 
-
 import com.decagonhq.clads_client.data.model.GenericResult
 import com.decagonhq.clads_client.data.model.LoginRequest
 import com.decagonhq.clads_client.data.model.RegistrationPayload

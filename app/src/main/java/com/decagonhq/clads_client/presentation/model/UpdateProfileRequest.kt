@@ -1,6 +1,6 @@
 package com.decagonhq.clads_client.presentation.model
 
-data class UpdateProfileRequest (
+data class UpdateProfileRequest(
     val deliveryAddresses: List<DeliveryAddresse>,
     val email: String,
     val firstName: String,
@@ -9,4 +9,3 @@ data class UpdateProfileRequest (
     val measurements: List<Any>? = null,
     val phoneNumber: String? = null
 )
-

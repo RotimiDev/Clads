@@ -59,19 +59,22 @@ class DashboardActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbarInclude.toolbar)
 
         viewModel.getDetails("Bearer $token")
-        viewModel.dashboardProfileDetails.observe(this, Observer { profile ->
+        viewModel.dashboardProfileDetails.observe(
+            this,
+            Observer { profile ->
 
-            when (profile) {
-                is Resource.Success -> {
-                    fullName = profile.data?.payload?.firstName + " " + profile.data?.payload?.lastName
-                    name.text = fullName
+                when (profile) {
+                    is Resource.Success -> {
+                        fullName = profile.data?.payload?.firstName + " " + profile.data?.payload?.lastName
+                        name.text = fullName
+                    }
+                    is Resource.Error -> {
+                        Toast.makeText(this, "Error:" + profile.data?.message, Toast.LENGTH_LONG).show()
+                    }
+                    is Resource.Loading -> { name.text = R.string.loading.toString() }
                 }
-                is Resource.Error -> {
-                    Toast.makeText(this, "Error:" + profile.data?.message, Toast.LENGTH_LONG).show()
-                }
-                is Resource.Loading -> { name.text = R.string.loading.toString() }
             }
-        })
+        )
 
         navHostFragment =
             supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
