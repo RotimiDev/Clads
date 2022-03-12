@@ -17,7 +17,6 @@ import javax.inject.Inject
 class UpdateProfileViewModel @Inject constructor(
     private val authRepository: AuthRepository
 ) : ViewModel() {
-
     private var _updateProfileResponse = MutableLiveData<Resource<GenericResult<UpdateProfilePayload>>>()
     val updateProfileResponse: LiveData<Resource<GenericResult<UpdateProfilePayload>>> get() = _updateProfileResponse
 
