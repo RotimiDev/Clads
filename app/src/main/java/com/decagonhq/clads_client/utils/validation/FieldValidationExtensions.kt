@@ -1,12 +1,12 @@
-package com.decagonhq.clads_client.presentation.utils.validation
+package com.decagonhq.clads_client.utils.validation
 
 import android.content.Context
 import androidx.core.content.ContextCompat
 import androidx.core.widget.doAfterTextChanged
 import androidx.lifecycle.LifecycleOwner
 import com.decagonhq.clads_client.R
-import com.decagonhq.clads_client.presentation.utils.validation.FieldValidationTracker.FieldType
-import com.decagonhq.clads_client.presentation.utils.validation.FieldValidationTracker.fieldTypeMap
+import com.decagonhq.clads_client.utils.validation.FieldValidationTracker.FieldType
+import com.decagonhq.clads_client.utils.validation.FieldValidationTracker.fieldTypeMap
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputLayout
 

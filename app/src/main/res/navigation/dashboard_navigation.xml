@@ -8,11 +8,14 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.decagonhq.clads_client.presentation.ui.HomeFragment"
-        android:label="Dashboard"
+        android:label=""
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_ratingFragment"
             app:destination="@id/ratingFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_artisanProfileFragment"
+            app:destination="@id/artisanProfileFragment" />
     </fragment>
 
     <fragment
@@ -54,5 +57,15 @@
         android:name="com.decagonhq.clads_client.presentation.ui.FavouritesFragment"
         android:label="Favorites"
         tools:layout="@layout/fragment_favourites" />
+
+    <fragment
+        android:id="@+id/artisanProfileFragment"
+        android:name="com.decagonhq.clads_client.presentation.ui.ArtisanProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_artisan_profile" >
+        <argument
+            android:name="tailor"
+            app:argType="com.decagonhq.clads_client.data.model.Tailor" />
+    </fragment>
 
 </navigation>

@@ -73,6 +73,16 @@
         android:label="fragment_welcome"
         tools:layout="@layout/fragment_welcome">
 
+        <deepLink
+            android:id="@+id/emailConfirmationDeepLink"
+            app:uri="https://clads-service.herokuapp.com/api/v1/confirm?token={token}" />
+        <argument
+            android:name="token"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"
+            />
+
     </fragment>
 
 </navigation>

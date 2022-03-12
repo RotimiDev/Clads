@@ -1,4 +1,4 @@
-package com.decagonhq.clads_client.presentation.model
+package com.decagonhq.clads_client.data.model
 
 import com.google.gson.annotations.SerializedName
 

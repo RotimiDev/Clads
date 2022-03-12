@@ -1,13 +1,20 @@
 package com.decagonhq.clads_client.data.repository
 
+
+import com.decagonhq.clads_client.data.model.GenericResult
+import com.decagonhq.clads_client.data.model.LoginRequest
+import com.decagonhq.clads_client.data.model.RegistrationPayload
+import com.decagonhq.clads_client.data.model.RegistrationRequest
 import com.decagonhq.clads_client.data.model.Role
-import com.decagonhq.clads_client.presentation.model.*
-import com.decagonhq.clads_client.presentation.network.ClientAPI
-import com.decagonhq.clads_client.presentation.utils.ApiCallHandler
-import com.decagonhq.clads_client.presentation.utils.Resource
+import com.decagonhq.clads_client.network.ClientAPI
+import com.decagonhq.clads_client.presentation.model.UpdateProfilePayload
+import com.decagonhq.clads_client.presentation.model.UpdateProfileRequest
+import com.decagonhq.clads_client.utils.ApiCallHandler
+import com.decagonhq.clads_client.utils.Resource
+import retrofit2.Response
 import javax.inject.Inject
 
-class AuthRepository @Inject constructor(private val api: ClientAPI,) {
+class AuthRepository @Inject constructor(private val api: ClientAPI) {
 
     suspend fun loginUser(loginRequest: LoginRequest): Resource<GenericResult<String>> {
         return ApiCallHandler.safeApiCall {
@@ -29,5 +36,9 @@ class AuthRepository @Inject constructor(private val api: ClientAPI,) {
         return ApiCallHandler.safeApiCall {
             api.updateUserProfile(bearer, updateProfileRequest)
         }
+    }
+
+    suspend fun verifyUserMail(token: String): Response<GenericResult<String>> {
+        return api.verifyAuthToken(token)
     }
 }

@@ -1,9 +1,11 @@
-package com.decagonhq.clads_client.presentation.ui
+package com.decagonhq.clads_client.presentation.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.decagonhq.clads_client.presentation.ui.EditProfileAccountFragment
+import com.decagonhq.clads_client.presentation.ui.EditProfileSecurityFragment
 
 private const val NUM_TABS = 2
 

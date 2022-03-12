@@ -1,4 +1,4 @@
-package com.decagonhq.clads_client.presentation.ui.utils
+package com.decagonhq.clads_client.presentation.adapters
 
 import androidx.recyclerview.widget.DiffUtil
 
