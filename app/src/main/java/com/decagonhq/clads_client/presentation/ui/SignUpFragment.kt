@@ -11,7 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.data.model.RegistrationRequest
 import com.decagonhq.clads_client.databinding.FragmentSignUpBinding
-import com.decagonhq.clads_client.presentation.viewModel.RegisterViewModel
+import com.decagonhq.clads_client.presentation.viewmodel.RegisterViewModel
 import com.decagonhq.clads_client.utils.Resource
 import com.decagonhq.clads_client.utils.SessionManager
 import com.decagonhq.clads_client.utils.SessionManager.FIRST_NAME

@@ -12,7 +12,7 @@ import androidx.lifecycle.Observer
 import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.data.model.LoginRequest
 import com.decagonhq.clads_client.databinding.FragmentLoginFormBinding
-import com.decagonhq.clads_client.presentation.viewModel.LoginViewModel
+import com.decagonhq.clads_client.presentation.viewmodel.LoginViewModel
 import com.decagonhq.clads_client.utils.Resource
 import com.decagonhq.clads_client.utils.SessionManager
 import com.decagonhq.clads_client.utils.validation.FieldValidationTracker
