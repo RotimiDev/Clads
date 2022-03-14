@@ -22,9 +22,9 @@ import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.databinding.FragmentEditProfileAccountBinding
 import com.decagonhq.clads_client.presentation.model.DeliveryAddresse
 import com.decagonhq.clads_client.presentation.model.UpdateProfileRequest
+import com.decagonhq.clads_client.presentation.viewmodel.DashboardViewModel
 import com.decagonhq.clads_client.presentation.viewmodel.EditProfileViewModel
 import com.decagonhq.clads_client.presentation.viewmodel.UpdateProfileViewModel
-import com.decagonhq.clads_client.presentation.viewmodel.DashboardViewModel
 import com.decagonhq.clads_client.utils.Resource
 import com.decagonhq.clads_client.utils.SessionManager
 import com.decagonhq.clads_client.utils.SessionManager.TOKEN
