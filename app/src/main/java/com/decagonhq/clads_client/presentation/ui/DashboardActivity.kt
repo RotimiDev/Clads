@@ -1,6 +1,7 @@
 package com.decagonhq.clads_client.presentation.ui
 
 import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast
@@ -107,10 +108,11 @@ class DashboardActivity : AppCompatActivity() {
                 R.id.logout -> {
                     // Using a dialog to ask the user for confirmation before logging out
                     val confirmationDialog = AlertDialog.Builder(this)
-                    confirmationDialog.setMessage(R.string.logout_confirmation_dialog_message)
+                    confirmationDialog.setMessage(R.string.are_you_sure_you_want_to_log_out)
                     confirmationDialog.setPositiveButton(R.string.yes) { _: DialogInterface, _: Int ->
                         SessionManager.clearSharedPref(this)
-                        findNavController(R.id.loginFormFragment)
+                        val intent = Intent(this, AuthenticationActivity::class.java)
+                        startActivity(intent)
                     }
                     confirmationDialog.setNegativeButton(
                         R.string.no
