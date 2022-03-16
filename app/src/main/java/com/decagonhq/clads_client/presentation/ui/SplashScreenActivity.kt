@@ -6,6 +6,9 @@ import android.os.Handler
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.decagonhq.clads_client.R
+import com.decagonhq.clads_client.network.NetworkConstants
+import com.decagonhq.clads_client.utils.SessionManager
+import kotlinx.coroutines.*
 
 class SplashScreenActivity : AppCompatActivity() {
 
@@ -28,4 +31,5 @@ class SplashScreenActivity : AppCompatActivity() {
             finish()
         }, SPLASH_TIME_OUT)
     }
+
 }
