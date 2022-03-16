@@ -198,7 +198,6 @@
     <string name="enter_caption_for_image">Please enter a Caption for the image</string>
     <string name="empty_token">Empty Token</string>
     <string name="are_you_sure_you_want_to_log_out">Are you sure you want to log out</string>
-=======
     <string name="failed_to_update">Failed To Update</string>
     <string name="profile_update_successful">Profile Updated Successfully</string>
     <string name="logout_confirmation_dialog_message" />
