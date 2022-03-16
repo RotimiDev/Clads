@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -26,6 +28,7 @@ class ArtisanProfileFragment : Fragment() {
     private val args: ArtisanProfileFragmentArgs by navArgs()
     private lateinit var tailor: Tailor
     var likeStatus: Boolean = false
+    private lateinit var toolbarProfileLayout:ConstraintLayout
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -41,12 +44,14 @@ class ArtisanProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         tailor = args.tailor
+        toolbarProfileLayout = (activity as DashboardActivity).toolbarProfileLayout
         binding.artisanAddressTextView.text = tailor.location
+        toolbarProfileLayout.visibility= View.GONE
         binding.artisanNameTextView.text = tailor.name
         Glide.with(requireContext()).load(tailor.image).into(binding.shapeAbleImageView)
 
         binding.goToGalleryButton.setOnClickListener { findNavController().navigate(R.id.mediaFragment) }
-        binding.singleArtisanProfileRatingBar.setOnClickListener { findNavController().navigate(R.id.ratingFragment) }
+        binding.seeReviewTextView.setOnClickListener { findNavController().navigate(R.id.ratingFragment) }
 
         binding.callButton.setOnClickListener {
             val dialIntent = Intent(Intent.ACTION_DIAL)

@@ -131,7 +131,7 @@
     <string name="elegant_suit_for_men">Elegant suit for men</string>
     <string name="empty_text">Empty Text</string>
     <string name="please_enter_caption">Please enter Caption</string>
-    <string name="add_caption">Add Caption</string>
+    <string name="add_caption">Add</string>
     <string name="share">Share</string>
     <string name="edit">Edit</string>
     <string name="delete">Delete</string>
@@ -204,4 +204,6 @@
     <string name="welcome">Welcome Back</string>
     <string name="email_verified">Email Verified Successfully</string>
     <string name="you_re_almost_done_just_tap_the_button_below_to_verify_your_account"> You\'re almost done, \ntap the button below to verify your account</string>
+    <string name="all_hi">Hi</string>
+    <string name="no_network_connection">No Network connection</string>
 </resources>

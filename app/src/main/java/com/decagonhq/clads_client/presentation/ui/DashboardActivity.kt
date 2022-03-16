@@ -2,14 +2,15 @@ package com.decagonhq.clads_client.presentation.ui
 
 import android.content.DialogInterface
 import android.os.Bundle
+import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -22,6 +23,7 @@ import com.decagonhq.clads_client.databinding.ActivityDashboardBinding
 import com.decagonhq.clads_client.presentation.viewmodel.DashboardViewModel
 import com.decagonhq.clads_client.utils.Resource
 import com.decagonhq.clads_client.utils.SessionManager
+import com.decagonhq.clads_client.utils.connectivity.ConnectivityLiveData
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.navigation.NavigationView
@@ -37,12 +39,17 @@ class DashboardActivity : AppCompatActivity() {
     private lateinit var navHostFragment: NavHostFragment
     private lateinit var editProfileButton: MaterialButton
     private lateinit var name: TextView
+    lateinit var toolbarProfileLayout:ConstraintLayout
+    private lateinit var toolBarName: TextView
     private lateinit var fullName: String
+    private lateinit var connectivityLiveData: ConnectivityLiveData
     val viewModel: DashboardViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        //Calling the function that checks for connectivity and saving it to a variable
+        connectivityLiveData = ConnectivityLiveData(this)
         val token = SessionManager.readFromSharedPref(this, SessionManager.TOKEN)
 
         binding = ActivityDashboardBinding.inflate(layoutInflater)
@@ -54,19 +61,27 @@ class DashboardActivity : AppCompatActivity() {
         mDrawer = binding.drawerLayout
         val navViewHeader = navView.getHeaderView(0)
         name = navViewHeader.findViewById(R.id.nav_drawer_editProfile_name_textView)
+        toolbarProfileLayout = findViewById(R.id.toolbar_profile_details_layout)
+        toolBarName = findViewById(R.id.toolbar_profile_name_text_view)
         editProfileButton = navViewHeader.findViewById(R.id.nav_drawer_editProfile_button)
 
         setSupportActionBar(binding.toolbarInclude.toolbar)
 
-        viewModel.getDetails("Bearer $token")
-        viewModel.dashboardProfileDetails.observe(
-            this,
-            Observer { profile ->
+        //The observer that constantly checks the network state
+        connectivityLiveData.observe(this,{ networkState->
+            if (networkState == true){
+                //Toggle the visibility of the network error layer
+                viewModel.getDetails("Bearer $token")
+                binding.noNetworkTextView.visibility= View.GONE
+            } else binding.noNetworkTextView.visibility= View.VISIBLE
+        })
 
+        viewModel.dashboardProfileDetails.observe(this, { profile ->
                 when (profile) {
                     is Resource.Success -> {
                         fullName = profile.data?.payload?.firstName + " " + profile.data?.payload?.lastName
                         name.text = fullName
+                        toolBarName.text = profile.data?.payload?.firstName
                     }
                     is Resource.Error -> {
                         Toast.makeText(this, "Error:" + profile.data?.message, Toast.LENGTH_LONG).show()

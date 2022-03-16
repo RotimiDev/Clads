@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.ActivityCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
@@ -33,6 +34,7 @@ class MediaFragment : Fragment(), PhotoGalleryAdapter.OnItemClickListener {
     private var _binding: FragmentMediaBinding? = null
     private val binding get() = _binding!!
     private lateinit var galleryAdapter: PhotoGalleryAdapter
+    private lateinit var toolbarProfileLayout: ConstraintLayout
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -45,6 +47,9 @@ class MediaFragment : Fragment(), PhotoGalleryAdapter.OnItemClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         initViews()
+        toolbarProfileLayout = (activity as DashboardActivity).toolbarProfileLayout
+        toolbarProfileLayout.visibility= View.GONE
+
         // Observing my recyclerView from viewModel, and updating accordingly
         viewModel.photoGallery.observe(viewLifecycleOwner) {
             galleryAdapter.submitList(it)

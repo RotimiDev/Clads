@@ -22,7 +22,7 @@ class TailorDataSource {
                     "https://www.mynativefashion.com/wp-content/uploads/2021/02/Nigerian-Fashion-For-Men-42.jpg",
                     "Lola Jegede Threads",
                     "Lekki, Lagos",
-                "Senator"
+                    "Senator"
                 )
             )
 
@@ -50,7 +50,7 @@ class TailorDataSource {
                 Tailor(
                     5,
                     "https://www.editsuits.com/wp-content/uploads/2018/05/edit-suits-tweed-suits-06-720x532.jpg",
-                    "Simpson's place",
+                    "Bespoke place",
                     "Garki, Abuja",
                     "Blazer"
                 )
@@ -59,6 +59,16 @@ class TailorDataSource {
             list.add(
                 Tailor(
                     6,
+                    "https://renystyles.com/wp-content/uploads/2021/05/Fantastic-Iro-And-Buba-2021-renystyles.com-22.jpg",
+                    "Shak Fashionista",
+                    "Rantya, Lagos",
+                    "Bubba"
+                )
+            )
+
+            list.add(
+                Tailor(
+                    7,
                     "https://www.mynativefashion.com/wp-content/uploads/2021/02/Nigerian-Fashion-For-Men-22-522x1024.jpg",
                     "Deca Fashionista",
                     "Jos, Plateau",
@@ -67,7 +77,7 @@ class TailorDataSource {
             )
             list.add(
                 Tailor(
-                    7,
+                    8,
                     "https://renystyles.com/wp-content/uploads/2021/06/Attractive-ankara-styles-2021-for-you-renystyles.com-50.jpg",
                     "Browndo Gowns",
                     "Umahia, Abia",
@@ -76,25 +86,46 @@ class TailorDataSource {
             )
             list.add(
                 Tailor(
-                    8,
+                    9,
                     "https://www.editsuits.com/wp-content/uploads/2019/11/ASHLEY-COLLAGE-1000x640.jpg",
                     "Ade and Johnson Suites",
                     "Mangu, Plateau",
-                "Blazer"
+                    "Blazer"
                 )
             )
             list.add(
                 Tailor(
-                    9,
+                    10,
                     "https://www.mynativefashion.com/wp-content/uploads/2020/10/Nigerian-Fashion-Dresses-16-1024x1024.jpg",
                     "Simpson's place",
                     "Garki, Abuja",
                     "Senator"
                 )
             )
+
             list.add(
                 Tailor(
-                    10,
+                    11,
+                    "https://renystyles.com/wp-content/uploads/2021/05/Fantastic-Iro-And-Buba-2021-renystyles.com-29.jpg",
+                    "Bibi's Place",
+                    "Ikoyi, Lagos",
+                    "Bubba"
+                )
+            )
+
+            list.add(
+                Tailor(
+                    12,
+                    "https://renystyles.com/wp-content/uploads/2021/05/Fantastic-Iro-And-Buba-2021-renystyles.com-33.jpg",
+                    "Kiki's Place",
+                    "Rantya, Lagos",
+                    "Bubba"
+                )
+            )
+
+            list.add(
+                Tailor(
+                    13,
                     "https://www.editsuits.com/wp-content/uploads/2018/05/edit-suits-tweed-suits-02.jpg",
                     "Kingsman",
                     "Tedo, Lagos",

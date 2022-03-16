@@ -22,7 +22,7 @@ class FavouritesRecyclerViewAdapter() :
             Glide.with(context).load(favourite.image).into(favouriteItemImageView)
             favouriteItemTextView.text = favourite.name
             itemView.setOnClickListener {
-                val direction  = FavouritesFragmentDirections.actionFavouritesFragmentToArtisanProfileFragment(favourite)
+                val direction = FavouritesFragmentDirections.actionFavouritesFragmentToArtisanProfileFragment(favourite)
                 itemView.findNavController().navigate(direction)
             }
         }

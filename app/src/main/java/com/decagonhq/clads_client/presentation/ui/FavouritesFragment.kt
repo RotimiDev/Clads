@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.decagonhq.clads_client.databinding.FragmentFavouritesBinding
@@ -16,6 +17,7 @@ class FavouritesFragment : Fragment() {
     private var _binding: FragmentFavouritesBinding? = null
     private val binding get() = _binding!!
     private var favouritesRecyclerViewAdapter = FavouritesRecyclerViewAdapter()
+    private lateinit var toolbarProfileLayout: ConstraintLayout
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,6 +31,9 @@ class FavouritesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        toolbarProfileLayout = (activity as DashboardActivity).toolbarProfileLayout
+        toolbarProfileLayout.visibility= View.GONE
 
         viewModel.getAllFavourites().observe(viewLifecycleOwner, {
             favouritesRecyclerViewAdapter.differ.submitList(it)

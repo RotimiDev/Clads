@@ -23,29 +23,28 @@
         android:id="@+id/media_caption_fragment_editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_28dp"
         android:layout_marginStart="@dimen/margin_5dp"
         android:layout_marginEnd="@dimen/margin_5dp"
-        android:paddingStart="@dimen/padding_10dp"
-        android:paddingEnd="@dimen/padding_10dp"
-        android:paddingVertical="@dimen/padding_10dp"
+        android:layout_marginBottom="53dp"
         android:background="@drawable/edit_text_background"
         android:hint="@string/please_enter_caption"
+        android:paddingVertical="@dimen/padding_10dp"
+        android:paddingStart="@dimen/padding_10dp"
+        android:paddingEnd="@dimen/padding_10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/media_caption_fragment_Image"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf= "@id/media_caption_fragment_button" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/media_caption_fragment_button"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/height_55dp"
-        android:layout_marginTop="@dimen/margin_20dp"
+        android:layout_height="@dimen/size_0_dp"
         android:backgroundTint="@color/app_color_blue"
-        app:cornerRadius="@dimen/radius_10dp"
         android:text="@string/add_caption"
+        app:cornerRadius="@dimen/radius_10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/media_caption_fragment_editText"
         app:layout_constraintEnd_toEndOf="@+id/media_caption_fragment_editText"
-        app:layout_constraintStart_toStartOf="@+id/media_caption_fragment_editText"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/media_caption_fragment_editText" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
