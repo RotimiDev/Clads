@@ -4,12 +4,12 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.utils.SessionManager
 import com.decagonhq.clads_client.utils.SessionManager.TOKEN
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -25,7 +25,7 @@ class AuthenticationActivity : AppCompatActivity() {
             window.navigationBarColor = resources.getColor(R.color.deep_sky_blue, this.theme)
         }
 
-        GlobalScope.launch {
+        lifecycleScope.launch {
             delay(1000)
             withContext(Dispatchers.Main) {
                 val preference = SessionManager.readFromSharedPref(this@AuthenticationActivity, TOKEN)
