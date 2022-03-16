@@ -2,6 +2,7 @@ package com.decagonhq.clads_client.presentation.ui
 
 import android.Manifest
 import android.app.Activity
+import android.app.Dialog
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
@@ -11,16 +12,25 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
+import android.widget.RadioButton
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import com.decagonhq.clads_client.R
 import com.decagonhq.clads_client.databinding.FragmentEditProfileAccountBinding
+import com.decagonhq.clads_client.presentation.model.DeliveryAddresse
+import com.decagonhq.clads_client.presentation.model.UpdateProfileRequest
 import com.decagonhq.clads_client.presentation.viewmodel.DashboardViewModel
 import com.decagonhq.clads_client.presentation.viewmodel.EditProfileViewModel
+import com.decagonhq.clads_client.presentation.viewmodel.UpdateProfileViewModel
 import com.decagonhq.clads_client.utils.Resource
+import com.decagonhq.clads_client.utils.SessionManager
+import com.decagonhq.clads_client.utils.SessionManager.TOKEN
+import com.decagonhq.clads_client.utils.viewextensions.provideCustomAlertDialog
 import com.decagonhq.clads_client.utils.viewextensions.showSnackBar
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import okhttp3.MultipartBody
 
@@ -31,6 +41,8 @@ class EditProfileAccountFragment : Fragment() {
     private lateinit var profileViewModel: DashboardViewModel
     private var _binding: FragmentEditProfileAccountBinding? = null
     private val binding get() = _binding!!
+    private val updateViewModel: UpdateProfileViewModel by activityViewModels()
+    private lateinit var dialog: Dialog
     private val requestWriteStorage = 0
     private var selectedImageUri: Uri? = null
 
@@ -46,7 +58,9 @@ class EditProfileAccountFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        dialog = provideCustomAlertDialog()
 
+        val token = SessionManager.readFromSharedPref(requireContext(), TOKEN)
         profileViewModel = (activity as DashboardActivity).viewModel
 
         binding.apply {
@@ -54,28 +68,50 @@ class EditProfileAccountFragment : Fragment() {
             val arrayAdapter =
                 ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, states)
             (accountStateTextInput.editText as? AutoCompleteTextView)?.setAdapter(arrayAdapter)
+
+            accountSaveChangeButton.setOnClickListener {
+                val radioGroup = profileGenderRadioGroup.checkedRadioButtonId
+                val radioValue: RadioButton = view.findViewById(radioGroup)
+                val state = editProfileStateSpinner.text.toString().trim()
+                val city = accountCityEditText.text.toString().trim()
+                val street = accountStreetEditText.text.toString().trim()
+                updateViewModel.updateUserProfile(
+                    "Bearer $token",
+                    UpdateProfileRequest(
+                        deliveryAddresses = listOf(DeliveryAddresse(city, state, street)),
+                        firstName = editFirstNameEditText.text.toString(),
+                        lastName = editLastNameEditText.text.toString(),
+                        gender = radioValue.text.toString(),
+                        email = "xyz@gmail.com"
+                    )
+                )
+            }
         }
+
         binding.accountImageView.setOnClickListener { requestWritePermission() }
 
-        viewModel.postImage.observe(viewLifecycleOwner, {
-            when (it) {
-                is Resource.Success -> {
-                    Glide.with(requireContext()).load(it.data?.payload?.downloadUri).into(binding.accountImageView)
-                }
-                is Resource.Loading -> {
-                    requireView().showSnackBar(getString(R.string.loading))
-                }
-                is Resource.Error -> {
-                    requireView().showSnackBar(it.data?.message.toString())
+        viewModel.postImage.observe(
+            viewLifecycleOwner,
+            Observer {
+                when (it) {
+                    is Resource.Success -> {
+                        Glide.with(requireContext()).load(it.data?.payload?.downloadUri).into(binding.accountImageView)
+                    }
+                    is Resource.Loading -> {
+                        requireView().showSnackBar(getString(R.string.loading))
+                    }
+                    is Resource.Error -> {
+                        requireView().showSnackBar(it.data?.message.toString())
+                    }
                 }
             }
-        })
+        )
 
-        profileViewModel.dashboardProfileDetails.observe(viewLifecycleOwner, { profile ->
+        profileViewModel.dashboardProfileDetails.observe(viewLifecycleOwner) { profile ->
 
             when (profile) {
-
                 is Resource.Success -> {
+                    dialog.dismiss()
                     binding.apply {
                         accountCityEditText.setText(profile.data?.payload?.showroomAddress?.city)
                         accountStreetEditText.setText(profile.data?.payload?.showroomAddress?.state)
@@ -87,13 +123,36 @@ class EditProfileAccountFragment : Fragment() {
                     }
                 }
                 is Resource.Error -> {
-                    requireView().showSnackBar("Error:" + profile.data?.message)
+                    dialog.dismiss()
+                    Snackbar.make(
+                        requireView(), "Error:" + profile.message.toString(),
+                        Snackbar.LENGTH_LONG
+                    ).show()
                 }
                 is Resource.Loading -> {
-                    requireView().showSnackBar(getString(R.string.loading))
+                    dialog.show()
                 }
             }
-        })
+        }
+
+        updateViewModel.updateProfileResponse.observe(
+            viewLifecycleOwner,
+            Observer { updatedProfile ->
+                when (updatedProfile) {
+                    is Resource.Loading -> {
+                        dialog.show()
+                    }
+                    is Resource.Error -> {
+                        dialog.dismiss()
+                        requireView().showSnackBar(getString(R.string.failed_to_update))
+                    }
+                    is Resource.Success -> {
+                        dialog.dismiss()
+                        requireView().showSnackBar(getString(R.string.profile_update_successful))
+                    }
+                }
+            }
+        )
     }
 
     // This is my Image Picker

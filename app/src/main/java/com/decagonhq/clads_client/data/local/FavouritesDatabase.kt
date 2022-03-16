@@ -6,7 +6,7 @@ import com.decagonhq.clads_client.data.model.Tailor
 
 @Database(
     entities = [Tailor::class],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 abstract class FavouritesDatabase : RoomDatabase() {

@@ -2,12 +2,14 @@ package com.decagonhq.clads_client.presentation.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.decagonhq.clads_client.data.model.Tailor
 import com.decagonhq.clads_client.databinding.FavouritesItemBinding
+import com.decagonhq.clads_client.presentation.ui.FavouritesFragmentDirections
 
 class FavouritesRecyclerViewAdapter() :
     RecyclerView.Adapter<FavouritesRecyclerViewAdapter.FavouritesViewHolder>() {
@@ -19,6 +21,10 @@ class FavouritesRecyclerViewAdapter() :
         fun bindData(favourite: Tailor) = with(itemView) {
             Glide.with(context).load(favourite.image).into(favouriteItemImageView)
             favouriteItemTextView.text = favourite.name
+            itemView.setOnClickListener {
+                val direction  = FavouritesFragmentDirections.actionFavouritesFragmentToArtisanProfileFragment(favourite)
+                itemView.findNavController().navigate(direction)
+            }
         }
     }
 
