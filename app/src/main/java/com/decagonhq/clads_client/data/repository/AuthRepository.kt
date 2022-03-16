@@ -6,6 +6,8 @@ import com.decagonhq.clads_client.data.model.RegistrationPayload
 import com.decagonhq.clads_client.data.model.RegistrationRequest
 import com.decagonhq.clads_client.data.model.Role
 import com.decagonhq.clads_client.network.ClientAPI
+import com.decagonhq.clads_client.presentation.model.UpdateProfilePayload
+import com.decagonhq.clads_client.presentation.model.UpdateProfileRequest
 import com.decagonhq.clads_client.utils.ApiCallHandler
 import com.decagonhq.clads_client.utils.Resource
 import retrofit2.Response
@@ -27,6 +29,11 @@ class AuthRepository @Inject constructor(private val api: ClientAPI) {
     suspend fun registerUser(registrationRequest: RegistrationRequest): Resource<GenericResult<RegistrationPayload>> {
         return ApiCallHandler.safeApiCall {
             api.registerUser(registrationRequest)
+        }
+    }
+    suspend fun updateUserProfile(bearer: String, updateProfileRequest: UpdateProfileRequest): Resource<GenericResult<UpdateProfilePayload>> {
+        return ApiCallHandler.safeApiCall {
+            api.updateUserProfile(bearer, updateProfileRequest)
         }
     }
 

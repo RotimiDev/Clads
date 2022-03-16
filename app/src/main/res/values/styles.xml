@@ -5,4 +5,5 @@
         <item name="cornerSize">50%</item>
         <item name="cornerFamily">rounded</item> <!--possible values are rounded, cut-->
     </style>
+
 </resources>
