@@ -22,6 +22,7 @@ import com.decagonhq.clads_client.utils.validation.validateField
 import com.decagonhq.clads_client.utils.viewextensions.provideCustomAlertDialog
 import com.decagonhq.clads_client.utils.viewextensions.showSnackBar
 import dagger.hilt.android.AndroidEntryPoint
+
 @AndroidEntryPoint
 class LoginFragment : Fragment() {
     private var _binding: FragmentLoginFormBinding? = null

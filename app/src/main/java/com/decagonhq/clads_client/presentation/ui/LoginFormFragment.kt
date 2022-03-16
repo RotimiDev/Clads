@@ -99,7 +99,7 @@ class LoginFormFragment : Fragment() {
     }
 
     private fun observers() {
-        viewModel. loginResponse.observe(viewLifecycleOwner) {
+        viewModel.loginResponse.observe(viewLifecycleOwner) {
             when (it) {
                 is Resource.Success -> {
                     val intent = Intent(requireContext(), DashboardActivity::class.java)

@@ -1,4 +1,5 @@
 package com.decagonhq.clads_client.network
+
 import com.decagonhq.clads_client.data.model.GenericResult
 import com.decagonhq.clads_client.data.model.GetImage
 import com.decagonhq.clads_client.data.model.LoginRequest
@@ -12,12 +13,15 @@ import com.decagonhq.clads_client.network.NetworkConstants.Companion.GOOGLE_LOGI
 import com.decagonhq.clads_client.network.NetworkConstants.Companion.PROFILE_URL
 import com.decagonhq.clads_client.network.NetworkConstants.Companion.UPLOAD_PROFILE_IMAGE
 import com.decagonhq.clads_client.network.NetworkConstants.Companion.VERIFY_USER_URL
+import com.decagonhq.clads_client.presentation.model.UpdateProfilePayload
+import com.decagonhq.clads_client.presentation.model.UpdateProfileRequest
 import okhttp3.MultipartBody
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.POST
+import retrofit2.http.PUT
 import retrofit2.http.Query
 
 interface ClientAPI {
@@ -46,4 +50,10 @@ interface ClientAPI {
 
     @POST(UPLOAD_PROFILE_IMAGE)
     suspend fun postProfileImage(@Header("Authorization") token: String, image: MultipartBody.Part): Response<UploadImage>
+
+    @PUT("/api/v1/customer/me/profile")
+    suspend fun updateUserProfile(
+        @Header("Authorization") Bearer: String,
+        @Body updateProfileRequest: UpdateProfileRequest
+    ): GenericResult<UpdateProfilePayload>
 }

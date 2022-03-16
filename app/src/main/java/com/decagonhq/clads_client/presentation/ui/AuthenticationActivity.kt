@@ -5,11 +5,14 @@ import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.decagonhq.clads_client.R
-import com.decagonhq.clads_client.network.NetworkConstants
 import com.decagonhq.clads_client.utils.SessionManager
 import com.decagonhq.clads_client.utils.SessionManager.TOKEN
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 @AndroidEntryPoint
 class AuthenticationActivity : AppCompatActivity() {
@@ -24,9 +27,9 @@ class AuthenticationActivity : AppCompatActivity() {
 
         GlobalScope.launch {
             delay(1000)
-            withContext(Dispatchers.Main){
-                val preference = SessionManager.readFromSharedPref(this@AuthenticationActivity,TOKEN)
-               if (preference.isNotBlank()){
+            withContext(Dispatchers.Main) {
+                val preference = SessionManager.readFromSharedPref(this@AuthenticationActivity, TOKEN)
+                if (preference.isNotBlank()) {
                     val intent =
                         Intent(this@AuthenticationActivity, DashboardActivity::class.java)
                     startActivity(intent)
