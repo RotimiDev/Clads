@@ -84,8 +84,6 @@ class ChoiceLoginFragment : Fragment() {
             ).show()
         }
     }
-
-
     // Trigger function
     private fun startGoogleSignIn() = googleSignInRequest.launch(googleSignInOptions)
 
