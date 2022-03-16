@@ -76,12 +76,14 @@ class EditProfileAccountFragment : Fragment() {
             when (profile) {
 
                 is Resource.Success -> {
-                    binding.accountCityEditText.setText(profile.data?.payload?.showroomAddress?.city)
-                    binding.accountStreetEditText.setText(profile.data?.payload?.showroomAddress?.state)
-                    binding.editLastNameEditText.setText(profile.data?.payload?.lastName)
-                    binding.editFirstNameEditText.setText(profile.data?.payload?.firstName)
-                    if (profile.data?.payload?.gender === R.string.male.toString()) {
-                        binding.profileGenderRadioGroup.check(R.id.profile_male_radio_button)
+                    binding.apply {
+                        accountCityEditText.setText(profile.data?.payload?.showroomAddress?.city)
+                        accountStreetEditText.setText(profile.data?.payload?.showroomAddress?.state)
+                        editLastNameEditText.setText(profile.data?.payload?.lastName)
+                        editFirstNameEditText.setText(profile.data?.payload?.firstName)
+                        if (profile.data?.payload?.gender === R.string.male.toString()) {
+                            profileGenderRadioGroup.check(R.id.profile_male_radio_button)
+                        }
                     }
                 }
                 is Resource.Error -> {

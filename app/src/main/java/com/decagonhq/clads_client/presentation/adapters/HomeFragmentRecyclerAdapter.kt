@@ -23,6 +23,7 @@ class HomeFragmentRecyclerAdapter(
             locationsTextView.text = data.location
             nameTextView.text = data.name
             Glide.with(context).load(data.image).into(imageView)
+
             itemView.setOnClickListener {
                 val directions = HomeFragmentDirections.actionHomeFragmentToArtisanProfileFragment(data)
                 itemView.findNavController().navigate(directions)
