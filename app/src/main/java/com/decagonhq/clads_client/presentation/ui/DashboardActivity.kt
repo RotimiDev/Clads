@@ -77,8 +77,7 @@ class DashboardActivity : AppCompatActivity() {
             } else binding.noNetworkTextView.visibility = View.VISIBLE
         })
 
-        viewModel.dashboardProfileDetails.observe(
-            this, { profile ->
+        viewModel.dashboardProfileDetails.observe(this, { profile ->
                 when (profile) {
                     is Resource.Success -> {
                         fullName = profile.data?.payload?.firstName + " " + profile.data?.payload?.lastName
