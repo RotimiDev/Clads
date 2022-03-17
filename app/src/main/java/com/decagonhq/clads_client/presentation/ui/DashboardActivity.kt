@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -77,7 +78,9 @@ class DashboardActivity : AppCompatActivity() {
             } else binding.noNetworkTextView.visibility = View.VISIBLE
         })
 
-        viewModel.dashboardProfileDetails.observe(this, { profile ->
+        viewModel.dashboardProfileDetails.observe(
+            this,
+            Observer { profile ->
                 when (profile) {
                     is Resource.Success -> {
                         fullName = profile.data?.payload?.firstName + " " + profile.data?.payload?.lastName
