@@ -40,7 +40,7 @@ class DashboardActivity : AppCompatActivity() {
     private lateinit var navHostFragment: NavHostFragment
     private lateinit var editProfileButton: MaterialButton
     private lateinit var name: TextView
-    lateinit var toolbarProfileLayout:ConstraintLayout
+    lateinit var toolbarProfileLayout: ConstraintLayout
     private lateinit var toolBarName: TextView
     private lateinit var fullName: String
     private lateinit var connectivityLiveData: ConnectivityLiveData
@@ -49,7 +49,7 @@ class DashboardActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        //Calling the function that checks for connectivity and saving it to a variable
+        // Calling the function that checks for connectivity and saving it to a variable
         connectivityLiveData = ConnectivityLiveData(this)
         val token = SessionManager.readFromSharedPref(this, SessionManager.TOKEN)
 
@@ -68,16 +68,17 @@ class DashboardActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbarInclude.toolbar)
 
-        //The observer that constantly checks the network state
-        connectivityLiveData.observe(this,{ networkState->
-            if (networkState == true){
-                //Toggle the visibility of the network error layer
+        // The observer that constantly checks the network state
+        connectivityLiveData.observe(this, { networkState ->
+            if (networkState == true) {
+                // Toggle the visibility of the network error layer
                 viewModel.getDetails("Bearer $token")
-                binding.noNetworkTextView.visibility= View.GONE
-            } else binding.noNetworkTextView.visibility= View.VISIBLE
+                binding.noNetworkTextView.visibility = View.GONE
+            } else binding.noNetworkTextView.visibility = View.VISIBLE
         })
 
-        viewModel.dashboardProfileDetails.observe(this, { profile ->
+        viewModel.dashboardProfileDetails.observe(
+            this, { profile ->
                 when (profile) {
                     is Resource.Success -> {
                         fullName = profile.data?.payload?.firstName + " " + profile.data?.payload?.lastName

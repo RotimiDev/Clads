@@ -48,7 +48,7 @@ class MediaFragment : Fragment(), PhotoGalleryAdapter.OnItemClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         initViews()
         toolbarProfileLayout = (activity as DashboardActivity).toolbarProfileLayout
-        toolbarProfileLayout.visibility= View.GONE
+        toolbarProfileLayout.visibility = View.GONE
 
         // Observing my recyclerView from viewModel, and updating accordingly
         viewModel.photoGallery.observe(viewLifecycleOwner) {

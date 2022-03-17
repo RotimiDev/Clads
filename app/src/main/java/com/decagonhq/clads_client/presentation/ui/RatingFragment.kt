@@ -30,7 +30,7 @@ class RatingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         toolbarProfileLayout = (activity as DashboardActivity).toolbarProfileLayout
-        toolbarProfileLayout.visibility= View.GONE
+        toolbarProfileLayout.visibility = View.GONE
 
         val message = RatingDataSource.createDataSet()
 

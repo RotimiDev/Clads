@@ -33,7 +33,7 @@ class FavouritesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         toolbarProfileLayout = (activity as DashboardActivity).toolbarProfileLayout
-        toolbarProfileLayout.visibility= View.GONE
+        toolbarProfileLayout.visibility = View.GONE
 
         viewModel.getAllFavourites().observe(viewLifecycleOwner, {
             favouritesRecyclerViewAdapter.differ.submitList(it)

@@ -29,7 +29,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         toolbarProfileLayout = (activity as DashboardActivity).toolbarProfileLayout
-        toolbarProfileLayout.visibility= View.VISIBLE
+        toolbarProfileLayout.visibility = View.VISIBLE
 
         val data = TailorDataSource.createDataSet()
         homeFragmentRecyclerAdapter = HomeFragmentRecyclerAdapter(data)

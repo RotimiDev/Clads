@@ -13,7 +13,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class ConnectivityLiveData (context: Context) : LiveData<Boolean>(){
+class ConnectivityLiveData(context: Context) : LiveData<Boolean>() {
 
     companion object {
         const val TAG = "C-Manager"
@@ -23,15 +23,15 @@ class ConnectivityLiveData (context: Context) : LiveData<Boolean>(){
     private var connectivityManager = context.getSystemService(CONNECTIVITY_SERVICE) as ConnectivityManager
     private val validNetworks: MutableSet<Network> = HashSet()
 
-    private fun checkValidNetworks(){
-        postValue(validNetworks.size>0)
+    private fun checkValidNetworks() {
+        postValue(validNetworks.size> 0)
     }
     override fun onActive() {
         networkCallback = createNetworkCallback()
         val networkRequest = NetworkRequest.Builder()
             .addCapability(NET_CAPABILITY_INTERNET)
             .build()
-        connectivityManager.registerNetworkCallback(networkRequest,networkCallback)
+        connectivityManager.registerNetworkCallback(networkRequest, networkCallback)
     }
 
     override fun onInactive() {
@@ -43,16 +43,16 @@ class ConnectivityLiveData (context: Context) : LiveData<Boolean>(){
         override fun onAvailable(network: Network) {
             val networkCapabilities = connectivityManager.getNetworkCapabilities(network)
             val hasInternetCapability = networkCapabilities?.hasCapability(NET_CAPABILITY_INTERNET)
-            if (hasInternetCapability == true){
+            if (hasInternetCapability == true) {
                 CoroutineScope(Dispatchers.IO).launch {
                     val hasInternet = Connectivity.hasConnectivity()
-                     if (hasInternet){
-                        withContext(Dispatchers.Main){
-                            Log.d(TAG,"onAvailable: adding network. $network")
+                    if (hasInternet) {
+                        withContext(Dispatchers.Main) {
+                            Log.d(TAG, "onAvailable: adding network. $network")
                             validNetworks.add(network)
                             checkValidNetworks()
                         }
-                    }else Log.d(TAG,"onAvailable: No data. $network")
+                    } else Log.d(TAG, "onAvailable: No data. $network")
                 }
             }
         }
@@ -61,7 +61,5 @@ class ConnectivityLiveData (context: Context) : LiveData<Boolean>(){
             validNetworks.remove(network)
             checkValidNetworks()
         }
-
     }
-
 }

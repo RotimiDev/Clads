@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -28,7 +27,7 @@ class ArtisanProfileFragment : Fragment() {
     private val args: ArtisanProfileFragmentArgs by navArgs()
     private lateinit var tailor: Tailor
     var likeStatus: Boolean = false
-    private lateinit var toolbarProfileLayout:ConstraintLayout
+    private lateinit var toolbarProfileLayout: ConstraintLayout
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -46,7 +45,7 @@ class ArtisanProfileFragment : Fragment() {
         tailor = args.tailor
         toolbarProfileLayout = (activity as DashboardActivity).toolbarProfileLayout
         binding.artisanAddressTextView.text = tailor.location
-        toolbarProfileLayout.visibility= View.GONE
+        toolbarProfileLayout.visibility = View.GONE
         binding.artisanNameTextView.text = tailor.name
         Glide.with(requireContext()).load(tailor.image).into(binding.shapeAbleImageView)
 
