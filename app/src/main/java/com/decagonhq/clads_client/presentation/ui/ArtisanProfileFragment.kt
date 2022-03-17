@@ -50,7 +50,10 @@ class ArtisanProfileFragment : Fragment() {
         Glide.with(requireContext()).load(tailor.image).into(binding.shapeAbleImageView)
 
         binding.goToGalleryButton.setOnClickListener { findNavController().navigate(R.id.mediaFragment) }
-        binding.seeReviewTextView.setOnClickListener { findNavController().navigate(R.id.ratingFragment) }
+        binding.seeReviewTextView.setOnClickListener {
+            val direction = ArtisanProfileFragmentDirections.actionArtisanProfileFragmentToRatingFragment(tailor)
+            findNavController().navigate(direction)
+        }
 
         binding.callButton.setOnClickListener {
             val dialIntent = Intent(Intent.ACTION_DIAL)

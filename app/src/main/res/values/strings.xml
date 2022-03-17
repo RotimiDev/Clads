@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">Clads-Client</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_main2">MainActivity2</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -11,7 +9,6 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
-    <string name="ijeoma">Ijeoma</string>
     <string name="lastname">LastName</string>
     <string name="ibukun">Ibukun</string>
     <string name="babangida">Babangida</string>
@@ -123,7 +120,6 @@
     <string name="login_fragment_new_user">New user?</string>
     <string name="login_fragment_signup_for_free">Signup for free</string>
     <string name="reset_password_fragment_confirm_new_password">Confirm New Password</string>
-    <string name="ijeoma_ibukun_babangida">Ijeoma Ibukun Babangida</string>
     <string name="edit_profile">Edit Profile</string>
     <string name="version_1_0">version 1.0</string>
     <string name="logout">Logout</string>
@@ -138,7 +134,6 @@
     <string name="delete_image">Delete Image</string>
     <string name="message">Do you wish to delete image ?</string>
     <string name="_5">5</string>
-    <string name="ratings_jj_fashionista_limited">JJ Fashionista Limited</string>
     <string name="reviews">Reviews</string>
     <string name="all_state">State</string>
     <string name="media_fragment">Media Fragment</string>
@@ -148,13 +143,11 @@
     <string name="location">Location</string>
     <string name="tailors">TAILORS</string>
     <string name="weavers">WEAVERS</string>
-    <string name="egbeda_lagos">Egbeda, Lagos</string>
     <string name="enter_valid_name_str">Please enter a valid name</string>
     <string name="enter_valid_email_str">Please enter a valid email</string>
     <string name="enter_valid_password_str">Password must have at least one special character, no white spaces and at least 4 characters.</string>
     <string name="enter_valid_confirm_password_str">Password does not match.</string>
     <string name="_4">4</string>
-    <string name="rate_jj_fashionista_limited">Rate JJ Fashionista Limited</string>
     <string name="describe_your_experience_optional">Describe your experience (optional)</string>
     <string name="all_post">Post</string>
     <string name="o">O</string>
@@ -165,7 +158,6 @@
     <string name="_1">1</string>
     <string name="_2">2</string>
     <string name="artisan_profile">Artisan Profile</string>
-    <string name="jj_fashionista_limited">JJ Fashionista Limited</string>
     <string name="dummy_text_amet">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim enim velit mollit.</string>
     <string name="chat">Chat</string>
     <string name="_24_akowoje_road_egbeda">24 Akowoje Road, Egbeda.</string>
@@ -175,7 +167,7 @@
     <string name="see_reviews">See Reviews</string>
     <string name="go_to_gallery">Go to gallery</string>
     <string name="add_favourites">Add Favourites</string>
-    <string name="this_need_background_permission">This need background permission</string>
+    <string name="this_need_background_permission">This needs background permission</string>
     <string name="permission_granted_now_you_can_read_the_storage">Permission granted now you can read the storage</string>
     <string name="oops_permission_is_not_granted">oops permission is not granted</string>
     <string name="yes">Yes</string>

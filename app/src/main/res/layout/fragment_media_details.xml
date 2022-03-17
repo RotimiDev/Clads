@@ -11,7 +11,7 @@
     <ImageView
         android:id="@+id/media_details_fragment_ImageView"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/Zero"
+        android:layout_height="@dimen/size_0_dp"
         android:elevation="@dimen/dp_10"
         android:scaleType="fitXY"
         android:src="@drawable/rectangle_25"

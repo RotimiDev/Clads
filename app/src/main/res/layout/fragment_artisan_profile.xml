@@ -30,7 +30,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/margin_12dp"
-            android:text="@string/jj_fashionista_limited"
             android:textColor="@color/dark_black"
             android:textSize="15sp"
             android:textStyle="bold" />
@@ -40,7 +39,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/_24_akowoje_road_egbeda"
             android:textColor="@color/menu_text_color"
             android:textSize="12sp" />
 
