@@ -11,9 +11,6 @@
         android:label=""
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment_to_ratingFragment"
-            app:destination="@id/ratingFragment" />
-        <action
             android:id="@+id/action_homeFragment_to_artisanProfileFragment"
             app:destination="@id/artisanProfileFragment" />
     </fragment>
@@ -51,12 +48,21 @@
         android:id="@+id/ratingFragment"
         android:name="com.decagonhq.clads_client.presentation.ui.RatingFragment"
         android:label="fragment_rating"
-        tools:layout="@layout/fragment_rating" />
+        tools:layout="@layout/fragment_rating">
+        <argument
+            android:name="tailor"
+            app:argType="com.decagonhq.clads_client.data.model.Tailor" />
+    </fragment>
+
     <fragment
         android:id="@+id/favouritesFragment"
         android:name="com.decagonhq.clads_client.presentation.ui.FavouritesFragment"
         android:label="Favorites"
-        tools:layout="@layout/fragment_favourites" />
+        tools:layout="@layout/fragment_favourites" >
+        <action
+            android:id="@+id/action_favouritesFragment_to_artisanProfileFragment"
+            app:destination="@id/artisanProfileFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/artisanProfileFragment"
@@ -66,6 +72,9 @@
         <argument
             android:name="tailor"
             app:argType="com.decagonhq.clads_client.data.model.Tailor" />
+        <action
+            android:id="@+id/action_artisanProfileFragment_to_ratingFragment"
+            app:destination="@id/ratingFragment" />
     </fragment>
 
 </navigation>

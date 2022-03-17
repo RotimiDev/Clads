@@ -9,4 +9,42 @@
     android:minHeight="?attr/actionBarSize"
     app:theme="@style/ThemeOverlay.AppCompat.ActionBar">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/toolbar_profile_details_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/toolbar_profile_image_view"
+            android:layout_width="@dimen/size_35dp"
+            android:layout_height="@dimen/size_35dp"
+            android:src="@drawable/ic_profileimage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/toolbar_hi_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/padding_4dp"
+            android:text="@string/all_hi"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_18sp"
+            app:layout_constraintTop_toTopOf="@id/toolbar_profile_image_view"
+            app:layout_constraintBottom_toBottomOf="@+id/toolbar_profile_image_view"
+            app:layout_constraintStart_toEndOf="@+id/toolbar_profile_image_view"/>
+
+        <TextView
+            android:id="@+id/toolbar_profile_name_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_18sp"
+            app:layout_constraintTop_toTopOf="@id/toolbar_hi_text_view"
+            app:layout_constraintBottom_toBottomOf="@id/toolbar_hi_text_view"
+            app:layout_constraintStart_toEndOf="@+id/toolbar_hi_text_view"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </androidx.appcompat.widget.Toolbar>

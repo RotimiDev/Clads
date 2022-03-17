@@ -13,5 +13,7 @@ data class Tailor(
     var image: String,
     var name: String,
     var location: String,
-    var phone: String = "08146397088"
+    var style: String,
+    var phone: String = "08146397088",
+
 ) : Parcelable
